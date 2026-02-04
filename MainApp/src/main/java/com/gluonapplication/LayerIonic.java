@@ -1,7 +1,6 @@
 package com.gluonapplication;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
-import javafx.scene.control.Label;
 
 public class LayerIonic extends LayerData  {
 

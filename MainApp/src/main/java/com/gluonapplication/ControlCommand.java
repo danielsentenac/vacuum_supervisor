@@ -10,14 +10,7 @@ import java.io.OutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Vector;
-import javafx.scene.layout.Pane;
-import com.gluonhq.charm.glisten.control.Dialog;
-import com.gluonhq.charm.glisten.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.fxml.FXMLLoader;
-import java.io.IOException;
 import java.net.ConnectException;
-import javafx.application.Platform;
 
 public class ControlCommand implements Runnable {   
    
@@ -27,7 +20,6 @@ public class ControlCommand implements Runnable {
    private boolean hasMastership = false;
    private boolean hasPrivilegeAccess = false;
    private String queryType = "";
-   private boolean isBusy = false;
    private String status = null;
    private String askedValue = "";
    private Vector<String> commandVect;
@@ -49,9 +41,17 @@ public class ControlCommand implements Runnable {
       }
    } 
     
-   private static ControlCommand INSTANCE = new ControlCommand();
+   private static final ControlCommand INSTANCE = new ControlCommand();
      
    public static ControlCommand getInstance() {return INSTANCE;}
+
+   private Vector<String> newCommand(String... items) {
+      Vector<String> command = new Vector<String>();
+      for (String item : items) {
+         command.addElement(item);
+      }
+      return command;
+   }
 
    /**
        A connection method called every time a connection to the servlet is needed. 
@@ -125,7 +125,7 @@ public class ControlCommand implements Runnable {
     public String setCommand(String msgServer, String msgType, String msgStation, String msgChannel, 
                              String value, int delay, boolean askMastership, String query, boolean showAlert) {
        queryType = "";
-       if ( askMastership == true ) {
+       if (askMastership) {
           queryType = query; // First passage, time query is same as queryType (Authorize | PrivilegeAccess)
           getMastership(query);
           System.out.println("Mastership: " + hasMastership);
@@ -134,70 +134,40 @@ public class ControlCommand implements Runnable {
        Vector<String> command = null;
        switch (msgType) {
           case "SETREGISTER": 
-                if ( hasMastership == true || askMastership == false ) {
+                if (hasMastership || !askMastership) {
                    if (!value.equals("")) {
-                      command = new Vector<String>(); 
-                      command.addElement(msgServer);
-                      command.addElement(msgType);
-                      command.addElement("-t");
-                      command.addElement(msgStation);
-                      command.addElement("-t");
-                      command.addElement(msgChannel);
-                      command.addElement("-d");
-                      command.addElement(value);
+                      command = newCommand(
+                              msgServer, msgType, "-t", msgStation, "-t", msgChannel, "-d", value
+                      );
                    }
                    else {
                       askedValue = "";
                       new DialogAskValue(msgChannel); // Ask user for value to be used
                       if (!askedValue.equals("")) {
-                         command = new Vector<String>(); 
-                         command.addElement(msgServer);
-                         command.addElement(msgType);
-                         command.addElement("-t");
-                         command.addElement(msgStation);
-                         command.addElement("-t");
-                         command.addElement(msgChannel);
-                         command.addElement("-d");
-                         command.addElement(askedValue);
+                         command = newCommand(
+                                 msgServer, msgType, "-t", msgStation, "-t", msgChannel, "-d", askedValue
+                         );
                       }
                    }
                 }
                 break;
           case "SETVALVEGAUGESAFECHANNEL": 
-                if ( hasMastership == true ) { 
-                   command = new Vector<String>();
-                   command.addElement(msgServer);
-                   command.addElement(msgType);
-                   command.addElement("-t");
-                   command.addElement(msgChannel);
-                   command.addElement("-d");
-                   command.addElement(value);
+                if (hasMastership) { 
+                   command = newCommand(msgServer, msgType, "-t", msgChannel, "-d", value);
                 }
                 break;
           case "SETVALVETURBOSAFECHANNEL": 
-                if ( hasMastership == true ) { 
-                   command = new Vector<String>();
-                   command.addElement(msgServer);
-                   command.addElement(msgType);
-                   command.addElement("-t");
-                   command.addElement(msgChannel);
-                   command.addElement("-d");
-                   command.addElement(value);
+                if (hasMastership) { 
+                   command = newCommand(msgServer, msgType, "-t", msgChannel, "-d", value);
                 }
                 break;
           case "SETEMERGENCYVALVECHANNEL": 
-                if ( hasPrivilegeAccess == true ) { 
-                   command = new Vector<String>();
-                   command.addElement(msgServer);
-                   command.addElement(msgType);
-                   command.addElement("-t");
-                   command.addElement(msgChannel);
-                   command.addElement("-d");
-                   command.addElement(value);
+                if (hasPrivilegeAccess) { 
+                   command = newCommand(msgServer, msgType, "-t", msgChannel, "-d", value);
                 }
                 break;
        }
-       if (isSimulation == false) {
+       if (!isSimulation) {
           if ( command != null ) {
              System.out.println("COMMAND SENT : " + command );
              status = sendCommand(command,delay);
@@ -213,7 +183,7 @@ public class ControlCommand implements Runnable {
           if ( command != null )
              MobileApplication.getInstance().showLayer("SERVER_KO");
        }
-       else if (showAlert == true ) {
+       else if (showAlert) {
           if (status.equals("SUCCESS"))
              MobileApplication.getInstance().showLayer("COMMAND_SUCCESS");
           else if (status.equals("SIMULATION"))
@@ -237,7 +207,6 @@ public class ControlCommand implements Runnable {
     }
 
     public void run() {
-       isBusy = true;
        try {
           // send data to the servlet
 	  URLConnection con = getServerConnection("http://online-data-provider.example:9081/jcmd/jcmd");
@@ -263,9 +232,6 @@ public class ControlCommand implements Runnable {
             ex.printStackTrace();
             MobileApplication.getInstance().showLayer("NETWORK_ERROR");
         } catch (Exception ex) {}
-       isBusy = false;
     }
 }
-
-
 

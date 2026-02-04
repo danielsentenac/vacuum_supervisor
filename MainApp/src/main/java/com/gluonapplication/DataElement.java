@@ -15,38 +15,27 @@ public class DataElement implements DataTypes {
       name = _name;
       type = _type;
       svrName = _svrName;
-      
    }
    public DataElement(String _name, Type _type, String _svrName, String _svrUnits) {
-      name = _name;
-      type = _type;
-      svrName = _svrName;
+      this(_name, _type, _svrName);
       svrUnits = _svrUnits;
    }
 
    public DataElement(String _name, Type _type, String _svrName, String _svrUnits, double _min, double _max) {
-      name = _name;
-      type = _type;
-      svrName = _svrName;
-      svrUnits = _svrUnits;
-      max = _max;
+      this(_name, _type, _svrName, _svrUnits);
       min = _min;
+      max = _max;
    }
    public DataElement(String _name, Type _type, String _svrName, int _bit) {
-      name = _name;
-      type = _type;
-      svrName = _svrName;
+      this(_name, _type, _svrName);
       bit = _bit;
    }
    public DataElement(String _name, Type _type, String _svrName, double _min, double _max) {
-      name = _name;
-      type = _type;
-      svrName = _svrName;
-      max = _max;
+      this(_name, _type, _svrName);
       min = _min;
+      max = _max;
    }
 }
-
 
 
 

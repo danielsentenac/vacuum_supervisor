@@ -2,19 +2,8 @@ package com.gluonapplication;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.collections.ObservableList;
-import com.gluonhq.charm.glisten.layout.Layer;
-import com.gluonhq.charm.glisten.mvc.View;
-import java.util.Vector;
-import com.gluonhq.charm.glisten.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.animation.PauseTransition;
-import javafx.util.Duration;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 
 public class ControllerCryoActions implements ControlTypes {
 

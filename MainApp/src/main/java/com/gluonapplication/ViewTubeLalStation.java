@@ -2,18 +2,11 @@ package com.gluonapplication;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
-import javafx.application.Platform;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.Icon;
 import com.gluonhq.charm.glisten.mvc.View;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Menu;
 import javafx.scene.control.Label;
-import javafx.event.EventHandler;
-import javafx.event.ActionEvent;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 
 public class ViewTubeLalStation extends ViewData  {
 

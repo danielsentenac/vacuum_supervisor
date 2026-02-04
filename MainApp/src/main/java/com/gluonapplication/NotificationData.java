@@ -1,47 +1,66 @@
 package com.gluonapplication;
 
-import com.gluonhq.charm.glisten.application.MobileApplication;
-import java.net.URLConnection; //for url management 
-import java.net.URL;
 import java.io.IOException;
-import java.lang.Runnable;
-import java.net.MalformedURLException;
-import java.lang.Thread;
-import java.util.Vector;
-import javafx.application.Platform;
-import java.net.URLConnection; //for url management 
-import java.net.URL;
-import java.io.ObjectInputStream; //for stream management
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-import java.io.IOException;
-import java.text.NumberFormat;
-import javafx.collections.ObservableList;
-import javafx.animation.PauseTransition;
-import javafx.util.Duration;
-import com.gluonhq.charm.down.Services;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.time.ZonedDateTime;
-import com.gluonhq.charm.down.plugins.DisplayService;
+import java.util.Vector;
+
+import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.LocalNotificationsService;
 import com.gluonhq.charm.down.plugins.Notification;
-import javafx.scene.control.Alert.AlertType;
 import com.gluonhq.charm.glisten.control.Alert;
+import javafx.application.Platform;
+import javafx.scene.control.Alert.AlertType;
 
 
 public class NotificationData implements Runnable, DataTypes {
     
-    private URLConnection con;
     private int initCnt = 0;
-    private int max_fr = 3;
+    private static final int MAX_FR = 3;
     public DataSet data;
     public String name = "";
     public boolean connectionError = false;
-    private String notificationId = "";
 
-    public NotificationData(String _name) {
-        name = _name;
-        notificationId = name;
+    public NotificationData(String name) {
+        this.name = name;
+    }
+
+    private boolean hasNotification(LocalNotificationsService service, String notificationId) {
+        for (Notification notification : service.getNotifications()) {
+            if (notificationId.equals(notification.getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void sleepQuietly(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (Exception e) {
+        }
+    }
+
+    private void addNotification(LocalNotificationsService service, String notificationId, String message) {
+        service.getNotifications().add(new Notification(
+                notificationId,
+                message,
+                ZonedDateTime.now().plusSeconds(10),
+                () -> {
+                    Alert alert = new Alert(AlertType.WARNING, message);
+                    Platform.runLater(() -> alert.showAndWait());
+                }
+        ));
+    }
+
+    private boolean isInvalidValue(String value) {
+        return "---".equals(value) || "255".equals(value);
     }
     /**
        A connection method called every time a connection to the servlet is needed. 
@@ -74,11 +93,11 @@ public class NotificationData implements Runnable, DataTypes {
          // receive result from servlet
          InputStream instr = con.getInputStream();
          ObjectInputStream inputFromServlet = new ObjectInputStream(instr);
-         data.svrValueList = (Vector <String> ) inputFromServlet.readObject();
+         data.svrValueList = (Vector<String>) inputFromServlet.readObject();
          inputFromServlet.close();
          instr.close();
 
-         if ( initCnt++ < max_fr) return; // First cycle data sent by Alp maybe corrupted!!
+         if (initCnt++ < MAX_FR) return; // First cycle data sent by Alp maybe corrupted!!
 
          //System.out.println(data.svrValueList);
          for (int i = 0 ; i < data.list.size(); ++i ) {
@@ -94,30 +113,17 @@ public class NotificationData implements Runnable, DataTypes {
                 svrUnits = " ";
              }
              final String value = svrValue;
-             final String units = svrUnits;
              switch (data.list.elementAt(i).type) {
                 case LABEL_TURBO_BOX_STATUS_STRING:
-                     if (!value.equals("0") && !value.equals("---") && !value.equals("255")) {
+                     if (!"0".equals(value) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "TURBO_BOX:" +data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && TURBO_BOX_STATUS_STRING.get(value) != null) {
+                              if (!hasNotification(service, notificationId) && TURBO_BOX_STATUS_STRING.get(value) != null) {
                                  System.out.println("CREATING NOTIFICATION TURBO_BOX:" + notificationId);
-                                 try {Thread.sleep(1000);} catch (Exception e){}
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + TURBO_BOX_STATUS_STRING.get(value) + ")", 
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + TURBO_BOX_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 sleepQuietly(1000);
+                                 String message = notificationId + "(" + TURBO_BOX_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                          }
@@ -125,27 +131,15 @@ public class NotificationData implements Runnable, DataTypes {
                      }
                      break;
                 case LABEL_TURBO_TEMP_STATUS_STRING:
-                     if (!value.equals("0") && !value.equals("---") && !value.equals("255")) {
+                     if (!"0".equals(value) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "TURBO_TEMP:" + data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && TURBO_TEMP_STATUS_STRING.get(value) != null) {
+                              if (!hasNotification(service, notificationId) && TURBO_TEMP_STATUS_STRING.get(value) != null) {
                                  System.out.println("CREATING NOTIFICATION TURBO_TEMP:" + notificationId);
-                                 try {Thread.sleep(2000);} catch (Exception e){}
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + TURBO_TEMP_STATUS_STRING.get(value) + ")", 
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + TURBO_TEMP_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 sleepQuietly(2000);
+                                 String message = notificationId + "(" + TURBO_TEMP_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                          }
@@ -153,27 +147,15 @@ public class NotificationData implements Runnable, DataTypes {
                      }
                      break;
                 case LABEL_TURBO_TEMP_BOX_STATUS_STRING:
-                     if (!value.equals("0") && !value.equals("---") && !value.equals("255")) {
+                     if (!"0".equals(value) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "TURBO_TEMP_BOX:" + data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && TURBO_TEMP_BOX_STATUS_STRING.get(value) != null) {
+                              if (!hasNotification(service, notificationId) && TURBO_TEMP_BOX_STATUS_STRING.get(value) != null) {
                                  System.out.println("CREATING NOTIFICATION TURBO_TEMP_BOX:" + notificationId);
-                                 try {Thread.sleep(3000);} catch (Exception e){}
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + TURBO_TEMP_BOX_STATUS_STRING.get(value) + ")", 
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + TURBO_TEMP_BOX_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 sleepQuietly(3000);
+                                 String message = notificationId + "(" + TURBO_TEMP_BOX_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                         }
@@ -181,29 +163,17 @@ public class NotificationData implements Runnable, DataTypes {
                      }
                      break;
                 case LABEL_TURBO_POWER_STATUS_STRING:
-                     if (!value.equals("---") && !value.equals("255")) {
+                     if (!isInvalidValue(value)) {
                         try {
                            int valueInt = Integer.parseInt(value); 
                            if (valueInt >=  data.list.elementAt(i).max) { 
                               String notificationId = "TURBO_POWER:" + data.list.elementAt(i).name;
                               Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                                 boolean alreadyExisting = false;
-                                 for(Notification notification: service.getNotifications()) {
-                                    if (notification.getId().equals(notificationId)) {
-                                       alreadyExisting = true;
-                                       break;
-                                    }
-                                 }
-                                 if ( alreadyExisting == false) { 
+                                 if (!hasNotification(service, notificationId)) { 
                                     System.out.println("CREATING NOTIFICATION TURBO_POWER:" + notificationId);
-                                    try {Thread.sleep(4000);} catch (Exception e){}
-                                    service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + TURBO_POWER_STATUS_STRING.get("1") + "-> " + value + " Watt)", 
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                       Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + TURBO_POWER_STATUS_STRING.get("1") + "-> " + value + " Watt)");
-                                       Platform.runLater(() -> alert.showAndWait());
-                                    }));
+                                    sleepQuietly(4000);
+                                    String message = notificationId + "(" + TURBO_POWER_STATUS_STRING.get("1") + "-> " + value + " Watt)";
+                                    addNotification(service, notificationId, message);
                                   }
                               });
                             }
@@ -212,27 +182,15 @@ public class NotificationData implements Runnable, DataTypes {
                      }
                      break;
                 case LABEL_GOLDEN_STATUS_STRING:
-                     if (!value.equals("1") && !value.equals("---") && !value.equals("255")) {
+                     if (!"1".equals(value) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "GOLDEN:" + data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && GOLDEN_STATUS_STRING.get(value)!= null) {
-                                 try {Thread.sleep(10000);} catch (Exception e){}
+                              if (!hasNotification(service, notificationId) && GOLDEN_STATUS_STRING.get(value)!= null) {
+                                 sleepQuietly(10000);
                                  System.out.println("CREATING NOTIFICATION GOLDEN ALERT:" + notificationId);
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + GOLDEN_STATUS_STRING.get(value) + ")",  
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + GOLDEN_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 String message = notificationId + "(" + GOLDEN_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                               }
                            });
                          }
@@ -240,27 +198,15 @@ public class NotificationData implements Runnable, DataTypes {
                      }
                      break;
                  case LABEL_RACK_STATUS_STRING:
-                     if (!value.equals("0") && !value.equals("---") && !value.equals("255")) {
+                     if (!"0".equals(value) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "RACK:" + data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && RACK_STATUS_STRING.get(value)!= null ) {
-                                 try {Thread.sleep(6000);} catch (Exception e){}
+                              if (!hasNotification(service, notificationId) && RACK_STATUS_STRING.get(value)!= null ) {
+                                 sleepQuietly(6000);
                                  System.out.println("CREATING NOTIFICATION RACK ALERT:" + notificationId);
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + RACK_STATUS_STRING.get(value) + ")",  
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + RACK_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 String message = notificationId + "(" + RACK_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                         } 
@@ -268,27 +214,15 @@ public class NotificationData implements Runnable, DataTypes {
                      }
                      break;
                   case LABEL_VALVE_STATUS_STRING:
-                     if (!value.equals("1") && !value.equals("2") && !value.equals("---") && !value.equals("255")) {
+                     if (!"1".equals(value) && !"2".equals(value) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "VALVE:" + data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && VALVE_STATUS_STRING.get(value)!= null ) {
-                                 try {Thread.sleep(7000);} catch (Exception e){}
+                              if (!hasNotification(service, notificationId) && VALVE_STATUS_STRING.get(value)!= null ) {
+                                 sleepQuietly(7000);
                                  System.out.println("CREATING NOTIFICATION VALVE ALERT:" + notificationId);
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + VALVE_STATUS_STRING.get(value) + ")",  
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + VALVE_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 String message = notificationId + "(" + VALVE_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                         } 
@@ -300,23 +234,11 @@ public class NotificationData implements Runnable, DataTypes {
                         try {
                            String notificationId = data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && OKFAILURE_STATUS_STRING.get(value)!= null ) {
-                                 try {Thread.sleep(8000);} catch (Exception e){}
+                              if (!hasNotification(service, notificationId) && OKFAILURE_STATUS_STRING.get(value)!= null ) {
+                                 sleepQuietly(8000);
                                  System.out.println("CREATING NOTIFICATION OKFAILURE ALERT:" + notificationId);
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + OKFAILURE_STATUS_STRING.get(value) + ")",  
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + OKFAILURE_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 String message = notificationId + "(" + OKFAILURE_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                         } 
@@ -328,23 +250,11 @@ public class NotificationData implements Runnable, DataTypes {
                         try {
                            String notificationId = data.list.elementAt(i).name;
                            Services.get(LocalNotificationsService.class).ifPresent(service -> {
-                              boolean alreadyExisting = false;
-                              for(Notification notification: service.getNotifications()) {
-                                 if (notification.getId().equals(notificationId)) {
-                                    alreadyExisting = true;
-                                    break;
-                                 }
-                              }
-                              if ( alreadyExisting == false && FAILUREOK_STATUS_STRING.get(value)!= null ) {
-                                 try {Thread.sleep(9000);} catch (Exception e){}
+                              if (!hasNotification(service, notificationId) && FAILUREOK_STATUS_STRING.get(value)!= null ) {
+                                 sleepQuietly(9000);
                                  System.out.println("CREATING NOTIFICATION FAILUREOK ALERT:" + notificationId);
-                                 service.getNotifications().add( new Notification(notificationId, notificationId + 
-                                                                          "(" + FAILUREOK_STATUS_STRING.get(value) + ")",  
-                                                                          ZonedDateTime.now().plusSeconds(10), () -> {
-                                     Alert alert = new Alert(AlertType.WARNING, notificationId + 
-                                                                          "(" + FAILUREOK_STATUS_STRING.get(value) + ")");
-                                     Platform.runLater(() -> alert.showAndWait());
-                                 }));
+                                 String message = notificationId + "(" + FAILUREOK_STATUS_STRING.get(value) + ")";
+                                 addNotification(service, notificationId, message);
                                }
                            });
                         } 

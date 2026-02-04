@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.scene.input.MouseEvent;
 import com.gluonhq.charm.glisten.mvc.View;
-import javafx.scene.input.ZoomEvent;
 
 public class ControllerTubeN extends ControlLayer implements ControlTypes {
 

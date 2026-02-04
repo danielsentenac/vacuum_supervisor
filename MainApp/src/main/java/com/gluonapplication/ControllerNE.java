@@ -8,7 +8,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import com.gluonhq.charm.glisten.mvc.View;
-import javafx.scene.input.ZoomEvent;
 
 public class ControllerNE extends ControlLayer implements ControlTypes {
 

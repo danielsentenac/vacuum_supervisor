@@ -3,21 +3,10 @@ package com.gluonapplication;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
-import javafx.scene.control.MenuItem;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import javafx.scene.control.Label;
-import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.geometry.Insets;
-import javafx.scene.paint.Color;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.input.ScrollEvent;
-import javafx.scene.input.TouchEvent;
-import javafx.event.EventHandler;
-import javafx.scene.layout.GridPane;
 
 public class ViewGlobal extends ViewData {
 

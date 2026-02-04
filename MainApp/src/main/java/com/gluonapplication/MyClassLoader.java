@@ -6,8 +6,8 @@ import java.util.Enumeration;
 import java.util.HashMap; 
 import java.util.Map; 
 
-public class MyClassLoader extends ClassLoader{ 
-  private final Map<String, Class> classes = new HashMap<String, Class>(); 
+public class MyClassLoader extends ClassLoader { 
+  private final Map<String, Class<?>> classes = new HashMap<>(); 
   private final ClassLoader parent; 
 
   public MyClassLoader(ClassLoader parent) { 
@@ -18,20 +18,18 @@ public class MyClassLoader extends ClassLoader{
   public Class<?> loadClass(String name) throws ClassNotFoundException {
     //System.out.println("In Class loader");
 
-    Class result;
     //System.out.println(" >>>>>> Load class : "+name);
-    result = (Class)classes.get(name);
-    if(result != null){
-        //System.out.println(" >>>>>> returning cached class.");
-        return result;
-    }else{
+    Class<?> result = classes.get(name);
+    if (result != null) {
+      //System.out.println(" >>>>>> returning cached class.");
+      return result;
+    }
     Class<?> c = findClass(name);
-    if ( c == null ) {
-      throw new ClassNotFoundException( name );
+    if (c == null) {
+      throw new ClassNotFoundException(name);
     }
     //System.out.println(" >>>>>> loading new class for first time only");
     return c;
-    }
  }
 
   @Override 
