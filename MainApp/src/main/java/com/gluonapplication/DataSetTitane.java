@@ -1,6 +1,5 @@
 package com.gluonapplication;
 
-import java.util.Vector;
 
 
 public class DataSetTitane extends DataSet {

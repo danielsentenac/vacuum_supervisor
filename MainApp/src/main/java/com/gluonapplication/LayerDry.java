@@ -1,6 +1,5 @@
 package com.gluonapplication;
 
-import javafx.scene.control.Label;
 
 public class LayerDry extends LayerData  {
 

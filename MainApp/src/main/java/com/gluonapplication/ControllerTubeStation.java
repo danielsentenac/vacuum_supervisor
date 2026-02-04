@@ -1,6 +1,5 @@
 package com.gluonapplication;
 
-import com.gluonhq.charm.glisten.application.MobileApplication;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Label;

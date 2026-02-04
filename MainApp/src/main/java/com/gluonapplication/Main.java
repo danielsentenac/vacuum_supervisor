@@ -4,23 +4,8 @@ import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.visual.Swatch;
 import com.gluonhq.charm.down.common.Platform;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
-import com.gluonhq.charm.glisten.mvc.View;
-import com.gluonhq.charm.glisten.layout.Layer;
-import com.gluonhq.charm.glisten.mvc.SplashView;
-import javafx.scene.control.Label;
-import javafx.util.Duration; 
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.geometry.Insets;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import java.net.CookieManager;
 import java.net.CookieHandler;
-import javafx.application.Application;
 import java.lang.reflect.Method;
 
 public class Main extends MobileApplication {

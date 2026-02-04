@@ -2,23 +2,12 @@ package com.gluonapplication;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.CategoryAxis;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import javafx.util.StringConverter;
 import javafx.event.EventHandler;
 import javafx.scene.input.ScrollEvent;
-import org.gillius.jfxutils.chart.JFXChartUtil;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.input.ZoomEvent;
-import javafx.scene.control.Tooltip;
-import javafx.scene.Node; 
-import java.util.Vector;
 
 public class ControllerChart {
 

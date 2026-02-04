@@ -1,22 +1,21 @@
 package com.gluonapplication;
 
 import java.util.Vector;
-import java.lang.Cloneable;
 
 
 
 public class DataSet implements DataTypes, Cloneable {
 
-   Vector<DataElement> list;
-   Vector<String> svrNameList;
-   Vector<String> svrUnitsList;
+   final Vector<DataElement> list;
+   final Vector<String> svrNameList;
+   final Vector<String> svrUnitsList;
    Vector<String> svrValueList;
 
    public DataSet() {
-      list = new Vector<DataElement>();
-      svrNameList = new Vector<String>();
-      svrUnitsList = new Vector<String>();
-      svrValueList = new Vector<String>();      
+      list = new Vector<>();
+      svrNameList = new Vector<>();
+      svrUnitsList = new Vector<>();
+      svrValueList = new Vector<>();
    }
 
    public void Init() {
@@ -49,7 +48,5 @@ public class DataSet implements DataTypes, Cloneable {
       return dataElement;
    }
 }
-
-
 
 

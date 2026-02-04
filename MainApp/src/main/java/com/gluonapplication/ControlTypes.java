@@ -1,7 +1,6 @@
 package com.gluonapplication;
 
 import java.util.Hashtable;
-import javafx.scene.paint.Color;
 
 public interface ControlTypes {
 

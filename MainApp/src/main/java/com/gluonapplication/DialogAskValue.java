@@ -3,7 +3,6 @@ package com.gluonapplication;
 import com.gluonhq.charm.glisten.control.Dialog;
 import javafx.scene.control.Button; 
 import javafx.scene.control.TextField;
-import javafx.application.Platform;
 
 public class DialogAskValue extends Dialog {
 

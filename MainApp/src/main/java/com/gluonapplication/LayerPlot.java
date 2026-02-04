@@ -1,14 +1,6 @@
 package com.gluonapplication;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
-import javafx.scene.Node;
-import javafx.scene.chart.BarChart; 
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Series;
-import javafx.scene.web.WebView; 
-import javafx.scene.web.WebEngine;
 
 
 

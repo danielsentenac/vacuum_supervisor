@@ -1,6 +1,5 @@
 package com.gluonapplication;
 
-import javafx.scene.control.Label;
 
 public class SidePopupViewTubeStation extends SidePopupViewData  {
 

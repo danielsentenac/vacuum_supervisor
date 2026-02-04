@@ -2,12 +2,7 @@ package com.gluonapplication;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.SVGPath;
 import javafx.scene.input.MouseEvent;
 
 public class ControllerMiniTowerSqzActions implements ControlTypes {
