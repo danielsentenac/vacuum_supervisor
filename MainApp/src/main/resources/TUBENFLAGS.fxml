@@ -8,354 +8,354 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1400.0" prefWidth="287.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="1400.0" prefWidth="287.0" style="-fx-background-color: #333333;">
    <children>
       <Label fx:id="ViewName" alignment="CENTER" layoutX="7.0" layoutY="41.0" prefHeight="25.0" prefWidth="267.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Tube Nord Flags">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
-      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="133.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="133.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
       <Label fx:id="ViewName1" alignment="CENTER" layoutX="5.0" layoutY="99.0" prefHeight="25.0" prefWidth="203.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Temperatures 600N">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <TilePane hgap="10.0" layoutX="13.0" layoutY="157.0" prefHeight="300.0" prefWidth="270.0" vgap="10.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. Int. " TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. Int. ">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NInt" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 1" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 1">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos1" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 2" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 2">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos2" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 3" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 3">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos3" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 4" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 4">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos4" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 5" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 5">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos5" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 6" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 6">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos6" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 7" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 7">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos7" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 8" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 8">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp600NPos8" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
             </Label>
          </children>
       </TilePane>
-      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="491.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="491.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
       <Label fx:id="ViewName11" alignment="CENTER" layoutX="5.0" layoutY="457.0" prefHeight="25.0" prefWidth="214.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Temperatures 1800N">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <TilePane hgap="10.0" layoutX="15.0" layoutY="515.0" prefHeight="300.0" prefWidth="251.0" vgap="10.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. Int. " TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. Int. ">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NInt" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 1" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 1">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos1" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 2" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 2">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos2" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 3" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 3">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos3" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 4" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 4">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos4" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 5" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 5">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos5" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 6" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 6">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos6" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 7" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 7">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos7" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 8" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 8">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp1800NPos8" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
             </Label>
          </children>
       </TilePane>
-      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="848.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="848.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
       <Label fx:id="ViewName12" alignment="CENTER" layoutX="5.0" layoutY="815.0" prefHeight="25.0" prefWidth="214.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Temperatures 3000N">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <TilePane hgap="10.0" layoutX="18.0" layoutY="873.0" prefHeight="300.0" prefWidth="260.0" vgap="10.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. Int. " TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. Int. ">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NInt" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 1" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 1">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos1" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 2" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 2">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos2" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 3" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 3">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos3" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 4" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 4">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos4" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 5" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 5">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos5" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 6" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 6">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos6" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 7" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 7">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos7" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 8" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Temp. 8">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="Temp3000NPos8" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
             </Label>
          </children>

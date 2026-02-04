@@ -3,4 +3,4 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane prefHeight="239.0" prefWidth="260.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="239.0" prefWidth="260.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-opacity: 1;"/>

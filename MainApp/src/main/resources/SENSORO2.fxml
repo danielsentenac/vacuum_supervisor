@@ -11,431 +11,431 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1952.0" prefWidth="289.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="1952.0" prefWidth="289.0" style="-fx-background-color: #333333;">
    <children>
       <TilePane layoutX="30.0" layoutY="329.0" prefHeight="81.0" prefWidth="220.0" vgap="10.0">
          <children>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Alarm CB" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Alarm CB">
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font>
             </Text>
             <Label fx:id="AlarmCB" alignment="CENTER" prefHeight="13.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Alarm NE" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Alarm NE">
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font>
             </Text>
             <Label fx:id="AlarmNE" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Alarm WE" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Alarm WE">
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font>
             </Text>
             <Label fx:id="AlarmWE" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
          </children>
       </TilePane>
       <Label fx:id="ViewName" alignment="CENTER" layoutX="50.0" layoutY="27.0" prefHeight="24.0" prefWidth="202.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Sensor O2">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <TilePane layoutX="31.0" layoutY="501.0" prefHeight="438.0" prefWidth="220.0" vgap="10.0">
          <children>
-          <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone A 60" TilePane.alignment="CENTER_RIGHT">
+          <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone A 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneA60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-           <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone A 120" TilePane.alignment="CENTER_RIGHT">
+           <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone A 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneA120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone B 120" wrappingWidth="169.8916015625" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone B 120" wrappingWidth="169.8916015625">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneB120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="Zone B 170" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="Zone B 170">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneB170" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-      	    <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone C 60" TilePane.alignment="CENTER_RIGHT">
+      	    <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone C 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneC60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-      	    <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone C 120" TilePane.alignment="CENTER_RIGHT">
+      	    <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone C 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneC120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-           <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone D 120" TilePane.alignment="CENTER_RIGHT">
+           <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone D 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneD120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone D 170" TilePane.alignment="CENTER_RIGHT">
+         <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone D 170">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
              <Label fx:id="CBZoneD170" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone E 60" TilePane.alignment="CENTER_RIGHT">
+         <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone E 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneE60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-          <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone E 120" TilePane.alignment="CENTER_RIGHT">
+          <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone E 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneE120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-           <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone F 60" TilePane.alignment="CENTER_RIGHT">
+           <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone F 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneF60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone F 120" TilePane.alignment="CENTER_RIGHT">
+         <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone F 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneF120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone G 60" TilePane.alignment="CENTER_RIGHT">
+         <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone G 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneG60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone G 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Zone G 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBZoneG120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBCleanRoom60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="CBCleanRoom120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
          </children>
       </TilePane>
-      <Line endX="270.0" fill="#cd0909" layoutX="-12.0" layoutY="1075.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <Line endX="270.0" fill="#b27d38" layoutX="-12.0" layoutY="304.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
-      <Line endX="270.0" fill="#cd0909" layoutX="-12.0" layoutY="475.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Line endX="270.0" fill="#cd0909" layoutX="-12.0" layoutY="1075.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0"/>
+      <Line endX="270.0" fill="#b27d38" layoutX="-12.0" layoutY="304.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
+      <Line endX="270.0" fill="#cd0909" layoutX="-12.0" layoutY="475.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0"/>
       <Label fx:id="ViewName1" alignment="CENTER" layoutX="4.0" layoutY="445.0" prefHeight="24.0" prefWidth="42.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="CB">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <Label fx:id="ViewName11" alignment="CENTER" layoutX="4.0" layoutY="276.0" prefHeight="24.0" prefWidth="75.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Alarms">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <Label fx:id="ViewName12" alignment="CENTER" layoutX="4.0" layoutY="1046.0" prefHeight="24.0" prefWidth="42.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="NE">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <TilePane layoutX="30.0" layoutY="1108.0" prefHeight="380.0" prefWidth="220.0" vgap="10.0">
          <children>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower DX 60" wrappingWidth="169.8916015625" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower DX 60" wrappingWidth="169.8916015625">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETowerDx60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="TowerDx120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="TowerDx120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETowerDx120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NEBaseRoom60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NEBaseRoom120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NECleanRoom60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NECleanRoom120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETowerSx60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETowerSx120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETunnel60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETunnel120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETunnelDoor60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="NETunnelDoor120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
          </children>
       </TilePane>
-      <Line endX="270.0" fill="#cd0909" layoutX="-12.0" layoutY="1539.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Line endX="270.0" fill="#cd0909" layoutX="-12.0" layoutY="1539.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0"/>
       <Label fx:id="ViewName121" alignment="CENTER" layoutX="4.0" layoutY="1510.0" prefHeight="24.0" prefWidth="42.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="WE">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
          <TilePane.margin>
             <Insets />
@@ -443,206 +443,206 @@
       </Label>
       <TilePane layoutX="30.0" layoutY="1572.0" prefHeight="380.0" prefWidth="220.0" vgap="10.0">
          <children>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower DX 60" wrappingWidth="169.8916015625" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower DX 60" wrappingWidth="169.8916015625">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETowerDx60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="TowerDx120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="TowerDx120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETowerDx120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WEBaseRoom60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Base Room 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WEBaseRoom120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WECleanRoom60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Clean Room 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WECleanRoom120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETowerSx60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower SX 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETowerSx120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETunnel60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETunnel120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 60" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 60">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETunnelDoor60" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 120" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tunnel Door 120">
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font></Text>
             <Label fx:id="WETunnelDoor120" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
          </children>
       </TilePane>
-      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="119.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Line endX="270.0" fill="#b27d38" layoutX="-10.5" layoutY="119.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
       <Label fx:id="ViewName111" alignment="CENTER" layoutX="5.0" layoutY="91.0" prefHeight="24.0" prefWidth="157.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Controller Status">
          <font>
-            <Font name="System" size="20.0" />
+            <Font name="System" size="20.0"/>
          </font>
       </Label>
       <TilePane layoutX="26.0" layoutY="141.0" prefHeight="81.0" prefWidth="220.0" vgap="10.0">
          <children>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Controller CB" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Controller CB">
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font>
             </Text>
             <Label fx:id="ControllerCB" alignment="CENTER" prefHeight="13.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Controller NE" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Controller NE">
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font>
             </Text>
             <Label fx:id="ControllerNE" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Controller WE" TilePane.alignment="CENTER_RIGHT">
+            <Text TilePane.alignment="CENTER_RIGHT" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Controller WE">
                <TilePane.margin>
                   <Insets />
                </TilePane.margin>
                <font>
-                  <Font size="12.0" />
+                  <Font size="12.0"/>
                </font>
             </Text>
             <Label fx:id="ControllerWE" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <TilePane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0"/>
                </TilePane.margin>
             </Label>
          </children>

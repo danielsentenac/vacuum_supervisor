@@ -4,23 +4,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="222.0" prefWidth="304.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerMastershipOvertake">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerMastershipOvertake" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="222.0" prefWidth="304.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-opacity: 1;">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" prefHeight="48.0" prefWidth="293.0" style=" -fx-opacity: 0.8; -fx-font-size: 20; -fx-text-fill: red; -fx-background-radius: 5;" text="Mastership taken by:" textAlignment="CENTER" textFill="#403131">
          <font>
-            <Font size="20.0" />
+            <Font size="20.0"/>
          </font>
       </Label>
-      <Label fx:id="YES" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="161.0" onMouseClicked="#YES_Clicked" onMousePressed="#YES_Pressed" onMouseReleased="#YES_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="YES" textAlignment="CENTER" />
-      <Label fx:id="NO" alignment="CENTER" contentDisplay="CENTER" layoutX="191.0" layoutY="161.0" onMouseClicked="#NO_Clicked" onMousePressed="#NO_Pressed" onMouseReleased="#NO_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="NO" textAlignment="CENTER" />
+      <Label fx:id="YES" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="161.0" onMouseClicked="#YES_Clicked" onMousePressed="#YES_Pressed" onMouseReleased="#YES_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="YES" textAlignment="CENTER"/>
+      <Label fx:id="NO" alignment="CENTER" contentDisplay="CENTER" layoutX="191.0" layoutY="161.0" onMouseClicked="#NO_Clicked" onMousePressed="#NO_Pressed" onMouseReleased="#NO_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="NO" textAlignment="CENTER"/>
       <Label fx:id="Reason" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="48.0" prefHeight="48.0" prefWidth="293.0" style=" -fx-opacity: 0.8; -fx-font-size: 20; -fx-text-fill: red; -fx-background-radius: 5;" text="reason" textAlignment="CENTER" textFill="#403131">
          <font>
-            <Font size="20.0" />
+            <Font size="20.0"/>
          </font>
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="101.0" prefHeight="48.0" prefWidth="293.0" style=" -fx-opacity: 0.8; -fx-font-size: 20; -fx-text-fill: red; -fx-background-radius: 5;" text="Overtake ?" textAlignment="CENTER" textFill="#403131">
          <font>
-            <Font size="20.0" />
+            <Font size="20.0"/>
          </font>
       </Label>
    </children>

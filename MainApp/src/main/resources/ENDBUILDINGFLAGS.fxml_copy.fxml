@@ -9,13 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="pane" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:id="pane" style="-fx-background-color: #333333;">
   <top>
-      <GridPane style="-fx-background-color: #262626;" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+      <GridPane GridPane.columnSpan="2" GridPane.halignment="CENTER" style="-fx-background-color: #262626;">
          <children>
-            <Label fx:id="ViewName" alignment="CENTER" prefHeight="50.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="End Building Flags" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <Label fx:id="ViewName" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" alignment="CENTER" prefHeight="50.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="End Building Flags">
                <font>
-                  <Font name="System" size="20.0" />
+                  <Font name="System" size="20.0"/>
                </font>
             </Label>
          </children>
@@ -30,66 +30,66 @@
    <center>
       <GridPane GridPane.rowIndex="1">
          <children>
-            <Label fx:id="StatusRackCryo" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="StatusRackCryo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="StatusRackCryoPump" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="StatusRackCryoPump" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="StatusRackTower" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Label fx:id="StatusRackTower" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
             </Label>
-            <Label fx:id="CompressAirTower" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Label fx:id="CompressAirTower" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="CompressAirCryo" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Label fx:id="CompressAirCryo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" alignment="CENTER" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Rack Cryo Comm" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.valignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Rack Cryo Comm">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Rack Cryo Pump Comm" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Rack Cryo Pump Comm">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower Compressed Air" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Tower Compressed Air">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Rack Tower Comm" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Rack Tower Comm">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Cryo Compressed Air" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Cryo Compressed Air">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
          </children>

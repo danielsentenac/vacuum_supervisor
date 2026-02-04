@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="895.0" prefWidth="313.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSqz">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSqz" maxHeight="1.7976931348623157E308" prefHeight="895.0" prefWidth="313.0" style="-fx-background-color: #333333;">
    <children>
       <Group fx:id="V21Sqz200" layoutX="68.0" layoutY="183.0" onMouseClicked="#V21Sqz200N_Clicked" onMousePressed="#V21Sqz200N_Pressed" onMouseReleased="#V21Sqz200N_Released">
          <children>
@@ -30,27 +30,27 @@
       </Group>
       <Label fx:id="PressureSqz0N" alignment="CENTER" layoutX="116.0" layoutY="471.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="PressureSqz100N" alignment="CENTER" layoutX="188.0" layoutY="298.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="PressureSqz200N" alignment="CENTER" layoutX="188.0" layoutY="207.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="PressureSqz300N" alignment="CENTER" layoutX="116.0" layoutY="39.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="StationSqz100N" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="277.0" onMouseClicked="#StationSqz100N_Clicked" onMousePressed="#StationSqz100N_Pressed" onMouseReleased="#StationSqz100N_Released" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZ100N" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -58,7 +58,7 @@
       </Label>
       <Label fx:id="StationSqz200N" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="187.0" onMouseClicked="#StationSqz200N_Clicked" onMousePressed="#StationSqz200N_Pressed" onMouseReleased="#StationSqz200N_Released" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="SQZ200N" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -82,26 +82,26 @@
             </SVGPath>
          </children>
       </Group>
-      <Group layoutX="59.0" layoutY="415.0" />
-      <Group layoutX="61.0" layoutY="-65.0" />
+      <Group layoutX="59.0" layoutY="415.0"/>
+      <Group layoutX="61.0" layoutY="-65.0"/>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="222.0" layoutX="36.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
       <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
       </Rectangle>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="43.0" layoutX="35.0" layoutY="583.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateY="-0.5" width="50.0">
       <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
       </Rectangle>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="50.0" layoutX="36.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
          <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
          </effect>
       </Rectangle>
       <Label fx:id="StationSqz300N" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="13.0" onMouseClicked="#StgationSqz300N_Clicked" onMousePressed="#StgationSqz300N_Pressed" onMouseReleased="#StgationSqz300N_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZ300N" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -109,7 +109,7 @@
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="63.0" layoutX="35.0" layoutY="493.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
          <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
          </effect>
       </Rectangle>
       <Group fx:id="VPSqz0N" layoutX="-25.0" layoutY="347.0" onMouseClicked="#VPSqz0N_Clicked" onMousePressed="#VPSqz0N_Pressed" onMouseReleased="#VPSqz0N_Released">
@@ -123,12 +123,12 @@
       </Group>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="50.0" layoutX="35.0" layoutY="390.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
          <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
          </effect>
       </Rectangle>
       <Label fx:id="StationSqz0N" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="432.0" onMouseClicked="#StgationSqz0N_Clicked" onMousePressed="#StgationSqz0N_Pressed" onMouseReleased="#StgationSqz0N_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZ0N">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -136,7 +136,7 @@
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="105.0" layoutX="89.0" layoutY="655.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
          <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
          </effect>
       </Rectangle>
       <Group fx:id="VPSqzDET1" layoutX="76.0" layoutY="725.0" onMouseClicked="#VPSqzDET1_Clicked" onMousePressed="#VPSqzDET1_Pressed" onMouseReleased="#VPSqzDET1_Released" rotate="-45.0">
@@ -150,12 +150,12 @@
       </Group>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="62.0" layoutX="167.0" layoutY="754.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
          <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
          </effect>
       </Rectangle>
       <Label fx:id="StationSqzDET1" alignment="CENTER" contentDisplay="CENTER" layoutX="202.0" layoutY="796.0" onMouseClicked="#StgationSqzDET1_Clicked" onMousePressed="#StgationSqzDET1_Pressed" onMouseReleased="#StgationSqzDET1_Released" prefHeight="70.0" prefWidth="70.0" rotate="-45.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZDET1">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -163,7 +163,7 @@
       </Label>
       <Label fx:id="StationSqzDET2" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="619.0" onMouseClicked="#StgationSqzDET2_Clicked" onMousePressed="#StgationSqzDET2_Pressed" onMouseReleased="#StgationSqzDET2_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZDET2">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -171,12 +171,12 @@
       </Label>
       <Label fx:id="PressureSqzDET2" alignment="CENTER" layoutX="117.0" layoutY="635.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="PressureSqzDET1" alignment="CENTER" layoutX="65.0" layoutY="846.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
    </children>
