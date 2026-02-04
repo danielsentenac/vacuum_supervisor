@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Text?>
 
 
-<BorderPane fx:id="pane" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSupervisorFlags"> 
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSupervisorFlags" fx:id="pane" style="-fx-background-color: #333333;">
    <top>
-      <GridPane style="-fx-background-color: #262626;" GridPane.halignment="CENTER">
+      <GridPane GridPane.halignment="CENTER" style="-fx-background-color: #262626;">
          <children>
-            <Label fx:id="ViewName" alignment="CENTER" prefHeight="50.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Supervisor Flags" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <Label fx:id="ViewName" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" alignment="CENTER" prefHeight="50.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Supervisor Flags">
                <font>
-                  <Font name="System" size="20.0" />
+                  <Font name="System" size="20.0"/>
                </font>
             </Label>
          </children>
@@ -35,385 +35,385 @@
      <center>
       <GridPane style="-fx-background-color: #333333;">
          <children>
-            <Label fx:id="SafeNorthArm" alignment="CENTER" onMouseClicked="#SafeNorthArm_Clicked" onMousePressed="#SafeNorthArm_Pressed" onMouseReleased="#SafeNorthArm_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Label fx:id="SafeNorthArm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#SafeNorthArm_Clicked" onMousePressed="#SafeNorthArm_Pressed" onMouseReleased="#SafeNorthArm_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="SafeWestArm" alignment="CENTER" onMouseClicked="#SafeWestArm_Clicked" onMousePressed="#SafeWestArm_Pressed" onMouseReleased="#SafeWestArm_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <Label fx:id="SafeWestArm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#SafeWestArm_Clicked" onMousePressed="#SafeWestArm_Pressed" onMouseReleased="#SafeWestArm_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="SafeCentral" alignment="CENTER" layoutX="221.0" layoutY="361.0" onMouseClicked="#SafeCentral_Clicked" onMousePressed="#SafeCentral_Pressed" onMouseReleased="#SafeCentral_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+            <Label fx:id="SafeCentral" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" alignment="CENTER" layoutX="221.0" layoutY="361.0" onMouseClicked="#SafeCentral_Clicked" onMousePressed="#SafeCentral_Pressed" onMouseReleased="#SafeCentral_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="SafeNorthEnd" alignment="CENTER" onMouseClicked="#SafeNorthEnd_Clicked" onMousePressed="#SafeNorthEnd_Pressed" onMouseReleased="#SafeNorthEnd_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <Label fx:id="SafeNorthEnd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#SafeNorthEnd_Clicked" onMousePressed="#SafeNorthEnd_Pressed" onMouseReleased="#SafeNorthEnd_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="SafeWestEnd" alignment="CENTER" onMouseClicked="#SafeWestEnd_Clicked" onMousePressed="#SafeWestEnd_Released" onMouseReleased="#SafeWestEnd_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+            <Label fx:id="SafeWestEnd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#SafeWestEnd_Clicked" onMousePressed="#SafeWestEnd_Released" onMouseReleased="#SafeWestEnd_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingBS" alignment="CENTER" onMouseClicked="#PrimaryPumpingBS_Clicked" onMousePressed="#PrimaryPumpingBS_Pressed" onMouseReleased="#PrimaryPumpingBS_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="15" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingBS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="15" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingBS_Clicked" onMousePressed="#PrimaryPumpingBS_Pressed" onMouseReleased="#PrimaryPumpingBS_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingNI" alignment="CENTER" onMouseClicked="#PrimaryPumpingNI_Clicked" onMousePressed="#PrimaryPumpingNI_Pressed" onMouseReleased="#PrimaryPumpingNI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="20" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingNI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="20" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingNI_Clicked" onMousePressed="#PrimaryPumpingNI_Pressed" onMouseReleased="#PrimaryPumpingNI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingWI" alignment="CENTER" onMouseClicked="#PrimaryPumpingWI_Clicked" onMousePressed="#PrimaryPumpingWI_Pressed" onMouseReleased="#PrimaryPumpingWI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="21" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingWI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="21" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingWI_Clicked" onMousePressed="#PrimaryPumpingWI_Pressed" onMouseReleased="#PrimaryPumpingWI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingNE" alignment="CENTER" onMouseClicked="#PrimaryPumpingNE_Clicked" onMousePressed="#PrimaryPumpingNE_Pressed" onMouseReleased="#PrimaryPumpingNE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="22" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingNE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="22" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingNE_Clicked" onMousePressed="#PrimaryPumpingNE_Pressed" onMouseReleased="#PrimaryPumpingNE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingWE" alignment="CENTER" onMouseClicked="#PrimaryPumpingWE_Clicked" onMousePressed="#PrimaryPumpingWE_Pressed" onMouseReleased="#PrimaryPumpingWE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingWE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingWE_Clicked" onMousePressed="#PrimaryPumpingWE_Pressed" onMouseReleased="#PrimaryPumpingWE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-             <Label fx:id="PrimaryPumpingPR" alignment="CENTER" onMouseClicked="#PrimaryPumpingPR_Clicked" onMousePressed="#PrimaryPumpingPR_Pressed" onMouseReleased="#PrimaryPumpingPR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="27" GridPane.valignment="CENTER">
+             <Label fx:id="PrimaryPumpingPR" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="27" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingPR_Clicked" onMousePressed="#PrimaryPumpingPR_Pressed" onMouseReleased="#PrimaryPumpingPR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingSR" alignment="CENTER" onMouseClicked="#PrimaryPumpingSR_Clicked" onMousePressed="#PrimaryPumpingSR_Pressed" onMouseReleased="#PrimaryPumpingSR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="28" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingSR" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="28" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingSR_Clicked" onMousePressed="#PrimaryPumpingSR_Pressed" onMouseReleased="#PrimaryPumpingSR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingDET" alignment="CENTER" onMouseClicked="#PrimaryPumpingDET_Clicked" onMousePressed="#PrimaryPumpingDET_Pressed" onMouseReleased="#PrimaryPumpingDET_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="29" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingDET" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="29" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingDET_Clicked" onMousePressed="#PrimaryPumpingDET_Pressed" onMouseReleased="#PrimaryPumpingDET_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingIB" alignment="CENTER" onMouseClicked="#PrimaryPumpingIB_Clicked" onMousePressed="#PrimaryPumpingIB_Pressed" onMouseReleased="#PrimaryPumpingIB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingIB" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingIB_Clicked" onMousePressed="#PrimaryPumpingIB_Pressed" onMouseReleased="#PrimaryPumpingIB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="PrimaryPumpingMC" alignment="CENTER" onMouseClicked="#PrimaryPumpingMC_Clicked" onMousePressed="#PrimaryPumpingMC_Pressed" onMouseReleased="#PrimaryPumpingMC_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="31" GridPane.valignment="CENTER">
+            <Label fx:id="PrimaryPumpingMC" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="31" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#PrimaryPumpingMC_Clicked" onMousePressed="#PrimaryPumpingMC_Pressed" onMouseReleased="#PrimaryPumpingMC_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Label fx:id="RemotePumpingBS" alignment="CENTER" onMouseClicked="#RemotePumpingBS_Clicked" onMousePressed="#RemotePumpingBS_Pressed" onMouseReleased="#RemotePumpingBS_Pressed" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="35" GridPane.valignment="CENTER">
+            <Label fx:id="RemotePumpingBS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="35" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingBS_Clicked" onMousePressed="#RemotePumpingBS_Pressed" onMouseReleased="#RemotePumpingBS_Pressed" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe North Arm" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe North Arm">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe West Arm" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe West Arm">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe Central" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe Central">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe North End" wrappingWidth="169.8916015625" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe North End" wrappingWidth="169.8916015625">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe West End" GridPane.halignment="RIGHT" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="10" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Safe West End">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-	    <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping BS" GridPane.halignment="RIGHT" GridPane.rowIndex="15" GridPane.valignment="CENTER">
+	    <Text GridPane.halignment="RIGHT" GridPane.rowIndex="15" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping BS">
 	       <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
 	  </GridPane.margin>
 	    </Text>
-	    <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping NI" GridPane.halignment="RIGHT" GridPane.rowIndex="20" GridPane.valignment="CENTER">
+	    <Text GridPane.halignment="RIGHT" GridPane.rowIndex="20" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping NI">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-          <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping WI" GridPane.halignment="RIGHT" GridPane.rowIndex="21" GridPane.valignment="CENTER">
+          <Text GridPane.halignment="RIGHT" GridPane.rowIndex="21" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping WI">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-           <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping NE" GridPane.halignment="RIGHT" GridPane.rowIndex="22" GridPane.valignment="CENTER">
+           <Text GridPane.halignment="RIGHT" GridPane.rowIndex="22" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping NE">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-           <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping WE" GridPane.halignment="RIGHT" GridPane.rowIndex="23" GridPane.valignment="CENTER">
+           <Text GridPane.halignment="RIGHT" GridPane.rowIndex="23" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping WE">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping PR" GridPane.halignment="RIGHT" GridPane.rowIndex="27" GridPane.valignment="CENTER">
+         <Text GridPane.halignment="RIGHT" GridPane.rowIndex="27" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping PR">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping SR" GridPane.halignment="RIGHT" GridPane.rowIndex="28" GridPane.valignment="CENTER">
+         <Text GridPane.halignment="RIGHT" GridPane.rowIndex="28" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping SR">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-          <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping DET" GridPane.halignment="RIGHT" GridPane.rowIndex="29" GridPane.valignment="CENTER">
+          <Text GridPane.halignment="RIGHT" GridPane.rowIndex="29" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping DET">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-           <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping IB" GridPane.halignment="RIGHT" GridPane.rowIndex="30" GridPane.valignment="CENTER">
+           <Text GridPane.halignment="RIGHT" GridPane.rowIndex="30" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping IB">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping MC" GridPane.halignment="RIGHT" GridPane.rowIndex="31" GridPane.valignment="CENTER">
+         <Text GridPane.halignment="RIGHT" GridPane.rowIndex="31" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Primary Pumping MC">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-         <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping BS" GridPane.halignment="RIGHT" GridPane.rowIndex="35" GridPane.valignment="CENTER">
+         <Text GridPane.halignment="RIGHT" GridPane.rowIndex="35" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping BS">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
            </Text>
-            <Line endX="201.5" startX="-100.0" stroke="#901313" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Line endX="201.5" startX="-100.0" stroke="#901313" GridPane.columnSpan="2" GridPane.rowIndex="32" />
-            <Label fx:id="RemotePumpingNI" alignment="CENTER" onMouseClicked="#RemotePumpingNI_Clicked" onMousePressed="#RemotePumpingNI_Pressed" onMouseReleased="#RemotePumpingNI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="36" GridPane.valignment="CENTER">
+            <Line GridPane.columnSpan="2" GridPane.rowIndex="11" endX="201.5" startX="-100.0" stroke="#901313"/>
+            <Line GridPane.columnSpan="2" GridPane.rowIndex="32" endX="201.5" startX="-100.0" stroke="#901313"/>
+            <Label fx:id="RemotePumpingNI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="36" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingNI_Clicked" onMousePressed="#RemotePumpingNI_Pressed" onMouseReleased="#RemotePumpingNI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping NI" GridPane.halignment="RIGHT" GridPane.rowIndex="36" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="36" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping NI">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping WI" GridPane.halignment="RIGHT" GridPane.rowIndex="37" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="37" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping WI">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="RemotePumpingWI" alignment="CENTER" onMouseClicked="#RemotePumpingWI_Clicked" onMousePressed="#RemotePumpingWI_Pressed" onMouseReleased="#RemotePumpingWI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="37" GridPane.valignment="CENTER">
+            <Label fx:id="RemotePumpingWI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="37" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingWI_Clicked" onMousePressed="#RemotePumpingWI_Pressed" onMouseReleased="#RemotePumpingWI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping PR" GridPane.halignment="RIGHT" GridPane.rowIndex="38" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="38" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping PR">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="RemotePumpingPR" alignment="CENTER" onMouseClicked="#RemotePumpingPR_Clicked" onMousePressed="#RemotePumpingPR_Pressed" onMouseReleased="#RemotePumpingPR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="38" GridPane.valignment="CENTER">
+            <Label fx:id="RemotePumpingPR" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="38" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingPR_Clicked" onMousePressed="#RemotePumpingPR_Pressed" onMouseReleased="#RemotePumpingPR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping DET" GridPane.halignment="RIGHT" GridPane.rowIndex="40" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="40" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping DET">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="RemotePumpingDET" alignment="CENTER" onMouseClicked="#RemotePumpingDET_Clicked" onMousePressed="#RemotePumpingDET_Pressed" onMouseReleased="#RemotePumpingDET_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="40" GridPane.valignment="CENTER">
+            <Label fx:id="RemotePumpingDET" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="40" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingDET_Clicked" onMousePressed="#RemotePumpingDET_Pressed" onMouseReleased="#RemotePumpingDET_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping IB" GridPane.halignment="RIGHT" GridPane.rowIndex="41" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="41" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping IB">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="RemotePumpingIB" alignment="CENTER" onMouseClicked="#RemotePumpingIB_Clicked" onMousePressed="#RemotePumpingIB_Pressed" onMouseReleased="#RemotePumpingIB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="41" GridPane.valignment="CENTER">
+            <Label fx:id="RemotePumpingIB" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="41" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingIB_Clicked" onMousePressed="#RemotePumpingIB_Pressed" onMouseReleased="#RemotePumpingIB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank NI" GridPane.halignment="RIGHT" GridPane.rowIndex="43" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="43" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank NI">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="LN2TankNI" alignment="CENTER" onMouseClicked="#LN2TankIB_Clicked" onMousePressed="#LN2TankIB_Pressed" onMouseReleased="#LN2TankIB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="43" GridPane.valignment="CENTER">
+            <Label fx:id="LN2TankNI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="43" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#LN2TankIB_Clicked" onMousePressed="#LN2TankIB_Pressed" onMouseReleased="#LN2TankIB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank WI" GridPane.halignment="RIGHT" GridPane.rowIndex="44" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="44" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank WI">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="LN2TankWI" alignment="CENTER" onMouseClicked="#LN2TankWI_Clicked" onMousePressed="#LN2TankWI_Pressed" onMouseReleased="#LN2TankWI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="44" GridPane.valignment="CENTER">
+            <Label fx:id="LN2TankWI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="44" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#LN2TankWI_Clicked" onMousePressed="#LN2TankWI_Pressed" onMouseReleased="#LN2TankWI_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank NE" GridPane.halignment="RIGHT" GridPane.rowIndex="45" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="45" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank NE">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="LN2TankNE" alignment="CENTER" onMouseClicked="#LN2TankNE_Clicked" onMousePressed="#LN2TankNE_Pressed" onMouseReleased="#LN2TankNE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="45" GridPane.valignment="CENTER">
+            <Label fx:id="LN2TankNE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="45" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#LN2TankNE_Clicked" onMousePressed="#LN2TankNE_Pressed" onMouseReleased="#LN2TankNE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank WE" GridPane.halignment="RIGHT" GridPane.rowIndex="46" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="46" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="LN2 Tank WE">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="LN2TankWE" alignment="CENTER" onMouseClicked="#LN2TankWE_Clicked" onMousePressed="#LN2TankWE_Pressed" onMouseReleased="#LN2TankWE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="46" GridPane.valignment="CENTER">
+            <Label fx:id="LN2TankWE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="46" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#LN2TankWE_Clicked" onMousePressed="#LN2TankWE_Pressed" onMouseReleased="#LN2TankWE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Line endX="201.5" startX="-100.0" stroke="#901313" GridPane.columnSpan="2" GridPane.rowIndex="42" />
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping SR" GridPane.halignment="CENTER" GridPane.rowIndex="39" GridPane.valignment="CENTER">
+            <Line GridPane.columnSpan="2" GridPane.rowIndex="42" endX="201.5" startX="-100.0" stroke="#901313"/>
+            <Text GridPane.halignment="CENTER" GridPane.rowIndex="39" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Remote Pumping SR">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="RemotePumpingSR" alignment="CENTER" onMouseClicked="#RemotePumpingSR_Clicked" onMousePressed="#RemotePumpingSR_Pressed" onMouseReleased="#RemotePumpingSR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="39" GridPane.valignment="CENTER">
+            <Label fx:id="RemotePumpingSR" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="39" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#RemotePumpingSR_Clicked" onMousePressed="#RemotePumpingSR_Pressed" onMouseReleased="#RemotePumpingSR_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Line endX="201.5" startX="-100.0" stroke="#901313" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Emergency CB" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+            <Line GridPane.columnSpan="2" GridPane.rowIndex="3" endX="201.5" startX="-100.0" stroke="#901313"/>
+            <Text GridPane.halignment="RIGHT" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Emergency CB">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="EmergencyCB" alignment="CENTER" onMouseClicked="#EmergencyCB_Clicked" onMousePressed="#EmergencyCB_Pressed" onMouseReleased="#EmergencyCB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="EmergencyCB" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#EmergencyCB_Clicked" onMousePressed="#EmergencyCB_Pressed" onMouseReleased="#EmergencyCB_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Emergency NE" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Emergency NE">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="EmergencyNE" alignment="CENTER" onMouseClicked="#EmergencyNE_Clicked" onMousePressed="#EmergencyNE_Pressed" onMouseReleased="#EmergencyNE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="EmergencyNE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#EmergencyNE_Clicked" onMousePressed="#EmergencyNE_Pressed" onMouseReleased="#EmergencyNE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
-            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Emergency WE" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Emergency WE">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0"/>
                </GridPane.margin>
             </Text>
-            <Label fx:id="EmergencyWE" alignment="CENTER" onMouseClicked="#EmergencyWE_Clicked" onMousePressed="#EmergencyWE_Pressed" onMouseReleased="#EmergencyWE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Label fx:id="EmergencyWE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" alignment="CENTER" onMouseClicked="#EmergencyWE_Clicked" onMousePressed="#EmergencyWE_Pressed" onMouseReleased="#EmergencyWE_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
                <font>
-                  <Font name="System" size="12.0" />
+                  <Font name="System" size="12.0"/>
                </font>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                </GridPane.margin>
             </Label>
          </children>
@@ -423,10 +423,10 @@
             <ColumnConstraints />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
@@ -434,15 +434,7 @@
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
@@ -455,21 +447,29 @@
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
          </rowConstraints>
       </GridPane>
    </center>

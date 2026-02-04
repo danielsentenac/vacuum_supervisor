@@ -5,97 +5,97 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="288.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTurbo">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTurbo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="288.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;">
    <children>
       <Label fx:id="TurboName" alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="21.0" prefWidth="86.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Turbo">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Status" alignment="CENTER" layoutX="141.0" layoutY="14.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Turbo" translateX="5.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="ON" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="297.0" onMouseClicked="#ON_Clicked" onMousePressed="#ON_Pressed" onMouseReleased="#ON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Label>
       <Label fx:id="OFF" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="297.0" onMouseClicked="#OFF_Clicked" onMousePressed="#OFF_Pressed" onMouseReleased="#OFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Label>
       <Label fx:id="StatusStandby" alignment="CENTER" layoutX="146.0" layoutY="44.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Standby">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="StatusTemp" alignment="CENTER" layoutX="146.0" layoutY="194.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text=" Status Temp.">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="StatusTempBox" alignment="CENTER" layoutX="146.0" layoutY="224.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Temp. Box">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="StatusBox" alignment="CENTER" layoutX="7.0" layoutY="260.0" prefHeight="21.0" prefWidth="273.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Box">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="ActSpeed" alignment="CENTER" layoutX="146.0" layoutY="74.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Actual Speed">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="FinalSpeed" alignment="CENTER" layoutX="146.0" layoutY="104.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Final Speed">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="OperatingTime" alignment="CENTER" layoutX="146.0" layoutY="134.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Operating Time">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="ActPower" alignment="CENTER" layoutX="146.0" layoutY="164.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Actual Power">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Text layoutX="48.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Actual Speed" translateX="10.0">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Text>
       <Text layoutX="57.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Final Speed" translateX="10.0">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Text>
       <Text layoutX="19.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Operating hours" translateX="22.0">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Text>
       <Text layoutX="50.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Actual Power" translateX="10.0">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Text>
       <Label fx:id="STYON" alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="297.0" onMouseClicked="#STYON_Clicked" onMousePressed="#STYON_Pressed" onMouseReleased="#STYON_Released" prefHeight="35.0" prefWidth="65.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="STYON" textAlignment="CENTER">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Label>
       <Label fx:id="STYOFF" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="297.0" onMouseClicked="#STYOFF_Clicked" onMousePressed="#STYOFF_Pressed" onMouseReleased="#STYOFF_Released" prefHeight="35.0" prefWidth="65.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="STYOFF">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Label>
       <Text layoutX="13.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Temperature Box" translateX="22.0">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Text>
       <Text layoutX="25.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Temperature Turbo">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font></Text>
    </children>
 </AnchorPane>

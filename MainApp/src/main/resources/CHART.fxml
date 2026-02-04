@@ -9,14 +9,14 @@
 <?import javafx.scene.shape.Rectangle?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="305.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerChart">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="305.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;">
    <children>
       <BarChart fx:id="chart" prefHeight="300.0" prefWidth="300.0">
         <xAxis>
-          <CategoryAxis side="BOTTOM" fx:id="xAxis"/>
+          <CategoryAxis fx:id="xAxis" side="BOTTOM"/>
         </xAxis>
         <yAxis>
-          <LogarithmicAxis side="LEFT" fx:id="yAxis" />
+          <LogarithmicAxis fx:id="yAxis" side="LEFT"/>
         </yAxis>
       </BarChart>
    </children>

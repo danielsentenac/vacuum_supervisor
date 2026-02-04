@@ -9,11 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="517.0" prefWidth="313.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTubeN">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTubeN" maxHeight="1.7976931348623157E308" prefHeight="517.0" prefWidth="313.0" style="-fx-background-color: #333333;">
    <children>
       <Label fx:id="Station3000" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="63.0" onMouseClicked="#Station3000_Clicked" onMousePressed="#Station3000_Pressed" onMouseReleased="#Station3000_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="3000" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -75,37 +75,37 @@
       </Group>
       <Label fx:id="Pressure3000" alignment="CENTER" layoutX="198.0" layoutY="83.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Pressure300" alignment="CENTER" layoutX="198.0" layoutY="433.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Pressure600" alignment="CENTER" layoutX="198.0" layoutY="363.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Pressure1200" alignment="CENTER" layoutX="198.0" layoutY="293.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Pressure1800" alignment="CENTER" layoutX="198.0" layoutY="223.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Pressure2400" alignment="CENTER" layoutX="198.0" layoutY="153.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
       </Label>
       <Label fx:id="Station300" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="413.0" onMouseClicked="#Station300_Clicked" onMousePressed="#Station300_Pressed" onMouseReleased="#Station300_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="300" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -113,7 +113,7 @@
       </Label>
       <Label fx:id="Station600" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="343.0" onMouseClicked="#Station600_Clicked" onMousePressed="#Station600_Pressed" onMouseReleased="#Station600_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="600" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -121,7 +121,7 @@
       </Label>
       <Label fx:id="Station1200" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="273.0" onMouseClicked="#Station1200_Clicked" onMousePressed="#Station1200_Pressed" onMouseReleased="#Station1200_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="1200" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -129,7 +129,7 @@
       </Label>
       <Label fx:id="Station1800" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="203.0" onMouseClicked="#Station1800_Clicked" onMousePressed="#Station1800_Pressed" onMouseReleased="#Station1800_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="1800" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -137,7 +137,7 @@
       </Label>
       <Label fx:id="Station2400" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="133.0" onMouseClicked="#Station2400_Clicked" onMousePressed="#Station2400_Pressed" onMouseReleased="#Station2400_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="2400" translateY="-10.0">
          <font>
-            <Font name="System" size="12.0" />
+            <Font name="System" size="12.0"/>
          </font>
          <effect>
             <InnerShadow />
@@ -161,23 +161,23 @@
             </SVGPath>
          </children>
       </Group>
-      <Group layoutX="70.0" layoutY="504.0" />
-      <Group layoutX="70.0" layoutY="12.0" />
-      <Text fill="#d1d1e0" layoutX="13.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NE" wrappingWidth="23.499992460012436" />
-      <Text fill="#d1d1e0" layoutX="13.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NI" wrappingWidth="23.499992460012436" />
+      <Group layoutX="70.0" layoutY="504.0"/>
+      <Group layoutX="70.0" layoutY="12.0"/>
+      <Text fill="#d1d1e0" layoutX="13.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NE" wrappingWidth="23.499992460012436"/>
+      <Text fill="#d1d1e0" layoutX="13.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NI" wrappingWidth="23.499992460012436"/>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="410.0" layoutX="45.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
       <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
       </Rectangle>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="29.0" layoutX="44.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateY="-0.5" width="50.0">
       <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
       </Rectangle>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="29.0" layoutX="44.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateY="0.5" width="50.0">
       <effect>
-            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
       </Rectangle>
    </children>
