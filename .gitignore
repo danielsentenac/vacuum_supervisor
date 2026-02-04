@@ -1,6 +1,7 @@
 ### Gradle
 build/
 .gradle/
+MainApp/build/
 
 ### Maven
 target/
@@ -18,6 +19,20 @@ out/
 
 ### Gluon
 gluoncloudlink_config.json
+
+### Local secrets
+local.properties
+MainAppkeystore
+MainAppkeystore.cer
+upload_apk
+upload_desktop
+Supervisor.jnlp
+genkey
+setIcon.sh
+setIcon2.sh
+setIcon3.sh
+setIcon4.sh
+setIconNative.sh
 
 ### Package Files
 *.jar

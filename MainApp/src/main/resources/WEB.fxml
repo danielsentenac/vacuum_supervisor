@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="304.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerWeb">
+   <children>
+      <Label fx:id="REFRESH" alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="301.0" onMouseClicked="#REFRESH_Clicked" onMousePressed="#REFRESH_Pressed" onMouseReleased="#REFRESH_Released" prefHeight="35.0" prefWidth="73.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="REFRESH" textAlignment="CENTER" />
+      <WebView fx:id="web" layoutY="6.0" prefHeight="238.0" prefWidth="292.0" translateX="6.0" />
+   </children>
+</AnchorPane>

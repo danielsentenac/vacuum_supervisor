@@ -1,4 +1,4 @@
-rootProject.name = 'HelloWorld'
+rootProject.name = 'Main'
 
-include 'HelloWorldApp'
+include 'MainApp'
 

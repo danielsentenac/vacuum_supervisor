@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="136.0" prefWidth="304.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerMaxiGauge">
+   <children>
+      <Label fx:id="Pressure" alignment="CENTER" layoutX="171.0" layoutY="20.0" onMouseClicked="#Pressure_Clicked" onMousePressed="#Pressure_Pressed" onMouseReleased="#Pressure_Released" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="GaugeName" alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Gauge">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="StatusSensor" alignment="CENTER" layoutX="171.0" layoutY="57.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Sensor">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="StatusPressure" alignment="CENTER" layoutX="171.0" layoutY="95.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Pressure">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="ON" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="70.0" onMouseClicked="#ON_Clicked" onMousePressed="#ON_Pressed" onMouseReleased="#ON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <Label fx:id="OFF" alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="70.0" onMouseClicked="#OFF_Clicked" onMousePressed="#OFF_Pressed" onMouseReleased="#OFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
