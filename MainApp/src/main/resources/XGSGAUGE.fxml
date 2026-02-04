@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="307.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-background-radius: 5; -fx-border-radius: 5; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerXGSGauge">
+   <children>
+      <Label fx:id="Pressure" alignment="CENTER" layoutX="180.0" layoutY="19.0" onMouseClicked="#Pressure_Clicked" onMousePressed="#Pressure_Pressed" onMouseReleased="#Pressure_Released" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="GaugeName" alignment="CENTER" layoutX="20.0" layoutY="19.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Gauge">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="StatusEmission" alignment="CENTER" layoutX="180.0" layoutY="56.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Emission">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="StatusFilament" alignment="CENTER" layoutX="180.0" layoutY="93.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Filament">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="StatusDegas" alignment="CENTER" layoutX="180.0" layoutY="131.0" prefHeight="21.0" prefWidth="113.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Degas">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="FIL1ON" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="67.0" onMouseClicked="#FIL1ON_Clicked" onMousePressed="#FIL1ON_Pressed" onMouseReleased="#FIL1ON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER" />
+      <Label fx:id="FIL1OFF" alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="67.0" onMouseClicked="#FIL1OFF_Clicked" onMousePressed="#FIL1OFF_Pressed" onMouseReleased="#FIL1OFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF" />
+      <Label fx:id="FIL2ON" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="105.0" onMouseClicked="#FIL2ON_Clicked" onMousePressed="#FIL2ON_Pressed" onMouseReleased="#FIL2ON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER" />
+      <Label fx:id="FIL2OFF" alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="105.0" onMouseClicked="#FIL2OFF_Clicked" onMousePressed="#FIL2OFF_Pressed" onMouseReleased="#FIL2OFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF" />
+      <Label fx:id="DEGASON" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="167.0" onMouseClicked="#DEGASON_Clicked" onMousePressed="#DEGASON_Pressed" onMouseReleased="#DEGASON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER" />
+      <Label fx:id="DEGASOFF" alignment="CENTER" contentDisplay="CENTER" layoutX="125.0" layoutY="167.0" onMouseClicked="#DEGASOFF_Clicked" onMousePressed="#DEGASOFF_Pressed" onMouseReleased="#DEGASOFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF" />
+      <Text layoutX="5.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="DEGAS:" translateX="5.0" />
+      <Text layoutX="1.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="FIL2:" translateX="9.0" />
+      <Text layoutX="1.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="FIL1:" translateX="9.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1400.0" prefWidth="256.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TilePane hgap="10.0" layoutX="13.0" layoutY="154.0" prefHeight="260.0" prefWidth="229.0" vgap="10.0">
+         <children>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="RACK Comm" TilePane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="12.0" />
+               </font></Text>
+            <Label fx:id="ComRack" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+            </Label>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Module Comm" TilePane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="12.0" />
+               </font></Text>
+            <Label fx:id="ComModule" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+            </Label>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="MaxiGauge Comm" TilePane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="12.0" />
+               </font></Text>
+            <Label fx:id="ComMaxiGauge" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+            </Label>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Turbo Comm" TilePane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="12.0" />
+               </font></Text>
+            <Label fx:id="ComTurbo" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+            </Label>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Compress Air" TilePane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="12.0" />
+               </font></Text>
+            <Label fx:id="CompressAir" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </TilePane>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="29.0" layoutY="26.0" prefHeight="0.0" prefWidth="199.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="CryoLink Station Flags">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="247.5" fill="#b27d38" layoutX="-10.5" layoutY="124.5" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Label fx:id="ViewName1" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="6.0" layoutY="96.0" prefHeight="24.0" prefWidth="199.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Vacuum Rack Status">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Line endX="247.5" fill="#b27d38" layoutX="-10.5" layoutY="374.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Label fx:id="ViewName11" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="6.0" layoutY="345.0" prefHeight="24.0" prefWidth="199.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Inhibit Valve Status">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <TilePane hgap="10.0" layoutX="18.0" layoutY="414.0" prefHeight="94.0" prefWidth="237.0" vgap="10.0">
+         <children>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Vs1" TilePane.alignment="CENTER_RIGHT">
+               <TilePane.margin>
+                  <Insets right="5.0" />
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Label fx:id="InhibitVs1" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+               <TilePane.margin>
+                  <Insets left="5.0" />
+               </TilePane.margin>
+            </Label>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Vs2" TilePane.alignment="CENTER_RIGHT">
+               <TilePane.margin>
+                  <Insets right="5.0" />
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Label fx:id="InhibitVs2" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0" />
+               </font>
+               <TilePane.margin>
+                  <Insets left="5.0" />
+               </TilePane.margin>
+            </Label>
+         </children>
+      </TilePane>
+   </children>
+</AnchorPane>

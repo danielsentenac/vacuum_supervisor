@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="417.0" prefWidth="282.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerCryoActions">
+   <children>
+      <Label fx:id="PIDenabled" alignment="CENTER" layoutX="150.0" layoutY="276.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="PIDrunning" alignment="CENTER" layoutX="150.0" layoutY="310.0" maxHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="PSStatus" alignment="CENTER" layoutX="150.0" layoutY="344.0" maxHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="CryoStatus" alignment="CENTER" layoutX="150.0" layoutY="378.0" maxHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="68.15364074707031" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="PID Enabled">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Text boundsType="VISUAL" layoutX="67.15364074707031" layoutY="324.8372497558594" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="PID Running">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Text boundsType="VISUAL" layoutX="82.15364837646484" layoutY="359.609375" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="PS Status">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Text boundsType="VISUAL" layoutX="48.44010543823242" layoutY="392.609375" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Cryotrap status" wrappingWidth="169.8916015625">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Text boundsType="VISUAL" layoutX="78.55078125" layoutY="187.609375" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Start/Stop">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Label fx:id="StartStop" alignment="CENTER" layoutX="150.0" layoutY="174.0" maxHeight="21.0" onMouseClicked="#StartStop_Clicked" onMousePressed="#StartStop_Pressed" onMouseReleased="#StartStop_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" fill="#d1d1e0" layoutX="106.15364837646484" layoutY="223.4791717529297" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Reset">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Label fx:id="Reset" alignment="CENTER" layoutX="150.0" layoutY="208.0" maxHeight="21.0" onMouseClicked="#Reset_Clicked" onMousePressed="#Reset_Pressed" onMouseReleased="#Reset_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="71.15364837646484" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Disable PID">
+         <font>
+            <Font size="12.0" />
+         </font></Text>
+      <Label fx:id="PIDdisable" alignment="CENTER" layoutX="150.0" layoutY="242.0" maxHeight="21.0" onMouseClicked="#PIDdisable_Clicked" onMousePressed="#PIDdisable_Pressed" onMouseReleased="#PIDdisable_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="38.0" layoutY="37.0" prefHeight="24.0" prefWidth="208.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="CryoActions Flags">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="260.0" fill="#b27d38" layoutX="-4.5" layoutY="144.0" startX="22.0" stroke="#901313" strokeWidth="3.0" />
+      <Label fx:id="ViewName1" alignment="CENTER" layoutX="16.0" layoutY="114.0" prefHeight="24.0" prefWidth="45.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Cryo">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="686.0" prefWidth="546.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerCentralBuilding">
+   <children>
+      <Label fx:id="CryoLinkIB" alignment="CENTER" contentDisplay="CENTER" layoutX="393.0" layoutY="573.0" onMouseClicked="#CryoLinkIB_Clicked" onMousePressed="#CryoLinkIB_Pressed" onMouseReleased="#CryoLinkIB_Released" prefHeight="36.0" prefWidth="31.0" scaleX="1.12" style="-fx-background-color: e1e4db; " text="C" translateX="3.5" translateY="-50.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TowerBS" alignment="CENTER" contentDisplay="CENTER" layoutX="376.0" layoutY="293.0" onMouseClicked="#TowerBS_Clicked" onMousePressed="#TowerBS_Pressed" onMouseReleased="#TowerBS_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: e1e4db; " text="BS" translateX="1.5" translateY="-1.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="MiniTowerPR" alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="390.0" onMouseClicked="#MiniTowerPR_Clicked" onMousePressed="#MiniTowerPR_Pressed" onMouseReleased="#MiniTowerPR_Released" prefHeight="43.0" prefWidth="43.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="MINI" translateY="-5.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="ValvePS" layoutX="335.0" layoutY="332.0" onMouseClicked="#ValvePS_Clicked" onMousePressed="#ValvePS_Pressed" onMouseReleased="#ValvePS_Released" scaleX="1.5" translateY="3.4">
+         <children>
+            <SVGPath fx:id="StatusValvePS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="VNI" layoutX="321.0" layoutY="59.0" onMouseClicked="#VNI_Clicked" onMousePressed="#VNI_Pressed" onMouseReleased="#VNI_Released" scaleX="0.95" translateX="4.0" translateY="-34.0">
+         <children>
+            <SVGPath fx:id="StatusVNI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="51.5" rotate="90.0" scaleX="0.8" scaleY="2.8" translateY="-6.7">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="TowerNI" alignment="CENTER" contentDisplay="CENTER" layoutX="372.0" layoutY="190.0" onMouseClicked="#TowerNI_Clicked" onMousePressed="#TowerNI_Pressed" onMouseReleased="#TowerNI_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="NI" translateX="5.0" translateY="-34.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="LinkPR" alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="386.0" onMouseClicked="#LinkPR_Clicked" onMousePressed="#LinkPR_Pressed" onMouseReleased="#LinkPR_Released" prefHeight="41.0" prefWidth="31.0" scaleX="1.12" style="-fx-background-color: e1e4db; " text="LP" translateX="-0.5" translateY="0.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="ValveWS" layoutX="286.0" layoutY="287.0" onMouseClicked="#ValveWS_Clicked" onMousePressed="#ValveWS_Pressed" onMouseReleased="#ValveWS_Released" rotate="90.0" scaleX="1.5" translateX="2.0">
+         <children>
+            <SVGPath fx:id="StatusValveWS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="ValveNS" layoutX="334.0" layoutY="240.0" onMouseClicked="#ValveNS_Clicked" onMousePressed="#ValveNS_Pressed" onMouseReleased="#ValveNS_Released" scaleX="1.5" translateX="1.0" translateY="0.5">
+         <children>
+            <SVGPath fx:id="StatusValveNS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="TowerPR" alignment="CENTER" contentDisplay="CENTER" layoutX="376.0" layoutY="427.0" onMouseClicked="#TowerPR_Clicked" onMousePressed="#TowerPR_Pressed" onMouseReleased="#TowerPR_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: e1e4db; " text="PR" translateX="1.0" translateY="0.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TowerWI" alignment="CENTER" contentDisplay="CENTER" layoutX="244.0" layoutY="291.0" onMouseClicked="#TowerWI_Clicked" onMousePressed="#TowerWI_Pressed" onMouseReleased="#TowerWI_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: e1e4db; " text="WI" translateX="-1.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TowerIB" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="584.0" onMouseClicked="#TowerIB_Clicked" onMousePressed="#TowerIB_Pressed" onMouseReleased="#TowerIB_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="IB" translateX="-2.0" translateY="-1.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="MiniTowerIB" alignment="CENTER" contentDisplay="CENTER" layoutX="481.0" layoutY="606.0" onMouseClicked="#MiniTowerIB_Clicked" onMousePressed="#MiniTowerIB_Pressed" onMouseReleased="#MiniTowerIB_Released" prefHeight="43.0" prefWidth="43.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="MINI" translateX="-1.0" translateY="-10.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="33.0" layoutX="457.0" layoutY="601.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="14.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39" />
+         </effect>
+      </Rectangle>
+      <Group fx:id="ValveLI" layoutX="289.0" layoutY="577.0" onMouseClicked="#ValveLI_Clicked" onMousePressed="#ValveLI_Pressed" onMouseReleased="#ValveLI_Released" rotate="90.0" scaleX="1.5" translateX="-0.5" translateY="1.0">
+         <children>
+            <SVGPath fx:id="StatusValveLI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="CryoWI" alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="300.0" onMouseClicked="#CryoWI_Clicked" onMousePressed="#CryoWI_Pressed" onMouseReleased="#CryoWI_Released" prefHeight="56.0" prefWidth="59.0" scaleY="0.9" style="-fx-background-color: e1e4db;  -fx-background-radius: 5; -fx-border-radius: 5; " text="CRYO" translateX="-3.0" translateY="-2.2">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Rectangle fx:id="TUBEN" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="188.0" layoutX="383.0" layoutY="-115.0" onMouseClicked="#TUBEN_Clicked" onMousePressed="#TUBEN_Pressed" onMouseReleased="#TUBEN_Released" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateX="4.5" translateY="-34.0" width="48.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+         </effect>
+      </Rectangle>
+      <Group fx:id="VWI" layoutX="54.0" layoutY="297.0" onMouseClicked="#VWI_Clicked" onMousePressed="#VWI_Pressed" onMouseReleased="#VWI_Released" rotate="90.0" scaleX="0.95" translateX="3.5" translateY="0.3">
+         <children>
+            <SVGPath fx:id="StatusVWI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="51.5" rotate="90.0" scaleX="0.8" scaleY="2.8" translateY="-6.7">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Rectangle fx:id="TUBEW" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="373.0" layoutX="-83.0" layoutY="139.0" onMouseClicked="#TUBEW_Clicked" onMousePressed="#TUBEW_Pressed" onMouseReleased="#TUBEW_Released" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateX="2.2" width="48.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0" />
+         </effect>
+      </Rectangle>
+      <Group fx:id="ValveSS" layoutX="383.0" layoutY="287.0" onMouseClicked="#ValveSS_Clicked" onMousePressed="#ValveSS_Pressed" onMouseReleased="#ValveSS_Released" rotate="90.0" scaleX="1.5">
+         <children>
+            <SVGPath fx:id="StatusValveSS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="TowerSR" alignment="CENTER" contentDisplay="CENTER" layoutX="514.0" layoutY="291.0" onMouseClicked="#TowerSR_Clicked" onMousePressed="#TowerSR_Pressed" onMouseReleased="#TowerSR_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SR" translateX="-0.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoLinkDET" alignment="CENTER" contentDisplay="CENTER" layoutX="609.0" layoutY="308.0" onMouseClicked="#CryoLinkDET_Clicked" onMousePressed="#CryoLinkDET_Pressed" onMouseReleased="#CryoLinkDET_Released" prefHeight="35.0" prefWidth="36.0" style="-fx-background-color: e1e4db; " text="C" translateX="-0.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VS1CryoDET" layoutX="520.0" layoutY="287.0" onMouseClicked="#VS1CryoDET_Clicked" onMousePressed="#VS1CryoDET_Pressed" onMouseReleased="#VS1CryoDET_Released" rotate="90.0" scaleX="1.5" translateX="-1.0">
+         <children>
+            <SVGPath fx:id="StatusVS1CryoDET" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="VS2CryoDET" layoutX="581.0" layoutY="287.0" onMouseClicked="#VS2CryoDET_Clicked" onMousePressed="#VS2CryoDET_Pressed" onMouseReleased="#VS2CryoDET_Released" rotate="90.0" scaleX="1.5" translateX="-1.0">
+         <children>
+            <SVGPath fx:id="StatusVS2CryoDET" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="TowerDET" alignment="CENTER" contentDisplay="CENTER" layoutX="669.0" layoutY="291.0" onMouseClicked="#TowerDET_Clicked" onMousePressed="#TowerDET_Pressed" onMouseReleased="#TowerDET_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="DET" translateX="0.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="MiniTowerDET" alignment="CENTER" contentDisplay="CENTER" layoutX="770.0" layoutY="303.0" onMouseClicked="#MiniTowerDET_Clicked" onMousePressed="#MiniTowerDET_Pressed" onMouseReleased="#MiniTowerDET_Released" prefHeight="43.0" prefWidth="43.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="MINI" translateX="-1.0" translateY="1.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="60.0" layoutX="748.0" layoutY="296.0" rotate="90.0" scaleY="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateX="-1.0" width="14.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39" />
+         </effect>
+      </Rectangle>
+      <Label fx:id="RemotePumps" alignment="CENTER" contentDisplay="CENTER" layoutX="502.0" layoutY="407.0" onMouseClicked="#RemotePumps_Clicked" onMousePressed="#RemotePumps_Pressed" onMouseReleased="#RemotePumps_Released" prefHeight="88.0" prefWidth="120.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="REMOTE PUMPS">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TubeMC" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="600.0" onMouseClicked="#TubeMC_Clicked" onMousePressed="#TubeMC_Pressed" onMouseReleased="#TubeMC_Released" prefHeight="35.0" prefWidth="252.0" style="-fx-background-color: e1e4db; " text="TUBE MC" translateX="2.0" translateY="-1.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VCryoWI" layoutX="143.0" layoutY="298.0" onMouseClicked="#VCryoWI_Clicked" onMousePressed="#VCryoWI_Pressed" onMouseReleased="#VCryoWI_Released" rotate="90.0" scaleX="0.8" translateX="-0.2" translateY="-0.3">
+         <children>
+            <SVGPath fx:id="StatusVCryoWI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="51.5" rotate="90.0" scaleX="0.8" scaleY="2.8" translateY="-6.7">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="CryoNI" alignment="CENTER" contentDisplay="CENTER" layoutX="378.0" layoutY="105.0" onMouseClicked="#CryoNI_Clicked" onMousePressed="#CryoNI_Pressed" onMouseReleased="#CryoNI_Released" prefHeight="59.0" prefWidth="56.0" scaleX="0.9" style="-fx-background-color: e1e4db;  -fx-background-radius: 5; -fx-border-radius: 5; " text="CRYO" translateX="5.5" translateY="-36.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VCryoNI" layoutX="320.0" layoutY="147.0" onMouseClicked="#VCryoNI_Clicked" onMousePressed="#VCryoNI_Pressed" onMouseReleased="#VCryoNI_Released" scaleX="0.8" translateX="5.0" translateY="-33.5">
+         <children>
+            <SVGPath fx:id="StatusVCryoNI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="51.5" rotate="90.0" scaleX="0.8" scaleY="2.8" translateY="-6.7">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="LinkNI" alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="226.0" onMouseClicked="#LinkNI_Clicked" onMousePressed="#LinkNI_Pressed" onMouseReleased="#LinkNI_Released" prefHeight="41.0" prefWidth="31.0" scaleX="1.12" style="-fx-background-color: e1e4db; " translateX="-0.5" translateY="-0.2">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VS2CryoIB" layoutX="335.0" layoutY="472.0" onMouseClicked="#VS2CryoIB_Clicked" onMousePressed="#VS2CryoIB_Pressed" onMouseReleased="#VS2CryoIB_Released" scaleX="1.5" translateY="-0.7">
+         <children>
+            <SVGPath fx:id="StatusVS2CryoIB" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="VS1CryoIB" layoutX="336.0" layoutY="532.0" onMouseClicked="#VS1CryoIB_Clicked" onMousePressed="#VS1CryoIB_Pressed" onMouseReleased="#VS1CryoIB_Released" scaleX="1.5" translateX="-1.0">
+         <children>
+            <SVGPath fx:id="StatusVS1CryoIB" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="LinkSR" alignment="CENTER" contentDisplay="CENTER" layoutX="471.0" layoutY="310.0" onMouseClicked="#LinkSR_Clicked" onMousePressed="#LinkSR_Pressed" onMouseReleased="#LinkSR_Released" prefHeight="31.0" prefWidth="41.0" scaleY="1.12" style="-fx-background-color: e1e4db; " text="LS" translateX="1.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="LinkWI" alignment="CENTER" contentDisplay="CENTER" layoutX="317.0" layoutY="305.0" onMouseClicked="#LinkWI_Clicked" onMousePressed="#LinkWI_Pressed" onMouseReleased="#LinkWI_Released" prefHeight="41.0" prefWidth="31.0" rotate="90.0" scaleX="1.12" style="-fx-background-color: e1e4db; " translateX="0.5">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TowerMC" alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="583.0" onMouseClicked="#TowerMC_Clicked" onMousePressed="#TowerMC_Pressed" onMouseReleased="#TowerMC_Released" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="MC">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="195.0" layoutX="554.0" layoutY="72.0" rotate="-55.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="14.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39" />
+         </effect>
+      </Rectangle>
+      <Group fx:id="VPSqzDET1" layoutX="572.0" layoutY="193.0" onMouseClicked="#VPSqzDET1_Clicked" onMousePressed="#VPSqzDET1_Pressed" onMouseReleased="#VPSqzDET1_Released" rotate="40.0" scaleX="0.8" scaleY="0.8">
+         <children>
+            <SVGPath fx:id="StatusVPSqzDET1" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="28.0" layoutX="661.0" layoutY="233.0" rotate="-55.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="14.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39" />
+         </effect>
+      </Rectangle>
+      <Label fx:id="MiniTowerSqzDET1" alignment="CENTER" contentDisplay="CENTER" layoutX="671.0" layoutY="246.0" onMouseClicked="#MiniTowerSqzDET1_Clicked" onMousePressed="#MiniTowerSqzDET1_Pressed" onMouseReleased="#MiniTowerSqzDET1_Released" prefHeight="43.0" prefWidth="43.0" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZDET1">
+         <font>
+            <Font name="System" size="9.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="28.0" layoutX="463.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="14.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39" />
+         </effect>
+      </Rectangle>
+      <Label fx:id="MiniTowerSqzDET2" alignment="CENTER" contentDisplay="CENTER" layoutX="449.0" layoutY="81.0" onMouseClicked="#MiniTowerSqzDET2_Clicked" onMousePressed="#MiniTowerSqzDET2_Pressed" onMouseReleased="#MiniTowerSqzDET2_Released" prefHeight="43.0" prefWidth="43.0" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="SQZDET2">
+         <font>
+            <Font name="System" size="9.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VPSqzDET2" layoutX="393.0" layoutY="12.0" onMouseClicked="#VPSqzDET2_Clicked" onMousePressed="#VPSqzDET2_Pressed" onMouseReleased="#VPSqzDET2_Released" rotate="90.0" scaleX="0.8" scaleY="0.8">
+         <children>
+            <SVGPath fx:id="StatusVPSqzDET2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Rectangle fx:id="Sqz" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="188.0" layoutX="463.0" layoutY="-147.0" onMouseClicked="#Sqz_Clicked" onMousePressed="#Sqz_Pressed" onMouseReleased="#Sqz_Released" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="14.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="Venting" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="51.0" layoutX="134.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 10; -fx-arc-width: 10;" width="59.0">
+         <effect>
+            <Blend />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </Rectangle>
+      <Text layoutX="141.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="VENTING" x="1.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="142.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="SYSTEM" x="1.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Group fx:id="lineNI" layoutX="216.0" layoutY="82.0">
+         <children>
+            <Line endX="-33.600006103515625" layoutX="33.0" layoutY="12.0" startX="-55.0" startY="-7.62939453125E-6" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-100.0" endY="31.25" layoutX="88.0" layoutY="12.0" startX="-100.0" startY="1.5999984741210938" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-42.600006103515625" endY="-0.25" layoutX="42.0" layoutY="45.0" startX="-54.0" startY="-0.25" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-37.0" endY="0.100006103515625" layoutX="78.0" layoutY="12.0" startX="-53.399993896484375" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-100.0" endY="31.25" layoutX="141.0" layoutY="12.0" startX="-100.0" startY="1.5999984741210938" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-38.0" endY="-0.25" layoutX="79.0" layoutY="45.0" startX="-53.0" startY="-0.25" stroke="#d1d1e0" strokeWidth="3.0" />
+         </children>
+      </Group>
+      <Group fx:id="NIVENT1" layoutX="193.0" layoutY="59.0" onMouseClicked="#NIVENT1_Clicked" onMousePressed="#NIVENT1_Pressed" onMouseReleased="#NIVENT1_Released">
+         <children>
+            <SVGPath fx:id="StatusNIVENT1" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleX="0.7" scaleY="1.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="NIVENT2" layoutX="216.0" layoutY="114.0" onMouseClicked="#NIVENT2_Clicked" onMousePressed="#NIVENT2_Pressed" onMouseReleased="#NIVENT2_Released">
+         <children>
+            <SVGPath fx:id="StatusNIVENT2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="-20.0" layoutY="-17.0" scaleX="0.7" scaleY="1.3" translateX="-3.0" translateY="-6.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="lineWI" layoutX="162.0" layoutY="137.0" rotate="90.0">
+         <children>
+            <Line endX="-33.600006103515625" layoutX="33.0" layoutY="12.0" startX="-55.0" startY="-7.62939453125E-6" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-100.0" endY="31.25" layoutX="88.0" layoutY="12.0" startX="-100.0" startY="1.5999984741210938" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-42.600006103515625" endY="-0.25" layoutX="42.0" layoutY="45.0" startX="-54.0" startY="-0.25" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-37.0" endY="0.100006103515625" layoutX="78.0" layoutY="12.0" startX="-50.56433868408203" startY="0.09999656677246094" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-100.0" endY="31.25" layoutX="141.0" layoutY="12.0" startX="-100.0" startY="1.5999984741210938" stroke="#d1d1e0" strokeWidth="3.0" />
+            <Line endX="-38.0" endY="-0.25" layoutX="79.0" layoutY="45.0" startX="-53.0" startY="-0.25" stroke="#d1d1e0" strokeWidth="3.0" />
+         </children>
+      </Group>
+      <Group fx:id="WIVENT1" layoutX="153.0" layoutY="134.0" onMouseClicked="#WIVENT1_Clicked" onMousePressed="#WIVENT1_Pressed" onMouseReleased="#WIVENT1_Released">
+         <children>
+            <SVGPath fx:id="StatusWIVENT1" content="m17,26v18l36-18v18z" fill="#e1e4db" rotate="90.0" scaleX="0.7" scaleY="1.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="WIVENT2" layoutX="143.0" layoutY="157.0" onMouseClicked="#WIVENT2_Clicked" onMousePressed="#WIVENT2_Pressed" onMouseReleased="#WIVENT2_Released" rotate="90.0">
+         <children>
+            <SVGPath fx:id="StatusWIVENT2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="-20.0" layoutY="-17.0" scaleX="0.7" scaleY="1.3" translateX="-3.0" translateY="-6.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#e8d7d7" layoutX="221.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NI" x="1.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text fill="#e7d7d7" layoutX="126.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="WI" x="1.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Line endX="-55.0" endY="-18.0" layoutX="226.0" layoutY="217.0" startX="-55.0" startY="-7.62939453125E-6" stroke="#d1d1e0" strokeWidth="3.0">
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Line>
+      <Line endX="-72.0" layoutX="332.0" layoutY="111.0" startX="-56.0" stroke="#d1d1e0" strokeDashOffset="2.0" strokeWidth="3.0">
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Line>
+      <Label fx:id="StationMC" alignment="CENTER" contentDisplay="CENTER" layoutX="295.0" layoutY="540.0" onMouseClicked="#StationMC_Clicked" onMousePressed="#StationMC_Pressed" onMouseReleased="#StationMC_Released" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="MC">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VMC" layoutX="235.0" layoutY="547.0" onMouseClicked="#VMC_Clicked" onMousePressed="#VMC_Pressed" onMouseReleased="#VMC_Released">
+         <children>
+            <SVGPath fx:id="StatusVMC" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="49.0" layoutY="14.0" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

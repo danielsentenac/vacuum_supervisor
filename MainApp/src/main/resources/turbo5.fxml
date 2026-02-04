@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.transform.*?>
+<?import javafx.scene.effect.*?>
+
+<Group id='_root' xmlns:fx="http://javafx.com/fxml" xmlns:fxsvg="http://efxclipse.org/fxml-svg">
+	<children>
+		<!-- Unhandled type 'SvgMetadataElement' -->
+		<Group
+			opacity="1.0"
+			>
+			<children>
+				<SVGPath
+					content="M365 1006 c-259 -82 -394 -348 -302 -596 116 -314 529 -402 773 -165 243 237 140 654 -187 756 -71 22 -221 25 -284 5z m318 -75 c87 -44 176 -136 208 -218 17 -44 23 -79 23 -149 1 -85 -1 -95 -36 -166 -104 -209 -344 -294 -552 -195 -340 161 -310 621 49 750 38 13 73 17 145 14 84 -2 103 -7 163 -36z"
+					opacity="1"
+					>
+					<fill>
+						<Color>
+							<red>0.0</red>
+							<green>0.0</green>
+							<blue>0.0</blue>
+						</Color>
+					</fill>
+				</SVGPath>
+				<SVGPath
+					content="M400 865 c0 -22 4 -25 40 -25 l40 0 0 -125 0 -125 -40 0 c-36 0 -40 -2 -40 -25 0 -22 4 -25 40 -25 l40 0 0 -125 0 -125 -40 0 c-36 0 -40 -2 -40 -25 l0 -25 105 0 105 0 0 25 c0 23 -4 25 -45 25 l-45 0 0 125 0 125 45 0 c41 0 45 2 45 25 0 23 -4 25 -45 25 l-45 0 0 125 0 125 45 0 c41 0 45 2 45 25 l0 25 -105 0 -105 0 0 -25z"
+					opacity="1"
+					>
+					<fill>
+						<Color>
+							<red>0.0</red>
+							<green>0.0</green>
+							<blue>0.0</blue>
+						</Color>
+					</fill>
+				</SVGPath>
+				<SVGPath
+					content="M7 233 c-26 -26 2 -41 241 -136 136 -54 252 -98 257 -98 6 0 121 44 257 98 187 74 248 102 248 115 0 9 -5 20 -11 23 -6 4 -119 -37 -251 -90 l-241 -98 -241 97 c-256 102 -249 100 -259 89z"
+					opacity="1"
+					>
+					<fill>
+						<Color>
+							<red>0.0</red>
+							<green>0.0</green>
+							<blue>0.0</blue>
+						</Color>
+					</fill>
+				</SVGPath>
+			</children>
+			<transforms>
+				<Translate
+					x="0.000000"
+					y="102.000000"
+					>
+				</Translate>
+				<Scale
+					x="0.100000"
+					y="-0.100000"
+				>
+				</Scale>
+			</transforms>
+		</Group>
+	</children>
+</Group>

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="537.0" prefWidth="543.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerCryoLink">
+   <children>
+      <Line endX="-11.0" endY="0.9999923706054688" fill="#4f1cd9" layoutX="165.0" layoutY="150.0" startX="-62.399993896484375" startY="1.0" stroke="#1e90ff" strokeWidth="5.0" translateY="-1.0" />
+      <Line endX="62.0" layoutX="422.0" layoutY="158.0" startX="-131.0" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="-143.60000610351562" layoutX="504.0" layoutY="284.0" startX="-168.0" stroke="#d1d1e0" strokeWidth="3.0" translateY="-2.0" />
+      <Line endX="-99.5" endY="-5.0" layoutX="319.0" layoutY="459.0" startX="-99.5" startY="-26.0" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="-99.5" endY="-0.666656494140625" layoutX="373.0" layoutY="435.0" startX="-99.5" startY="-26.0" stroke="#d1d1e0" strokeWidth="3.0" translateY="-6.0" />
+      <Line endX="-99.5" endY="-0.666656494140625" layoutX="267.0" layoutY="430.0" startX="-100.0" startY="-86.0" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Ellipse fx:id="StatusLevel" fill="DODGERBLUE" layoutX="218.0" layoutY="280.0" radiusX="129.0" radiusY="157.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to top, deepskyblue 10%, grey 0%);" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#acb4bc" height="34.0" layoutX="-48.0" layoutY="74.0" rotate="90.0" scaleX="0.2" scaleY="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to top, grey 100%, grey 0%);" translateX="-1.0" translateY="-10.0" width="189.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#acb4bc" height="26.0" layoutX="40.0" layoutY="124.0" scaleX="0.6" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to top, grey 100%, grey 0%);" width="12.0" />
+      <Line endX="-100.0" endY="10.5" layoutX="584.0" layoutY="146.0" startX="-100.0" startY="2.0" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="6.42218017578125" layoutX="522.0" layoutY="283.0" startX="-27.399993896484375" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="-37.0" layoutX="505.0" layoutY="283.0" startX="-52.5679931640625" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="-82.57778930664062" layoutX="500.0" layoutY="282.0" startX="-114.39999389648438" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="-314.3999938964844" endY="-72.66665649414062" layoutX="413.0" layoutY="502.0" startX="-247.0" startY="-72.66665649414062" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Label fx:id="PressureGs3" alignment="CENTER" layoutX="333.0" layoutY="195.0" onMouseClicked="#PressureGs3_Clicked" onMousePressed="#PressureGs3_Pressed" onMouseReleased="#PressureGs3_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateX="-4.0" translateY="-5.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="PressureGs4" alignment="CENTER" layoutX="335.0" layoutY="102.0" onMouseClicked="#PressureGs4_Clicked" onMousePressed="#PressureGs4_Pressed" onMouseReleased="#PressureGs4_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateX="-4.0" translateY="-5.0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Group layoutX="43.0" layoutY="542.0" />
+      <Line endX="-100.0" endY="13.999992370605469" layoutX="490.0" layoutY="152.0" startX="-100.0" startY="-2.75" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Group fx:id="Gs3" layoutX="385.0" layoutY="179.0" onMouseClicked="#Gs3_Clicked" onMousePressed="#Gs3_Pressed" onMouseReleased="#Gs3_Released">
+         <children>
+            <Circle fx:id="StatusGs3" fill="#e1e4db" layoutX="5.0" layoutY="-1.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect></Circle>
+            <SVGPath content="M200 710 l0 -90 -100 0 -100 0 0 -120 0 -120 100 0 100 0 0 -80 0 -80 -100 0 -100 0 0 -110 c0 -103 1 -110 20 -110 19 0 20 7 20 90 l0 90 100 0 100 0 0 120 0 120 -100 0 -100 0 0 80 0 80 100 0 100 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90z" opacity="1" scaleX="0.02" scaleY="0.02" translateX="-115.0" translateY="-400.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="Gs4" layoutX="390.0" layoutY="135.0" onMouseClicked="#Gs4_Clicked" onMousePressed="#Gs4_Pressed" onMouseReleased="#Gs4_Released" translateY="2.0">
+         <children>
+            <Circle fx:id="StatusGs4" fill="#e1e4db" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect></Circle>
+            <Circle fill="#e1e3dc00" layoutY="-5.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+            <SVGPath content="M0 110 l0 -110 170 0 170 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90 l0 -90 -130 0 -130 0 0 90 c0 83 -1 90 -20 90 -19 0 -20 -7 -20 -110z" opacity="1" rotate="180.0" scaleX="0.04" scaleY="0.03" translateX="-170.0" translateY="-108.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="V21" layoutX="345.0" layoutY="246.0" onMouseClicked="#V21_Clicked" onMousePressed="#V21_Pressed" onMouseReleased="#V21_Released" translateX="-3.0" translateY="1.0">
+         <children>
+            <SVGPath fx:id="StatusV21" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleX="0.7" scaleY="1.3" translateX="-4.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="P21" layoutX="519.0" layoutY="286.0" onMouseClicked="#P21_Clicked" onMousePressed="#P21_Pressed" onMouseReleased="#P21_Released">
+         <children>
+            <Rectangle fx:id="StatusP21" arcHeight="2.3636022" arcWidth="2.3636022" fill="#e1e4db" height="44.979168" layoutX="-178.0" layoutY="-116.0" opacity="1" stroke="TRANSPARENT" strokeLineJoin="ROUND" strokeWidth="0.61400002" width="34.395832" x="76.729164" y="95.916664">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Rectangle>
+            <Circle fill="#e3e3e300" layoutX="-82.0" layoutY="8.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" translateX="-1.7" translateY="-0.5" />
+            <Line endX="100.0" layoutX="-184.0" startX="100.0" startY="15.0" />
+            <Line endX="-88.0" startX="-79.5" />
+            <Line endX="-88.0" layoutY="5.0" startX="-79.5" />
+            <Line endX="-88.0" layoutY="15.0" startX="-79.5" />
+            <Line endX="-88.0" layoutY="10.0" startX="-79.5" />
+            <Line endX="95.0" endY="0.77" layoutX="-181.0" layoutY="21.0" startX="85.25" startY="-3.0" strokeMiterLimit="5.0" translateX="2.0" translateY="1.0" />
+            <Line endX="95.0" endY="0.77" layoutX="-170.0" layoutY="20.0" rotate="-45.0" startX="85.25" startY="-3.0" strokeMiterLimit="5.0" translateX="1.5" translateY="1.6" />
+            <Label layoutX="-97.0" layoutY="-20.0" style="" text="P21">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group fx:id="V22" layoutX="442.0" layoutY="249.0" onMouseClicked="#V22_Clicked" onMousePressed="#V22_Pressed" onMouseReleased="#V22_Released" translateX="5.0" translateY="-1.0">
+         <children>
+            <SVGPath fx:id="StatusV22" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleX="0.7" scaleY="1.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="P22" layoutX="630.0" layoutY="287.0" onMouseClicked="#P22_Clicked" onMousePressed="#P22_Pressed" onMouseReleased="#P22_Released">
+         <children>
+            <Rectangle fx:id="StatusP22" arcHeight="2.3636022" arcWidth="2.3636022" fill="#e1e4db" height="44.979168" layoutX="-178.0" layoutY="-116.0" opacity="1" stroke="TRANSPARENT" strokeLineJoin="ROUND" strokeWidth="0.61400002" width="34.395832" x="76.729164" y="95.916664">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Rectangle>
+            <Circle fill="#e3e3e300" layoutX="-82.0" layoutY="8.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" translateX="-1.7" translateY="-0.5" />
+            <Line endX="95.0" endY="0.77" layoutX="-181.0" layoutY="21.0" startX="85.25" startY="-3.0" strokeMiterLimit="5.0" translateX="2.0" translateY="1.0" />
+            <Line endX="95.0" endY="0.77" layoutX="-170.0" layoutY="20.0" rotate="-45.0" startX="85.25" startY="-3.0" strokeMiterLimit="5.0" translateX="1.5" translateY="1.6" />
+            <Label layoutX="-96.0" layoutY="-20.0" style="" text="P22">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Label fx:id="PressureGs1" alignment="CENTER" layoutX="30.0" layoutY="449.0" onMouseClicked="#PressureGs1_Clicked" onMousePressed="#PressureGs1_Pressed" onMouseReleased="#PressureGs1_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="404.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Gs3">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="404.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Gs4">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="499.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Gs6">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="77.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="CV1">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="73.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Vs1">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="361.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="V21">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="PressureGs2" alignment="CENTER" layoutX="423.0" layoutY="444.0" onMouseClicked="#PressureGs2_Clicked" onMousePressed="#PressureGs2_Pressed" onMouseReleased="#PressureGs2_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="457.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="V22" translateX="1.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Group layoutX="339.0" layoutY="229.0" />
+      <Ellipse fill="#1e90ff" layoutX="219.0" layoutY="277.0" radiusX="108.0" radiusY="137.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to top, lightgrey 100%, white 0%);" />
+      <Text fill="#d1d1e0" layoutX="5.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="CV2">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Line endX="-310.66668701171875" endY="-76.66667175292969" layoutX="351.0" layoutY="181.0" rotate="90.0" scaleX="0.2" scaleY="0.2" startX="-297.0404052734375" startY="-111.0" stroke="#ee0707" translateX="-1.5" />
+      <Line endX="-303.83331298828125" endY="-72.33332824707031" layoutX="356.0" layoutY="172.0" rotate="90.0" scaleX="0.2" scaleY="0.2" startX="-316.33331298828125" startY="-106.0" stroke="#ee0707" translateY="1.0" />
+      <Line endX="-310.66668701171875" endY="-76.66667175292969" layoutX="350.0" layoutY="172.0" rotate="90.0" scaleX="0.2" scaleY="0.2" startX="-296.25" startY="-110.25" stroke="#ee0707" translateX="-1.0" translateY="2.0" />
+      <Line endX="-304.25" endY="-74.75" layoutX="357.0" layoutY="182.0" rotate="90.0" scaleX="0.2" scaleY="0.2" startX="-317.54290771484375" startY="-107.95710754394531" stroke="#ee0707" translateX="-0.5" />
+      <Label fx:id="TemperatureTF" alignment="CENTER" layoutX="194.0" layoutY="56.0" onMouseClicked="#TemperatureTF_Clicked" onMousePressed="#TemperatureTF_Pressed" onMouseReleased="#TemperatureTF_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="TemperatureT1" alignment="CENTER" layoutX="109.0" layoutY="356.0" onMouseClicked="#TemperatureT1_Clicked" onMousePressed="#TemperatureT1_Pressed" onMouseReleased="#TemperatureT1_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="TemperatureT2" alignment="CENTER" layoutX="215.0" layoutY="356.0" onMouseClicked="#TemperatureT2_Clicked" onMousePressed="#TemperatureT2_Pressed" onMouseReleased="#TemperatureT2_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="TemperatureT3" alignment="CENTER" layoutX="115.0" layoutY="287.0" onMouseClicked="#TemperatureT3_Clicked" onMousePressed="#TemperatureT3_Pressed" onMouseReleased="#TemperatureT3_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="Level" alignment="CENTER" layoutX="1.0" layoutY="267.0" onMouseClicked="#Level_Clicked" onMousePressed="#Level_Pressed" onMouseReleased="#Level_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="TemperatureT12" alignment="CENTER" layoutX="51.0" layoutY="79.0" onMouseClicked="#TemperatureT12_Clicked" onMousePressed="#TemperatureT12_Pressed" onMouseReleased="#TemperatureT12_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="181.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="TF">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="16.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Level">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#333333" layoutX="158.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T1">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#333333" layoutX="262.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T2">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#333333" layoutX="193.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T3">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="63.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T12">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Line endX="-308.0" endY="-73.5" layoutX="319.0" layoutY="502.0" startX="-245.60000610351562" startY="-73.5" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Group fx:id="Gs1" layoutX="18.0" layoutY="455.0" onMouseClicked="#Gs1_Clicked" onMousePressed="#Gs1_Pressed" onMouseReleased="#Gs1_Released">
+         <children>
+            <Circle fx:id="StatusGs1" fill="#e1e4db" layoutX="5.0" layoutY="-1.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Circle>
+            <SVGPath content="M200 710 l0 -90 -100 0 -100 0 0 -120 0 -120 100 0 100 0 0 -80 0 -80 -100 0 -100 0 0 -110 c0 -103 1 -110 20 -110 19 0 20 7 20 90 l0 90 100 0 100 0 0 120 0 120 -100 0 -100 0 0 80 0 80 100 0 100 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90z" opacity="1" scaleX="0.02" scaleY="0.02" translateX="-115.0" translateY="-400.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+            <Line endX="-100.0" endY="22.0" layoutX="105.0" layoutY="-37.0" startX="-100.0" startY="8.0" stroke="#d1d1e0" strokeWidth="3.0" translateY="4.0" />
+         </children>
+      </Group>
+      <Line endX="-317.0" endY="-72.66665649414062" layoutX="592.0" layoutY="506.0" startX="-247.0" startY="-72.66665649414062" stroke="#d1d1e0" strokeWidth="3.0" translateY="-5.0">
+         <rotationAxis>
+            <Point3D x="1.0" z="1.0" />
+         </rotationAxis>
+      </Line>
+      <Line endX="-319.3999938964844" endY="-72.66668701171875" layoutX="689.0" layoutY="501.0" startX="-269.0" startY="-72.5" stroke="#d1d1e0" strokeWidth="3.0">
+         <rotationAxis>
+            <Point3D x="1.0" z="1.0" />
+         </rotationAxis>
+      </Line>
+      <Text fill="#d1d1e0" layoutX="11.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Gs1">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="20.0" layoutX="520.0" layoutY="422.0" startX="-100.0" startY="8.0" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Text fill="#d1d1e0" layoutX="407.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Gs2">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="345.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Vs2">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Group fx:id="Gs5" layoutX="214.0" layoutY="467.0" onMouseClicked="#Gs5_Clicked" onMousePressed="#Gs5_Pressed" onMouseReleased="#Gs5_Released">
+         <children>
+            <Circle fx:id="StatusGs5" fill="#e1e4db" layoutX="5.0" layoutY="-1.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Circle>
+            <SVGPath content="M200 710 l0 -90 -100 0 -100 0 0 -120 0 -120 100 0 100 0 0 -80 0 -80 -100 0 -100 0 0 -110 c0 -103 1 -110 20 -110 19 0 20 7 20 90 l0 90 100 0 100 0 0 120 0 120 -100 0 -100 0 0 80 0 80 100 0 100 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90z" opacity="1" scaleX="0.02" scaleY="0.02" translateX="-115.0" translateY="-400.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#d1d1e0" layoutX="206.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Gs5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="PressureGs5" alignment="CENTER" layoutX="227.0" layoutY="457.0" onMouseClicked="#PressureGs5_Clicked" onMousePressed="#PressureGs5_Pressed" onMouseReleased="#PressureGs5_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Line endX="13.4000244140625" endY="3.0" fill="#4f1cd9" layoutX="63.0" layoutY="147.0" startX="-47.5" startY="3.0" stroke="#1e90ff" strokeWidth="5.0" />
+      <Label fx:id="TemperatureTL" alignment="CENTER" layoutX="194.0" layoutY="94.0" onMouseClicked="#TemperatureTL_Clicked" onMousePressed="#TemperatureTL_Pressed" onMouseReleased="#TemperatureTL_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="TemperatureTN" alignment="CENTER" layoutX="194.0" layoutY="75.0" onMouseClicked="#TemperatureTN_Clicked" onMousePressed="#TemperatureTN_Pressed" onMouseReleased="#TemperatureTN_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="181.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="TL">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="181.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="TN">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="TemperatureT4" alignment="CENTER" layoutX="216.0" layoutY="287.0" onMouseClicked="#TemperatureT4_Clicked" onMousePressed="#TemperatureT4_Pressed" onMouseReleased="#TemperatureT4_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#333333" layoutX="233.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T4">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="TemperatureT5" alignment="CENTER" layoutX="96.0" layoutY="236.0" onMouseClicked="#TemperatureT5_Clicked" onMousePressed="#TemperatureT5_Pressed" onMouseReleased="#TemperatureT5_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#333333" layoutX="110.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="TemperatureT6" alignment="CENTER" layoutX="230.0" layoutY="236.0" onMouseClicked="#TemperatureT6_Clicked" onMousePressed="#TemperatureT6_Pressed" onMouseReleased="#TemperatureT6_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#333333" layoutX="313.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T6">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="TemperatureT7" alignment="CENTER" layoutX="105.0" layoutY="183.0" onMouseClicked="#TemperatureT7_Clicked" onMousePressed="#TemperatureT7_Pressed" onMouseReleased="#TemperatureT7_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#333333" layoutX="167.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T7">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="TemperatureT8" alignment="CENTER" layoutX="220.0" layoutY="183.0" onMouseClicked="#TemperatureT8_Clicked" onMousePressed="#TemperatureT8_Pressed" onMouseReleased="#TemperatureT8_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #333333; -fx-border-width: 1;  -fx-border-radius: 5;" text="Temperature" textFill="#01011b">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Text fill="#333333" layoutX="254.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="T8">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Group fx:id="G22" layoutX="499.0" layoutY="253.0" onMouseClicked="#G22_Clicked" onMousePressed="#G22_Pressed" onMouseReleased="#G22_Released">
+         <children>
+            <Circle fx:id="StatusG22" fill="#e1e4db" layoutX="5.0" layoutY="-1.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Circle>
+            <SVGPath content="M200 710 l0 -90 -100 0 -100 0 0 -120 0 -120 100 0 100 0 0 -80 0 -80 -100 0 -100 0 0 -110 c0 -103 1 -110 20 -110 19 0 20 7 20 90 l0 90 100 0 100 0 0 120 0 120 -100 0 -100 0 0 80 0 80 100 0 100 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90z" opacity="1" scaleX="0.02" scaleY="0.02" translateX="-115.0" translateY="-400.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#d1d1e0" layoutX="491.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="G22">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="22.0" layoutX="604.0" layoutY="258.0" startX="-100.0" startY="8.0" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Line endX="-100.0" endY="26.0" layoutX="492.0" layoutY="281.0" startX="-100.0" startY="2.5" stroke="#d1d1e0" strokeWidth="3.0" />
+      <Text fill="#d1d1e0" layoutX="378.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="G21">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="PressureG22" alignment="CENTER" layoutX="510.0" layoutY="236.0" onMouseClicked="#PressureG22_Clicked" onMousePressed="#PressureG22_Pressed" onMouseReleased="#PressureG22_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="PressureG21" alignment="CENTER" layoutX="344.0" layoutY="353.0" onMouseClicked="#PressureG21_Clicked" onMousePressed="#PressureG21_Pressed" onMouseReleased="#PressureG21_Released" prefHeight="21.0" prefWidth="113.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="SpeedP21" alignment="CENTER" layoutX="410.0" layoutY="314.0" onMouseClicked="#SpeedP21_Clicked" onMousePressed="#SpeedP21_Pressed" onMouseReleased="#SpeedP21_Released" prefHeight="21.0" prefWidth="70.0" scaleX="0.8" scaleY="0.8" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Speed" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+      </Label>
+      <Group fx:id="Vs1" layoutX="55.0" layoutY="400.0" onMouseClicked="#Vs1_Clicked" onMousePressed="#Vs1_Pressed" onMouseReleased="#Vs1_Released">
+         <children>
+            <SVGPath fx:id="StatusVs1" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleX="0.7" scaleY="1.3" translateX="-4.0" translateY="-5.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="CV1" layoutX="59.0" layoutY="119.0" onMouseClicked="#CV1_Clicked" onMousePressed="#CV1_Pressed" onMouseReleased="#CV1_Released" translateY="1.0">
+         <children>
+            <SVGPath fx:id="StatusCV1" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleX="0.7" scaleY="1.3" translateX="-4.0" translateY="-5.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="CV2" layoutX="15.0" layoutY="82.0" onMouseClicked="#CV2_Clicked" onMousePressed="#CV2_Pressed" onMouseReleased="#CV2_Released">
+         <children>
+            <SVGPath fx:id="StatusCV2" content="m17,26v18l36-18v18z" fill="#e1e4db" rotate="90.0" scaleX="0.7" scaleY="1.3" translateX="-4.0" translateY="-5.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="Vs2" layoutX="326.0" layoutY="400.0" onMouseClicked="#Vs2_Clicked" onMousePressed="#Vs2_Pressed" onMouseReleased="#Vs2_Released">
+         <children>
+            <SVGPath fx:id="StatusVs2" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleX="0.7" scaleY="1.3" translateX="-4.0" translateY="-5.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+         <rotationAxis>
+            <Point3D x="1.0" z="1.0" />
+         </rotationAxis>
+      </Group>
+      <Group fx:id="Gs2" layoutX="414.0" layoutY="455.0" onMouseClicked="#Gs2_Clicked" onMousePressed="#Gs2_Pressed" onMouseReleased="#Gs2_Released">
+         <children>
+            <Circle fx:id="StatusGs2" fill="#e1e4db" layoutX="5.0" layoutY="-1.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Circle>
+            <SVGPath content="M200 710 l0 -90 -100 0 -100 0 0 -120 0 -120 100 0 100 0 0 -80 0 -80 -100 0 -100 0 0 -110 c0 -103 1 -110 20 -110 19 0 20 7 20 90 l0 90 100 0 100 0 0 120 0 120 -100 0 -100 0 0 80 0 80 100 0 100 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90z" opacity="1" scaleX="0.02" scaleY="0.02" translateX="-115.0" translateY="-400.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+         </children>
+         <rotationAxis>
+            <Point3D x="1.0" z="1.0" />
+         </rotationAxis>
+      </Group>
+      <Group fx:id="G21" layoutX="392.0" layoutY="319.0" onMouseClicked="#G21_Clicked" onMousePressed="#G21_Pressed" onMouseReleased="#G21_Released">
+         <children>
+            <Circle fx:id="StatusG21" fill="#e1e4db" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Circle>
+            <Circle fill="#e1e3dc00" layoutY="-5.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+            <SVGPath content="M0 110 l0 -110 170 0 170 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90 l0 -90 -130 0 -130 0 0 90 c0 83 -1 90 -20 90 -19 0 -20 -7 -20 -110z" opacity="1" rotate="180.0" scaleX="0.04" scaleY="0.03" translateX="-170.0" translateY="-108.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0" />
+               </fill>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="Gs6" layoutX="484.0" layoutY="137.0" onMouseClicked="#Gs6_Clicked" onMousePressed="#Gs6_Pressed" onMouseReleased="#Gs6_Released">
+         <children>
+            <Circle fx:id="StatusGs6" fill="#e1e4db" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Circle>
+            <Line endX="80.75" endY="-1.52587890625E-5" layoutX="-80.0" layoutY="-5.0" startX="76.0" />
+            <Line endX="83.0" layoutX="-80.0" startX="76.0" />
+            <Line endX="85.25" layoutX="-80.0" layoutY="6.0" startX="76.0" />
+            <Line endX="76.0" endY="12.0" layoutX="-81.0" layoutY="-6.0" startX="76.0" startY="1.0" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
