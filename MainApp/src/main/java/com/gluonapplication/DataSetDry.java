@@ -18,6 +18,8 @@ public class DataSetDry extends DataSet {
          list.addElement(new DataElement("Status",Type.LABEL_DRY_STATUS_STRING, "VAC_CRYOLINK_DET_P22ST"));
       else if (name.contains("CRYOLINKIB"))
          list.addElement(new DataElement("Status",Type.LABEL_DRY_STATUS_STRING, "VAC_CRYOLINK_IB_P22ST"));
+      else if (attributes[0].contains("VENTING"))
+         list.addElement(new DataElement("Status",Type.LABEL_DRY_STATUS_STRING, channelPrefix + "_M1_P1ST"));
       else
       list.addElement(new DataElement("Status",Type.LABEL_DRY_STATUS_STRING,
                                          channelPrefix + DRY_CHANNELS.get("Status" + attributes[1])));     
@@ -26,7 +28,6 @@ public class DataSetDry extends DataSet {
       Init();
    }
 }
-
 
 
 
