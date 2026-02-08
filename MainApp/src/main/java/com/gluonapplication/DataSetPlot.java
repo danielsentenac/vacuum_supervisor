@@ -42,6 +42,12 @@ public class DataSetPlot extends DataSet {
          else // All other cases
             list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + PLOT_CRYOLINK_CHANNELS.get(attributes[1])));
       }
+      else if ( attributes[0].contains("VENTING")) {
+         if (attributes[1].equals("PlotG2"))
+            list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + "_MG_PR2"));
+         else
+            list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + "_MG_PR1"));
+      }
       else if ( attributes[0].contains("SQZ") ||
                 attributes[0].contains("TILTMETER")) {
          // Special case GMid
@@ -72,7 +78,6 @@ public class DataSetPlot extends DataSet {
       Init(); 
    }
 }
-
 
 
 

@@ -54,6 +54,8 @@ public class DataSetValve extends DataSet {
       }
       else if (attributes[0].contains("TOWER"))
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + TOWER_VALVE_CHANNELS.get("Status"+attributes[1])));
+      else if (attributes[0].contains("VENTING"))
+         list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + VENTING_VALVE_CHANNELS.get("Status"+attributes[1])));
       else if (attributes[0].contains("CRYO") && !attributes[0].contains("LINK"))
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + CRYO_VALVE_CHANNELS.get("Status"+attributes[1])));
       else if (attributes[0].contains("REMOTESCROLL"))
@@ -72,7 +74,6 @@ public class DataSetValve extends DataSet {
       Init();
    }
 }
-
 
 
 

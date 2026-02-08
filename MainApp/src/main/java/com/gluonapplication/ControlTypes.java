@@ -74,6 +74,13 @@ public interface ControlTypes {
       put("Vlp", "_VLPCMD");
       put("Vbs", "_VBSCMD");
       put("Vwi", "_VWICMD");
+      // VENTING
+      put("VBypass", "_M1_VBYPASSCMD");
+      put("VRP", "_M1_VRPCMD");
+      put("VDryer", "_M1_VDRYERCMD");
+      put("V1", "_M1_V1CMD");
+      put("VMain", "_M1_VMAINCMD");
+      put("VSoft", "_M1_VSOFTCMD");
       // TUBES
       put("TUBE300N_V21","_V21CMD");
       put("TUBELAL600N_V21","_V21CMD");
@@ -467,4 +474,3 @@ public interface ControlTypes {
    
    
 }
-

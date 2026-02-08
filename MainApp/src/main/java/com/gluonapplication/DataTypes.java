@@ -571,6 +571,16 @@ public interface DataTypes {
       put("StatusVb","_VBST");
    }};
 
+   Hashtable<String, String> VENTING_VALVE_CHANNELS = new Hashtable<String, String>(){{
+      // Venting valves
+      put("StatusVBypass", "_M1_VBYPASSST");
+      put("StatusVMain", "_M1_VENTST");
+      put("StatusVSoft", "_M1_VENTST");
+      put("StatusVRP", "_M1_VRPST");
+      put("StatusVDryer", "_M1_VDRYERST");
+      put("StatusV1", "_M1_V1ST");
+   }};
+
    Hashtable<String, String> TUBESTATION_PRESSURE_EGO_CHANNELS = new Hashtable<String, String>(){{
       // MaxiGauges
       put("PressureGa1", "_PR3");
@@ -1927,4 +1937,3 @@ public interface DataTypes {
       put("...", "lightgrey");
    }};
 }
-

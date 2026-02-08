@@ -35,7 +35,8 @@ public class Main extends MobileApplication {
     public LayerMessage command_simulation_layer= null;
       
     // Create Views
-    public ViewData global = new ViewGlobal("GLOBAL", "GLOBAL");
+    public ViewData global = null;
+    public ViewData venting = null;
     public ViewData tubeN = null;
     public ViewData tubeW = null;   
     public ViewData tube300W = null; 
@@ -96,13 +97,26 @@ public class Main extends MobileApplication {
 
     @Override
     public void init() {
-      
+      Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
+         System.err.println("Uncaught exception in thread " + t.getName());
+         e.printStackTrace();
+      });
+      try {
+         global = new ViewGlobal("GLOBAL", "GLOBAL");
+         venting = new MobileVentingView("MOBILEVENTING", "VENTING1");
+      } catch (Throwable t) {
+         System.err.println("View construction failed:");
+         t.printStackTrace();
+         throw t;
+      }
       // Add Layers
        addLayerFactory("NETWORK_ERROR", () -> { return network_error_layer;});
        addLayerFactory("SERVER_KO", () -> { return server_ko_layer;});
 
       // Add Views
       addViewFactory(HOME_VIEW, () -> { return global;});
+      addViewFactory("VENTING", () -> { return venting;});
+      addViewFactory("VENTING1", () -> { return venting;});
       
        // Necessary to handle tomcat sessions
        CookieManager cookieManager = new CookieManager();
@@ -120,31 +134,46 @@ public class Main extends MobileApplication {
     }
     @Override
     public void postInit(Scene scene) {
-      
-        Swatch.GREY.assignTo(scene);
-
-        // If running on Desktop, adjust the size
-        if(Platform.isDesktop()){
-            scene.getWindow().setWidth(850);
-            scene.getWindow().setHeight(850);
-        }
-        setTitle("Vacuum Supervisor");
         try {
-           System.out.println("STARTING THREADS");
-           new Thread(global).start();
-           new Thread(notificationTurboBox).start();
-           new Thread(notificationTurboTemp).start();
-           new Thread(notificationTurboBoxTemp).start();
-           new Thread(notificationTurboPower).start();
-           new Thread(notificationGolden).start();
-           new Thread(notificationRack).start();
-           new Thread(notificationValve).start();
-           new Thread(notificationUps).start();
-           new Thread(notificationO2Sensor).start();
-           new Thread(notificationCompressAir).start();
-        }
-        catch (Exception e) {
-           e.printStackTrace();
+            Swatch.GREY.assignTo(scene);
+
+            // If running on Desktop, adjust the size
+            if (Platform.isDesktop()) {
+                scene.getWindow().setWidth(850);
+                scene.getWindow().setHeight(850);
+            }
+            setTitle("Vacuum Supervisor");
+            try {
+                System.out.println("STARTING THREADS");
+                new Thread(global).start();
+                new Thread(venting).start();
+                new Thread(notificationTurboBox).start();
+                new Thread(notificationTurboTemp).start();
+                new Thread(notificationTurboBoxTemp).start();
+                new Thread(notificationTurboPower).start();
+                new Thread(notificationGolden).start();
+                new Thread(notificationRack).start();
+                new Thread(notificationValve).start();
+                new Thread(notificationUps).start();
+                new Thread(notificationO2Sensor).start();
+                new Thread(notificationCompressAir).start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Throwable t) {
+            System.err.println("postInit failed:");
+            t.printStackTrace();
+            throw t;
         }
     }
+
+    public static void main(String[] args) {
+        try {
+            launch(args);
+        } catch (Throwable t) {
+            System.err.println("Application launch failed:");
+            t.printStackTrace();
+        }
+    }
+
 }

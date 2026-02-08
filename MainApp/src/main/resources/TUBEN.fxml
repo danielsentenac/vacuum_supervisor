@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTubeN" maxHeight="1.7976931348623157E308" prefHeight="731.0" prefWidth="322.0" style="-fx-background-color: #333333;">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTubeN" maxHeight="1.7976931348623157E308" prefHeight="731.0" prefWidth="322.0" style="-fx-background-color: #333333;">
    <children>
       <Label fx:id="Station3000N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="67.0" onMouseClicked="#Station3000N_Clicked" onMousePressed="#Station3000N_Pressed" onMouseReleased="#Station3000N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="3000N" translateY="-10.0">
          <font>

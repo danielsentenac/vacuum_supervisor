@@ -94,6 +94,20 @@ public class DataSetGauge extends DataSet implements DataTypes {
          list.addElement(new DataElement("StatusSensor",Type.LABEL_MAXIGAUGE_SENSOR_STATUS_STRING, 
                                          channelPrefix.replace("IB","_IB") + CRYOLINKIB_PRESSURE_CHANNELS.get("StatusSensor"+attributes[1])));
       }
+      else if (attributes[0].contains("VENTING")) {
+         String prSuffix = attributes[1].equals("G2") ? "_MG_PR2" : "_MG_PR1";
+         String prStatusSuffix = attributes[1].equals("G2") ? "_MG_PR2ST" : "_MG_PR1ST";
+         String prSensorSuffix = attributes[1].equals("G2") ? "_MG_PR2SST" : "_MG_PR1SST";
+         // Pressure
+         list.addElement(new DataElement("Pressure",Type.LABEL_VALUE_STRING, 
+                                         channelPrefix + prSuffix, "mbar"));
+         // Status Pressure
+         list.addElement(new DataElement("StatusPressure",Type.LABEL_MAXIGAUGE_PRESSURE_STATUS_STRING, 
+                                         channelPrefix + prStatusSuffix));
+         // Status Sensor
+         list.addElement(new DataElement("StatusSensor",Type.LABEL_MAXIGAUGE_SENSOR_STATUS_STRING, 
+                                         channelPrefix + prSensorSuffix));
+      }
       else if ( channelPrefix.contains("SQZ") ||
                 channelPrefix.contains("TILTMETER")) { // SQZ TUBE & MINITOWER STATIONS & TILTMETER
          // Special case GMid
@@ -191,7 +205,6 @@ public class DataSetGauge extends DataSet implements DataTypes {
       Init();
    }
 }
-
 
 
 

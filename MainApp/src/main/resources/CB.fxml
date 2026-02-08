@@ -374,24 +374,14 @@
             <InnerShadow choke="0.2" color="#000000cd" height="34.91" radius="16.575" width="33.39"/>
          </effect>
       </Rectangle>
-      <Rectangle fx:id="Venting" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="51.0" layoutX="134.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 10; -fx-arc-width: 10;" width="59.0">
+      <Label fx:id="Venting" alignment="CENTER" contentDisplay="CENTER" layoutX="134.0" layoutY="82.0" onMouseClicked="#Venting_Clicked" onMousePressed="#Venting_Pressed" onMouseReleased="#Venting_Released" prefHeight="51.0" prefWidth="59.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="VENTING&#10;SYSTEM">
+         <font>
+            <Font size="10.0"/>
+         </font>
          <effect>
-            <Blend />
+            <InnerShadow />
          </effect>
-         <cursor>
-            <Cursor fx:constant="NONE"/>
-         </cursor>
-      </Rectangle>
-      <Text layoutX="141.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="VENTING" x="1.0">
-         <font>
-            <Font size="10.0"/>
-         </font>
-      </Text>
-      <Text layoutX="142.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="SYSTEM" x="1.0">
-         <font>
-            <Font size="10.0"/>
-         </font>
-      </Text>
+      </Label>
       <Group fx:id="lineNI" layoutX="216.0" layoutY="82.0">
          <children>
             <Line endX="-33.600006103515625" layoutX="33.0" layoutY="12.0" startX="-55.0" startY="-7.62939453125E-6" stroke="#d1d1e0" strokeWidth="3.0"/>

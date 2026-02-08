@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle; 
+import javafx.scene.control.Label;
 
 
 public class ControllerCentralBuilding extends ControlLayer implements ControlTypes {
@@ -28,6 +29,9 @@ public class ControllerCentralBuilding extends ControlLayer implements ControlTy
 
     @FXML
     private Label MiniTowerPR;
+
+    @FXML
+    private Label Venting;
 
     @FXML
     private Group ValvePS;
@@ -393,6 +397,29 @@ public class ControllerCentralBuilding extends ControlLayer implements ControlTy
     @FXML
     void MiniTowerPR_Released(MouseEvent event) {
        MiniTowerPR.setStyle(style);
+    }
+
+    @FXML
+    void Venting_Clicked(MouseEvent event) {
+       System.out.println("Switch to Venting View");
+       Main main = (Main) MobileApplication.getInstance();
+       if (main.venting == null) {
+          main.venting = new MobileVentingView("MOBILEVENTING", "VENTING1");
+          main.addViewFactory("VENTING1", () -> { return main.venting;});
+          new Thread(main.venting).start();
+       }
+       main.switchView("VENTING1");
+    }
+
+    @FXML
+    void Venting_Pressed(MouseEvent event) {
+       style = Venting.getStyle();
+       Venting.setStyle(DECORATION_STYLE_PUSHED);
+    }
+
+    @FXML
+    void Venting_Released(MouseEvent event) {
+       Venting.setStyle(style);
     }
 
     @FXML
@@ -1174,4 +1201,3 @@ public class ControllerCentralBuilding extends ControlLayer implements ControlTy
    }
 
 }
-

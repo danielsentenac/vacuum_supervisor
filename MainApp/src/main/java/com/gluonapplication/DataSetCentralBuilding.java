@@ -59,6 +59,8 @@ public class DataSetCentralBuilding extends DataSet {
       list.addElement(new DataElement("MiniTowerSqzDET2",Type.LABEL_RACK_STATUS_COLOR,"VAC_SQZDET2_RackStatus"));
       // TUBEMC 
       list.addElement(new DataElement("StationMC",Type.LABEL_RACK_STATUS_COLOR,"VAC_TUBEMC_RackStatus"));
+      // Venting System
+      list.addElement(new DataElement("Venting",Type.LABEL_RACK_STATUS_COLOR,"VAC_VENTING1_RackStatus"));
       // Venting System Valves
       list.addElement(new DataElement("StatusNIVENT1",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_VENTINGVALVENI_1ST"));
       list.addElement(new DataElement("StatusNIVENT2",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_VENTINGVALVENI_2ST"));
@@ -69,7 +71,6 @@ public class DataSetCentralBuilding extends DataSet {
       Init();  
    }
 }
-
 
 
 
