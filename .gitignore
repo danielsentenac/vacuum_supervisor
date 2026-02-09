@@ -1,7 +1,11 @@
 ### Gradle
 build/
 .gradle/
+.gradle-user/
 MainApp/build/
+
+### Local Android SDK
+.android-sdk/
 
 ### Maven
 target/
@@ -33,6 +37,15 @@ setIcon2.sh
 setIcon3.sh
 setIcon4.sh
 setIconNative.sh
+release-signing.env
+keys/
+
+### Release artifacts
+release/
+
+### Local release tooling
+release-signing.env.example
+scripts/release_apk.sh
 
 ### Package Files
 *.jar
