@@ -59,13 +59,11 @@ public class ViewCentralBuilding extends ViewData  {
           catch (Exception e) {
              e.printStackTrace();
           }
-          ScrollPane scrollpane = new ScrollPane(content.pane);
-          scrollpane.setStyle("-fx-background-color: transparent;");
+          ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
           SidePopupView sidePopupView = new SidePopupView(scrollpane);
           sidePopupView.setBackground(new Background(new BackgroundFill(Color.web("#333333"),CornerRadii.EMPTY,
                                       Insets.EMPTY)));
-          sidePopupView.setOnHidden(e -> {content.isSuspended = true;});
-          sidePopupView.setOnShowing(e -> {content.isSuspended = false;});
+          bindSidePopupLifecycle(sidePopupView, content);
           MobileApplication.getInstance().addLayerFactory(name, () -> { return sidePopupView;});
        }
        MobileApplication.getInstance().showLayer(name);

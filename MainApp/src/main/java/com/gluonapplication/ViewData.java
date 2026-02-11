@@ -2,6 +2,7 @@ package com.gluonapplication;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
+import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.scene.layout.Pane;
@@ -27,6 +28,7 @@ import javafx.scene.input.TouchEvent;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ZoomEvent;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -87,6 +89,29 @@ public class ViewData extends View implements Runnable, DataTypes {
         }));
         appBar.setTitleText(name + " View");
     }
+
+    protected ScrollPane createSidePopupScrollPane(Pane popupPane) {
+        ScrollPane scrollPane = new ScrollPane(popupPane);
+        scrollPane.setFitToWidth(false);
+        scrollPane.setFitToHeight(false);
+        scrollPane.setPannable(true);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setStyle("-fx-background-color: #333333; -fx-background: #333333; -fx-control-inner-background: #333333;");
+        return scrollPane;
+    }
+
+    protected void bindSidePopupLifecycle(SidePopupView sidePopupView, SidePopupViewData content) {
+        sidePopupView.setOnHidden(e -> {
+            content.isSuspended = true;
+            setMouseTransparent(false);
+        });
+        sidePopupView.setOnShowing(e -> {
+            content.isSuspended = false;
+            setMouseTransparent(true);
+        });
+    }
+
     private void setupScroll() {
         mainPane.setOnScroll(new EventHandler<ScrollEvent>() {
            @Override public void handle(ScrollEvent event) {

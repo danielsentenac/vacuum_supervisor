@@ -3,6 +3,7 @@ package com.gluonapplication;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import java.net.URLConnection; //for url management 
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
@@ -49,6 +50,17 @@ public class SidePopupViewData implements Runnable, DataTypes {
            loader.setClassLoader(cachingClassLoader); 
            backgroundPane = new BorderPane();
            pane =  (Pane) loader.load();
+           if (pane instanceof Region) {
+              Region regionPane = (Region) pane;
+              // Keep authored FXML width, but compute height from real content.
+              double fxmlPrefWidth = regionPane.getPrefWidth();
+              regionPane.setPrefWidth(fxmlPrefWidth);
+              regionPane.setMinWidth(Region.USE_PREF_SIZE);
+              regionPane.setMaxWidth(Region.USE_PREF_SIZE);
+              regionPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
+              regionPane.setMinHeight(Region.USE_PREF_SIZE);
+              regionPane.setMaxHeight(Region.USE_PREF_SIZE);
+           }
            System.out.println("Created  SidePopupViewData " + fxml + " " + name);
         }
         catch (Exception e) {

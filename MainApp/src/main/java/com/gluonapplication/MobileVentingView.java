@@ -46,16 +46,9 @@ public class MobileVentingView extends ViewData {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            ScrollPane scrollpane = new ScrollPane(content.pane);
-            scrollpane.setFitToWidth(true);
-            scrollpane.setStyle("-fx-background-color: #333333; -fx-background: #333333;");
+            ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
             SidePopupView sidePopupView = new SidePopupView(scrollpane);
-            sidePopupView.setOnHidden(e -> {
-                content.isSuspended = true;
-            });
-            sidePopupView.setOnShowing(e -> {
-                content.isSuspended = false;
-            });
+            bindSidePopupLifecycle(sidePopupView, content);
             MobileApplication.getInstance().addLayerFactory(name, () -> {
                 return sidePopupView;
             });
