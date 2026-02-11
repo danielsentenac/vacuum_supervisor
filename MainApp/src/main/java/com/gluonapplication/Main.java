@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import java.net.CookieManager;
 import java.net.CookieHandler;
 import java.lang.reflect.Method;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
 
 public class Main extends MobileApplication {
     
@@ -36,6 +38,9 @@ public class Main extends MobileApplication {
     public LayerMessage command_success_layer = null;
     public LayerMessage command_failure_layer= null;
     public LayerMessage command_simulation_layer= null;
+    private LayerSplashProgress splash_layer = new LayerSplashProgress();
+    private volatile boolean startupCompleted = false;
+    private volatile String pendingStartupViewId = null;
       
     // Create Views
     public ViewData global = null;
@@ -115,6 +120,7 @@ public class Main extends MobileApplication {
       // Add Layers
        addLayerFactory("NETWORK_ERROR", () -> { return network_error_layer;});
        addLayerFactory("SERVER_KO", () -> { return server_ko_layer;});
+       addLayerFactory("SPLASH_PROGRESS", () -> { return splash_layer;});
 
       // Add Views
       addViewFactory(HOME_VIEW, () -> { return global;});
@@ -150,8 +156,11 @@ public class Main extends MobileApplication {
     }
     @Override
     public void postInit(Scene scene) {
+        showStartupSplash();
         try {
+            updateStartupProgress(0.10, "Starting...");
             Swatch.GREY.assignTo(scene);
+            updateStartupProgress(0.30, "Applying style");
 
             // If running on Desktop, adjust the size
             if (Platform.isDesktop()) {
@@ -159,10 +168,12 @@ public class Main extends MobileApplication {
                 scene.getWindow().setHeight(850);
             }
             setTitle("Vacuum Supervisor");
+            updateStartupProgress(0.55, "Preparing views");
             try {
                 System.out.println("STARTING THREADS");
                 new Thread(global).start();
                 new Thread(venting).start();
+                updateStartupProgress(0.75, "Starting services");
                 new Thread(notificationTurboBox).start();
                 new Thread(notificationTurboTemp).start();
                 new Thread(notificationTurboBoxTemp).start();
@@ -175,6 +186,8 @@ public class Main extends MobileApplication {
                 new Thread(notificationCompressAir).start();
                 registerNotificationLaunchHandler();
                 clearPendingNotifications();
+                updateStartupProgress(0.95, "Finalizing startup");
+                updateStartupProgress(1.00, "Ready");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -182,7 +195,46 @@ public class Main extends MobileApplication {
             System.err.println("postInit failed:");
             t.printStackTrace();
             throw t;
+        } finally {
+            startupCompleted = true;
+            finalizeStartupUi();
         }
+    }
+
+    private void showStartupSplash() {
+       runOnFxThread(() -> {
+          try {
+             showLayer("SPLASH_PROGRESS");
+             // Fallback: never keep the app blocked on splash forever.
+             PauseTransition timeout = new PauseTransition(Duration.seconds(8));
+             timeout.setOnFinished(e -> {
+                if (splash_layer != null && splash_layer.isShowing()) {
+                   splash_layer.hide();
+                }
+             });
+             timeout.play();
+          } catch (Exception e) {
+             e.printStackTrace();
+          }
+       });
+    }
+
+    private void hideStartupSplash() {
+       runOnFxThread(() -> {
+          try {
+             if (splash_layer != null) {
+                splash_layer.hide();
+             }
+          } catch (Exception e) {
+             e.printStackTrace();
+          }
+       });
+    }
+
+    private void updateStartupProgress(double progress, String message) {
+       if (splash_layer != null) {
+          splash_layer.setProgress(progress, message);
+       }
     }
 
     private void registerNotificationLaunchHandler() {
@@ -203,7 +255,35 @@ public class Main extends MobileApplication {
        removeNotificationById(notificationId);
        String viewId = NotificationData.getRelatedViewId(notificationId);
        if (viewId != null) {
+          if (startupCompleted) {
+             hideStartupSplash();
+             switchToNotificationView(viewId);
+          } else {
+             pendingStartupViewId = viewId;
+          }
+       }
+    }
+
+    private void openPendingStartupViewIfAny() {
+       String viewId = pendingStartupViewId;
+       pendingStartupViewId = null;
+       if (viewId != null && !viewId.isEmpty()) {
           switchToNotificationView(viewId);
+       }
+    }
+
+    private void finalizeStartupUi() {
+       runOnFxThread(() -> {
+          hideStartupSplash();
+          openPendingStartupViewIfAny();
+       });
+    }
+
+    private void runOnFxThread(Runnable runnable) {
+       if (javafx.application.Platform.isFxApplicationThread()) {
+          runnable.run();
+       } else {
+          javafx.application.Platform.runLater(runnable);
        }
     }
 

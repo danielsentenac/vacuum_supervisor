@@ -6,6 +6,7 @@ import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 
 public class ViewTubeSqzStation extends ViewData  {
 
@@ -57,9 +58,9 @@ public class ViewTubeSqzStation extends ViewData  {
           catch (Exception e) {
              e.printStackTrace();
           }
-          SidePopupView sidePopupView = new SidePopupView(content.pane);
-          sidePopupView.setOnHidden(e -> {content.isSuspended = true;});
-          sidePopupView.setOnShowing(e -> {content.isSuspended = false;});
+          ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
+          SidePopupView sidePopupView = new SidePopupView(scrollpane);
+          bindSidePopupLifecycle(sidePopupView, content);
           MobileApplication.getInstance().addLayerFactory(name, () -> { return sidePopupView;});
        }
        MobileApplication.getInstance().showLayer(name);
@@ -76,9 +77,9 @@ public class ViewTubeSqzStation extends ViewData  {
           catch (Exception e) {
              e.printStackTrace();
           }
-          SidePopupView sidePopupView = new SidePopupView(content.pane);
-          sidePopupView.setOnHidden(e -> {content.isSuspended = true;});
-          sidePopupView.setOnShowing(e -> {content.isSuspended = false;});
+          ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
+          SidePopupView sidePopupView = new SidePopupView(scrollpane);
+          bindSidePopupLifecycle(sidePopupView, content);
           MobileApplication.getInstance().addLayerFactory(name, () -> { return sidePopupView;});
        }
        MobileApplication.getInstance().showLayer(name);

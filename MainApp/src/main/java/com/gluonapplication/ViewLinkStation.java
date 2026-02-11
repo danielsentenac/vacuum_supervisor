@@ -58,9 +58,9 @@ public class ViewLinkStation extends ViewData  {
           catch (Exception e) {
              e.printStackTrace();
           }
-          SidePopupView sidePopupView = new SidePopupView(content.pane);
-          sidePopupView.setOnHidden(e -> {content.isSuspended = true;});
-          sidePopupView.setOnShowing(e -> {content.isSuspended = false;});
+          ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
+          SidePopupView sidePopupView = new SidePopupView(scrollpane);
+          bindSidePopupLifecycle(sidePopupView, content);
           MobileApplication.getInstance().addLayerFactory(name, () -> { return sidePopupView;});
        }
        MobileApplication.getInstance().showLayer(name);
@@ -77,11 +77,9 @@ public class ViewLinkStation extends ViewData  {
           catch (Exception e) {
              e.printStackTrace();
           }
-          ScrollPane scrollpane = new ScrollPane(content.pane);
-          scrollpane.setStyle("-fx-background-color: transparent;");
+          ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
           SidePopupView sidePopupView = new SidePopupView(scrollpane);
-          sidePopupView.setOnHidden(e -> {content.isSuspended = true;});
-          sidePopupView.setOnShowing(e -> {content.isSuspended = false;});
+          bindSidePopupLifecycle(sidePopupView, content);
           MobileApplication.getInstance().addLayerFactory(name, () -> { return sidePopupView;});
        }
        MobileApplication.getInstance().showLayer(name);
