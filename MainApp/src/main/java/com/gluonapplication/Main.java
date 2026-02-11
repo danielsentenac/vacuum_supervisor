@@ -3,6 +3,9 @@ package com.gluonapplication;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.visual.Swatch;
 import com.gluonhq.charm.down.common.Platform;
+import com.gluonhq.charm.down.Services;
+import com.gluonhq.charm.down.plugins.LocalNotificationsService;
+import com.gluonhq.charm.down.plugins.RuntimeArgsService;
 import javafx.scene.Scene;
 import java.net.CookieManager;
 import java.net.CookieHandler;
@@ -129,8 +132,21 @@ public class Main extends MobileApplication {
      */
     @Override
     public void stop() throws Exception {
+       clearPendingNotifications();
        super.stop();
        System.exit(0);
+    }
+
+    private void clearPendingNotifications() {
+       try {
+          Services.get(LocalNotificationsService.class).ifPresent(service -> {
+             int notificationCount = service.getNotifications().size();
+             service.getNotifications().clear();
+             System.out.println("Cleared pending notifications: " + notificationCount);
+          });
+       } catch (Exception e) {
+          e.printStackTrace();
+       }
     }
     @Override
     public void postInit(Scene scene) {
@@ -157,6 +173,8 @@ public class Main extends MobileApplication {
                 new Thread(notificationUps).start();
                 new Thread(notificationO2Sensor).start();
                 new Thread(notificationCompressAir).start();
+                registerNotificationLaunchHandler();
+                clearPendingNotifications();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -165,6 +183,38 @@ public class Main extends MobileApplication {
             t.printStackTrace();
             throw t;
         }
+    }
+
+    private void registerNotificationLaunchHandler() {
+       try {
+          Services.get(RuntimeArgsService.class).ifPresent(service ->
+                  service.addListener(RuntimeArgsService.LAUNCH_LOCAL_NOTIFICATION_KEY, this::onLaunchFromNotification)
+          );
+       } catch (Exception e) {
+          e.printStackTrace();
+       }
+    }
+
+    private void onLaunchFromNotification(String notificationId) {
+       if (notificationId == null || notificationId.isEmpty()) {
+          return;
+       }
+       System.out.println("App launched from local notification: " + notificationId);
+       removeNotificationById(notificationId);
+       String viewId = NotificationData.getRelatedViewId(notificationId);
+       if (viewId != null) {
+          switchToNotificationView(viewId);
+       }
+    }
+
+    private void removeNotificationById(String notificationId) {
+       try {
+          Services.get(LocalNotificationsService.class).ifPresent(service ->
+                  service.getNotifications().removeIf(notification -> notificationId.equals(notification.getId()))
+          );
+       } catch (Exception e) {
+          e.printStackTrace();
+       }
     }
 
     public void switchToNotificationView(String viewId) {
