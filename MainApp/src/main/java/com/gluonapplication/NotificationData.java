@@ -14,6 +14,7 @@ import java.util.Vector;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.LocalNotificationsService;
 import com.gluonhq.charm.down.plugins.Notification;
+import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.Alert;
 import javafx.application.Platform;
 import javafx.scene.control.Alert.AlertType;
@@ -52,11 +53,214 @@ public class NotificationData implements Runnable, DataTypes {
                 notificationId,
                 message,
                 ZonedDateTime.now().plusSeconds(10),
-                () -> {
-                    Alert alert = new Alert(AlertType.WARNING, message);
-                    Platform.runLater(() -> alert.showAndWait());
-                }
+                () -> Platform.runLater(() -> showNotificationAlert(notificationId, message))
         ));
+    }
+
+    private void showNotificationAlert(String notificationId, String message) {
+        Alert alert = new Alert(AlertType.WARNING, message);
+        alert.showAndWait();
+        openRelatedView(notificationId);
+    }
+
+    private void openRelatedView(String notificationId) {
+        String viewId = getRelatedViewId(notificationId);
+        if (viewId == null) {
+            return;
+        }
+        try {
+            Main main = (Main) MobileApplication.getInstance();
+            if (main != null) {
+                main.switchToNotificationView(viewId);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String getRelatedViewId(String notificationId) {
+        if (notificationId == null) {
+            return null;
+        }
+        String key = notificationId.toUpperCase();
+
+        if (key.contains("REMOTESCROLL")) {
+            return "REMOTEPUMPS";
+        }
+
+        if (key.contains("CRYOLINKDET")) {
+            return "CRYOLINKDET";
+        }
+        if (key.contains("CRYOLINKIB")) {
+            return "CRYOLINKIB";
+        }
+        if (key.contains("CRYOLINK(DET/IB)") || key.contains("CRYOLINK")) {
+            return "CRYOLINKDET";
+        }
+
+        if (key.contains("TOWERBS")) {
+            return "TOWERBS";
+        }
+        if (key.contains("TOWERPR")) {
+            return "TOWERPR";
+        }
+        if (key.contains("TOWERNI")) {
+            return "TOWERNI";
+        }
+        if (key.contains("TOWERWI")) {
+            return "TOWERWI";
+        }
+        if (key.contains("TOWERSR")) {
+            return "TOWERSR";
+        }
+        if (key.contains("TOWERNE")) {
+            return "TOWERNE";
+        }
+        if (key.contains("TOWERWE")) {
+            return "TOWERWE";
+        }
+        if (key.contains("TOWERIB")) {
+            return "TOWERIB";
+        }
+        if (key.contains("TOWERDET")) {
+            return "TOWERDET";
+        }
+        if (key.contains("TOWERMC")) {
+            return "TOWERMC";
+        }
+
+        if (key.contains("LINKPR")) {
+            return "LINKPR";
+        }
+        if (key.contains("LINKSR")) {
+            return "LINKSR";
+        }
+        if (key.contains("LINK")) {
+            return "LINKPR";
+        }
+
+        if (key.contains("CRYONI")) {
+            return "CRYONI";
+        }
+        if (key.contains("CRYOWI")) {
+            return "CRYOWI";
+        }
+        if (key.contains("CRYONE")) {
+            return "CRYONE";
+        }
+        if (key.contains("CRYOWE")) {
+            return "CRYOWE";
+        }
+
+        if (key.contains("SQZ DET2") || key.contains("SQZDET2")) {
+            return "SQZDET2";
+        }
+        if (key.contains("SQZ DET1") || key.contains("SQZDET1")) {
+            return "SQZDET1";
+        }
+        if (key.contains("SQZ300N") || key.contains("SQZ 300N")) {
+            return "SQZ300N";
+        }
+        if (key.contains("SQZ200N") || key.contains("SQZ 200N")) {
+            return "SQZ200N";
+        }
+        if (key.contains("SQZ100N") || key.contains("SQZ 100N")) {
+            return "SQZ100N";
+        }
+        if (key.contains("SQZ0N") || key.contains("SQZ 0N")) {
+            return "SQZ0N";
+        }
+        if (key.contains("SQZ PATH")) {
+            return "SQZ";
+        }
+        if (key.contains("SQZ")) {
+            return "SQZ";
+        }
+
+        if (key.contains("TUBEMC")) {
+            return "TUBEMC";
+        }
+
+        if (key.contains("3000W")) {
+            return "TUBELAL3000W";
+        }
+        if (key.contains("2400W")) {
+            return "TUBELAL2400W";
+        }
+        if (key.contains("1800W")) {
+            return "TUBELAL1800W";
+        }
+        if (key.contains("1200W")) {
+            return "TUBELAL1200W";
+        }
+        if (key.contains("600W")) {
+            return "TUBELAL600W";
+        }
+        if (key.contains("300W")) {
+            return "TUBE300W";
+        }
+
+        if (key.contains("3000N")) {
+            return "TUBELAL3000N";
+        }
+        if (key.contains("2400N")) {
+            return "TUBELAL2400N";
+        }
+        if (key.contains("1800N")) {
+            return "TUBELAL1800N";
+        }
+        if (key.contains("1200N")) {
+            return "TUBELAL1200N";
+        }
+        if (key.contains("600N")) {
+            return "TUBELAL600N";
+        }
+        if (key.contains("300N")) {
+            return "TUBE300N";
+        }
+
+        if (key.contains("SAFE TUBE WEST") || key.contains("TUBE WEST")) {
+            return "TUBEW";
+        }
+        if (key.contains("SAFE TUBE NORTH") || key.contains("TUBE NORTH")) {
+            return "TUBEN";
+        }
+        if (key.contains("VAC_TUBE0W")) {
+            return "TUBEW";
+        }
+        if (key.contains("SAFE CENTRAL") || key.contains("VALVECENTRAL")) {
+            return "CB";
+        }
+        if (key.contains("BEAM PATH")) {
+            return "CB";
+        }
+        if (key.contains("SAFE TOWERNE") || key.contains("VALVEBIGNE")) {
+            return "TOWERNE";
+        }
+        if (key.contains("SAFE TOWERWE") || key.contains("VALVEBIGWE")) {
+            return "TOWERWE";
+        }
+        if (key.contains("VALVEBIGNI")) {
+            return "TOWERNI";
+        }
+        if (key.contains("VALVEBIGWI")) {
+            return "TOWERWI";
+        }
+        if (key.contains("UPS1:WE") || key.contains("UPS2:WE") || key.contains("WE UPS")
+                || key.contains("O2 WE") || key.contains("SENSOR O2: WE")) {
+            return "WE";
+        }
+        if (key.contains("UPS1:NE") || key.contains("UPS2:NE") || key.contains("NE UPS")
+                || key.contains("O2 NE") || key.contains("SENSOR O2: NE")) {
+            return "NE";
+        }
+        if (key.contains("UPS1:MC") || key.contains("UPS2:MC") || key.contains("MC UPS")
+                || key.contains("UPS:TB") || key.contains("TB UPS")
+                || key.contains("O2 CB") || key.contains("SENSOR O2: CB")) {
+            return "CB";
+        }
+
+        return null;
     }
 
     private boolean isInvalidValue(String value) {
