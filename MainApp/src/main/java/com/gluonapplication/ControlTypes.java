@@ -471,6 +471,11 @@ public interface ControlTypes {
       put("FanOnOff", "_RACK_FANONOFF");
       put("FanSpeed", "_RACK_FANSPEED");
    }};
+
+   Hashtable<String,String> MOBILEVENTINGACTIONS_COMMAND_CHANNELS = new Hashtable<String, String>(){{
+      put("OpExecute", "_OP_EXECUTE_CMD");
+      put("OpStop", "_OP_STOP_CMD");
+   }};
    
    
 }

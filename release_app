@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 || $# -gt 3 ]]; then
+  echo "Usage: $0 <version_name|vX.Y.Z> [tag] [commit_message]"
+  echo "Example: $0 0.1.48 v0.1.48 \"Release v0.1.48\""
+  exit 1
+fi
+
+VERSION_NAME="${1#v}"
+TAG="${2:-v${VERSION_NAME}}"
+COMMIT_MESSAGE="${3:-Release ${TAG}}"
+MANIFEST="MainApp/src/android/AndroidManifest.xml"
+
+if [[ ! -f "${MANIFEST}" ]]; then
+  echo "Error: ${MANIFEST} not found."
+  exit 1
+fi
+
+if git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
+  echo "Error: tag ${TAG} already exists."
+  exit 1
+fi
+
+CURRENT_VERSION="$(sed -n 's/.*android:versionName=\"\([^\"]*\)\".*/\1/p' "${MANIFEST}" | head -n1)"
+if [[ -z "${CURRENT_VERSION}" ]]; then
+  echo "Error: could not read android:versionName from ${MANIFEST}."
+  exit 1
+fi
+
+sed -i -E "s/(android:versionName=\")[^\"]+(\")/\1${VERSION_NAME}\2/" "${MANIFEST}"
+
+echo "AndroidManifest versionName: ${CURRENT_VERSION} -> ${VERSION_NAME}"
+
+git add -A
+
+if git diff --cached --quiet; then
+  echo "No changes to commit."
+else
+  git commit -m "${COMMIT_MESSAGE}"
+fi
+
+git push
+git tag "${TAG}"
+git push origin "${TAG}"
+
+echo "Release completed: version=${VERSION_NAME}, tag=${TAG}"
