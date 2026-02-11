@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerMobileVentingActions" prefHeight="265.0" prefWidth="280.0" style="-fx-background-color: #333333;">
+   <children>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="20.0" layoutY="36.0" prefHeight="25.0" prefWidth="240.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Venting Actions">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName1" alignment="CENTER" layoutX="12.0" layoutY="118.0" prefHeight="25.0" prefWidth="120.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Operations">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Line endX="247.5" fill="#b27d38" layoutX="-7.5" layoutY="148.5" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
+      <TilePane hgap="10.0" layoutX="10.0" layoutY="184.0" prefHeight="78.0" prefWidth="258.0" vgap="10.0">
+         <children>
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Execute Command">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="OpExecute" alignment="CENTER" onMouseClicked="#OpExecute_Clicked" onMousePressed="#OpExecute_Pressed" onMouseReleased="#OpExecute_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Stop Command">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="OpStop" alignment="CENTER" onMouseClicked="#OpStop_Clicked" onMousePressed="#OpStop_Pressed" onMouseReleased="#OpStop_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Operation Step">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="OpStep" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+         </children>
+      </TilePane>
+   </children>
+</AnchorPane>
