@@ -60,7 +60,21 @@ public class NotificationData implements Runnable, DataTypes {
     private void showNotificationAlert(String notificationId, String message) {
         Alert alert = new Alert(AlertType.WARNING, message);
         alert.showAndWait();
+        removeNotification(notificationId);
         openRelatedView(notificationId);
+    }
+
+    private void removeNotification(String notificationId) {
+        if (notificationId == null || notificationId.isEmpty()) {
+            return;
+        }
+        try {
+            Services.get(LocalNotificationsService.class).ifPresent(service ->
+                    service.getNotifications().removeIf(notification -> notificationId.equals(notification.getId()))
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void openRelatedView(String notificationId) {
@@ -78,7 +92,7 @@ public class NotificationData implements Runnable, DataTypes {
         }
     }
 
-    private String getRelatedViewId(String notificationId) {
+    public static String getRelatedViewId(String notificationId) {
         if (notificationId == null) {
             return null;
         }
