@@ -47,6 +47,11 @@ dependencies {
     compile 'com.github.ChickenHook:RestrictionBypass:2.2'
 }
 
+def releaseStoreFile = (System.getenv('RELEASE_STORE_FILE') ?: project.findProperty('RELEASE_STORE_FILE'))?.toString()
+def releaseStorePassword = (System.getenv('RELEASE_STORE_PASSWORD') ?: project.findProperty('RELEASE_STORE_PASSWORD'))?.toString()
+def releaseKeyAlias = (System.getenv('RELEASE_KEY_ALIAS') ?: project.findProperty('RELEASE_KEY_ALIAS'))?.toString()
+def releaseKeyPassword = (System.getenv('RELEASE_KEY_PASSWORD') ?: project.findProperty('RELEASE_KEY_PASSWORD'))?.toString()
+
 jfxmobile {
     downConfig {
         version = '3.8.6'
@@ -58,6 +63,14 @@ jfxmobile {
         compileSdkVersion = '30'
         targetSdkVersion = '30'
         manifest = 'src/android/AndroidManifest.xml'
+        if (releaseStoreFile && releaseStorePassword && releaseKeyAlias && releaseKeyPassword) {
+            signingConfig {
+                storeFile file(releaseStoreFile)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
     }
     ios {
         infoPList = file('src/ios/Default-Info.plist')

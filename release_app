@@ -11,6 +11,10 @@ VERSION_NAME="${1#v}"
 TAG="${2:-v${VERSION_NAME}}"
 COMMIT_MESSAGE="${3:-Release ${TAG}}"
 MANIFEST="MainApp/src/android/AndroidManifest.xml"
+APK_PATH_DEFAULT="MainApp/build/javafxports/android/MainApp.apk"
+APK_PATH_ALT="MainApp/build/outputs/apk/release/MainApp-release.apk"
+LOCAL_KEYSTORE="$(pwd)/MainAppkeystore"
+GRADLE_USER_PROPS="${HOME}/.gradle/gradle.properties"
 
 if [[ ! -f "${MANIFEST}" ]]; then
   echo "Error: ${MANIFEST} not found."
@@ -28,9 +32,147 @@ if [[ -z "${CURRENT_VERSION}" ]]; then
   exit 1
 fi
 
+read_gradle_property() {
+  local key="$1"
+  if [[ -f "${GRADLE_USER_PROPS}" ]]; then
+    sed -n "s/^${key}=//p" "${GRADLE_USER_PROPS}" | tail -n1
+  fi
+}
+
+find_android_tool() {
+  local tool="$1"
+  local sdk_root=""
+  local from_local_props=""
+
+  if command -v "${tool}" >/dev/null 2>&1; then
+    command -v "${tool}"
+    return 0
+  fi
+
+  if [[ -f "local.properties" ]]; then
+    from_local_props="$(sed -n 's/^sdk.dir=//p' local.properties | head -n1)"
+  fi
+
+  for candidate in "${ANDROID_HOME:-}" "${ANDROID_SDK_ROOT:-}" "${from_local_props}" "$(read_gradle_property ANDROID_HOME)"; do
+    if [[ -n "${candidate}" && -d "${candidate}/build-tools" ]]; then
+      sdk_root="${candidate}"
+      break
+    fi
+  done
+
+  if [[ -n "${sdk_root}" ]]; then
+    find "${sdk_root}/build-tools" -maxdepth 2 -type f -name "${tool}" | sort -V | tail -n1
+  fi
+}
+
+EXPLICIT_STORE_FILE="${RELEASE_STORE_FILE:-}"
+EXPLICIT_KEY_ALIAS="${RELEASE_KEY_ALIAS:-}"
+
+SIGNING_STORE_FILE="${EXPLICIT_STORE_FILE:-$(read_gradle_property RELEASE_STORE_FILE)}"
+SIGNING_STORE_PASSWORD="${RELEASE_STORE_PASSWORD:-$(read_gradle_property RELEASE_STORE_PASSWORD)}"
+SIGNING_KEY_ALIAS="${RELEASE_KEY_ALIAS:-$(read_gradle_property RELEASE_KEY_ALIAS)}"
+SIGNING_KEY_PASSWORD="${RELEASE_KEY_PASSWORD:-$(read_gradle_property RELEASE_KEY_PASSWORD)}"
+
+if [[ -z "${SIGNING_STORE_FILE}" || ! -f "${SIGNING_STORE_FILE}" ]]; then
+  if [[ -f "${LOCAL_KEYSTORE}" ]]; then
+    SIGNING_STORE_FILE="${LOCAL_KEYSTORE}"
+    if [[ -z "${EXPLICIT_KEY_ALIAS}" ]]; then
+      SIGNING_KEY_ALIAS="mainappkey"
+    fi
+    echo "Using local keystore: ${SIGNING_STORE_FILE}"
+  fi
+fi
+
+MISSING=()
+if [[ -z "${SIGNING_STORE_FILE}" ]]; then
+  MISSING+=("RELEASE_STORE_FILE")
+fi
+if [[ -z "${SIGNING_STORE_PASSWORD}" ]]; then
+  MISSING+=("RELEASE_STORE_PASSWORD")
+fi
+if [[ -z "${SIGNING_KEY_ALIAS}" ]]; then
+  MISSING+=("RELEASE_KEY_ALIAS")
+fi
+if [[ -z "${SIGNING_KEY_PASSWORD}" ]]; then
+  MISSING+=("RELEASE_KEY_PASSWORD")
+fi
+
+if [[ ${#MISSING[@]} -gt 0 ]]; then
+  echo "Error: missing signing values: ${MISSING[*]}"
+  echo "Set them in environment or in ${GRADLE_USER_PROPS}."
+  exit 1
+fi
+
+if [[ ! -f "${SIGNING_STORE_FILE}" ]]; then
+  echo "Error: signing keystore file not found: ${SIGNING_STORE_FILE}"
+  exit 1
+fi
+
+export RELEASE_STORE_FILE="${SIGNING_STORE_FILE}"
+export RELEASE_STORE_PASSWORD="${SIGNING_STORE_PASSWORD}"
+export RELEASE_KEY_ALIAS="${SIGNING_KEY_ALIAS}"
+export RELEASE_KEY_PASSWORD="${SIGNING_KEY_PASSWORD}"
+
 sed -i -E "s/(android:versionName=\")[^\"]+(\")/\1${VERSION_NAME}\2/" "${MANIFEST}"
 
 echo "AndroidManifest versionName: ${CURRENT_VERSION} -> ${VERSION_NAME}"
+
+echo "Building signed APK (androidRelease)..."
+APK_UNALIGNED="MainApp/build/javafxports/android/MainApp-unaligned.apk"
+APK_ALIGNED="MainApp/build/javafxports/android/MainApp-aligned.apk"
+GRADLE_LOG="$(mktemp)"
+GRADLE_RELEASE_OK=0
+
+if ./gradlew :MainApp:androidRelease 2>&1 | tee "${GRADLE_LOG}"; then
+  GRADLE_RELEASE_OK=1
+fi
+
+if [[ ${GRADLE_RELEASE_OK} -ne 1 ]]; then
+  if [[ -f "${APK_UNALIGNED}" ]] && rg -q "Failed to seal APK|InvalidKeyException|SigningException" "${GRADLE_LOG}"; then
+    ZIPALIGN_BIN="$(find_android_tool zipalign)"
+    APKSIGNER_BIN="$(find_android_tool apksigner)"
+
+    if [[ -z "${ZIPALIGN_BIN}" || -z "${APKSIGNER_BIN}" ]]; then
+      echo "Error: androidRelease failed during signing and zipalign/apksigner were not found."
+      rm -f "${GRADLE_LOG}"
+      exit 1
+    fi
+
+    echo "Gradle signing failed, applying manual zipalign + apksigner fallback..."
+    rm -f "${APK_ALIGNED}" "${APK_PATH_DEFAULT}"
+    "${ZIPALIGN_BIN}" -f -p 4 "${APK_UNALIGNED}" "${APK_ALIGNED}"
+    "${APKSIGNER_BIN}" sign \
+      --ks "${SIGNING_STORE_FILE}" \
+      --ks-key-alias "${SIGNING_KEY_ALIAS}" \
+      --ks-pass "env:RELEASE_STORE_PASSWORD" \
+      --key-pass "env:RELEASE_KEY_PASSWORD" \
+      --out "${APK_PATH_DEFAULT}" \
+      "${APK_ALIGNED}"
+    "${APKSIGNER_BIN}" verify --verbose "${APK_PATH_DEFAULT}" >/dev/null
+  else
+    echo "Error: androidRelease failed. See log above."
+    rm -f "${GRADLE_LOG}"
+    exit 1
+  fi
+fi
+
+rm -f "${GRADLE_LOG}"
+
+APK_PATH=""
+if [[ -f "${APK_PATH_DEFAULT}" ]]; then
+  APK_PATH="${APK_PATH_DEFAULT}"
+elif [[ -f "${APK_PATH_ALT}" ]]; then
+  APK_PATH="${APK_PATH_ALT}"
+fi
+
+if [[ -z "${APK_PATH}" ]]; then
+  echo "Warning: androidRelease completed, but APK path was not found in expected locations."
+  echo "Checked:"
+  echo "  - ${APK_PATH_DEFAULT}"
+  echo "  - ${APK_PATH_ALT}"
+else
+  echo "Signed APK created at: ${APK_PATH}"
+fi
 
 git add -A
 
@@ -44,4 +186,8 @@ git push
 git tag "${TAG}"
 git push origin "${TAG}"
 
-echo "Release completed: version=${VERSION_NAME}, tag=${TAG}"
+if [[ -n "${APK_PATH}" ]]; then
+  echo "Release completed: version=${VERSION_NAME}, tag=${TAG}, apk=${APK_PATH}"
+else
+  echo "Release completed: version=${VERSION_NAME}, tag=${TAG}"
+fi
