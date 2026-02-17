@@ -56,7 +56,7 @@ public class LayerData extends Layer implements Runnable, DataTypes {
     public String fxml = "";
     public String name = "";
     private int initCnt = 0;
-    private int max_fr = 2;
+    private int max_fr = 0;
     public boolean isSuspended = true;
     public boolean isStarted = true;
     private boolean plotStarted = false;
@@ -137,7 +137,7 @@ public class LayerData extends Layer implements Runnable, DataTypes {
       try {
          // send data to the servlet
          DataSet tmpData = (DataSet) data.clone();
-         URLConnection con = getServerConnection("http://online-data-provider.example:8081/jchv/jchv");
+         URLConnection con = getServerConnection("http://online-data-provider.example:8082/jchv/jchv");
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(data.svrNameList);

@@ -76,7 +76,7 @@ public class ControlCommand implements Runnable {
          hasMastership = false;            
          hasPrivilegeAccess = false;
          // send query to the servlet
-         URLConnection con = getServerConnection("http://online-data-provider.example:8081/jmaster/jmaster");
+         URLConnection con = getServerConnection("http://online-data-provider.example:8082/jmaster/jmaster");
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(query);
