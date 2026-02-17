@@ -47,7 +47,7 @@ public class ViewData extends View implements Runnable, DataTypes {
     public String fxml = "";
     public String name = ""; 
     private int initCnt = 0;
-    private int max_fr = 2;
+    private int max_fr = 0;
     protected static FXMLLoader mainLoader;
     public DataSet data;
     private double scaleX;
@@ -181,7 +181,7 @@ public class ViewData extends View implements Runnable, DataTypes {
       try {
          // send data to the servlet
          DataSet tmpData = (DataSet) data.clone();
-         URLConnection con = getServerConnection("http://olserver135.virgo.infn.it:8081/jchv/jchv");
+         URLConnection con = getServerConnection("http://olserver135.virgo.infn.it:8082/jchv/jchv");
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(data.svrNameList);
@@ -200,6 +200,7 @@ public class ViewData extends View implements Runnable, DataTypes {
          for (int i = 0 ; i < data.list.size(); ++i ) {
              String svrValue =  data.svrValueList.elementAt(i).replace(" ", "").replace(",", ".");
              String svrUnits = " " + data.svrUnitsList.elementAt(i);
+             //System.out.println(data.svrNameList.elementAt(i) + "=" + data.svrValueList.elementAt(i));
              if ( tmpData.svrValueList.size() > 0 && 
                   initCnt != max_fr + 1 && 
                   svrValue.equals(tmpData.svrValueList.elementAt(i).replace(" ", "").replace(",", ".") ) )
