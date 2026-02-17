@@ -14,7 +14,11 @@ MANIFEST="MainApp/src/android/AndroidManifest.xml"
 APK_PATH_DEFAULT="MainApp/build/javafxports/android/MainApp.apk"
 APK_PATH_ALT="MainApp/build/outputs/apk/release/MainApp-release.apk"
 LOCAL_KEYSTORE="$(pwd)/MainAppkeystore"
+LOCAL_SIGNING_ENV_DEFAULT="$(pwd)/release-signing.env"
+LOCAL_SIGNING_ENV="${SIGNING_ENV_FILE:-${LOCAL_SIGNING_ENV_DEFAULT}}"
 GRADLE_USER_PROPS="${HOME}/.gradle/gradle.properties"
+PROJECT_LOCAL_PROPS="$(pwd)/local.properties"
+DEFAULT_ANDROID_SDK="$(pwd)/.android-sdk"
 
 if [[ ! -f "${MANIFEST}" ]]; then
   echo "Error: ${MANIFEST} not found."
@@ -38,6 +42,37 @@ read_gradle_property() {
     sed -n "s/^${key}=//p" "${GRADLE_USER_PROPS}" | tail -n1
   fi
 }
+
+read_local_sdk_dir() {
+  if [[ -f "${PROJECT_LOCAL_PROPS}" ]]; then
+    sed -n 's/^sdk.dir=//p' "${PROJECT_LOCAL_PROPS}" | head -n1
+  fi
+}
+
+if [[ -f "${LOCAL_SIGNING_ENV}" ]]; then
+  # shellcheck disable=SC1090
+  source "${LOCAL_SIGNING_ENV}"
+  echo "Loaded signing values from ${LOCAL_SIGNING_ENV}"
+fi
+
+LOCAL_SDK_DIR="$(read_local_sdk_dir)"
+if [[ -z "${ANDROID_HOME:-}" ]]; then
+  if [[ -n "${ANDROID_SDK_ROOT:-}" ]]; then
+    export ANDROID_HOME="${ANDROID_SDK_ROOT}"
+  elif [[ -n "${LOCAL_SDK_DIR}" && -d "${LOCAL_SDK_DIR}" ]]; then
+    export ANDROID_HOME="${LOCAL_SDK_DIR}"
+  elif [[ -d "${DEFAULT_ANDROID_SDK}" ]]; then
+    export ANDROID_HOME="${DEFAULT_ANDROID_SDK}"
+  fi
+fi
+
+if [[ -z "${ANDROID_SDK_ROOT:-}" && -n "${ANDROID_HOME:-}" ]]; then
+  export ANDROID_SDK_ROOT="${ANDROID_HOME}"
+fi
+
+if [[ -n "${ANDROID_HOME:-}" ]]; then
+  echo "Using Android SDK: ${ANDROID_HOME}"
+fi
 
 find_android_tool() {
   local tool="$1"
@@ -68,10 +103,19 @@ find_android_tool() {
 EXPLICIT_STORE_FILE="${RELEASE_STORE_FILE:-}"
 EXPLICIT_KEY_ALIAS="${RELEASE_KEY_ALIAS:-}"
 
-SIGNING_STORE_FILE="${EXPLICIT_STORE_FILE:-$(read_gradle_property RELEASE_STORE_FILE)}"
-SIGNING_STORE_PASSWORD="${RELEASE_STORE_PASSWORD:-$(read_gradle_property RELEASE_STORE_PASSWORD)}"
-SIGNING_KEY_ALIAS="${RELEASE_KEY_ALIAS:-$(read_gradle_property RELEASE_KEY_ALIAS)}"
-SIGNING_KEY_PASSWORD="${RELEASE_KEY_PASSWORD:-$(read_gradle_property RELEASE_KEY_PASSWORD)}"
+GRADLE_STORE_FILE="$(read_gradle_property RELEASE_STORE_FILE)"
+GRADLE_STORE_PASSWORD="$(read_gradle_property RELEASE_STORE_PASSWORD)"
+GRADLE_KEY_ALIAS="$(read_gradle_property RELEASE_KEY_ALIAS)"
+GRADLE_KEY_PASSWORD="$(read_gradle_property RELEASE_KEY_PASSWORD)"
+
+SIGNING_STORE_FILE="${EXPLICIT_STORE_FILE:-${GRADLE_STORE_FILE:-${SIGNING_KEYSTORE:-}}}"
+SIGNING_STORE_PASSWORD="${RELEASE_STORE_PASSWORD:-${GRADLE_STORE_PASSWORD:-${SIGNING_STORE_PASSWORD:-}}}"
+SIGNING_KEY_ALIAS="${RELEASE_KEY_ALIAS:-${GRADLE_KEY_ALIAS:-${SIGNING_ALIAS:-}}}"
+SIGNING_KEY_PASSWORD="${RELEASE_KEY_PASSWORD:-${GRADLE_KEY_PASSWORD:-${SIGNING_KEY_PASSWORD:-}}}"
+
+if [[ -n "${SIGNING_STORE_FILE}" && ! -f "${SIGNING_STORE_FILE}" && -f "$(pwd)/${SIGNING_STORE_FILE}" ]]; then
+  SIGNING_STORE_FILE="$(pwd)/${SIGNING_STORE_FILE}"
+fi
 
 if [[ -z "${SIGNING_STORE_FILE}" || ! -f "${SIGNING_STORE_FILE}" ]]; then
   if [[ -f "${LOCAL_KEYSTORE}" ]]; then
@@ -99,7 +143,7 @@ fi
 
 if [[ ${#MISSING[@]} -gt 0 ]]; then
   echo "Error: missing signing values: ${MISSING[*]}"
-  echo "Set them in environment or in ${GRADLE_USER_PROPS}."
+  echo "Set them in environment, ${GRADLE_USER_PROPS}, or ${LOCAL_SIGNING_ENV}."
   exit 1
 fi
 
