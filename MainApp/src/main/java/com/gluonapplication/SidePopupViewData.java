@@ -89,7 +89,7 @@ public class SidePopupViewData implements Runnable, DataTypes {
       try {
          // send data to the servlet
          DataSet tmpData = (DataSet) data.clone();
-         URLConnection con = getServerConnection("http://olserver135.virgo.infn.it:8082/jchv/jchv");
+         URLConnection con = getServerConnection("http://olserver135.virgo.infn.it:8081/jchv/jchv");
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(data.svrNameList);
