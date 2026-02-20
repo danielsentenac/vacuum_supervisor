@@ -70,6 +70,7 @@ public class LayerData extends Layer implements Runnable, DataTypes {
     public boolean isStarted = true;
     private boolean plotStarted = false;
     private XYChart.Series series;
+    private String lastPlotXAxisLabel = "";
     public boolean connectionError = false;
     public boolean serverError = false;
     public static ClassLoader cachingClassLoader = new MyClassLoader(FXMLLoader.getDefaultClassLoader());
@@ -545,7 +546,11 @@ public class LayerData extends Layer implements Runnable, DataTypes {
                              //System.out.println("GPS = " + gps + " value = " + value);
                              Platform.runLater(() -> {
                                 try {
-                                   series.getData().add(new XYChart.Data<String,Double>(formatGPS(gps),Double.parseDouble(value)));
+                                   double yValue = Double.parseDouble(value);
+                                   String xLabel = buildPlotXAxisLabel(gps);
+                                   if (xLabel != null && !xLabel.trim().isEmpty()) {
+                                      series.getData().add(new XYChart.Data<String,Double>(xLabel, yValue));
+                                   }
                                 } catch (Exception e) {}
                             
                              });
@@ -822,5 +827,16 @@ public class LayerData extends Layer implements Runnable, DataTypes {
         }
         
         return null;
+    }
+
+    private String buildPlotXAxisLabel(String gps) {
+       String label = formatGPS(gps);
+       if (label == null || label.trim().isEmpty()) {
+          label = new SimpleDateFormat("HH:mm:ss.S").format(new Date());
+       } else if (label.equals(lastPlotXAxisLabel)) {
+          label = label + "." + (System.currentTimeMillis() % 10);
+       }
+       lastPlotXAxisLabel = label;
+       return label;
     }
 }
