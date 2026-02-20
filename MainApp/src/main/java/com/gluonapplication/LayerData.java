@@ -10,6 +10,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.ConnectException;
 import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.shape.SVGPath;
@@ -28,8 +33,11 @@ import com.gluonhq.charm.glisten.layout.Layer;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
@@ -39,6 +47,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import com.gluonhq.charm.glisten.animation.BounceInDownTransition;
 import com.gluonhq.charm.glisten.animation.BounceOutUpTransition;
+import javafx.scene.text.Text;
 
 
 public class LayerData extends Layer implements Runnable, DataTypes {
@@ -64,6 +73,10 @@ public class LayerData extends Layer implements Runnable, DataTypes {
     public boolean connectionError = false;
     public boolean serverError = false;
     public static ClassLoader cachingClassLoader = new MyClassLoader(FXMLLoader.getDefaultClassLoader());
+    private static final Pattern RGA_NUMERIC_PATTERN =
+       Pattern.compile("[-+]?\\d*\\.?\\d+(?:[eE][-+]?\\d+)?");
+    private static final long RGA_RENDER_INTERVAL_MS = 5000;
+    private long lastRgaRenderMs = 0;
 
     public LayerData(String _fxml, String _name) { 
         fxml = _fxml;
@@ -133,7 +146,7 @@ public class LayerData extends Layer implements Runnable, DataTypes {
      protected void updateViewData() {
         StringBuilder x = new StringBuilder(); // For Plot cases (RGA_WEB_DATA)
         StringBuilder y = new StringBuilder(); // For Plot cases (RGA_WE_DATA)
-        Vector<XYChart.Data> xychartVect = new Vector<XYChart.Data>(); // For Plot cases (RGA_CHART_DATA, RGA_2_CHART_DATA)
+        Vector<XYChart.Data<String,Double>> xychartVect = new Vector<XYChart.Data<String,Double>>(); // For Plot cases (RGA_CHART_DATA, RGA_2_CHART_DATA)
       try {
          // send data to the servlet
          DataSet tmpData = (DataSet) data.clone();
@@ -541,115 +554,25 @@ public class LayerData extends Layer implements Runnable, DataTypes {
                      break;
                 case RGA_CHART_DATA: 
                      try {
-                          if (!data.svrNameList.elementAt(i).contains("_200")) {
-                             if (Double.parseDouble(value) > 0)
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,Double.parseDouble(value)));
-                             else
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,new Double(1e-20)));
+                          xychartVect.addElement(new XYChart.Data<String,Double>(
+                             data.list.elementAt(i).name, parseRgaChartValue(value)));
+                          if (isLastElementOfType(i, Type.RGA_CHART_DATA) && isRgaRenderDue()) {
+                             Platform.runLater(() -> {
+                                renderRgaChart(xychartVect);
+                             });
                           }
-                          else {
-                             if (Double.parseDouble(value) > 0)
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,Double.parseDouble(value)));
-                             else
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,new Double(1e-20)));
-                             if (controllerchart.REFRESH_Clicked) {
-                                Platform.runLater(() -> {
-                                   BarChart chart = (BarChart) lookup("#chart");
-                                   chart.getData().clear();
-                                   chart.layout();
-                                   chart.setTitle("RGA:" + name); 
-                                   XYChart.Series series = new XYChart.Series();                                   
-                                   for (int j = 0 ; j < xychartVect.size(); j++) {
-                                     //System.out.println(xychartVect.elementAt(j) + ":add value=" + value);
-                                     series.getData().add(xychartVect.elementAt(j));
-                                     }
-                                   chart.getData().add( series );
-                                   for (int j = 0 ; j < xychartVect.size(); j++) {
-                                        XYChart.Data<String,Double> data = (XYChart.Data<String,Double>)series.getData().get(j);
-                                        Tooltip tooltip = new Tooltip();
-                                        tooltip.setText("AMU " + data.getXValue() + " : " + Double.toString(data.getYValue()));
-                                        Tooltip.install(data.getNode(),tooltip);
-                                        data.getNode().setOnMousePressed(new EventHandler<MouseEvent>() {
-                                           public void handle(MouseEvent event) {
-                                              //System.out.println("Node pressed:" + data.getNode());
-                                              if (event.getClickCount() == 1) {
-                                                 //System.out.println("Show tooltip:" + tooltip.getText() + 
-                                                 //     "(" + event.getScreenX() + "," + event.getScreenY() + ")");
-                                                 tooltip.show(data.getNode(), event.getScreenX(), event.getScreenY()-100);
-                                              }
-                                           }
-                                        });
-                                        data.getNode().setOnMouseReleased(new EventHandler<MouseEvent>() {
-                                           public void handle(MouseEvent event) {
-                                              //System.out.println("Node released:" + data.getNode());
-                                              if (event.getClickCount() == 1) {
-                                                 //System.out.println("Hide tooltip:" + tooltip.getText() + 
-                                                 //     "(" + event.getScreenX() + "," + event.getScreenY() + ")");
-                                                 tooltip.hide();
-                                              }
-                                           }
-                                        });
-                                     }
-                                controllerchart.REFRESH_Clicked = false;});
-                             }
-                          }
-                     } catch (Exception e) {controllerchart.REFRESH_Clicked = true;}
+                     } catch (Exception e) {}
                      break;
               case RGA_2_CHART_DATA: 
                      try {
-                          if (!data.svrNameList.elementAt(i).contains("_050")) {
-                             if (Double.parseDouble(value) > 0)
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,Double.parseDouble(value)));
-                             else
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,new Double(1e-20)));
+                          xychartVect.addElement(new XYChart.Data<String,Double>(
+                             data.list.elementAt(i).name, parseRgaChartValue(value)));
+                          if (isLastElementOfType(i, Type.RGA_2_CHART_DATA) && isRgaRenderDue()) {
+                             Platform.runLater(() -> {
+                                renderRgaChart(xychartVect);
+                             });
                           }
-                          else {
-                             if (Double.parseDouble(value) > 0)
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,Double.parseDouble(value)));
-                             else
-                                xychartVect.addElement(new XYChart.Data<String,Double>(data.list.elementAt(i).name,new Double(1e-20)));
-                           if (controllerchart.REFRESH_Clicked) {
-                                Platform.runLater(() -> {
-                                   BarChart chart = (BarChart) lookup("#chart");
-                                   chart.getData().clear();
-                                   chart.layout();
-                                   chart.setTitle("RGA:" + name); 
-                                   XYChart.Series series = new XYChart.Series();                                   
-                                   for (int j = 0 ; j < xychartVect.size(); j++) {
-                                     //System.out.println(xychartVect.elementAt(j) + ":add value=" + value);
-                                     series.getData().add(xychartVect.elementAt(j));
-                                     }
-                                   chart.getData().add( series );
-                                   for (int j = 0 ; j < xychartVect.size(); j++) {
-                                        XYChart.Data<String,Double> data = (XYChart.Data<String,Double>)series.getData().get(j);
-                                        Tooltip tooltip = new Tooltip();
-                                        tooltip.setText("AMU " + data.getXValue() + " : " + Double.toString(data.getYValue()));
-                                        Tooltip.install(data.getNode(),tooltip);
-                                        data.getNode().setOnMousePressed(new EventHandler<MouseEvent>() {
-                                           public void handle(MouseEvent event) {
-                                              //System.out.println("Node pressed:" + data.getNode());
-                                              if (event.getClickCount() == 1) {
-                                                 //System.out.println("Show tooltip:" + tooltip.getText() + 
-                                                 //     "(" + event.getScreenX() + "," + event.getScreenY() + ")");
-                                                 tooltip.show(data.getNode(), event.getScreenX(), event.getScreenY()-100);
-                                              }
-                                           }
-                                        });
-                                        data.getNode().setOnMouseReleased(new EventHandler<MouseEvent>() {
-                                           public void handle(MouseEvent event) {
-                                              //System.out.println("Node released:" + data.getNode());
-                                              if (event.getClickCount() == 1) {
-                                                 //System.out.println("Hide tooltip:" + tooltip.getText() + 
-                                                 //     "(" + event.getScreenX() + "," + event.getScreenY() + ")");
-                                                 tooltip.hide();
-                                              }
-                                           }
-                                        });
-                                     }
-                                controllerchart.REFRESH_Clicked = false;});
-                             }
-                          }
-                     } catch (Exception e) {controllerchart.REFRESH_Clicked = true;}
+                     } catch (Exception e) {}
                      break;
              }
          }
@@ -692,6 +615,140 @@ public class LayerData extends Layer implements Runnable, DataTypes {
          connectionError = true;
       }
       catch (Exception e) {e.printStackTrace();}
+    }
+
+    private void renderRgaChart(Vector<XYChart.Data<String,Double>> xychartVect) {
+       BarChart<String,Double> chart = (BarChart<String,Double>) lookup("#chart");
+       if (chart == null) return;
+
+       chart.getData().clear();
+       chart.layout();
+       chart.setTitle("RGA:" + name);
+       chart.setAnimated(false);
+       restoreRgaXAxisDefault(chart);
+
+       XYChart.Series<String,Double> series = new XYChart.Series<String,Double>();
+       for (int j = 0 ; j < xychartVect.size(); j++) {
+          series.getData().add(xychartVect.elementAt(j));
+       }
+       chart.getData().add(series);
+       chart.layout();
+
+       for (int j = 0 ; j < xychartVect.size(); j++) {
+          XYChart.Data<String,Double> chartData = series.getData().get(j);
+          Tooltip tooltip = new Tooltip();
+          tooltip.setText("AMU " + chartData.getXValue() + " : " + Double.toString(chartData.getYValue()));
+          Tooltip.install(chartData.getNode(), tooltip);
+          chartData.getNode().setOnMousePressed(new EventHandler<MouseEvent>() {
+             public void handle(MouseEvent event) {
+                if (event.getClickCount() == 1) {
+                   tooltip.show(chartData.getNode(), event.getScreenX(), event.getScreenY()-100);
+                }
+             }
+          });
+          chartData.getNode().setOnMouseReleased(new EventHandler<MouseEvent>() {
+             public void handle(MouseEvent event) {
+                if (event.getClickCount() == 1) {
+                   tooltip.hide();
+                }
+             }
+          });
+       }
+    }
+
+    private void configureRgaXAxis(BarChart<String,Double> chart, int maxAmu) {
+       if (!(chart.getXAxis() instanceof CategoryAxis) || maxAmu <= 0) return;
+
+       CategoryAxis xAxis = (CategoryAxis) chart.getXAxis();
+       ObservableList<String> categories = FXCollections.observableArrayList();
+       for (int amu = 1; amu <= maxAmu; amu++) {
+          categories.add(Integer.toString(amu));
+       }
+
+       xAxis.setAutoRanging(false);
+       xAxis.setCategories(categories);
+       xAxis.setGapStartAndEnd(false);
+       xAxis.setStartMargin(0);
+       xAxis.setEndMargin(0);
+       xAxis.setTickLabelRotation(0);
+       xAxis.setTickLabelGap(2.0);
+    }
+
+    private void restoreRgaXAxisDefault(BarChart<String,Double> chart) {
+       chart.setCategoryGap(10.0);
+       chart.setBarGap(4.0);
+       if (!(chart.getXAxis() instanceof CategoryAxis)) return;
+
+       CategoryAxis xAxis = (CategoryAxis) chart.getXAxis();
+       xAxis.setAutoRanging(true);
+       xAxis.setGapStartAndEnd(true);
+       xAxis.setStartMargin(5.0);
+       xAxis.setEndMargin(5.0);
+       xAxis.setTickLabelRotation(0);
+    }
+
+    private double parseRgaChartValue(String value) {
+       try {
+          double parsed = Double.parseDouble(value);
+          return parsed > 0 ? parsed : 1e-20;
+       } catch (NumberFormatException e) {
+          Matcher m = RGA_NUMERIC_PATTERN.matcher(value);
+          if (m.find()) {
+             try {
+                double parsed = Double.parseDouble(m.group());
+                return parsed > 0 ? parsed : 1e-20;
+             } catch (NumberFormatException ignore) {}
+          }
+          return 1e-20;
+       }
+    }
+
+    private boolean isLastElementOfType(int index, Type type) {
+       for (int j = index + 1; j < data.list.size(); j++) {
+          if (data.list.elementAt(j).type == type) {
+             return false;
+          }
+       }
+       return true;
+    }
+
+    private boolean isRgaRenderDue() {
+       long now = System.currentTimeMillis();
+       if (lastRgaRenderMs == 0 || (now - lastRgaRenderMs) >= RGA_RENDER_INTERVAL_MS) {
+          lastRgaRenderMs = now;
+          return true;
+       }
+       return false;
+    }
+
+    private void applyRgaXAxisTickDensity(BarChart<String,Double> chart, int maxAmu) {
+       if (!(chart.getXAxis() instanceof CategoryAxis) || maxAmu <= 0) return;
+
+       CategoryAxis xAxis = (CategoryAxis) chart.getXAxis();
+       final int targetVisibleLabels = maxAmu <= 60 ? 12 : (maxAmu <= 120 ? 10 : 8);
+       Platform.runLater(() -> {
+          xAxis.applyCss();
+          xAxis.layout();
+          ArrayList<Text> labels = new ArrayList<Text>();
+          for (Node node : xAxis.lookupAll(".axis-tick-label")) {
+             if (node instanceof Text) {
+                Text label = (Text) node;
+                if (!label.getText().trim().isEmpty()) {
+                   labels.add(label);
+                }
+             }
+          }
+          if (labels.isEmpty()) return;
+
+          Collections.sort(labels, Comparator.comparingDouble(Node::getLayoutX));
+          int showEvery = Math.max(1, (int)Math.ceil((double)labels.size() / targetVisibleLabels));
+          for (int idx = 0; idx < labels.size(); idx++) {
+             Text label = labels.get(idx);
+             boolean show = idx % showEvery == 0 || idx == labels.size() - 1;
+             label.setVisible(show);
+             label.setManaged(show);
+          }
+       });
     }
 
     public void loadBarChartData(WebView web, String title, String x, String y) {

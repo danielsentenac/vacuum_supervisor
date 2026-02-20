@@ -278,18 +278,18 @@ public class ControllerLink extends ControlLayer implements ControlTypes {
     @Override
    void CreateAndShowRGALayer(String name) {
        ViewData presentView = (ViewData) MobileApplication.getInstance().getView();
-       //if ( !MobileApplication.getInstance().isLayerPresent(presentView.name + ":" + name) ) {
-          MobileApplication.getInstance().removeLayerFactory("LINKPR:" + name);
-          LayerData rga = new LayerRGA("CHART", "LINKPR:" + name);
+       String layerName = presentView.name + ":" + name;
+       //if ( !MobileApplication.getInstance().isLayerPresent(layerName) ) {
+          MobileApplication.getInstance().removeLayerFactory(layerName);
+          LayerData rga = new LayerRGA("CHART", layerName);
           try { 
              new Thread(rga).start(); 
           }
           catch (Exception e) {
              e.printStackTrace();
           }
-          MobileApplication.getInstance().addLayerFactory("LINKPR:" + name, () -> { return  rga;});
+          MobileApplication.getInstance().addLayerFactory(layerName, () -> { return  rga;});
        //}
-       MobileApplication.getInstance().showLayer("LINKPR:" + name);
+       MobileApplication.getInstance().showLayer(layerName);
    }
 }
-

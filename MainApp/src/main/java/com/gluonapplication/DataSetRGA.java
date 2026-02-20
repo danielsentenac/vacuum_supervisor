@@ -46,7 +46,7 @@ public class DataSetRGA extends DataSet {
          }
       }
       else if (name.contains("LINKDET")) {
-         for ( int i = 1; i <= 200; ++i ) {
+         for ( int i = 1; i <= 300; ++i ) {
             if ( i < 10 )
 	       list.addElement(new DataElement(Integer.toString(i),Type.RGA_CHART_DATA,"VAC_LINK_DET_RGA" + attributes[1] + "_00" + i,""));
 	    else if ( i < 100 )
