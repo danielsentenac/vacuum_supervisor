@@ -13,3 +13,22 @@ The VACUUM Supervisor API documentation is generated from:
 - `Controller*` classes: control flow and interaction logic.
 - `DataSet*`, `DataElement`, and `DataTypes`: data model and type mappings.
 - `ControlCommand`, `NotificationData`, and related classes: online provider interactions and command flow.
+
+## Platform Validation
+
+- Tested on Android 16.
+- Not tested on iOS.
+
+## Client Illustrations
+
+### CB
+![CB](img/CB.png)
+
+### CRYO
+![CRYO](img/CRYO.png)
+
+### Global
+![Global](img/Global.png)
+
+### TOWER
+![TOWER](img/TOWER.png)
