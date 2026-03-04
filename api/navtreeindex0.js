@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"":[2,0,0],
 "BasicView_8java.html":[4,0,0],
 "BasicView_8java_source.html":[4,0,0],
 "ControlCommand_8java.html":[4,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "NotificationService_8java_source.html":[4,0,122],
 "SidePopupViewCentralBuilding_8java.html":[4,0,123],
 "SidePopupViewCentralBuilding_8java_source.html":[4,0,123],
-"SidePopupViewCryoActions_8java.html":[4,0,124],
-"SidePopupViewCryoActions_8java_source.html":[4,0,124]
+"SidePopupViewCryoActions_8java.html":[4,0,124]
 };
