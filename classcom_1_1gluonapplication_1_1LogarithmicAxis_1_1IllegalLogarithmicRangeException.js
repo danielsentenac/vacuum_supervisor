@@ -1,0 +1,4 @@
+var classcom_1_1gluonapplication_1_1LogarithmicAxis_1_1IllegalLogarithmicRangeException =
+[
+    [ "IllegalLogarithmicRangeException", "classcom_1_1gluonapplication_1_1LogarithmicAxis_1_1IllegalLogarithmicRangeException.html#a20ba32150a4d0d029b81d41d35ed76bc", null ]
+];

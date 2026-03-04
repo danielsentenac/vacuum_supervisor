@@ -1,0 +1,25 @@
+var interfacecom_1_1gluonapplication_1_1ControlTypes =
+[
+    [ "Type", "enumcom_1_1gluonapplication_1_1ControlTypes_1_1Type.html", null ],
+    [ "CRYOACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#abced642581c71627661872581893636a", null ],
+    [ "CRYOLINKACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#ad5990af8212f2a91ebdf14ce38ec45e5", null ],
+    [ "DECORATION_STYLE_PUSHED", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#afec4af46494ec10ca33b445858a718cb", null ],
+    [ "DRY_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#ac4bb0927290a9ca8b681e8c92bcee752", null ],
+    [ "GAUGE_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a1865464245f02d72704a78252d9d98d1", null ],
+    [ "GAUGE_CRYOLINKDET_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a243b552b889b692b2117f939b12927bf", null ],
+    [ "GAUGE_CRYOLINKIB_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a96fe2a8132659afb2229971029fb5dc9", null ],
+    [ "GAUGE_LAL_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a11db1cfe955aaa68167426b0a9cc702a", null ],
+    [ "GAUGE_LINKPR_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#ae5c37bf916fa2d0b021ca0e8c8a6e310", null ],
+    [ "GAUGE_LINKSR_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a102f76cd1c63a2205f65de6bc03c5759", null ],
+    [ "GAUGE_SQZ_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a37fd5af2951eae90d9d4ca13bc29c89c", null ],
+    [ "IONIC_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a02d82d2dd3b9517e62396d5e83b4d2bb", null ],
+    [ "LINKACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#aed6b6144407448771cdc4b15615b2bc6", null ],
+    [ "MINITOWERSQZACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a519b745045b5cef60ed5e21f42d48ef1", null ],
+    [ "MOBILEVENTINGACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#aac774c413487dbcc5963902a698f81ed", null ],
+    [ "SUPERVISORACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a5f86cf99a38430dcd74c671814c43657", null ],
+    [ "TITANE_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a04a2b3d9e4f7d4e13b52cea7e40596c1", null ],
+    [ "TUBESQZACTIONS_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#acd1388f1d2c380a2f0530062591cf31f", null ],
+    [ "TURBO_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a1f1e63b35e098cf52b563da92ae80c61", null ],
+    [ "VALVE_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#a3f91bf93a84774d42660c108ce3b294b", null ],
+    [ "VALVE_CRYOLINK_COMMAND_CHANNELS", "interfacecom_1_1gluonapplication_1_1ControlTypes.html#ab94638afd259a087fe9c9c359e443887", null ]
+];
