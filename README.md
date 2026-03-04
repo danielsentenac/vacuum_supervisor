@@ -32,10 +32,6 @@ Out of scope for this repository:
 ./gradlew :MainApp:android
 ```
 
-## API Documentation
-
-- Published API reference (GitHub Pages): https://danielsentenac.github.io/vacuum_supervisor/api/index.html
-
 ## Client Illustrations
 
 ### CB
