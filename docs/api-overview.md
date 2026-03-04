@@ -22,13 +22,13 @@ The VACUUM Supervisor API documentation is generated from:
 ## Client Illustrations
 
 ### CB
-![CB](img/CB.png)
+![CB](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/CB.png)
 
 ### CRYO
-![CRYO](img/CRYO.png)
+![CRYO](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/CRYO.png)
 
 ### Global
-![Global](img/Global.png)
+![Global](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/Global.png)
 
 ### TOWER
-![TOWER](img/TOWER.png)
+![TOWER](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/TOWER.png)
