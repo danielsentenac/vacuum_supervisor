@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"classcom_1_1gluonapplication_1_1ControllerRemotePumps.html#a9d9f90749922e596b313514af08d9c3c":[3,0,0,0,24,113],
 "classcom_1_1gluonapplication_1_1ControllerRemotePumps.html#a9e0043ff27f9238fe1c3c7664c487173":[3,0,0,0,24,79],
 "classcom_1_1gluonapplication_1_1ControllerRemotePumps.html#aa0bcb717201f24284a99aa920fa40845":[3,0,0,0,24,59],
 "classcom_1_1gluonapplication_1_1ControllerRemotePumps.html#aa0dcf73fd6c80b6a68c6966247a25189":[3,0,0,0,24,43],
@@ -249,5 +248,6 @@ var NAVTREEINDEX5 =
 "classcom_1_1gluonapplication_1_1ControllerTowerBenchStation.html#a12aea11528fb257b56f8080c701d445c":[3,0,0,0,28,32],
 "classcom_1_1gluonapplication_1_1ControllerTowerBenchStation.html#a12c6b1db2b3a05b6b64621d417739c9a":[3,0,0,0,28,44],
 "classcom_1_1gluonapplication_1_1ControllerTowerBenchStation.html#a12deca0ca619b0cb6ef876794f3d8622":[3,0,0,0,28,83],
-"classcom_1_1gluonapplication_1_1ControllerTowerBenchStation.html#a15a5167b070b70c0273cf9d1fc47d0d6":[3,0,0,0,28,62]
+"classcom_1_1gluonapplication_1_1ControllerTowerBenchStation.html#a15a5167b070b70c0273cf9d1fc47d0d6":[3,0,0,0,28,62],
+"classcom_1_1gluonapplication_1_1ControllerTowerBenchStation.html#a17ccb3905a53548cc72d07278e89409f":[3,0,0,0,28,58]
 };
