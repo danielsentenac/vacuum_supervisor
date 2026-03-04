@@ -8,6 +8,7 @@ The VACUUM Supervisor API documentation is generated from:
 ## Main Runtime Areas
 
 - `View*` classes: high-level UI containers and application screens.
+- FXML resources under `MainApp/src/main/resources`: UI graphics/layout built with Gluon Scene Builder.
 - `Layer*` classes: reusable UI layers and dynamic visual components.
 - `Controller*` classes: control flow and interaction logic.
 - `DataSet*`, `DataElement`, and `DataTypes`: data model and type mappings.
