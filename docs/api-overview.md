@@ -18,17 +18,3 @@ The VACUUM Supervisor API documentation is generated from:
 
 - Tested on Android 16.
 - Not tested on iOS.
-
-## Client Illustrations
-
-### CB
-![CB](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/CB.png)
-
-### CRYO
-![CRYO](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/CRYO.png)
-
-### Global
-![Global](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/Global.png)
-
-### TOWER
-![TOWER](https://raw.githubusercontent.com/danielsentenac/vacuum_supervisor/master/docs/img/TOWER.png)
