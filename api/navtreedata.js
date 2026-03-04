@@ -25,14 +25,16 @@
 var NAVTREE =
 [
   [ "VACUUM Supervisor", "index.html", [
-    [ "Scope", "index.html#autotoc_md1", null ],
-    [ "Technology Base", "index.html#autotoc_md2", null ],
-    [ "Public Sanitization", "index.html#autotoc_md3", null ],
-    [ "Build / Run", "index.html#autotoc_md4", null ],
-    [ "API Documentation (Doxygen Awesome)", "index.html#autotoc_md5", null ],
+    [ "VACUUM Supervisor Client", "index.html", [
+      [ "Project Scope", "index.html#autotoc_md1", null ],
+      [ "Technology", "index.html#autotoc_md2", null ],
+      [ "Build Examples", "index.html#autotoc_md3", null ],
+      [ "API Documentation", "index.html#autotoc_md4", null ]
+    ] ],
     [ "API Overview", "md_docs_api_overview.html", [
-      [ "Main Runtime Areas", "md_docs_api_overview.html#autotoc_md7", null ],
-      [ "Public Sanitization Note", "md_docs_api_overview.html#autotoc_md8", null ]
+      [ "Main Runtime Areas", "md_docs_api_overview.html#autotoc_md6", null ],
+      [ "Platform Validation", "md_docs_api_overview.html#autotoc_md7", null ],
+      [ "Client Illustrations", "md_docs_api_overview.html#autotoc_md8", null ]
     ] ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VACUUM Supervisor: VACUUM Supervisor</title>
+<title>VACUUM Supervisor: VACUUM Supervisor Client</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,60 +87,44 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">VACUUM Supervisor </div>  </div>
+<div class="title">VACUUM Supervisor Client </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> VACUUM Supervisor is a Java/Gluon application used to monitor and control vacuum subsystems across multiple stations (tube sectors, towers, cryogenic links, remote pumps, gauges, and safety actions).</p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> VACUUM Supervisor is a Java client application used by operators to monitor and control distributed vacuum subsystems (tube sectors, towers, cryogenic links, remote pumps, gauges, and supervisor actions).</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Scope</h1>
-<p>This repository contains:</p>
+Project Scope</h1>
+<p>This repository contains the supervisor client app, including:</p>
 <ul>
-<li>UI layers and views (<code>View*</code>, <code>Layer*</code>, <code>SidePopupView*</code>)</li>
-<li>station and subsystem controllers (<code>Controller*</code>)</li>
-<li>data definitions and mappings (<code>DataSet*</code>, <code>DataElement</code>, <code>DataTypes</code>)</li>
-<li>online command/telemetry integration (<code>ControlCommand</code>, <code>ViewData</code>, <code>NotificationData</code>)</li>
+<li>UI views and layers for station/subsystem dashboards (<code>View*</code>, <code>Layer*</code>, <code>SidePopupView*</code>)</li>
+<li>UI graphics/layout authored with Gluon Scene Builder and FXML resources (<code>MainApp/src/main/resources/*.fxml</code>)</li>
+<li>interaction and control logic (<code>Controller*</code>)</li>
+<li>data models and mappings for telemetry, flags, and commands (<code>DataSet*</code>, <code>DataElement</code>, <code>DataTypes</code>, <code>ControlCommand</code>)</li>
+<li>packaging/build configuration for desktop and mobile deployment</li>
 </ul>
-<p>The app can be packaged for desktop and mobile targets via the JavaFXPorts/Gluon toolchain.</p>
+<p>Out of scope for this repository:</p>
+<ul>
+<li>backend services and control-system servers</li>
+<li>site-specific online data infrastructure</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Technology Base</h1>
+Technology</h1>
 <ul>
-<li>Gluon Java client libraries (Charm/Glisten/Charm Down):<ul>
-<li><a href="https://gluonhq.com/products/mobile/">https://gluonhq.com/products/mobile/</a></li>
-<li><a href="https://github.com/gluonhq/charm">https://github.com/gluonhq/charm</a></li>
-</ul>
-</li>
-<li>JavaFXPorts Gradle plugin (<code>org.javafxports:jfxmobile-plugin</code>):<ul>
-<li><a href="https://github.com/javafxports/javafxmobile-plugin">https://github.com/javafxports/javafxmobile-plugin</a></li>
-</ul>
-</li>
+<li>Gluon platform and libraries (Charm / Glisten / Charm Down): <br  />
+ <a href="https://gluonhq.com/">https://gluonhq.com/</a> <br  />
+ <a href="https://gluonhq.com/products/mobile/">https://gluonhq.com/products/mobile/</a></li>
+<li>JavaFXPorts mobile Gradle plugin (<code>org.javafxports:jfxmobile-plugin</code>): <br  />
+ <a href="https://github.com/javafxports/javafxmobile-plugin">https://github.com/javafxports/javafxmobile-plugin</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
-Public Sanitization</h1>
-<p>For public sharing, internal online-provider hostnames are replaced with examples.</p>
-<p>Run:</p>
-<div class="fragment"><div class="line">./scripts/sanitize_for_public.sh</div>
-</div><!-- fragment --><p>Optional:</p>
-<ul>
-<li><code>EXAMPLE_HOST=online-data-provider.example ./scripts/sanitize_for_public.sh</code></li>
-<li><code>DRY_RUN=1 ./scripts/sanitize_for_public.sh</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Build / Run</h1>
-<p>Examples:</p>
+Build Examples</h1>
 <div class="fragment"><div class="line">./gradlew :MainApp:runDesktop</div>
 <div class="line">./gradlew :MainApp:android</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
-API Documentation (Doxygen Awesome)</h1>
-<p>This repo ships a zCm-style Doxygen configuration with Doxygen Awesome CSS.</p>
-<p>Generate docs locally:</p>
-<div class="fragment"><div class="line">./scripts/generate_api_docs.sh</div>
-</div><!-- fragment --><p>Output:</p>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+API Documentation</h1>
 <ul>
-<li><code>docs/_build/html/index.html</code></li>
+<li>Published API reference (GitHub Pages): <a href="https://danielsentenac.github.io/vacuum_supervisor/api/index.html">https://danielsentenac.github.io/vacuum_supervisor/api/index.html</a> </li>
 </ul>
-<p>Optional publish helper:</p>
-<div class="fragment"><div class="line">./scripts/publish_api_docs.sh --dry-run</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
