@@ -3,6 +3,7 @@ build/
 .gradle/
 .gradle-user/
 MainApp/build/
+docs/_build/
 
 ### Local Android SDK
 .android-sdk/
@@ -46,6 +47,9 @@ release/
 ### Local release tooling
 release-signing.env.example
 scripts/release_apk.sh
+
+### Public sanitize state
+.sanitize_state/
 
 ### Package Files
 *.jar
