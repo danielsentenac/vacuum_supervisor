@@ -33,5 +33,5 @@ Out of scope for this repository:
 
 ## API Documentation
 
-- Generated API reference: [docs/_build/html/index.html](docs/_build/html/index.html)
+- Published API reference (GitHub Pages): https://danielsentenac.github.io/vacuum_supervisor/api/index.html
 - API overview: [docs/api-overview.md](docs/api-overview.md)
