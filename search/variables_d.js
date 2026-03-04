@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['rack_5f2_5fstatus_5fcolor_3982',['RACK_2_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a05fa4a9817e1f789ac91d7645d1b7560',1,'com::gluonapplication::DataTypes']]],
+  ['rack_5fstatus_5fcolor_3983',['RACK_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a9775b12cf16e2a52f3fcc335e4ace65b',1,'com::gluonapplication::DataTypes']]],
+  ['rack_5fstatus_5fstring_3984',['RACK_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#aedb10561c06d626426f48e9e24e6d9b3',1,'com::gluonapplication::DataTypes']]],
+  ['rectangle_5fbuilding_5fstatus_5fcolor_3985',['RECTANGLE_BUILDING_STATUS_COLOR',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#a541784db8f599b4d11bb344b5834aa70',1,'com::gluonapplication::DataTypes::Type']]],
+  ['rectangle_5ffill_5flevel_3986',['RECTANGLE_FILL_LEVEL',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#a55c66c4027c1ba6841fa047a3a5e53cc',1,'com::gluonapplication::DataTypes::Type']]],
+  ['rectangle_5ffill_5fstyle_3987',['RECTANGLE_FILL_STYLE',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a2414089b87c599367860df162b81f3d5',1,'com::gluonapplication::DataTypes']]],
+  ['rectangle_5fpump_5fstatus_5fcolor_3988',['RECTANGLE_PUMP_STATUS_COLOR',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#a0882a866de959d919caa378d71ba32cd',1,'com::gluonapplication::DataTypes::Type']]],
+  ['rectangle_5fremote_5fpumping_5fstatus_5fcolor_3989',['RECTANGLE_REMOTE_PUMPING_STATUS_COLOR',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#abc7aa2af4acc48122b4eb297ce5fdaa3',1,'com::gluonapplication::DataTypes::Type']]],
+  ['rectangle_5fventing_5fstatus_5fcolor_3990',['RECTANGLE_VENTING_STATUS_COLOR',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#ab8e84f3786bafac5a3b0f26c64a93095',1,'com::gluonapplication::DataTypes::Type']]],
+  ['refill_5fmode_5fstatus_5fstring_3991',['REFILL_MODE_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a68e7ff009f07b8a145e422da24fddfaa',1,'com::gluonapplication::DataTypes']]],
+  ['refresh_5fclicked_3992',['REFRESH_Clicked',['../classcom_1_1gluonapplication_1_1ControllerWeb.html#a849a9e695a8abbaea4a382a12b54a22e',1,'com.gluonapplication.ControllerWeb.REFRESH_Clicked()'],['../classcom_1_1gluonapplication_1_1ControllerPlot.html#a02d3ca7ff7c3b56c0d5b3000db05ddde',1,'com.gluonapplication.ControllerPlot.REFRESH_Clicked()'],['../classcom_1_1gluonapplication_1_1ControllerChart.html#aad4cf8a023060149a624cfdde948a527',1,'com.gluonapplication.ControllerChart.REFRESH_Clicked()']]],
+  ['region_3993',['region',['../classcom_1_1gluonapplication_1_1LayerData.html#a8337acc393610979d8c2011566b6f0a3',1,'com::gluonapplication::LayerData']]],
+  ['remote_5fpumping_5fstatus_5fcolor_3994',['REMOTE_PUMPING_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a3d502287ec8f5c9c06856b490539b2e5',1,'com::gluonapplication::DataTypes']]],
+  ['remote_5fpumping_5fstatus_5fcolor_5f2_3995',['REMOTE_PUMPING_STATUS_COLOR_2',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a06a05b68fb17985cdb7962c4332c8341',1,'com::gluonapplication::DataTypes']]],
+  ['remote_5fpumping_5fstatus_5fstring_3996',['REMOTE_PUMPING_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#addef1c622e02055348a17876acfb71e8',1,'com::gluonapplication::DataTypes']]],
+  ['remotepumps_3997',['remotePumps',['../classcom_1_1gluonapplication_1_1Main.html#abf8a96cf3f6aabdf9a27c92423474c7e',1,'com::gluonapplication::Main']]],
+  ['remotepumps_5fpressure_5fchannels_3998',['REMOTEPUMPS_PRESSURE_CHANNELS',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ad5dafb0de7b547ea47a2bcfa4d4a1739',1,'com::gluonapplication::DataTypes']]],
+  ['remotepumps_5fvalve_5fchannels_3999',['REMOTEPUMPS_VALVE_CHANNELS',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a6d5d93342cf38b526b9ad7c32daac2b8',1,'com::gluonapplication::DataTypes']]],
+  ['rga_5f2_5fchart_5fdata_4000',['RGA_2_CHART_DATA',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#ae88c9ea43ea330546170b973b8bd3eb4',1,'com::gluonapplication::DataTypes::Type']]],
+  ['rga_5f2_5fstatus_5fcolor_4001',['RGA_2_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ac053cd975ae71b75d9a99a65ae06484b',1,'com::gluonapplication::DataTypes']]],
+  ['rga_5fchart_5fdata_4002',['RGA_CHART_DATA',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#a7dc451ca454af2762a61e659b54970a1',1,'com::gluonapplication::DataTypes::Type']]],
+  ['rga_5fstatus_5fcolor_4003',['RGA_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ac757777847d4a417c81394f7ff28298a',1,'com::gluonapplication::DataTypes']]],
+  ['rga_5fweb_5fdata_4004',['RGA_WEB_DATA',['../enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#ade2fccac8c2f3babd75e391651a1957a',1,'com::gluonapplication::DataTypes::Type']]]
+];
