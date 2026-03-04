@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"SidePopupViewCryoActions_8java_source.html":[4,0,124],
 "SidePopupViewCryoLinkActions_8java.html":[4,0,125],
 "SidePopupViewCryoLinkActions_8java_source.html":[4,0,125],
 "SidePopupViewCryoLinkStation_8java.html":[4,0,126],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afb38a7cf852d74f7e6fe511d37fc5451":[3,0,0,0,3,124],
 "classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afb73f739b2e047164dcc463475ecfded":[3,0,0,0,3,25],
 "classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afc10dc6bdf49d5b03bc3ae3312ee533e":[3,0,0,0,3,18],
-"classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afddfbd1991c618c253a5f24e5891f9ec":[3,0,0,0,3,7]
+"classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afddfbd1991c618c253a5f24e5891f9ec":[3,0,0,0,3,7],
+"classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afea84f5879040a8b17eebb28641600f1":[3,0,0,0,3,118]
 };
