@@ -131,7 +131,6 @@ var NAVTREEINDEX12 =
 "md_docs_api_overview.html":[1],
 "md_docs_api_overview.html#autotoc_md6":[1,0],
 "md_docs_api_overview.html#autotoc_md7":[1,1],
-"md_docs_api_overview.html#autotoc_md8":[1,2],
 "namespacecom_1_1gluonapplication.html":[2,0,0,0],
 "namespaces.html":[2,0],
 "pages.html":[]

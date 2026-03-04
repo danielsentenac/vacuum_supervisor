@@ -33,8 +33,7 @@ var NAVTREE =
     ] ],
     [ "API Overview", "md_docs_api_overview.html", [
       [ "Main Runtime Areas", "md_docs_api_overview.html#autotoc_md6", null ],
-      [ "Platform Validation", "md_docs_api_overview.html#autotoc_md7", null ],
-      [ "Client Illustrations", "md_docs_api_overview.html#autotoc_md8", null ]
+      [ "Platform Validation", "md_docs_api_overview.html#autotoc_md7", null ]
     ] ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
