@@ -7,6 +7,7 @@ VACUUM Supervisor is a Java client application used by operators to monitor and 
 This repository contains the supervisor client app, including:
 
 - UI views and layers for station/subsystem dashboards (`View*`, `Layer*`, `SidePopupView*`)
+- UI graphics/layout authored with Gluon Scene Builder and FXML resources (`MainApp/src/main/resources/*.fxml`)
 - interaction and control logic (`Controller*`)
 - data models and mappings for telemetry, flags, and commands (`DataSet*`, `DataElement`, `DataTypes`, `ControlCommand`)
 - packaging/build configuration for desktop and mobile deployment
