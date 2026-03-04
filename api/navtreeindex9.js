@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"classcom_1_1gluonapplication_1_1ControllerTurbo.html":[3,0,0,0,38],
 "classcom_1_1gluonapplication_1_1ControllerTurbo.html#a1621da5246556fbaf9333196d88a2e75":[3,0,0,0,38,14],
 "classcom_1_1gluonapplication_1_1ControllerTurbo.html#a194bd058f00c14c230bdd6729e1e4fc9":[3,0,0,0,38,15],
 "classcom_1_1gluonapplication_1_1ControllerTurbo.html#a258a7255057e89dce44301e3f23bdbee":[3,0,0,0,38,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "classcom_1_1gluonapplication_1_1LayerData.html#adf24554ef4ec690504f066cab10c6f74":[3,0,0,0,104,0],
 "classcom_1_1gluonapplication_1_1LayerData.html#aeec7e9b1a7d23c0b44e6cb4336895729":[3,0,0,0,104,1],
 "classcom_1_1gluonapplication_1_1LayerData.html#afde864befc1cc08c428b993b73c3cce9":[3,0,0,0,104,15],
-"classcom_1_1gluonapplication_1_1LayerData.html#afff76c89d0d10afffaf00c5f3525c3cf":[3,0,0,0,104,5]
+"classcom_1_1gluonapplication_1_1LayerData.html#afff76c89d0d10afffaf00c5f3525c3cf":[3,0,0,0,104,5],
+"classcom_1_1gluonapplication_1_1LayerDry.html":[3,0,0,0,105]
 };

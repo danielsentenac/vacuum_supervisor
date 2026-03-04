@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afea84f5879040a8b17eebb28641600f1":[3,0,0,0,3,118],
 "classcom_1_1gluonapplication_1_1ControllerCentralBuilding.html#afeeb157fba6ca3a3c557be573b76f885":[3,0,0,0,3,11],
 "classcom_1_1gluonapplication_1_1ControllerChart.html":[3,0,0,0,4],
 "classcom_1_1gluonapplication_1_1ControllerChart.html#a0de753a42a07be611acc0dbbdd2bd080":[3,0,0,0,4,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "classcom_1_1gluonapplication_1_1ControllerCryoLink.html#ade255190bd3cb8bfe12393027dbe2b84":[3,0,0,0,7,3],
 "classcom_1_1gluonapplication_1_1ControllerCryoLink.html#adeeabecb9fdbd615c2d08ef9110c4ae1":[3,0,0,0,7,110],
 "classcom_1_1gluonapplication_1_1ControllerCryoLink.html#adf6755b97efbde7c0441b1ca330ce26c":[3,0,0,0,7,15],
-"classcom_1_1gluonapplication_1_1ControllerCryoLink.html#ae3847f22453b8413afa5863572c19b6b":[3,0,0,0,7,50]
+"classcom_1_1gluonapplication_1_1ControllerCryoLink.html#ae3847f22453b8413afa5863572c19b6b":[3,0,0,0,7,50],
+"classcom_1_1gluonapplication_1_1ControllerCryoLink.html#ae5c2f2cd83808d8eab603f0e3979503b":[3,0,0,0,7,1]
 };
