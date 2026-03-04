@@ -35,4 +35,3 @@ Out of scope for this repository:
 ## API Documentation
 
 - Published API reference (GitHub Pages): https://danielsentenac.github.io/vacuum_supervisor/api/index.html
-- API overview: [docs/api-overview.md](docs/api-overview.md)
