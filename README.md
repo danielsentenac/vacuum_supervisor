@@ -30,3 +30,8 @@ Out of scope for this repository:
 ./gradlew :MainApp:runDesktop
 ./gradlew :MainApp:android
 ```
+
+## API Documentation
+
+- Generated API reference: [docs/_build/html/index.html](docs/_build/html/index.html)
+- API overview: [docs/api-overview.md](docs/api-overview.md)

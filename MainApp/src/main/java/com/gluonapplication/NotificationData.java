@@ -301,7 +301,7 @@ public class NotificationData implements Runnable, DataTypes {
      protected void updateViewData() {
       try {
          // send data to the servlet
-         URLConnection con = getServerConnection("http://olserver135.virgo.infn.it:8081/jchv/jchv");
+         URLConnection con = getServerConnection("http://online-data-provider.example:8081/jchv/jchv");
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(data.svrNameList);
