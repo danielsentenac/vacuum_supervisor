@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classcom_1_1gluonapplication_1_1ControllerTowerStation.html#aefb2aad17bc8f4e29edab6efb246f056":[3,0,0,0,29,69],
 "classcom_1_1gluonapplication_1_1ControllerTowerStation.html#af00db252dad7e3b0f735a1ac0f1ebd5e":[3,0,0,0,29,63],
 "classcom_1_1gluonapplication_1_1ControllerTowerStation.html#af4168265b8506c6281573772a8cbaa52":[3,0,0,0,29,96],
 "classcom_1_1gluonapplication_1_1ControllerTowerStation.html#af4434bf7298a06deaf6d722a28d290ef":[3,0,0,0,29,163],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classcom_1_1gluonapplication_1_1ControllerTubeSqz.html#a3b17fbab4ef2198755936bdf3ff00753":[3,0,0,0,34,29],
 "classcom_1_1gluonapplication_1_1ControllerTubeSqz.html#a3f2ca835321f4ad0a5cb34d7c8e91f2b":[3,0,0,0,34,47],
 "classcom_1_1gluonapplication_1_1ControllerTubeSqz.html#a41643b07f11bb8c9d66f30b9f80b36c6":[3,0,0,0,34,18],
-"classcom_1_1gluonapplication_1_1ControllerTubeSqz.html#a436e6d155ba372f303152a09ee39a9c1":[3,0,0,0,34,2],
-"classcom_1_1gluonapplication_1_1ControllerTubeSqz.html#a47b1380a7f522c2de658a5529791c517":[3,0,0,0,34,59]
+"classcom_1_1gluonapplication_1_1ControllerTubeSqz.html#a436e6d155ba372f303152a09ee39a9c1":[3,0,0,0,34,2]
 };

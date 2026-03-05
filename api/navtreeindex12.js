@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"interfacecom_1_1gluonapplication_1_1DataTypes.html":[3,0,0,0,99],
 "interfacecom_1_1gluonapplication_1_1DataTypes.html#a0421d9cd75a6d51298f3d72d748245cc":[3,0,0,0,99,70],
 "interfacecom_1_1gluonapplication_1_1DataTypes.html#a050620a86c271e5332070138cb91c12e":[3,0,0,0,99,62],
 "interfacecom_1_1gluonapplication_1_1DataTypes.html#a05e44f4bcd54b012519916cd79be2d17":[3,0,0,0,99,65],
@@ -130,8 +131,7 @@ var NAVTREEINDEX12 =
 "md_docs_api_overview.html":[1],
 "md_docs_api_overview.html#autotoc_md6":[1,0],
 "md_docs_api_overview.html#autotoc_md7":[1,1],
-"namespacecom_1_1gluonapplication.html":[2,0,0,0],
-"namespaces.html":[2,0],
-"pages.html":[],
-"":[2,0,0]
+"namespacecom_1_1gluonapplication.html":[2,0,0],
+"namespaces.html":[2],
+"pages.html":[]
 };

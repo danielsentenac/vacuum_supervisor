@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcom_1_1gluonapplication_1_1ViewGlobal.html":[3,0,0,0,155],
 "classcom_1_1gluonapplication_1_1ViewGlobal.html#a00a6363680a5bc2748dccf895af8ae0c":[3,0,0,0,155,4],
 "classcom_1_1gluonapplication_1_1ViewGlobal.html#a10ee6afd1400a885bf08b94596c89b24":[3,0,0,0,155,3],
 "classcom_1_1gluonapplication_1_1ViewGlobal.html#a43478209264a8f688017a89b2d70a445":[3,0,0,0,155,1],
@@ -156,8 +157,8 @@ var NAVTREEINDEX11 =
 "enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#af7a4cdc2f6ebb78c9ee5c3d23d74e267":[3,0,0,0,99,0,40],
 "enumcom_1_1gluonapplication_1_1DataTypes_1_1Type.html#af8857856bc0c6c2d5cbd7d85ef5c1881":[3,0,0,0,99,0,33],
 "files.html":[4,0],
-"functions.html":[3,3,0,0],
 "functions.html":[3,3,0],
+"functions.html":[3,3,0,0],
 "functions_a.html":[3,3,0,1],
 "functions_b.html":[3,3,0,2],
 "functions_c.html":[3,3,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "interfacecom_1_1gluonapplication_1_1ControlTypes.html#ad5990af8212f2a91ebdf14ce38ec45e5":[3,0,0,0,44,2],
 "interfacecom_1_1gluonapplication_1_1ControlTypes.html#ae5c37bf916fa2d0b021ca0e8c8a6e310":[3,0,0,0,44,9],
 "interfacecom_1_1gluonapplication_1_1ControlTypes.html#aed6b6144407448771cdc4b15615b2bc6":[3,0,0,0,44,13],
-"interfacecom_1_1gluonapplication_1_1ControlTypes.html#afec4af46494ec10ca33b445858a718cb":[3,0,0,0,44,3],
-"interfacecom_1_1gluonapplication_1_1DataTypes.html":[3,0,0,0,99]
+"interfacecom_1_1gluonapplication_1_1ControlTypes.html#afec4af46494ec10ca33b445858a718cb":[3,0,0,0,44,3]
 };
