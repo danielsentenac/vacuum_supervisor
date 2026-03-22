@@ -28,9 +28,19 @@ Out of scope for this repository:
 ## Build Examples
 
 ```bash
-./gradlew :MainApp:runDesktop
+./gradlew :MainApp:run
 ./gradlew :MainApp:android
 ```
+
+## Local Backend Override
+
+For local testing against an internal backend host without changing the sanitized default:
+
+```bash
+VACUUM_SUPERVISOR_BACKEND_HOST=<internal-backend-host> ./gradlew :MainApp:run
+```
+
+The desktop client also accepts the JVM property `vacuum.supervisor.backend.host` when launched outside Gradle.
 
 ## Client Illustrations
 

@@ -181,7 +181,7 @@ public class ViewData extends View implements Runnable, DataTypes {
       try {
          // send data to the servlet
          DataSet tmpData = (DataSet) data.clone();
-         URLConnection con = getServerConnection("http://online-data-provider.example:8081/jchv/jchv");
+         URLConnection con = getServerConnection(ServerEndpoints.jchvUrl());
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(data.svrNameList);

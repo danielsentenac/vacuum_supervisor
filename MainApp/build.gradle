@@ -87,5 +87,5 @@ jfxmobile {
 tasks.register('debug') {
     group = 'application'
     description = 'Alias to run the app on desktop'
-    dependsOn 'runDesktop'
+    dependsOn 'run'
 }

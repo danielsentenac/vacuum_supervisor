@@ -76,7 +76,7 @@ public class ControlCommand implements Runnable {
          hasMastership = false;            
          hasPrivilegeAccess = false;
          // send query to the servlet
-         URLConnection con = getServerConnection("http://online-data-provider.example:8081/jmaster/jmaster");
+         URLConnection con = getServerConnection(ServerEndpoints.jmasterUrl());
          OutputStream outstream = con.getOutputStream();
          ObjectOutputStream oos = new ObjectOutputStream(outstream);
          oos.writeObject(query);
@@ -209,7 +209,7 @@ public class ControlCommand implements Runnable {
     public void run() {
        try {
           // send data to the servlet
-	  URLConnection con = getServerConnection("http://online-data-provider.example:9081/jcmd/jcmd");
+	  URLConnection con = getServerConnection(ServerEndpoints.jcmdUrl());
 	  OutputStream outstream = con.getOutputStream();
 	  ObjectOutputStream oos = new ObjectOutputStream(outstream);
 	  oos.writeObject(commandVect);
@@ -234,4 +234,3 @@ public class ControlCommand implements Runnable {
         } catch (Exception ex) {}
     }
 }
-
