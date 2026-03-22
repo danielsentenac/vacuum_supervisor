@@ -7,13 +7,25 @@ import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.LocalNotificationsService;
 import com.gluonhq.charm.down.plugins.RuntimeArgsService;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import java.net.CookieManager;
 import java.net.CookieHandler;
+import java.net.URI;
+import java.net.URLDecoder;
+import java.io.File;
 import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Locale;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
 public class Main extends MobileApplication {
+
+    private static final String DESKTOP_URI_SCHEME = "vacuum-supervisor";
+    private static final String DESKTOP_ICON_PROPERTY = "vacuum.supervisor.desktop.icon";
+    private static final String DESKTOP_ICON_ENV = "VACUUM_SUPERVISOR_DESKTOP_ICON_PATH";
     
     static {
        if (Platform.isAndroid()) {
@@ -130,6 +142,8 @@ public class Main extends MobileApplication {
        // Necessary to handle tomcat sessions
        CookieManager cookieManager = new CookieManager();
        CookieHandler.setDefault(cookieManager);
+
+       captureDesktopLaunchArguments();
     }
 
     /**
@@ -154,6 +168,206 @@ public class Main extends MobileApplication {
           e.printStackTrace();
        }
     }
+
+    private void captureDesktopLaunchArguments() {
+       try {
+          String viewId = extractLaunchViewId(getParameters().getRaw());
+          if (viewId != null) {
+             setPendingStartupViewId(viewId, "desktop launch");
+          }
+       } catch (Exception e) {
+          e.printStackTrace();
+       }
+    }
+
+    private String extractLaunchViewId(List<String> rawArgs) {
+       if (rawArgs == null) {
+          return null;
+       }
+       for (String rawArg : rawArgs) {
+          String viewId = extractViewIdFromArgument(rawArg);
+          if (viewId != null) {
+             return viewId;
+          }
+       }
+       return null;
+    }
+
+    private String extractViewIdFromArgument(String rawArg) {
+       if (rawArg == null) {
+          return null;
+       }
+
+       String trimmedArg = rawArg.trim();
+       if (trimmedArg.isEmpty()) {
+          return null;
+       }
+
+       String uriViewId = extractViewIdFromDesktopUri(trimmedArg);
+       if (uriViewId != null) {
+          return uriViewId;
+       }
+
+       if (trimmedArg.matches("[A-Za-z0-9_-]+")) {
+          return normalizeViewId(trimmedArg);
+       }
+
+       return null;
+    }
+
+    private String extractViewIdFromDesktopUri(String rawArg) {
+       URI launchUri;
+       try {
+          launchUri = URI.create(rawArg);
+       } catch (IllegalArgumentException e) {
+          return null;
+       }
+
+       if (launchUri.getScheme() == null || !DESKTOP_URI_SCHEME.equalsIgnoreCase(launchUri.getScheme())) {
+          return null;
+       }
+
+       String queryViewId = extractViewIdFromQuery(launchUri.getRawQuery());
+       if (queryViewId != null) {
+          return queryViewId;
+       }
+
+       String pathViewId = extractLastPathSegment(launchUri.getPath());
+       if (pathViewId != null) {
+          return pathViewId;
+       }
+
+       String hostViewId = normalizeViewId(launchUri.getHost());
+       if (hostViewId != null && !"OPEN".equals(hostViewId) && !"VIEW".equals(hostViewId)) {
+          return hostViewId;
+       }
+
+       String schemeSpecificPart = launchUri.getSchemeSpecificPart();
+       if (schemeSpecificPart != null && !schemeSpecificPart.startsWith("//")) {
+          return normalizeViewId(stripLeadingSlashes(schemeSpecificPart));
+       }
+
+       return null;
+    }
+
+    private String extractViewIdFromQuery(String rawQuery) {
+       if (rawQuery == null || rawQuery.isEmpty()) {
+          return null;
+       }
+
+       String[] pairs = rawQuery.split("&");
+       for (String pair : pairs) {
+          int separatorIndex = pair.indexOf('=');
+          String rawKey = separatorIndex >= 0 ? pair.substring(0, separatorIndex) : pair;
+          if ("view".equalsIgnoreCase(urlDecode(rawKey))) {
+             String rawValue = separatorIndex >= 0 ? pair.substring(separatorIndex + 1) : "";
+             return normalizeViewId(urlDecode(rawValue));
+          }
+       }
+
+       return null;
+    }
+
+    private String extractLastPathSegment(String rawPath) {
+       if (rawPath == null || rawPath.isEmpty()) {
+          return null;
+       }
+
+       String[] segments = rawPath.split("/");
+       for (int i = segments.length - 1; i >= 0; i--) {
+          String normalizedSegment = normalizeViewId(segments[i]);
+          if (normalizedSegment != null) {
+             return normalizedSegment;
+          }
+       }
+
+       return null;
+    }
+
+    private String stripLeadingSlashes(String value) {
+       String strippedValue = value;
+       while (strippedValue.startsWith("/")) {
+          strippedValue = strippedValue.substring(1);
+       }
+       return strippedValue;
+    }
+
+    private String urlDecode(String value) {
+       if (value == null) {
+          return null;
+       }
+       try {
+          return URLDecoder.decode(value, StandardCharsets.UTF_8.name());
+       } catch (Exception e) {
+          return value;
+       }
+    }
+
+    private String normalizeViewId(String viewId) {
+       if (viewId == null) {
+          return null;
+       }
+
+       String normalizedViewId = stripLeadingSlashes(viewId.trim());
+       if (normalizedViewId.isEmpty()) {
+          return null;
+       }
+
+       int querySeparatorIndex = normalizedViewId.indexOf('?');
+       if (querySeparatorIndex >= 0) {
+          normalizedViewId = normalizedViewId.substring(0, querySeparatorIndex);
+       }
+
+       int fragmentSeparatorIndex = normalizedViewId.indexOf('#');
+       if (fragmentSeparatorIndex >= 0) {
+          normalizedViewId = normalizedViewId.substring(0, fragmentSeparatorIndex);
+       }
+
+       normalizedViewId = normalizedViewId.replace("-", "").replace("_", "").trim();
+       if (normalizedViewId.isEmpty()) {
+          return null;
+       }
+
+       return normalizedViewId.toUpperCase(Locale.ENGLISH);
+    }
+
+    private void setPendingStartupViewId(String viewId, String source) {
+       String normalizedViewId = normalizeViewId(viewId);
+       if (normalizedViewId == null) {
+          return;
+       }
+       pendingStartupViewId = normalizedViewId;
+       System.out.println("Queued startup view from " + source + ": " + normalizedViewId);
+    }
+
+    private void applyDesktopWindowIcon(Scene scene) {
+       if (scene == null || !(scene.getWindow() instanceof Stage)) {
+          return;
+       }
+
+       String iconPath = System.getProperty(DESKTOP_ICON_PROPERTY);
+       if (iconPath == null || iconPath.trim().isEmpty()) {
+          iconPath = System.getenv(DESKTOP_ICON_ENV);
+       }
+       if (iconPath == null || iconPath.trim().isEmpty()) {
+          return;
+       }
+
+       File iconFile = new File(iconPath.trim());
+       if (!iconFile.isFile()) {
+          System.err.println("Desktop icon file not found: " + iconFile.getAbsolutePath());
+          return;
+       }
+
+       try {
+          Stage stage = (Stage) scene.getWindow();
+          stage.getIcons().setAll(new Image(iconFile.toURI().toString()));
+       } catch (Exception e) {
+          System.err.println("Failed to set desktop window icon from: " + iconFile.getAbsolutePath());
+          e.printStackTrace();
+       }
+    }
+
     @Override
     public void postInit(Scene scene) {
         showStartupSplash();
@@ -166,6 +380,7 @@ public class Main extends MobileApplication {
             if (Platform.isDesktop()) {
                 scene.getWindow().setWidth(850);
                 scene.getWindow().setHeight(850);
+                applyDesktopWindowIcon(scene);
             }
             setTitle("Vacuum Supervisor");
             updateStartupProgress(0.55, "Preparing views");
@@ -259,7 +474,7 @@ public class Main extends MobileApplication {
              hideStartupSplash();
              switchToNotificationView(viewId);
           } else {
-             pendingStartupViewId = viewId;
+             setPendingStartupViewId(viewId, "local notification");
           }
        }
     }
@@ -306,6 +521,8 @@ public class Main extends MobileApplication {
              if (ensureViewFactory(viewId)) {
                 switchView(viewId);
                 System.out.println("Switch to related notification view: " + viewId);
+             } else {
+                System.err.println("Unsupported launch view: " + viewId);
              }
           } catch (Exception e) {
              e.printStackTrace();
