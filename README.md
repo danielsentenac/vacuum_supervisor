@@ -34,13 +34,19 @@ Out of scope for this repository:
 
 ## Local Backend Override
 
-For local testing against an internal backend host without changing the sanitized default:
+For local testing against an internal backend host without changing the public-safe default:
 
 ```bash
 VACUUM_SUPERVISOR_BACKEND_HOST=<internal-backend-host> ./gradlew :MainApp:run
 ```
 
 The desktop client also accepts the JVM property `vacuum.supervisor.backend.host` when launched outside Gradle.
+
+To verify that no internal hostnames were accidentally committed:
+
+```bash
+./scripts/check_no_internal_hosts.sh
+```
 
 ## Client Illustrations
 
