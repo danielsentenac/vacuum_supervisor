@@ -11,6 +11,7 @@ VERSION_NAME="${1#v}"
 TAG="${2:-v${VERSION_NAME}}"
 COMMIT_MESSAGE="${3:-Release ${TAG}}"
 MANIFEST="MainApp/src/android/AndroidManifest.xml"
+DOXYFILE_PATH="${DOXYFILE_PATH:-Doxyfile}"
 APK_PATH_DEFAULT="MainApp/build/javafxports/android/MainApp.apk"
 APK_PATH_ALT="MainApp/build/outputs/apk/release/MainApp-release.apk"
 LOCAL_KEYSTORE="$(pwd)/MainAppkeystore"
@@ -46,6 +47,25 @@ read_gradle_property() {
 read_local_sdk_dir() {
   if [[ -f "${PROJECT_LOCAL_PROPS}" ]]; then
     sed -n 's/^sdk.dir=//p' "${PROJECT_LOCAL_PROPS}" | head -n1
+  fi
+}
+
+read_doxy_project_number() {
+  local doxyfile="$1"
+  sed -n 's/^[[:space:]]*PROJECT_NUMBER[[:space:]]*=[[:space:]]*"\{0,1\}\([^"]*\)"\{0,1\}[[:space:]]*$/\1/p' "${doxyfile}" | head -n1
+}
+
+update_doxy_project_number() {
+  local doxyfile="$1"
+  local version_tag="$2"
+  local escaped_tag
+
+  escaped_tag="$(printf '%s' "${version_tag}" | sed -e 's/[\/&]/\\&/g' -e 's/"/\\"/g')"
+
+  if grep -qE '^[[:space:]]*PROJECT_NUMBER[[:space:]]*=' "${doxyfile}"; then
+    sed -i -E "s|^[[:space:]]*PROJECT_NUMBER[[:space:]]*=.*$|PROJECT_NUMBER         = \"${escaped_tag}\"|" "${doxyfile}"
+  else
+    printf '\nPROJECT_NUMBER         = "%s"\n' "${version_tag}" >> "${doxyfile}"
   fi
 }
 
@@ -158,6 +178,18 @@ export RELEASE_KEY_ALIAS="${SIGNING_KEY_ALIAS}"
 export RELEASE_KEY_PASSWORD="${SIGNING_KEY_PASSWORD}"
 
 sed -i -E "s/(android:versionName=\")[^\"]+(\")/\1${VERSION_NAME}\2/" "${MANIFEST}"
+
+if [[ -f "${DOXYFILE_PATH}" ]]; then
+  CURRENT_DOXY_PROJECT_NUMBER="$(read_doxy_project_number "${DOXYFILE_PATH}")"
+  update_doxy_project_number "${DOXYFILE_PATH}" "${TAG}"
+  if [[ -n "${CURRENT_DOXY_PROJECT_NUMBER}" ]]; then
+    echo "Doxyfile PROJECT_NUMBER: ${CURRENT_DOXY_PROJECT_NUMBER} -> ${TAG}"
+  else
+    echo "Doxyfile PROJECT_NUMBER set to: ${TAG}"
+  fi
+else
+  echo "Warning: ${DOXYFILE_PATH} not found; skipping API doc title version update."
+fi
 
 echo "AndroidManifest versionName: ${CURRENT_VERSION} -> ${VERSION_NAME}"
 echo "Using signing keystore: ${RELEASE_STORE_FILE}"
