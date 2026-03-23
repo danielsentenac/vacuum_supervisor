@@ -32,6 +32,19 @@ Out of scope for this repository:
 ./gradlew :MainApp:android
 ```
 
+## Windows Installer
+
+Preferred release path on Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build_windows_setup.ps1 -JavaHome C:\path\to\jdk
+```
+
+If Inno Setup 6 is installed, this produces `build\windows-installer\output\VacuumSupervisorSetup-<version>.exe`.
+
+The Linux helper `./scripts/build_windows_setup.sh` is an NSIS-based cross-build path. It requires an external Windows JavaFX JDK zip via `--jdk-zip` and a working local NSIS toolchain. Do not treat the checked-in `Windows_Install\VacuumSupervisorSetup-*.exe` as the authoritative release artifact; rebuild locally before shipping.
+
+
 ## Local Backend Override
 
 For local testing against an internal backend host without changing the public-safe default:

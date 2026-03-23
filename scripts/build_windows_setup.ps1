@@ -15,14 +15,17 @@ $DistributionSource = Join-Path $RepoRoot 'MainApp\build\install\MainApp'
 $DistributionLauncher = Join-Path $DistributionSource 'bin\MainApp.bat'
 $RepoGradleProperties = Join-Path $RepoRoot 'gradle.properties'
 $UserGradleProperties = Join-Path $env:USERPROFILE '.gradle\gradle.properties'
-$IconPngSource = Join-Path $RepoRoot 'MainApp\src\android\res\mipmap-xxxhdpi\ic_launcher.png'
+$IosIconSetDir = Join-Path $RepoRoot 'MainApp\src\ios\assets\Assets.xcassets\AppIcon.appiconset'
+$IosIconPngSource = Join-Path $RepoRoot 'MainApp\src\ios\assets\Assets.xcassets\AppIcon.appiconset\Gluon-app-store-icon-1024@1x.png'
+$AndroidIconPngSource = Join-Path $RepoRoot 'MainApp\src\android\res\mipmap-xxxhdpi\ic_launcher.png'
 $StageDir = Join-Path $StageRoot 'stage'
 $OutputDir = Join-Path $StageRoot 'output'
 $AppStageDir = Join-Path $StageDir 'app'
 $RuntimeStageDir = Join-Path $StageDir 'runtime'
 $IconPngStagePath = Join-Path $StageDir 'vacuum-supervisor.png'
-$IconIcoStagePath = Join-Path $StageDir 'vacuum-supervisor.ico'
+$IconIcoStagePath = Join-Path $StageDir 'vacuum-supervisor-shortcut.ico'
 $WrapperStagePath = Join-Path $StageDir 'vacuum-supervisor.cmd'
+$WrapperVbsStagePath = Join-Path $StageDir 'vacuum-supervisor.vbs'
 $InnoScriptPath = Join-Path $ScriptDir 'windows\VacuumSupervisor.iss'
 
 function Get-GradleProperty {
@@ -66,6 +69,20 @@ function Resolve-JavaHome {
     throw 'A Windows JavaFX-enabled JDK was not found. Pass -JavaHome or set JAVA_HOME to a Windows JDK that contains bin\java.exe.'
 }
 
+function Resolve-RuntimeHome {
+    param(
+        [string]$JavaHomePath
+    )
+
+    $EmbeddedJrePath = Join-Path $JavaHomePath 'jre'
+    $EmbeddedJreJava = Join-Path $EmbeddedJrePath 'bin\java.exe'
+    if (Test-Path -LiteralPath $EmbeddedJreJava) {
+        return (Resolve-Path -LiteralPath $EmbeddedJrePath).Path
+    }
+
+    return $JavaHomePath
+}
+
 function Get-AppVersion {
     if (-not (Test-Path -LiteralPath $ManifestPath)) {
         throw 'AndroidManifest.xml was not found.'
@@ -80,40 +97,106 @@ function Get-AppVersion {
     return $Match.Groups[1].Value
 }
 
+function Resolve-IconPngSource {
+    $Candidates = @(
+        $IosIconPngSource,
+        $AndroidIconPngSource
+    )
+
+    foreach ($Candidate in $Candidates) {
+        if (Test-Path -LiteralPath $Candidate) {
+            return (Resolve-Path -LiteralPath $Candidate).Path
+        }
+    }
+
+    throw 'A source PNG icon was not found for the Windows installer.'
+}
+
 function Write-PortableIcon {
     param(
-        [string]$PngPath,
+        [string]$FallbackPngPath,
         [string]$IcoPath
     )
 
     Add-Type -AssemblyName System.Drawing
-    $Bitmap = New-Object System.Drawing.Bitmap($PngPath)
-    $PngBytes = [System.IO.File]::ReadAllBytes($PngPath)
     $Stream = New-Object System.IO.MemoryStream
     $Writer = New-Object System.IO.BinaryWriter($Stream)
+    $Sizes = @(16, 20, 24, 32, 40, 48, 64, 96, 128, 256)
+    $SizeSpecificSources = @{
+        16  = Join-Path $IosIconSetDir 'Gluon-ipad-notifications-icon-20@1x.png'
+        20  = Join-Path $IosIconSetDir 'Gluon-ipad-notifications-icon-20@1x.png'
+        24  = Join-Path $IosIconSetDir 'Gluon-ipad-settings-icon-29@1x.png'
+        32  = Join-Path $IosIconSetDir 'Gluon-ipad-spotlight-icon-40@1x.png'
+        40  = Join-Path $IosIconSetDir 'Gluon-ipad-spotlight-icon-40@1x.png'
+        48  = Join-Path $IosIconSetDir 'Gluon-ipad-settings-icon-29@2x.png'
+        64  = Join-Path $IosIconSetDir 'Gluon-ipad-app-icon-76@1x.png'
+        96  = Join-Path $IosIconSetDir 'Gluon-iphone-app-icon-60@2x.png'
+        128 = Join-Path $IosIconSetDir 'Gluon-ipad-app-icon-76@2x.png'
+        256 = Join-Path $IosIconSetDir 'Gluon-app-store-icon-1024@1x.png'
+    }
+    $Entries = @()
 
     try {
-        $WidthByte = if ($Bitmap.Width -ge 256) { [byte]0 } else { [byte]$Bitmap.Width }
-        $HeightByte = if ($Bitmap.Height -ge 256) { [byte]0 } else { [byte]$Bitmap.Height }
-
         $Writer.Write([UInt16]0)
         $Writer.Write([UInt16]1)
-        $Writer.Write([UInt16]1)
-        $Writer.Write([byte]$WidthByte)
-        $Writer.Write([byte]$HeightByte)
-        $Writer.Write([byte]0)
-        $Writer.Write([byte]0)
-        $Writer.Write([UInt16]1)
-        $Writer.Write([UInt16]32)
-        $Writer.Write([UInt32]$PngBytes.Length)
-        $Writer.Write([UInt32]22)
-        $Writer.Write($PngBytes)
+        $Writer.Write([UInt16]$Sizes.Count)
+
+        foreach ($Size in $Sizes) {
+            $SourcePath = $FallbackPngPath
+            if ($SizeSpecificSources.ContainsKey($Size) -and (Test-Path -LiteralPath $SizeSpecificSources[$Size])) {
+                $SourcePath = $SizeSpecificSources[$Size]
+            }
+
+            $Bitmap = New-Object System.Drawing.Bitmap($SourcePath)
+            $SizedBitmap = New-Object System.Drawing.Bitmap($Size, $Size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+            $Graphics = [System.Drawing.Graphics]::FromImage($SizedBitmap)
+            $PngStream = New-Object System.IO.MemoryStream
+
+            try {
+                $Graphics.Clear([System.Drawing.Color]::Transparent)
+                $Graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+                $Graphics.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+                $Graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+                $Graphics.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
+                $Graphics.DrawImage($Bitmap, 0, 0, $Size, $Size)
+                $SizedBitmap.Save($PngStream, [System.Drawing.Imaging.ImageFormat]::Png)
+                $Entries += [PSCustomObject]@{
+                    Size  = $Size
+                    Bytes = $PngStream.ToArray()
+                }
+            }
+            finally {
+                $Bitmap.Dispose()
+                $PngStream.Dispose()
+                $Graphics.Dispose()
+                $SizedBitmap.Dispose()
+            }
+        }
+
+        $Offset = 6 + (16 * $Entries.Count)
+        foreach ($Entry in $Entries) {
+            $Dimension = if ($Entry.Size -ge 256) { [byte]0 } else { [byte]$Entry.Size }
+
+            $Writer.Write([byte]$Dimension)
+            $Writer.Write([byte]$Dimension)
+            $Writer.Write([byte]0)
+            $Writer.Write([byte]0)
+            $Writer.Write([UInt16]1)
+            $Writer.Write([UInt16]32)
+            $Writer.Write([UInt32]$Entry.Bytes.Length)
+            $Writer.Write([UInt32]$Offset)
+            $Offset += $Entry.Bytes.Length
+        }
+
+        foreach ($Entry in $Entries) {
+            $Writer.Write($Entry.Bytes)
+        }
+
         [System.IO.File]::WriteAllBytes($IcoPath, $Stream.ToArray())
     }
     finally {
         $Writer.Dispose()
         $Stream.Dispose()
-        $Bitmap.Dispose()
     }
 }
 
@@ -141,7 +224,9 @@ function Resolve-IsccPath {
 }
 
 $ResolvedJavaHome = Resolve-JavaHome
+$ResolvedRuntimeHome = Resolve-RuntimeHome -JavaHomePath $ResolvedJavaHome
 $AppVersion = Get-AppVersion
+$IconPngSource = Resolve-IconPngSource
 $GradleBat = Join-Path $RepoRoot 'gradlew.bat'
 
 if (-not $SkipBuild) {
@@ -167,10 +252,6 @@ if (-not (Test-Path -LiteralPath $DistributionLauncher)) {
     throw 'MainApp\build\install\MainApp\bin\MainApp.bat was not found. Run gradlew.bat :MainApp:installDist first.'
 }
 
-if (-not (Test-Path -LiteralPath $IconPngSource)) {
-    throw 'Android launcher icon was not found under MainApp\src\android\res\mipmap-xxxhdpi\ic_launcher.png.'
-}
-
 if (-not (Test-Path -LiteralPath $InnoScriptPath)) {
     throw 'Inno Setup script was not found under scripts\windows\VacuumSupervisor.iss.'
 }
@@ -184,9 +265,23 @@ New-Item -ItemType Directory -Force -Path $RuntimeStageDir | Out-Null
 New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
 
 Copy-Item -LiteralPath $DistributionSource -Destination $AppStageDir -Recurse -Force
-Get-ChildItem -LiteralPath $ResolvedJavaHome -Force | Copy-Item -Destination $RuntimeStageDir -Recurse -Force
+Get-ChildItem -LiteralPath $ResolvedRuntimeHome -Force | Copy-Item -Destination $RuntimeStageDir -Recurse -Force
 Copy-Item -LiteralPath $IconPngSource -Destination $IconPngStagePath -Force
-Write-PortableIcon -PngPath $IconPngStagePath -IcoPath $IconIcoStagePath
+Write-PortableIcon -FallbackPngPath $IconPngStagePath -IcoPath $IconIcoStagePath
+
+# The app no longer uses JavaFX WebView, Media, or SWT integration.
+$UnusedRuntimeFiles = @(
+    (Join-Path $RuntimeStageDir 'bin\jfxwebkit.dll'),
+    (Join-Path $RuntimeStageDir 'bin\jfxmedia.dll'),
+    (Join-Path $RuntimeStageDir 'bin\gstreamer-lite.dll'),
+    (Join-Path $RuntimeStageDir 'bin\fxplugins.dll'),
+    (Join-Path $RuntimeStageDir 'lib\jfxswt.jar')
+)
+foreach ($UnusedRuntimeFile in $UnusedRuntimeFiles) {
+    if (Test-Path -LiteralPath $UnusedRuntimeFile) {
+        Remove-Item -LiteralPath $UnusedRuntimeFile -Force
+    }
+}
 
 $WrapperContent = @"
 @echo off
@@ -202,6 +297,26 @@ set "EXIT_CODE=%ERRORLEVEL%"
 endlocal & exit /b %EXIT_CODE%
 "@
 [System.IO.File]::WriteAllText($WrapperStagePath, $WrapperContent, [System.Text.Encoding]::ASCII)
+
+$WrapperVbsContent = @"
+Set shell = CreateObject("WScript.Shell")
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+scriptDir = fso.GetParentFolderName(WScript.ScriptFullName)
+cmdPath = scriptDir & "\vacuum-supervisor.cmd"
+command = "cmd.exe /c " & QuoteArg(cmdPath)
+
+For i = 0 To WScript.Arguments.Count - 1
+  command = command & " " & QuoteArg(WScript.Arguments(i))
+Next
+
+shell.Run command, 0, False
+
+Function QuoteArg(value)
+  QuoteArg = """" & Replace(value, """", """""") & """"
+End Function
+"@
+[System.IO.File]::WriteAllText($WrapperVbsStagePath, $WrapperVbsContent, [System.Text.Encoding]::ASCII)
 
 $ResolvedIsccPath = Resolve-IsccPath
 if ([string]::IsNullOrWhiteSpace($ResolvedIsccPath)) {
