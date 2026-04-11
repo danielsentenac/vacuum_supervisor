@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['o2sensor_5fstatus_5fcolor_3948',['O2SENSOR_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ad1ddc82521227d06318732a8dfcc7ec0',1,'com::gluonapplication::DataTypes']]],
+  ['offactive_5fstatus_5fcolor_3949',['OFFACTIVE_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a4073b742ec033354cdb568a812499cb0',1,'com::gluonapplication::DataTypes']]],
+  ['offactive_5fstatus_5fstring_3950',['OFFACTIVE_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a643f02908d08557e34bccb07239da31e',1,'com::gluonapplication::DataTypes']]],
+  ['offon_5fstatus_5fcolor_3951',['OFFON_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a4b8d019c90f9d9c63f750af49d8d2921',1,'com::gluonapplication::DataTypes']]],
+  ['offon_5fstatus_5fstring_3952',['OFFON_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ac965bde96e49cb7102cc51b7901b16e4',1,'com::gluonapplication::DataTypes']]],
+  ['okfailure_5fstatus_5fcolor_3953',['OKFAILURE_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a6cce4da7a8e46570bbe4f6920a310748',1,'com::gluonapplication::DataTypes']]],
+  ['okfailure_5fstatus_5fcolor_5f2_3954',['OKFAILURE_STATUS_COLOR_2',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#abf34f7e60f1254307064c20601d05eb3',1,'com::gluonapplication::DataTypes']]],
+  ['okfailure_5fstatus_5fstring_3955',['OKFAILURE_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#aa0e116c12a7e824a69cc99ed0be5ad8a',1,'com::gluonapplication::DataTypes']]],
+  ['oklow_5fstatus_5fcolor_3956',['OKLOW_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#aa7efecd563bca6924f8d32a971822424',1,'com::gluonapplication::DataTypes']]],
+  ['oklow_5fstatus_5fstring_3957',['OKLOW_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#aab54784a2c7ec735332b2193f2124ee2',1,'com::gluonapplication::DataTypes']]],
+  ['okworking_5fstatus_5fcolor_3958',['OKWORKING_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ab6e9341d42b11209ec5f0354a5d5c61e',1,'com::gluonapplication::DataTypes']]],
+  ['okworking_5fstatus_5fstring_3959',['OKWORKING_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ac5b34025d538cf7a09b0cb58ffae80e2',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5f2_5fstatus_5fcolor_3960',['ONOFF_2_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ac7a326e83aa50e88307827442f24d74d',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5f2_5fstatus_5fstring_3961',['ONOFF_2_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a42303132ef77867e9712cee02f8473f4',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5f3_5fstatus_5fcolor_3962',['ONOFF_3_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a5c78f244fb65c349dbf281dd1fd546f3',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5f3_5fstatus_5fstring_3963',['ONOFF_3_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#afff4694ba372fe8e2b7a9148ed809330',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5f4_5fstatus_5fcolor_3964',['ONOFF_4_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a8ebefa5687972e0427f7b12435ab67e2',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5f4_5fstatus_5fstring_3965',['ONOFF_4_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a96596dace8bcebfc1a41843e28327375',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5fstatus_5fcolor_3966',['ONOFF_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#ab1adfbc2058abb3664f457de29900eae',1,'com::gluonapplication::DataTypes']]],
+  ['onoff_5fstatus_5fstring_3967',['ONOFF_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a050620a86c271e5332070138cb91c12e',1,'com::gluonapplication::DataTypes']]],
+  ['operation_5fstatus_5fcolor_3968',['OPERATION_STATUS_COLOR',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#af26346784ac975287046c93a8d84b49a',1,'com::gluonapplication::DataTypes']]],
+  ['operation_5fstatus_5fstring_3969',['OPERATION_STATUS_STRING',['../interfacecom_1_1gluonapplication_1_1DataTypes.html#a27b711448da92412051ff56969060376',1,'com::gluonapplication::DataTypes']]]
+];

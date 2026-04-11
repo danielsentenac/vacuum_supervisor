@@ -1,0 +1,27 @@
+var classcom_1_1gluonapplication_1_1ControllerXGSGauge =
+[
+    [ "DEGASOFF_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a69c682b9f23c92e3e9939e327fe784e5", null ],
+    [ "DEGASOFF_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a316b5cb5123a0c8f814b8635a89ae0a7", null ],
+    [ "DEGASOFF_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#ac0701320a923aa6d3aaedd8a08e1762b", null ],
+    [ "DEGASON_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a269650ee9b9a9968f64907d646b02032", null ],
+    [ "DEGASON_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#adafadd1115a1f52ed4a3e7a70e0efd72", null ],
+    [ "DEGASON_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a1d685ffb48e4ad6bb05505eacfc27741", null ],
+    [ "FIL1OFF_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#acb1de5068fbd2ddf5bf0d19e792e0a57", null ],
+    [ "FIL1OFF_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a5a35688f664680382a70ba84aa3f854c", null ],
+    [ "FIL1OFF_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#af673dbd1b7ae573d43d466a19f3ead47", null ],
+    [ "FIL1ON_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#af245c79b8a8be84ebbe24c44c5f61330", null ],
+    [ "FIL1ON_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a70f92f9ee45d57fb1e84ec5f349514c0", null ],
+    [ "FIL1ON_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a15cbf926aa3ca80964ca2baa168976c8", null ],
+    [ "FIL2OFF_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a486976e42fa667eefd9239d3cf4f7a3f", null ],
+    [ "FIL2OFF_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a18dc84c309c32ddd3f40346b48cb88c4", null ],
+    [ "FIL2OFF_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#ad3b2c407382e27de25a29962d7c6f4fa", null ],
+    [ "FIL2ON_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a429ae68b59983d21ebb297c6c432c6e6", null ],
+    [ "FIL2ON_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a4f165d12823cbc74cc4c08b04de3759a", null ],
+    [ "FIL2ON_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#abbb7e6a09c5e16a136a50e1189c4bc34", null ],
+    [ "initialize", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#af09bc6623f80018cf6da0376d7eb1bd9", null ],
+    [ "Pressure_Clicked", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a495f6fe2cadace973d2dd115b0944e13", null ],
+    [ "Pressure_Pressed", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a400d5110a24223a2e92bc2c333084dd9", null ],
+    [ "Pressure_Released", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a3960f97406c78b34893309ee3aa8e196", null ],
+    [ "name", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a7c3f9f94918180578d773feb546a46fd", null ],
+    [ "style", "classcom_1_1gluonapplication_1_1ControllerXGSGauge.html#a49b50feade459d7f4d6a346b0e413923", null ]
+];
