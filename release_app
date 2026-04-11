@@ -1,0 +1,274 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 || $# -gt 3 ]]; then
+  echo "Usage: $0 <version_name|vX.Y.Z> [tag] [commit_message]"
+  echo "Example: $0 0.1.48 v0.1.48 \"Release v0.1.48\""
+  exit 1
+fi
+
+VERSION_NAME="${1#v}"
+TAG="${2:-v${VERSION_NAME}}"
+COMMIT_MESSAGE="${3:-Release ${TAG}}"
+MANIFEST="MainApp/src/android/AndroidManifest.xml"
+DOXYFILE_PATH="${DOXYFILE_PATH:-Doxyfile}"
+APK_PATH_DEFAULT="MainApp/build/javafxports/android/MainApp.apk"
+APK_PATH_ALT="MainApp/build/outputs/apk/release/MainApp-release.apk"
+LOCAL_KEYSTORE="$(pwd)/MainAppkeystore"
+LOCAL_SIGNING_ENV_DEFAULT="$(pwd)/release-signing.env"
+LOCAL_SIGNING_ENV="${SIGNING_ENV_FILE:-${LOCAL_SIGNING_ENV_DEFAULT}}"
+GRADLE_USER_PROPS="${HOME}/.gradle/gradle.properties"
+PROJECT_LOCAL_PROPS="$(pwd)/local.properties"
+DEFAULT_ANDROID_SDK="$(pwd)/.android-sdk"
+
+if [[ ! -f "${MANIFEST}" ]]; then
+  echo "Error: ${MANIFEST} not found."
+  exit 1
+fi
+
+if git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
+  echo "Error: tag ${TAG} already exists."
+  exit 1
+fi
+
+CURRENT_VERSION="$(sed -n 's/.*android:versionName=\"\([^\"]*\)\".*/\1/p' "${MANIFEST}" | head -n1)"
+if [[ -z "${CURRENT_VERSION}" ]]; then
+  echo "Error: could not read android:versionName from ${MANIFEST}."
+  exit 1
+fi
+
+read_gradle_property() {
+  local key="$1"
+  if [[ -f "${GRADLE_USER_PROPS}" ]]; then
+    sed -n "s/^${key}=//p" "${GRADLE_USER_PROPS}" | tail -n1
+  fi
+}
+
+read_local_sdk_dir() {
+  if [[ -f "${PROJECT_LOCAL_PROPS}" ]]; then
+    sed -n 's/^sdk.dir=//p' "${PROJECT_LOCAL_PROPS}" | head -n1
+  fi
+}
+
+read_doxy_project_number() {
+  local doxyfile="$1"
+  sed -n 's/^[[:space:]]*PROJECT_NUMBER[[:space:]]*=[[:space:]]*"\{0,1\}\([^"]*\)"\{0,1\}[[:space:]]*$/\1/p' "${doxyfile}" | head -n1
+}
+
+update_doxy_project_number() {
+  local doxyfile="$1"
+  local version_tag="$2"
+  local escaped_tag
+
+  escaped_tag="$(printf '%s' "${version_tag}" | sed -e 's/[\/&]/\\&/g' -e 's/"/\\"/g')"
+
+  if grep -qE '^[[:space:]]*PROJECT_NUMBER[[:space:]]*=' "${doxyfile}"; then
+    sed -i -E "s|^[[:space:]]*PROJECT_NUMBER[[:space:]]*=.*$|PROJECT_NUMBER         = \"${escaped_tag}\"|" "${doxyfile}"
+  else
+    printf '\nPROJECT_NUMBER         = "%s"\n' "${version_tag}" >> "${doxyfile}"
+  fi
+}
+
+if [[ -f "${LOCAL_SIGNING_ENV}" ]]; then
+  # shellcheck disable=SC1090
+  source "${LOCAL_SIGNING_ENV}"
+  echo "Loaded signing values from ${LOCAL_SIGNING_ENV}"
+fi
+
+LOCAL_SDK_DIR="$(read_local_sdk_dir)"
+if [[ -z "${ANDROID_HOME:-}" ]]; then
+  if [[ -n "${ANDROID_SDK_ROOT:-}" ]]; then
+    export ANDROID_HOME="${ANDROID_SDK_ROOT}"
+  elif [[ -n "${LOCAL_SDK_DIR}" && -d "${LOCAL_SDK_DIR}" ]]; then
+    export ANDROID_HOME="${LOCAL_SDK_DIR}"
+  elif [[ -d "${DEFAULT_ANDROID_SDK}" ]]; then
+    export ANDROID_HOME="${DEFAULT_ANDROID_SDK}"
+  fi
+fi
+
+if [[ -z "${ANDROID_SDK_ROOT:-}" && -n "${ANDROID_HOME:-}" ]]; then
+  export ANDROID_SDK_ROOT="${ANDROID_HOME}"
+fi
+
+if [[ -n "${ANDROID_HOME:-}" ]]; then
+  echo "Using Android SDK: ${ANDROID_HOME}"
+fi
+
+find_android_tool() {
+  local tool="$1"
+  local sdk_root=""
+  local from_local_props=""
+
+  if command -v "${tool}" >/dev/null 2>&1; then
+    command -v "${tool}"
+    return 0
+  fi
+
+  if [[ -f "local.properties" ]]; then
+    from_local_props="$(sed -n 's/^sdk.dir=//p' local.properties | head -n1)"
+  fi
+
+  for candidate in "${ANDROID_HOME:-}" "${ANDROID_SDK_ROOT:-}" "${from_local_props}" "$(read_gradle_property ANDROID_HOME)"; do
+    if [[ -n "${candidate}" && -d "${candidate}/build-tools" ]]; then
+      sdk_root="${candidate}"
+      break
+    fi
+  done
+
+  if [[ -n "${sdk_root}" ]]; then
+    find "${sdk_root}/build-tools" -maxdepth 2 -type f -name "${tool}" | sort -V | tail -n1
+  fi
+}
+
+EXPLICIT_STORE_FILE="${RELEASE_STORE_FILE:-}"
+EXPLICIT_KEY_ALIAS="${RELEASE_KEY_ALIAS:-}"
+
+GRADLE_STORE_FILE="$(read_gradle_property RELEASE_STORE_FILE)"
+GRADLE_STORE_PASSWORD="$(read_gradle_property RELEASE_STORE_PASSWORD)"
+GRADLE_KEY_ALIAS="$(read_gradle_property RELEASE_KEY_ALIAS)"
+GRADLE_KEY_PASSWORD="$(read_gradle_property RELEASE_KEY_PASSWORD)"
+
+SIGNING_STORE_FILE="${EXPLICIT_STORE_FILE:-${GRADLE_STORE_FILE:-${SIGNING_KEYSTORE:-}}}"
+SIGNING_STORE_PASSWORD="${RELEASE_STORE_PASSWORD:-${GRADLE_STORE_PASSWORD:-${SIGNING_STORE_PASSWORD:-}}}"
+SIGNING_KEY_ALIAS="${RELEASE_KEY_ALIAS:-${GRADLE_KEY_ALIAS:-${SIGNING_ALIAS:-}}}"
+SIGNING_KEY_PASSWORD="${RELEASE_KEY_PASSWORD:-${GRADLE_KEY_PASSWORD:-${SIGNING_KEY_PASSWORD:-}}}"
+
+if [[ -n "${SIGNING_STORE_FILE}" && ! -f "${SIGNING_STORE_FILE}" && -f "$(pwd)/${SIGNING_STORE_FILE}" ]]; then
+  SIGNING_STORE_FILE="$(pwd)/${SIGNING_STORE_FILE}"
+fi
+
+if [[ -z "${SIGNING_STORE_FILE}" || ! -f "${SIGNING_STORE_FILE}" ]]; then
+  if [[ -f "${LOCAL_KEYSTORE}" ]]; then
+    SIGNING_STORE_FILE="${LOCAL_KEYSTORE}"
+    if [[ -z "${EXPLICIT_KEY_ALIAS}" ]]; then
+      SIGNING_KEY_ALIAS="mainappkey"
+    fi
+    echo "Using local keystore: ${SIGNING_STORE_FILE}"
+  fi
+fi
+
+MISSING=()
+if [[ -z "${SIGNING_STORE_FILE}" ]]; then
+  MISSING+=("RELEASE_STORE_FILE")
+fi
+if [[ -z "${SIGNING_STORE_PASSWORD}" ]]; then
+  MISSING+=("RELEASE_STORE_PASSWORD")
+fi
+if [[ -z "${SIGNING_KEY_ALIAS}" ]]; then
+  MISSING+=("RELEASE_KEY_ALIAS")
+fi
+if [[ -z "${SIGNING_KEY_PASSWORD}" ]]; then
+  MISSING+=("RELEASE_KEY_PASSWORD")
+fi
+
+if [[ ${#MISSING[@]} -gt 0 ]]; then
+  echo "Error: missing signing values: ${MISSING[*]}"
+  echo "Set them in environment, ${GRADLE_USER_PROPS}, or ${LOCAL_SIGNING_ENV}."
+  exit 1
+fi
+
+if [[ ! -f "${SIGNING_STORE_FILE}" ]]; then
+  echo "Error: signing keystore file not found: ${SIGNING_STORE_FILE}"
+  exit 1
+fi
+
+export RELEASE_STORE_FILE="${SIGNING_STORE_FILE}"
+export RELEASE_STORE_PASSWORD="${SIGNING_STORE_PASSWORD}"
+export RELEASE_KEY_ALIAS="${SIGNING_KEY_ALIAS}"
+export RELEASE_KEY_PASSWORD="${SIGNING_KEY_PASSWORD}"
+
+sed -i -E "s/(android:versionName=\")[^\"]+(\")/\1${VERSION_NAME}\2/" "${MANIFEST}"
+
+if [[ -f "${DOXYFILE_PATH}" ]]; then
+  CURRENT_DOXY_PROJECT_NUMBER="$(read_doxy_project_number "${DOXYFILE_PATH}")"
+  update_doxy_project_number "${DOXYFILE_PATH}" "${TAG}"
+  if [[ -n "${CURRENT_DOXY_PROJECT_NUMBER}" ]]; then
+    echo "Doxyfile PROJECT_NUMBER: ${CURRENT_DOXY_PROJECT_NUMBER} -> ${TAG}"
+  else
+    echo "Doxyfile PROJECT_NUMBER set to: ${TAG}"
+  fi
+else
+  echo "Warning: ${DOXYFILE_PATH} not found; skipping API doc title version update."
+fi
+
+echo "AndroidManifest versionName: ${CURRENT_VERSION} -> ${VERSION_NAME}"
+echo "Using signing keystore: ${RELEASE_STORE_FILE}"
+echo "Using signing alias: ${RELEASE_KEY_ALIAS}"
+
+echo "Building signed APK (androidRelease)..."
+APK_UNALIGNED="MainApp/build/javafxports/android/MainApp-unaligned.apk"
+APK_ALIGNED="MainApp/build/javafxports/android/MainApp-aligned.apk"
+GRADLE_LOG="$(mktemp)"
+GRADLE_RELEASE_OK=0
+
+# Ensure fallback is based on artifacts from the current build attempt only.
+rm -f "${APK_UNALIGNED}" "${APK_ALIGNED}" "${APK_PATH_DEFAULT}"
+
+if ./gradlew --no-daemon :MainApp:androidRelease 2>&1 | tee "${GRADLE_LOG}"; then
+  GRADLE_RELEASE_OK=1
+fi
+
+if [[ ${GRADLE_RELEASE_OK} -ne 1 ]]; then
+  if [[ -f "${APK_UNALIGNED}" ]]; then
+    ZIPALIGN_BIN="$(find_android_tool zipalign)"
+    APKSIGNER_BIN="$(find_android_tool apksigner)"
+
+    if [[ -z "${ZIPALIGN_BIN}" || -z "${APKSIGNER_BIN}" ]]; then
+      echo "Error: androidRelease failed during signing and zipalign/apksigner were not found."
+      rm -f "${GRADLE_LOG}"
+      exit 1
+    fi
+
+    echo "Gradle signing failed, applying manual zipalign + apksigner fallback..."
+    rm -f "${APK_ALIGNED}" "${APK_PATH_DEFAULT}"
+    "${ZIPALIGN_BIN}" -f -p 4 "${APK_UNALIGNED}" "${APK_ALIGNED}"
+    "${APKSIGNER_BIN}" sign \
+      --ks "${SIGNING_STORE_FILE}" \
+      --ks-key-alias "${SIGNING_KEY_ALIAS}" \
+      --ks-pass "env:RELEASE_STORE_PASSWORD" \
+      --key-pass "env:RELEASE_KEY_PASSWORD" \
+      --out "${APK_PATH_DEFAULT}" \
+      "${APK_ALIGNED}"
+    "${APKSIGNER_BIN}" verify --verbose "${APK_PATH_DEFAULT}" >/dev/null
+  else
+    echo "Error: androidRelease failed. See log above."
+    rm -f "${GRADLE_LOG}"
+    exit 1
+  fi
+fi
+
+rm -f "${GRADLE_LOG}"
+
+APK_PATH=""
+if [[ -f "${APK_PATH_DEFAULT}" ]]; then
+  APK_PATH="${APK_PATH_DEFAULT}"
+elif [[ -f "${APK_PATH_ALT}" ]]; then
+  APK_PATH="${APK_PATH_ALT}"
+fi
+
+if [[ -z "${APK_PATH}" ]]; then
+  echo "Warning: androidRelease completed, but APK path was not found in expected locations."
+  echo "Checked:"
+  echo "  - ${APK_PATH_DEFAULT}"
+  echo "  - ${APK_PATH_ALT}"
+else
+  echo "Signed APK created at: ${APK_PATH}"
+fi
+
+git add -A
+
+if git diff --cached --quiet; then
+  echo "No changes to commit."
+else
+  git commit -m "${COMMIT_MESSAGE}"
+fi
+
+git push
+git tag "${TAG}"
+git push origin "${TAG}"
+
+if [[ -n "${APK_PATH}" ]]; then
+  echo "Release completed: version=${VERSION_NAME}, tag=${TAG}, apk=${APK_PATH}"
+else
+  echo "Release completed: version=${VERSION_NAME}, tag=${TAG}"
+fi

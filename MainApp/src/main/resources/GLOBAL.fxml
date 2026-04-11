@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerGlobal" maxHeight="1.7976931348623157E308" prefHeight="548.0" prefWidth="857.0" style="-fx-background-color: #333333;" stylesheets="@GLOBAL.css">
+   <children>
+      <Label fx:id="CB" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="360.0" layoutY="302.0" onMouseClicked="#CB_Clicked" onMousePressed="#CB_Pressed" onMouseReleased="#CB_Released" prefHeight="191.0" prefWidth="194.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; ">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Label fx:id="RGA_WEST" alignment="TOP_CENTER" layoutX="692.0" layoutY="366.0" prefHeight="143.0" prefWidth="155.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="(RGA 1500W)" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RGA_BS" alignment="TOP_CENTER" layoutX="692.0" layoutY="203.0" prefHeight="143.0" prefWidth="155.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="(RGA Central BS)" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RGA_NORTH" alignment="TOP_CENTER" layoutX="692.0" layoutY="39.0" prefHeight="143.0" prefWidth="155.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="(RGA 1500 N)" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="TUBEMC" alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" layoutY="470.0" onMouseClicked="#TUBEMC_Clicked" onMousePressed="#TUBEMC_Pressed" onMouseReleased="#TUBEMC_Released" prefHeight="17.0" prefWidth="60.0" style="-fx-background-color: e1e4db;" text="TUBE MC">
+         <font>
+            <Font name="System" size="10.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TUBEW" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="366.0" onMouseClicked="#TUBEW_Clicked" onMousePressed="#TUBEW_Pressed" onMouseReleased="#TUBEW_Released" prefHeight="20.0" prefWidth="142.0" style="-fx-background-color: e1e4db;" text="TUBE WEST">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TUBEN" alignment="CENTER" contentDisplay="CENTER" layoutX="364.5" layoutY="204.0" onMouseClicked="#TUBEN_Clicked" onMousePressed="#TUBEN_Pressed" onMouseReleased="#TUBEN_Released" prefHeight="20.0" prefWidth="142.0" rotate="-90.0" style="-fx-background-color: e1e4db;" text="TUBE NORTH">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="NE" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="66.0" onMouseClicked="#NE_Clicked" onMousePressed="#NE_Pressed" onMouseReleased="#NE_Released" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="NE">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="MC" alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="468.0" onMouseClicked="#MC_Clicked" onMousePressed="#MC_Pressed" onMouseReleased="#MC_Released" prefHeight="23.0" prefWidth="26.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="MC" translateX="1.0" translateY="-1.0">
+         <font>
+            <Font name="System" size="10.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Rectangle fx:id="StatusLevelLN2CB" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="44.0" layoutX="287.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20; -fx-fill: linear-gradient(to top, deepskyblue 10%,white 0%);" width="22.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Rectangle>
+      <Line endX="2.2" layoutX="327.0" layoutY="308.0" startX="-16.5" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Group fx:id="ValveLN2WI" layoutX="267.5" layoutY="300.0" onMouseClicked="#ValveLN2WI_Clicked" onMousePressed="#ValveLN2WI_Pressed" onMouseReleased="#ValveLN2WI_Released">
+         <children>
+            <SVGPath fx:id="StatusValveLN2WI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="15.5" rotate="90.0" scaleX="0.5">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="ValveLN2NI" layoutX="304.0" layoutY="275.0" onMouseClicked="#ValveLN2NI_Clicked" onMousePressed="#ValveLN2NI_Pressed" onMouseReleased="#ValveLN2NI_Released">
+         <children>
+            <SVGPath fx:id="StatusValveLN2NI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutY="-2.0" scaleX="0.5">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="ValveLN2WE" layoutX="85.0" layoutY="375.0" onMouseClicked="#ValveLN2WE_Clicked" onMousePressed="#ValveLN2WE_Pressed" onMouseReleased="#ValveLN2WE_Released">
+         <children>
+            <SVGPath fx:id="StatusValveLN2WE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="16.0" layoutY="2.0" rotate="90.0" scaleX="0.5">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="ValveLN2NE" layoutX="351.0" layoutY="50.0" onMouseClicked="#ValveLN2NE_Clicked" onMousePressed="#ValveLN2NE_Pressed" onMouseReleased="#ValveLN2NE_Released">
+         <children>
+            <SVGPath fx:id="StatusValveLN2NE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="4.0" layoutY="-2.0" scaleX="0.5">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Rectangle fx:id="StatusLevelLN2NE" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="35.0" layoutX="338.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20; -fx-fill: linear-gradient(to top, deepskyblue 10%, white 0%);" width="20.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="StatusLevelLN2WE" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="35.0" layoutX="98.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20; -fx-fill: linear-gradient(to top, deepskyblue 10%, white 0%);" width="20.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Rectangle>
+      <Line endX="3.0000152587890625" layoutX="133.0" layoutY="430.0" startX="-14.0" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Line endX="-1.5" endY="1.52587890625E-5" layoutX="381.0" layoutY="82.0" startX="-22.0" startY="7.62939453125E-6" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Line endX="16.5" endY="1.52587890625E-5" layoutX="400.0" layoutY="82.0" startX="0.5" startY="7.62939453125E-6" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Label fx:id="PressureLN2NE" alignment="CENTER" layoutX="256.0" layoutY="83.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelLN2NE" alignment="CENTER" layoutX="256.0" layoutY="59.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureLN2WE" alignment="CENTER" layoutX="85.0" layoutY="494.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelLN2WE" alignment="CENTER" layoutX="85.0" layoutY="471.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureLN2CB" alignment="CENTER" layoutX="213.0" layoutY="273.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelLN2CB" alignment="CENTER" layoutX="213.0" layoutY="250.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Line endX="-14.25" endY="13.5" layoutX="333.0" layoutY="311.0" startX="-14.25" stroke="DEEPSKYBLUE" strokeWidth="3.0" translateX="-0.5"/>
+      <Line endX="-14.25" endY="6.25" layoutX="332.0" layoutY="346.0" startX="-14.25" startY="-0.5" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Line endX="25.0" endY="-0.25" layoutX="335.0" layoutY="354.0" startX="-17.25" startY="-0.25" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Line endX="-6.25" layoutX="366.0" layoutY="308.0" startX="-16.5" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Line endX="4.0" endY="9.25" layoutX="132.0" layoutY="413.0" startX="4.0" startY="15.5" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Line endX="4.0" endY="7.5" layoutX="132.0" layoutY="386.0" startX="4.0" startY="15.5" stroke="DEEPSKYBLUE" strokeWidth="3.0"/>
+      <Label fx:id="GPS" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="33.0" prefHeight="21.0" prefWidth="131.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="GPS" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="Sqz" alignment="CENTER" contentDisplay="CENTER" layoutX="465.0" layoutY="254.0" onMouseClicked="#Sqz_Clicked" onMousePressed="#Sqz_Pressed" onMouseReleased="#Sqz_Released" prefHeight="17.0" prefWidth="60.0" rotate="-90.0" style="-fx-background-color: e1e4db;" text="SQZ">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="708.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2"/>
+      <Text fill="#d1d1e0" layoutX="708.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18"/>
+      <Text fill="#d1d1e0" layoutX="708.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="28"/>
+      <Text fill="#d1d1e0" layoutX="708.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="32"/>
+      <Text fill="#d1d1e0" layoutX="708.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="44"/>
+      <Label fx:id="RgaNE_2" alignment="CENTER" layoutX="733.0" layoutY="67.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="2" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaNE_18" alignment="CENTER" layoutX="733.0" layoutY="87.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="18" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaNE_28" alignment="CENTER" layoutX="733.0" layoutY="107.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="28" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaNE_32" alignment="CENTER" layoutX="733.0" layoutY="127.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="32" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaNE_44" alignment="CENTER" layoutX="733.0" layoutY="147.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="44" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="711.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2"/>
+      <Text fill="#d1d1e0" layoutX="711.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18"/>
+      <Text fill="#d1d1e0" layoutX="711.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="28"/>
+      <Text fill="#d1d1e0" layoutX="711.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="32"/>
+      <Text fill="#d1d1e0" layoutX="711.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="44"/>
+      <Label fx:id="RgaWE_2" alignment="CENTER" layoutX="736.0" layoutY="395.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="2" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaWE_18" alignment="CENTER" layoutX="736.0" layoutY="415.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="18" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaWE_28" alignment="CENTER" layoutX="736.0" layoutY="435.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="28" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaWE_32" alignment="CENTER" layoutX="736.0" layoutY="455.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="32" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaWE_44" alignment="CENTER" layoutX="736.0" layoutY="475.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="44" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="706.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2"/>
+      <Text fill="#d1d1e0" layoutX="706.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18"/>
+      <Text fill="#d1d1e0" layoutX="706.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="28"/>
+      <Text fill="#d1d1e0" layoutX="706.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="32"/>
+      <Text fill="#d1d1e0" layoutX="706.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="44"/>
+      <Label fx:id="RgaBS_2" alignment="CENTER" layoutX="731.0" layoutY="234.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="2" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaBS_18" alignment="CENTER" layoutX="731.0" layoutY="254.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="18" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaBS_28" alignment="CENTER" layoutX="731.0" layoutY="274.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="28" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaBS_32" alignment="CENTER" layoutX="731.0" layoutY="294.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="32" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="RgaBS_44" alignment="CENTER" layoutX="731.0" layoutY="314.0" prefHeight="21.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="44" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <SVGPath fx:id="StatusValveSqz300N" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="460.0" layoutY="193.0" rotate="90.0" scaleX="0.3">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveSqz0N" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="460.0" layoutY="262.0" rotate="90.0" scaleX="0.3">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="Sqz0N" alignment="CENTER" contentDisplay="CENTER" layoutX="494.0" layoutY="304.0" prefHeight="16.0" prefWidth="13.5" rotate="50.0" style="-fx-background-color: e1e4db;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveSqzDet2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="474.0" layoutY="287.0" rotate="50.0" scaleX="0.3" scaleY="0.9">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="SqzDet2" alignment="CENTER" contentDisplay="CENTER" layoutX="510.0" layoutY="322.0" prefHeight="17.0" prefWidth="12.0" rotate="50.0" style="-fx-background-color: e1e4db;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveSqzDet1" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="488.0" layoutY="304.0" rotate="50.0" scaleX="0.3" scaleY="0.9">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="Sqz300N" alignment="CENTER" contentDisplay="CENTER" layoutX="489.0" layoutY="208.0" prefHeight="17.0" prefWidth="12.0" rotate="90.0" style="-fx-background-color: e1e4db;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveBigNI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="401.0" layoutY="258.0" rotate="90.0" scaleX="0.5" scaleY="1.2">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveBigNE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="400.5" layoutY="99.0" rotate="90.0" scaleX="0.5" scaleY="1.2">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveBigWI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="316.0" layoutY="341.0" scaleX="0.5" scaleY="1.2">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveBigWE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="156.0" layoutY="341.0" scaleX="0.5" scaleY="1.2">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCentralLI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="316.0" layoutY="443.5" scaleX="0.5">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="CryoWE" alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="366.0" prefHeight="20.0" prefWidth="15.0" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoNE" alignment="CENTER" contentDisplay="CENTER" layoutX="428.0" layoutY="108.0" prefHeight="20.0" prefWidth="15.0" rotate="90.0" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveCryoNE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="400.0" layoutY="71.0" rotate="90.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCryoWE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="127.0" layoutY="341.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCryoNI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="401.0" layoutY="286.7" rotate="90.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCryoWI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="345.0" layoutY="341.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="WI" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="363.5" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="WI">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveCentralNS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="401.0" layoutY="320.0" rotate="90.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCentralWS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="379.0" layoutY="341.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCentralPS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="401.0" layoutY="362.0" rotate="90.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCentralSS" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="422.0" layoutY="341.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="WE" alignment="CENTER" contentDisplay="CENTER" layoutX="121.7" layoutY="358.0" onMouseClicked="#WE_Clicked" onMousePressed="#WE_Pressed" onMouseReleased="#WE_Released" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="WE">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveCryoLinkDETVs1" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="456.0" layoutY="341.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCryoLinkIBVs2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="401.0" layoutY="395.5" rotate="90.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="PR" alignment="CENTER" contentDisplay="CENTER" layoutX="424.0" layoutY="402.0" prefHeight="24.0" prefWidth="25.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="PR">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="SR" alignment="CENTER" contentDisplay="CENTER" layoutX="462.0" layoutY="363.5" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="SR">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="BS" alignment="CENTER" contentDisplay="CENTER" layoutX="419.0" layoutY="360.0" prefHeight="32.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="BS">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="NI" alignment="CENTER" contentDisplay="CENTER" layoutX="423.5" layoutY="326.5" prefHeight="24.0" prefWidth="25.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="NI">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoNI" alignment="CENTER" contentDisplay="CENTER" layoutX="428.5" layoutY="299.0" prefHeight="20.0" prefWidth="15.0" rotate="90.0" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoWI" alignment="CENTER" contentDisplay="CENTER" layoutX="359.7" layoutY="366.0" prefHeight="20.0" prefWidth="15.0" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoLinkDet" alignment="CENTER" contentDisplay="CENTER" layoutX="496.0" layoutY="366.0" prefHeight="20.0" prefWidth="15.0" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoLinkIB" alignment="CENTER" contentDisplay="CENTER" layoutX="428.5" layoutY="433.0" prefHeight="20.0" prefWidth="15.0" rotate="90.0" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveCryoLinkIBVs1" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="401.0" layoutY="420.5" rotate="90.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="IB" alignment="CENTER" contentDisplay="CENTER" layoutX="423.5" layoutY="460.5" prefHeight="24.0" prefWidth="25.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="IB">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="Det" alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="363.5" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="DT">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <SVGPath fx:id="StatusValveCryoLinkDETVs2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="481.0" layoutY="341.0" scaleX="0.3" scaleY="1.1">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="SqzDet1" alignment="CENTER" contentDisplay="CENTER" layoutX="524.0" layoutY="339.0" prefHeight="17.0" prefWidth="12.0" rotate="50.0" style="-fx-background-color: e1e4db;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Polygon fill="#0d0d0d" layoutX="477.0" layoutY="340.0" points="13.75, -27.75, 25.75, -38.25, 9.5, -38.25" stroke="#e1e4db" strokeMiterLimit="0.0" strokeType="INSIDE" style="-fx-fill: #e1e4db;">
+         <effect>
+            <InnerShadow />
+         </effect></Polygon>
+      <Label fx:id="LevelPsCryoNI" alignment="CENTER" layoutX="337.0" layoutY="258.0" prefHeight="12.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelTexhaustCryoNI" alignment="CENTER" layoutX="337.0" layoutY="277.0" prefHeight="12.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Temp" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelPsCryoWI" alignment="CENTER" layoutX="269.0" layoutY="408.0" prefHeight="12.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelTexhaustCryoWI" alignment="CENTER" layoutX="269.0" layoutY="427.0" prefHeight="12.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Temp" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelPsCryoWE" alignment="CENTER" layoutX="150.0" layoutY="319.0" prefHeight="12.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelTexhaustCryoWE" alignment="CENTER" layoutX="150.0" layoutY="339.0" prefHeight="12.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Temp" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelPsCryoNE" alignment="CENTER" layoutX="460.0" layoutY="101.0" prefHeight="17.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Level" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="LevelTexhaustCryoNE" alignment="CENTER" layoutX="460.0" layoutY="120.0" prefHeight="17.0" prefWidth="80.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Temp" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureDetG51" alignment="CENTER" layoutX="560.0" layoutY="368.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P Det G51" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="Remote" alignment="CENTER" contentDisplay="CENTER" layoutX="482.0" layoutY="459.0" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="REMOTE">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="PressureRemoteG3" alignment="CENTER" layoutX="568.0" layoutY="427.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P Rem G3" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureTubeNorth" alignment="CENTER" layoutX="311.0" layoutY="185.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P Tube North" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureTubeWest" alignment="CENTER" layoutX="157.0" layoutY="419.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P Tube West" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="316.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Tube North Avg)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="164.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Tube West Avg)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="268.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Cryo WI Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="335.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Cryo NI Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="459.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Cryo NE Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="148.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Cryo WE Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="214.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Tank Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="85.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Tank Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="258.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Tank Levels)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="562.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Det Pressure G51)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="562.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Remote Pressure G3)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Label fx:id="PressureMCG51" alignment="CENTER" layoutX="200.0" layoutY="515.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P MC G51" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="202.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(MC Pressure G51)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Label fx:id="PressureIBG51" alignment="CENTER" layoutX="394.0" layoutY="512.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P IB G51" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="398.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(IB Pressure G51)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Label fx:id="PressureBSGd2" alignment="CENTER" layoutX="453.0" layoutY="415.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 5;" text="P BS Gd2">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text layoutX="455.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(BS Pressure Gd2)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Label fx:id="PressureNEGd2" alignment="CENTER" layoutX="386.0" layoutY="43.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P NE Gd2" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="388.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(NE Pressure Gd2)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Label fx:id="PressureWEGd2" alignment="CENTER" layoutX="14.0" layoutY="376.0" prefHeight="17.0" prefWidth="98.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="P WE Gd2" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="16.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(WE Pressure Gd2)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Time GPS)">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

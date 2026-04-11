@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerNE" maxHeight="1.7976931348623157E308" prefHeight="546.0" prefWidth="313.0" style="-fx-background-color: #333333;">
+   <children>
+      <Label fx:id="CryoNE" alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="285.0" onMouseClicked="#CryoNE_Clicked" onMousePressed="#CryoNE_Pressed" onMouseReleased="#CryoNE_Released" prefHeight="94.0" prefWidth="50.0" style="-fx-background-color: e1e4db;  -fx-background-radius: 5; -fx-border-radius: 5;" text="CRYO" translateX="-3.0" translateY="-6.0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="TowerNE" alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="153.0" onMouseClicked="#TowerNE_Clicked" onMousePressed="#TowerNE_Pressed" onMouseReleased="#TowerNE_Released" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: e1e4db; " text="TOWER NE" translateX="-3.0" translateY="-1.5">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="MiniTowerNE" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="51.0" onMouseClicked="#MiniTowerNE_Clicked" onMousePressed="#MiniTowerNE_Pressed" onMouseReleased="#MiniTowerNE_Released" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="MINI" translateX="-3.0" translateY="-5.0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="VCryoNE" layoutX="7.0" layoutY="237.0" onMouseClicked="#VCryoNE_Clicked" onMousePressed="#VCryoNE_Pressed" onMouseReleased="#VCryoNE_Released" scaleX="0.9" translateX="-3.0" translateY="4.0">
+         <children>
+            <SVGPath fx:id="StatusVCryoNE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="50.5" rotate="90.0" scaleX="0.8" scaleY="2.8" translateX="-7.0" translateY="-10.3">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group fx:id="VNE" layoutY="360.0" onMouseClicked="#VNE_Clicked" onMousePressed="#VNE_Pressed" onMouseReleased="#VNE_Released" scaleX="0.95" translateX="-3.0" translateY="-2.5">
+         <children>
+            <SVGPath fx:id="StatusVNE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="50.5" rotate="90.0" scaleX="0.8" scaleY="2.8" translateY="-6.7">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="PressureTower" alignment="CENTER" layoutX="153.0" layoutY="193.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateX="-3.0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureMiniTower" alignment="CENTER" layoutX="153.0" layoutY="63.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateX="-3.0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureCryo" alignment="CENTER" layoutX="153.0" layoutY="319.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0" translateX="-3.0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Rectangle fx:id="TUBEN" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="165.0" layoutX="61.0" layoutY="403.0" onMouseClicked="#TUBEN_Clicked" onMousePressed="#TUBEN_Pressed" onMouseReleased="#TUBEN_Released" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateX="-3.0" translateY="-3.0" width="48.0">
+      <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
+	 </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="56.0" layoutX="72.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateX="-3.0" width="24.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
+         </effect>
+      </Rectangle>
+      <Circle fx:id="StatusSensorTower" fill="#d1d1e0" layoutX="273.0" layoutY="204.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE" translateX="-3.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Circle>
+      <Circle fx:id="StatusSensorCryo" fill="#d1d1e0" layoutX="273.0" layoutY="330.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE" translateX="-3.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Circle>
+      <Label fx:id="Tiltmeter" alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="241.0" onMouseClicked="#Tiltmeter_Clicked" onMousePressed="#Tiltmeter_Pressed" onMouseReleased="#Tiltmeter_Released" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="TILTMETER">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="1758.0" prefWidth="290.0" style="-fx-background-color: #333333;">
+   <children>
+      <Label fx:id="PressureAverageN" alignment="CENTER" layoutX="166.0" layoutY="284.0" prefHeight="13.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="PressureAverageW" alignment="CENTER" layoutX="166.0" layoutY="316.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="7.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Avg. Pressure North Arm">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Text boundsType="VISUAL" layoutX="10.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Avg. Pressure West Arm">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="21.0" layoutY="30.0" prefHeight="6.0" prefWidth="239.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Global Flags">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="17.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden state valves CB" wrappingWidth="169.8916015625">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateValveCentral" alignment="CENTER" layoutX="165.0" layoutY="411.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="43.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="Golden State 300N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube300N" alignment="CENTER" layoutX="165.0" layoutY="517.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+	    <Text boundsType="VISUAL" layoutX="43.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 600N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube600N" alignment="CENTER" layoutX="165.0" layoutY="549.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+	    <Text boundsType="VISUAL" layoutX="35.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 1200N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube1200N" alignment="CENTER" layoutX="165.0" layoutY="581.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+    <Text boundsType="VISUAL" layoutX="35.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 1800N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube1800N" alignment="CENTER" layoutX="165.0" layoutY="613.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+     <Text boundsType="VISUAL" layoutX="35.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 2400N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube2400N" alignment="CENTER" layoutX="165.0" layoutY="645.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+     <Text boundsType="VISUAL" layoutX="35.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 3000N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube3000N" alignment="CENTER" layoutX="165.0" layoutY="677.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Line endX="270.0" fill="#cd0909" layoutX="-11.0" layoutY="759.0" startX="22.0" stroke="#901313" strokeLineJoin="ROUND" strokeMiterLimit="0.0" strokeWidth="3.0"/>
+   <Text boundsType="VISUAL" layoutX="40.0" layoutY="799.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 300W">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+       <Label fx:id="GoldenStateTube300W" alignment="CENTER" layoutX="165.0" layoutY="783.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+   <Text boundsType="VISUAL" layoutX="40.0" layoutY="831.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 600W">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube600W" alignment="CENTER" layoutX="165.0" layoutY="815.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+    <Text boundsType="VISUAL" layoutX="32.0" layoutY="863.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 1200W">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube1200W" alignment="CENTER" layoutX="165.0" layoutY="847.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+     <Text boundsType="VISUAL" layoutX="32.0" layoutY="895.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 1800W">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube1800W" alignment="CENTER" layoutX="165.0" layoutY="879.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+   <Text boundsType="VISUAL" layoutX="32.0" layoutY="927.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 2400W">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube2400W" alignment="CENTER" layoutX="165.0" layoutY="911.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+   <Text boundsType="VISUAL" layoutX="32.0" layoutY="959.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 3000W">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateTube3000W" alignment="CENTER" layoutX="165.0" layoutY="943.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Line endX="270.0" fill="#cd0909" layoutX="-11.0" layoutY="492.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0"/>
+      <Line endX="270.0" fill="#b27d38" layoutX="-9.0" layoutY="258.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
+      <Line endX="270.0" fill="#cd0909" layoutX="-11.0" layoutY="386.0" startX="22.0" stroke="#901313" strokeMiterLimit="0.0" strokeWidth="3.0"/>
+      <Label fx:id="ViewName1" alignment="CENTER" layoutX="5.0" layoutY="356.0" prefHeight="24.0" prefWidth="190.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Golden State Central">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName11" alignment="CENTER" layoutX="5.0" layoutY="229.0" prefHeight="24.0" prefWidth="178.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Average Pressures">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName12" alignment="CENTER" layoutX="5.0" layoutY="463.0" prefHeight="24.0" prefWidth="220.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Golden State North Arm">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName121" alignment="CENTER" layoutX="5.0" layoutY="729.0" prefHeight="24.0" prefWidth="220.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Golden State West Arm">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Line endX="270.0" fill="#cd0909" layoutX="-9.0" layoutY="1290.0" startX="22.0" stroke="#901313" strokeLineJoin="ROUND" strokeMiterLimit="0.0" strokeWidth="3.0"/>
+      <Text boundsType="VISUAL" layoutX="56.0" layoutY="1329.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Longitudinal NE">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="HlsLonNE" alignment="CENTER" layoutX="165.0" layoutY="1314.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="60.0" layoutY="1362.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Transversal NE">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="HlsTransNE" alignment="CENTER" layoutX="165.0" layoutY="1346.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="55.0" layoutY="1393.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Mean Height NE">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="HlsAltNE" alignment="CENTER" layoutX="165.0" layoutY="1378.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="55.0" layoutY="1425.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Longitudinal WE">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="HlsLonWE" alignment="CENTER" layoutX="165.0" layoutY="1410.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="58.0" layoutY="1458.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Transversal WE">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="HlsTransWE" alignment="CENTER" layoutX="165.0" layoutY="1442.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="52.0" layoutY="1489.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Mean Height WE">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="HlsAltWE" alignment="CENTER" layoutX="165.0" layoutY="1474.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName1211" alignment="CENTER" layoutX="-1.0" layoutY="1260.0" prefHeight="24.0" prefWidth="119.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Hls Status">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="GoldenStateBeamPath" alignment="CENTER" layoutX="164.0" layoutY="153.0" prefHeight="13.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Line endX="270.0" fill="#b27d38" layoutX="-6.0" layoutY="133.0" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
+      <Label fx:id="ViewName111" alignment="CENTER" layoutX="8.0" layoutY="104.0" prefHeight="24.0" prefWidth="168.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Valve Beam Path ">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="39.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Interferometer path">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqzPath" alignment="CENTER" layoutX="164.0" layoutY="185.0" prefHeight="13.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="104.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Sqz path">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Line endX="270.0" fill="#cd0909" layoutX="-9.0" layoutY="1018.0" startX="22.0" stroke="#901313" strokeLineJoin="ROUND" strokeMiterLimit="0.0" strokeWidth="3.0"/>
+      <Text boundsType="VISUAL" layoutX="42.0" layoutY="1058.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State DET1">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqzDet1" alignment="CENTER" layoutX="167.0" layoutY="1042.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="42.0" layoutY="1090.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State DET2">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqzDet2" alignment="CENTER" layoutX="167.0" layoutY="1074.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="56.0" layoutY="1122.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 0N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqz0N" alignment="CENTER" layoutX="167.0" layoutY="1106.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="41.0" layoutY="1154.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 100N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqz100N" alignment="CENTER" layoutX="167.0" layoutY="1138.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="41.0" layoutY="1186.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 200N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqz200N" alignment="CENTER" layoutX="167.0" layoutY="1170.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text boundsType="VISUAL" layoutX="41.0" layoutY="1218.0" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Golden State 300N">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="GoldenStateSqz300N" alignment="CENTER" layoutX="167.0" layoutY="1202.0" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName1212" alignment="CENTER" layoutX="5.0" layoutY="990.0" prefHeight="24.0" prefWidth="168.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Golden State Sqz">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTitane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="299.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;">
+   <children>
+      <GridPane layoutX="11.0" layoutY="14.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+         </rowConstraints>
+         <children>
+            <Label fx:id="StatusFilament" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Filament">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="StatusController" GridPane.columnIndex="1" GridPane.rowIndex="10" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text=" Status Controller">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="StatusRecover" GridPane.columnIndex="1" GridPane.rowIndex="11" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Recover">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="OperatingMode" GridPane.columnIndex="1" GridPane.rowIndex="12" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Operating Mode">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="AbsorbedCurrent" GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Absorbed Current">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="AbsorbedVoltage" GridPane.columnIndex="1" GridPane.rowIndex="5" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Absorbed Voltage">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="SublimationCurrent" GridPane.columnIndex="1" GridPane.rowIndex="6" alignment="CENTER" onMouseClicked="#SublimationCurrent_Clicked" onMousePressed="#SublimationCurrent_Pressed" onMouseReleased="#SublimationCurrent_Released" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Sublimation Current">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="StatusAutostart" GridPane.columnIndex="1" GridPane.rowIndex="9" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Autostart">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="4" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Absorbed Current">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="5" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Absorbed Voltage">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="6" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Subl. Current" translateX="2.0">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="SublimationTime" GridPane.columnIndex="1" GridPane.rowIndex="7" alignment="CENTER" onMouseClicked="#SublimationTime_Clicked" onMousePressed="#SublimationTime_Pressed" onMouseReleased="#SublimationTime_Released" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Sublimation Time">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="7" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Subl. Time">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="SublimationPeriod" GridPane.columnIndex="1" GridPane.rowIndex="8" alignment="CENTER" onMouseClicked="#SublimationPeriod_Clicked" onMousePressed="#SublimationPeriod_Pressed" onMouseReleased="#SublimationPeriod_Released" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Sublimation Period">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="8" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Subl. Period">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="FilamentUsed" GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER" onMouseClicked="#FilamentUsed_Clicked" onMousePressed="#FilamentUsed_Pressed" onMouseReleased="#FilamentUsed_Released" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Filament Used">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="3" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Filament used">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="9" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Auto Start">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="10" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Controller Status">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="11" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Recover Status">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="12" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Operating Mode">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="2" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Filament status">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="ON" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#ON_Clicked" onMousePressed="#ON_Pressed" onMouseReleased="#ON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="5.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="OFF" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#OFF_Clicked" onMousePressed="#OFF_Pressed" onMouseReleased="#OFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="5.0"/>
+               </GridPane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="TitaneName" GridPane.halignment="CENTER" alignment="CENTER" prefHeight="21.0" prefWidth="86.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Titane">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="Status" GridPane.columnIndex="1" alignment="CENTER" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Status Titane">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

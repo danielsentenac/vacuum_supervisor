@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="1400.0" prefWidth="290.0" style="-fx-background-color: #333333;">
+   <children>
+      <TilePane layoutX="25.0" layoutY="125.0" prefHeight="373.0" prefWidth="237.0" vgap="10.0">
+         <children>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="RACK Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComRack" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="TurboP2 Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComTurboP2" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="Ionic Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComIonic" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="MaxiG1 Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComMaxiGauge1" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="MaxiG2 Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComMaxiGauge2" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="TiP31i Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComTitaneP31i" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="TiP32i Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComTitaneP32i" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="TiP31e Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComTitaneP31e" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="TiP32e Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="ComTitaneP32e" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="Compressed Air">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="CompressAir" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Text TilePane.alignment="CENTER_RIGHT" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="Compr. Air Rel">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="CompressAirRelay" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+         </children>
+      </TilePane>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="2.0" prefWidth="183.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Cryo Station Flags">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName1" alignment="CENTER" layoutY="74.0" prefHeight="25.0" prefWidth="139.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Rack Status">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+         <padding>
+            <Insets left="10.0"/>
+         </padding>
+      </Label>
+      <Line endX="270.0" fill="#b27d38" layoutY="104.0" startX="13.0" stroke="#901313" strokeWidth="3.0"/>
+      <Label fx:id="ViewName11" alignment="CENTER" layoutX="3.0" layoutY="515.0" prefHeight="25.0" prefWidth="183.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Cryo Rack Status">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+         <padding>
+            <Insets left="10.0"/>
+         </padding>
+      </Label>
+      <Line endX="270.0" fill="#b27d38" layoutX="3.0" layoutY="545.0" startX="13.0" stroke="#901313" strokeWidth="3.0"/>
+      <TilePane layoutX="25.0" layoutY="575.0" prefHeight="42.0" prefWidth="237.0">
+         <children>
+            <Text disable="true" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0; -fx-font-size: 11;" text="Cryo Comm">
+               <TilePane.margin>
+                  <Insets right="10.0"/>
+               </TilePane.margin>
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Text>
+            <Label fx:id="ComCryo" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0; -fx-font-size: 11;">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+         </children>
+      </TilePane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" right="-35.0"/>
+   </padding>
+</AnchorPane>

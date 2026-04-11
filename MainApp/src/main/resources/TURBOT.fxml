@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTurbo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="239.0" prefWidth="285.0" style="-fx-background-color: grey; -fx-border-color: #403131; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-opacity: 1;">
+   <children>
+      <Label fx:id="TurboName" alignment="CENTER" layoutX="9.0" layoutY="23.0" prefHeight="21.0" prefWidth="86.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Turbo">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="Status" alignment="CENTER" layoutX="130.0" layoutY="23.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Status Turbo">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="StatusLowSpeed" alignment="CENTER" layoutX="130.0" layoutY="53.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Status Low Speed">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="StatusNormalSpeed" alignment="CENTER" layoutX="130.0" layoutY="83.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text=" Status Norm Speed">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="StatusRamp" alignment="CENTER" layoutX="130.0" layoutY="113.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Status Ramp">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="StatusBox" alignment="CENTER" layoutX="130.0" layoutY="143.0" prefHeight="21.0" prefWidth="137.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5;" text="Status Box">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Text layoutX="39.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Normal Speed">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Text layoutX="84.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Ramp">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Text layoutX="55.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Low Speed">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+      <Label fx:id="ON" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="182.0" onMouseClicked="#ON_Clicked" onMousePressed="#ON_Pressed" onMouseReleased="#ON_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="ON" textAlignment="CENTER">
+         <font>
+            <Font size="12.0"/>
+         </font></Label>
+      <Label fx:id="OFF" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="182.0" onMouseClicked="#OFF_Clicked" onMousePressed="#OFF_Pressed" onMouseReleased="#OFF_Released" prefHeight="35.0" prefWidth="50.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="OFF">
+         <font>
+            <Font size="12.0"/>
+         </font></Label>
+      <Label fx:id="STYON" alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="182.0" onMouseClicked="#STYON_Clicked" onMousePressed="#STYON_Pressed" onMouseReleased="#STYON_Released" prefHeight="35.0" prefWidth="65.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="STYON" textAlignment="CENTER">
+         <font>
+            <Font size="12.0"/>
+         </font></Label>
+      <Label fx:id="STYOFF" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="182.0" onMouseClicked="#STYOFF_Clicked" onMousePressed="#STYOFF_Pressed" onMouseReleased="#STYOFF_Released" prefHeight="35.0" prefWidth="65.0" style=" -fx-border-color: black; -fx-border-radius: 5;" text="STYOFF">
+         <font>
+            <Font size="12.0"/>
+         </font></Label>
+      <Text layoutX="58.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="Status Box">
+         <font>
+            <Font size="12.0"/>
+         </font></Text>
+   </children>
+</AnchorPane>

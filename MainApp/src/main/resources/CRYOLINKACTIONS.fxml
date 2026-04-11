@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerCryoLinkActions" prefHeight="235.0" prefWidth="253.0" style="-fx-background-color: #333333;">
+   <children>
+      <TilePane layoutX="28.0" layoutY="187.0" prefHeight="21.0" prefWidth="221.0">
+         <children>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Refill Mode">
+               <font>
+                  <Font size="12.0"/>
+               </font></Text>
+            <Label fx:id="RefillMode" alignment="CENTER" onMouseClicked="#RefillMode_Clicked" onMousePressed="#RefillMode_Pressed" onMouseReleased="#RefillMode_Released" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+            </Label>
+         </children>
+      </TilePane>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="3.0" layoutY="36.0" prefHeight="25.0" prefWidth="248.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="CryolinkActions Flags">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="ViewName1" alignment="CENTER" layoutX="9.0" layoutY="119.0" prefHeight="25.0" prefWidth="55.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Cryo">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Line endX="247.0" fill="#b27d38" layoutX="-7.5" layoutY="148.5" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
+   </children>
+</AnchorPane>

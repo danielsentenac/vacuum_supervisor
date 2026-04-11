@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="621.0" prefWidth="300.0" style="-fx-background-color: #333333;">
+   <children>
+      <GridPane layoutX="11.0" layoutY="12.0" prefHeight="598.0" prefWidth="212.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES"/>
+            <ColumnConstraints hgrow="SOMETIMES"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+         </rowConstraints>
+         <children>
+            <Label fx:id="PressureTowerBS" GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureTowerNI" GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureTowerWI" GridPane.columnIndex="1" GridPane.rowIndex="5" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureTowerPR" GridPane.columnIndex="1" GridPane.rowIndex="6" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureTowerSR" GridPane.columnIndex="1" GridPane.rowIndex="7" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureTowerDET" GridPane.columnIndex="1" GridPane.rowIndex="8" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureTowerIB" GridPane.columnIndex="1" GridPane.rowIndex="9" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureCryoWI" GridPane.columnIndex="1" GridPane.rowIndex="10" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureCryoNI" GridPane.columnIndex="1" GridPane.rowIndex="11" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureCryoLinkDET" GridPane.columnIndex="1" GridPane.rowIndex="12" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureCryoLinkIB" GridPane.columnIndex="1" GridPane.rowIndex="13" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureMiniTowerPR" GridPane.columnIndex="1" GridPane.rowIndex="14" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureMiniTowerDET" GridPane.columnIndex="1" GridPane.rowIndex="15" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="PressureMiniTowerIB" GridPane.columnIndex="1" GridPane.rowIndex="16" alignment="CENTER" prefWidth="100.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" translateX="-5.0">
+               <font>
+                  <Font name="System" size="12.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="3" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0; " text="Pressure Tower BS">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="4" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Tower NI">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="5" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Tower WI">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="6" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Tower PR">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="7" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Tower SR">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="8" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Tower DET">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="9" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Tower IB">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="13" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure CryoLink IB">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="12" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure CryoLink DET">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="11" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Cryo NI">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="10" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Cryo WI">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="16" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Mini Tower IB">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="15" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Mini Tower DET">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Text GridPane.halignment="RIGHT" GridPane.rowIndex="14" strokeType="OUTSIDE" strokeWidth="0.0" style=" -fx-fill: #d1d1e0;" text="Pressure Mini Tower PR">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0"/>
+               </GridPane.margin>
+            </Text>
+            <Label fx:id="ViewName" GridPane.columnSpan="2" GridPane.halignment="CENTER" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="239.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Central Building Flags">
+               <font>
+                  <Font name="System" size="20.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Line GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" endX="293.5" fill="#b27d38" startX="22.0" stroke="#901313" strokeWidth="3.0"/>
+            <Label fx:id="ViewName11" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" alignment="CENTER" prefHeight="25.0" prefWidth="109.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Pressures">
+               <font>
+                  <Font name="System" size="20.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets left="-7.0" top="30.0"/>
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
