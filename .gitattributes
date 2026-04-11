@@ -1,0 +1,3 @@
+# Exclude Windows installer tooling from GitHub language statistics.
+Windows_Install/** linguist-vendored
+scripts/windows/VacuumSupervisor.nsi linguist-vendored
