@@ -32,6 +32,22 @@ Out of scope for this repository:
 ./gradlew :MainApp:android
 ```
 
+## GitHub Release Workflow
+
+Pushing a version tag builds the Android APK, Windows installer, and Linux tarball, then attaches them to the matching GitHub Release:
+
+```bash
+git tag v0.2.3
+git push origin v0.2.3
+```
+
+The workflow uses the tag without the leading `v` as the release version. Android release signing requires these repository secrets:
+
+- `ANDROID_RELEASE_KEYSTORE_BASE64` - base64-encoded Android signing keystore
+- `RELEASE_STORE_PASSWORD`
+- `RELEASE_KEY_ALIAS`
+- `RELEASE_KEY_PASSWORD`
+
 ## Windows Installer
 
 Preferred release path on Windows:

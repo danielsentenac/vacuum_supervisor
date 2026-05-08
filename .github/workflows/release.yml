@@ -1,0 +1,353 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  JAVA_DISTRIBUTION: zulu
+  JAVA_VERSION: '8'
+  GRADLE_OPTS: -Dorg.gradle.daemon=false
+
+jobs:
+  android-apk:
+    name: Android APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Resolve release version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF_NAME}"
+          if [[ ! "${tag}" =~ ^v[0-9]+(\.[0-9]+){2}([-.+][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Release tags must look like v0.2.3 or v0.2.3-rc1; got ${tag}" >&2
+            exit 1
+          fi
+          echo "version=${tag#v}" >> "${GITHUB_OUTPUT}"
+
+      - name: Set up JavaFX JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+          java-package: jdk+fx
+          cache: gradle
+
+      - name: Set up Android SDK packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${ANDROID_HOME:?ANDROID_HOME is not set on this runner}"
+          sdkmanager="${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager"
+          if [[ ! -x "${sdkmanager}" ]]; then
+            sdkmanager="${ANDROID_HOME}/tools/bin/sdkmanager"
+          fi
+          if [[ ! -x "${sdkmanager}" ]]; then
+            echo "sdkmanager not found under ANDROID_HOME=${ANDROID_HOME}" >&2
+            exit 1
+          fi
+          set +e
+          set +o pipefail
+          yes | "${sdkmanager}" --licenses >/dev/null
+          license_status=$?
+          set -e
+          set -o pipefail
+          if [[ "${license_status}" -ne 0 ]]; then
+            exit "${license_status}"
+          fi
+          "${sdkmanager}" "platforms;android-30" "build-tools;30.0.3" "platform-tools"
+          printf 'sdk.dir=%s\n' "${ANDROID_HOME}" > local.properties
+
+      - name: Apply release version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.version }}"
+          perl -0pi -e 's/android:versionName="[^"]+"/android:versionName="'${version}'"/' MainApp/src/android/AndroidManifest.xml
+          grep -q "android:versionName=\"${version}\"" MainApp/src/android/AndroidManifest.xml
+
+      - name: Decode Android signing key
+        shell: bash
+        env:
+          ANDROID_RELEASE_KEYSTORE_BASE64: ${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}
+          RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          missing=0
+          for name in ANDROID_RELEASE_KEYSTORE_BASE64 RELEASE_STORE_PASSWORD RELEASE_KEY_ALIAS RELEASE_KEY_PASSWORD; do
+            if [[ -z "${!name:-}" ]]; then
+              echo "::error title=Missing secret::${name} is required for Android release signing"
+              missing=1
+            fi
+          done
+          if [[ "${missing}" -ne 0 ]]; then
+            exit 1
+          fi
+
+          keystore_path="${RUNNER_TEMP}/android-release.keystore"
+          printf '%s' "${ANDROID_RELEASE_KEYSTORE_BASE64}" | base64 --decode > "${keystore_path}"
+          echo "RELEASE_STORE_FILE=${keystore_path}" >> "${GITHUB_ENV}"
+
+      - name: Build signed APK
+        shell: bash
+        env:
+          RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          apk_dir="MainApp/build/javafxports/android"
+          apk_default="${apk_dir}/MainApp.apk"
+          apk_unaligned="${apk_dir}/MainApp-unaligned.apk"
+          apk_aligned="${apk_dir}/MainApp-aligned.apk"
+
+          rm -f "${apk_default}" "${apk_unaligned}" "${apk_aligned}"
+
+          set +e
+          ./gradlew -Dorg.gradle.java.home="${JAVA_HOME}" --no-daemon :MainApp:androidRelease
+          gradle_status=$?
+          set -e
+
+          if [[ "${gradle_status}" -ne 0 || ! -f "${apk_default}" ]]; then
+            if [[ ! -f "${apk_unaligned}" ]]; then
+              if [[ "${gradle_status}" -ne 0 ]]; then
+                exit "${gradle_status}"
+              fi
+              echo "androidRelease completed but did not create ${apk_default} or ${apk_unaligned}" >&2
+              exit 1
+            fi
+
+            zipalign="${ANDROID_HOME}/build-tools/30.0.3/zipalign"
+            apksigner="${ANDROID_HOME}/build-tools/30.0.3/apksigner"
+            if [[ ! -x "${zipalign}" || ! -x "${apksigner}" ]]; then
+              echo "zipalign or apksigner was not found under ${ANDROID_HOME}/build-tools/30.0.3" >&2
+              exit 1
+            fi
+
+            "${zipalign}" -f -p 4 "${apk_unaligned}" "${apk_aligned}"
+            "${apksigner}" sign \
+              --ks "${RELEASE_STORE_FILE}" \
+              --ks-key-alias "${RELEASE_KEY_ALIAS}" \
+              --ks-pass "env:RELEASE_STORE_PASSWORD" \
+              --key-pass "env:RELEASE_KEY_PASSWORD" \
+              --out "${apk_default}" \
+              "${apk_aligned}"
+            "${apksigner}" verify --verbose "${apk_default}" >/dev/null
+          fi
+
+      - name: Stage APK artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.version }}"
+          mkdir -p release-assets
+
+          apk_path=""
+          for candidate in \
+            MainApp/build/javafxports/android/MainApp.apk \
+            MainApp/build/outputs/apk/release/MainApp-release.apk; do
+            if [[ -f "${candidate}" ]]; then
+              apk_path="${candidate}"
+              break
+            fi
+          done
+
+          if [[ -z "${apk_path}" ]]; then
+            echo "Signed APK was not found in the expected output locations." >&2
+            exit 1
+          fi
+
+          cp "${apk_path}" "release-assets/VacuumSupervisor-${version}.apk"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-apk
+          path: release-assets/VacuumSupervisor-${{ steps.version.outputs.version }}.apk
+          if-no-files-found: error
+          retention-days: 7
+
+  windows-installer:
+    name: Windows installer
+    runs-on: windows-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Resolve release version
+        id: version
+        shell: pwsh
+        run: |
+          $Tag = $env:GITHUB_REF_NAME
+          if ($Tag -notmatch '^v[0-9]+(\.[0-9]+){2}([-.+][0-9A-Za-z.-]+)?$') {
+            throw "Release tags must look like v0.2.3 or v0.2.3-rc1; got $Tag"
+          }
+          "version=$($Tag.Substring(1))" >> $env:GITHUB_OUTPUT
+
+      - name: Set up JavaFX JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+          java-package: jdk+fx
+          cache: gradle
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup --no-progress -y
+
+      - name: Apply release version
+        shell: pwsh
+        run: |
+          $Version = '${{ steps.version.outputs.version }}'
+          $ManifestPath = 'MainApp\src\android\AndroidManifest.xml'
+          $Manifest = Get-Content -LiteralPath $ManifestPath -Raw
+          $Manifest = $Manifest -replace 'android:versionName="[^"]+"', "android:versionName=`"$Version`""
+          [System.IO.File]::WriteAllText((Resolve-Path -LiteralPath $ManifestPath), $Manifest, [System.Text.Encoding]::UTF8)
+
+      - name: Build installer
+        shell: pwsh
+        run: .\scripts\build_windows_setup.ps1 -JavaHome $env:JAVA_HOME
+
+      - name: Stage installer artifact
+        shell: pwsh
+        run: |
+          $Version = '${{ steps.version.outputs.version }}'
+          $OutputPath = "build\windows-installer\output\VacuumSupervisorSetup-$Version.exe"
+          if (-not (Test-Path -LiteralPath $OutputPath)) {
+            throw "Windows installer was not found: $OutputPath"
+          }
+          New-Item -ItemType Directory -Force -Path release-assets | Out-Null
+          Copy-Item -LiteralPath $OutputPath -Destination "release-assets\VacuumSupervisorSetup-$Version.exe" -Force
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: windows-installer
+          path: release-assets/VacuumSupervisorSetup-${{ steps.version.outputs.version }}.exe
+          if-no-files-found: error
+          retention-days: 7
+
+  linux-tarball:
+    name: Linux tarball
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Resolve release version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF_NAME}"
+          if [[ ! "${tag}" =~ ^v[0-9]+(\.[0-9]+){2}([-.+][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Release tags must look like v0.2.3 or v0.2.3-rc1; got ${tag}" >&2
+            exit 1
+          fi
+          echo "version=${tag#v}" >> "${GITHUB_OUTPUT}"
+
+      - name: Set up JavaFX JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+          java-package: jdk+fx
+          cache: gradle
+
+      - name: Apply release version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.version }}"
+          perl -0pi -e 's/android:versionName="[^"]+"/android:versionName="'${version}'"/' MainApp/src/android/AndroidManifest.xml
+          grep -q "android:versionName=\"${version}\"" MainApp/src/android/AndroidManifest.xml
+
+      - name: Build Linux tarball
+        shell: bash
+        run: ./gradlew -Dorg.gradle.java.home="${JAVA_HOME}" --no-daemon :MainApp:distTar
+
+      - name: Stage tarball artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.version }}"
+          mkdir -p release-assets
+          cp MainApp/build/distributions/MainApp.tar "release-assets/VacuumSupervisor-linux-${version}.tar"
+
+      - name: Upload tarball artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: linux-tarball
+          path: release-assets/VacuumSupervisor-linux-${{ steps.version.outputs.version }}.tar
+          if-no-files-found: error
+          retention-days: 7
+
+  publish-release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    needs:
+      - android-apk
+      - windows-installer
+      - linux-tarball
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download release artifacts
+        uses: actions/download-artifact@v8
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Create or update release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          mapfile -t assets < <(find release-assets -maxdepth 1 -type f | sort)
+          if [[ "${#assets[@]}" -eq 0 ]]; then
+            echo "No release assets were downloaded." >&2
+            exit 1
+          fi
+
+          printf 'Release assets:\n'
+          printf '  %s\n' "${assets[@]}"
+
+          if gh release view "${TAG_NAME}" >/dev/null 2>&1; then
+            gh release upload "${TAG_NAME}" "${assets[@]}" --clobber
+          else
+            prerelease=()
+            if [[ "${TAG_NAME}" == *-* ]]; then
+              prerelease+=(--prerelease)
+            fi
+            gh release create "${TAG_NAME}" "${assets[@]}" \
+              --verify-tag \
+              --title "${TAG_NAME}" \
+              --generate-notes \
+              "${prerelease[@]}"
+          fi
