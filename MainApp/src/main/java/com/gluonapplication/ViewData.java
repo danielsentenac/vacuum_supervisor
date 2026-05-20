@@ -197,6 +197,12 @@ public class ViewData extends View implements Runnable, DataTypes {
        
          if ( initCnt++ < max_fr) return; // First cycle data sent by Alp maybe corrupted!!
 
+         // Compute laser (Yag/Green) reachability across the ITF tower graph and
+         // overwrite the svrValueList slots for any Yag/Green tower-indicator
+         // entries with "0"/"1"/"---". The render loop below then picks the
+         // computed value up via the existing CIRCLE_YAG/GREEN_STATUS_COLOR path.
+         LaserTopology.applyPropagation(data);
+
          for (int i = 0 ; i < data.list.size(); ++i ) {
              String svrValue =  data.svrValueList.elementAt(i).replace(" ", "").replace(",", ".");
              String svrUnits = " " + data.svrUnitsList.elementAt(i);
@@ -334,10 +340,132 @@ public class ViewData extends View implements Runnable, DataTypes {
                               station.setStyle(LABEL_BACKGROUND_STYLE + RACK_STATUS_COLOR.get(value));
                            });
                      break;
-                case CIRCLE_RGA_STATUS_COLOR: 
+                case CIRCLE_RGA_STATUS_COLOR:
                         Circle rga = (Circle) lookup("#" + data.list.elementAt(i).name);
                         if (rga != null)
                            Platform.runLater(() -> {rga.setFill(RGA_STATUS_COLOR.get(value));});
+                     break;
+                case CIRCLE_YAG_STATUS_COLOR:
+                        Circle yagCircle = (Circle) lookup("#" + data.list.elementAt(i).name);
+                        if (yagCircle != null)
+                           Platform.runLater(() -> {yagCircle.setFill(LASER_STATUS_COLOR.get(value));});
+                     break;
+                case CIRCLE_GREEN_STATUS_COLOR:
+                        Circle greenCircle = (Circle) lookup("#" + data.list.elementAt(i).name);
+                        if (greenCircle != null)
+                           Platform.runLater(() -> {greenCircle.setFill(LASER_STATUS_COLOR.get(value));});
+                     break;
+                case CIRCLE_CO2_STATUS_COLOR:
+                        Circle co2Circle = (Circle) lookup("#" + data.list.elementAt(i).name);
+                        if (co2Circle != null)
+                           Platform.runLater(() -> {co2Circle.setFill(LASER_STATUS_COLOR.get(value));});
+                     break;
+                case RECTANGLE_LOCALCTRL_STATUS_COLOR:
+                        Rectangle laserRect = (Rectangle) lookup("#" + data.list.elementAt(i).name);
+                        if (laserRect != null) {
+                           // OR across the F0_DC_ENBL / F7_DC_ON entries sharing this fx:id:
+                           // any "1" => ON, all known "0" => OFF, otherwise no-data.
+                           String localCtrlName = data.list.elementAt(i).name;
+                           boolean anyOn = false;
+                           boolean anyKnown = false;
+                           for (int k = 0; k < data.list.size(); k++) {
+                              if (!data.list.elementAt(k).name.equals(localCtrlName)) continue;
+                              String raw = data.svrValueList.elementAt(k).replace(" ", "").replace(",", ".");
+                              if (raw.contains("NOTEXIST") || raw.contains("TIMOUT")) continue;
+                              try {
+                                 if (Integer.parseInt(raw) != 0) anyOn = true;
+                                 anyKnown = true;
+                              }
+                              catch (NumberFormatException ex) { /* skip parse errors */ }
+                           }
+                           final String localCtrlState = anyOn ? "1" : (anyKnown ? "0" : "---");
+                           Platform.runLater(() -> {laserRect.setFill(LASER_STATUS_COLOR.get(localCtrlState));});
+                        }
+                     break;
+                case CIRCLE_SOURCE_YAG_STATUS_COLOR:
+                        Circle sourceYagCircle = (Circle) lookup("#" + data.list.elementAt(i).name);
+                        if (sourceYagCircle != null) {
+                           // Source state computation is centralised in LaserTopology
+                           // so the SourceYag circle and the propagation BFS always
+                           // agree on whether the Yag source is ON.
+                           final String sourceYagState =
+                              LaserTopology.triToColorKey(LaserTopology.computeYagSourceState(data));
+                           Platform.runLater(() -> {sourceYagCircle.setFill(LASER_STATUS_COLOR.get(sourceYagState));});
+                        }
+                     break;
+                case CIRCLE_SOURCE_GREEN_STATUS_COLOR:
+                        Circle sourceGreenCircle = (Circle) lookup("#" + data.list.elementAt(i).name);
+                        if (sourceGreenCircle != null) {
+                           // Source state computation is centralised in LaserTopology
+                           // so the SourceGreen circle and the propagation BFS always
+                           // agree on whether the Green source is ON.
+                           final String sourceGreenState =
+                              LaserTopology.triToColorKey(
+                                 LaserTopology.computeGreenSourceState(data, data.list.elementAt(i).name));
+                           Platform.runLater(() -> {sourceGreenCircle.setFill(GREEN_STATUS_COLOR.get(sourceGreenState));});
+                        }
+                     break;
+                case CIRCLE_SOURCE_CO2_STATUS_COLOR:
+                        Circle sourceCo2BeamCircle = (Circle) lookup("#" + data.list.elementAt(i).name);
+                        if (sourceCo2BeamCircle != null) {
+                           // Source state computation is centralised in LaserTopology
+                           // so the SourceCO2 circle and any propagation users always
+                           // agree on whether the CO2 source is ON.
+                           final String sourceCo2BeamState =
+                              LaserTopology.triToColorKey(
+                                 LaserTopology.computeCo2SourceState(data, data.list.elementAt(i).name));
+                           Platform.runLater(() -> {sourceCo2BeamCircle.setFill(CO2_STATUS_COLOR.get(sourceCo2BeamState));});
+                        }
+                     break;
+                case SHUTTER_GREEN_STATUS_COLOR:
+                        SVGPath greenShutter = (SVGPath) lookup("#" + data.list.elementAt(i).name);
+                        if (greenShutter != null) {
+                           // Combine all entries sharing this fx:id: any non-zero => "1", all zero => "0",
+                           // any unknown (NOTEXIST/TIMOUT/parse error) with no "1" => no-data.
+                           String shutterName = data.list.elementAt(i).name;
+                           boolean anyOn = false;
+                           boolean anyUnknown = false;
+                           for (int k = 0; k < data.list.size(); k++) {
+                              if (!data.list.elementAt(k).name.equals(shutterName)) continue;
+                              String raw = data.svrValueList.elementAt(k).replace(" ", "").replace(",", ".");
+                              if (raw.contains("NOTEXIST") || raw.contains("TIMOUT")) {
+                                 anyUnknown = true;
+                                 continue;
+                              }
+                              try {
+                                 if (Integer.parseInt(raw) != 0) anyOn = false;
+                              }
+                              catch (NumberFormatException ex) { anyUnknown = true; }
+                           }
+                           final String shutterState = anyOn ? "1" : (anyUnknown ? "---" : "0");
+                           Platform.runLater(() -> {greenShutter.setFill(GREEN_STATUS_COLOR.get(shutterState));});
+                        }
+                     break;
+                case SHUTTER_CO2_STATUS_COLOR:
+                        SVGPath co2Shutter = (SVGPath) lookup("#" + data.list.elementAt(i).name);
+                        if (co2Shutter != null) {
+                           // Combine all entries sharing this fx:id: any non-zero => "1", all zero => "0",
+                           // any unknown (NOTEXIST/TIMOUT/parse error) with no "1" => no-data.
+                           String shutterName = data.list.elementAt(i).name;
+                           boolean anyOn = false;
+                           boolean anyUnknown = false;
+                           for (int k = 0; k < data.list.size(); k++) {
+                              if (!data.list.elementAt(k).name.equals(shutterName)) continue;
+                              String chan = data.list.elementAt(k).svrName;
+                              String raw = data.svrValueList.elementAt(k).replace(" ", "").replace(",", ".");
+                              if (raw.contains("NOTEXIST") || raw.contains("TIMOUT")) {
+                                 anyUnknown = true;
+                                 continue;
+                              }
+                              try {
+                                 if (Integer.parseInt(raw) != 0) anyOn = true;
+                                 System.out.println(chan + " = " + raw);
+                              }
+                              catch (NumberFormatException ex) { anyUnknown = true; }
+                           }
+                           final String shutterState = anyOn ? "1" : (anyUnknown ? "---" : "0");
+                           Platform.runLater(() -> {co2Shutter.setFill(CO2_STATUS_COLOR.get(shutterState));});
+                        }
                      break;
                 case CIRCLE_RGA_2_STATUS_COLOR: 
                         Circle rga2 = (Circle) lookup("#" + data.list.elementAt(i).name);

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="382.0" style="-fx-background-color: #333333;" stylesheets="@../../../../../../Downloads/vacuum_global/MainApp/src/main/resources/GLOBAL.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSafetyNE">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="293.0" layoutY="67.0" stroke="#21ff27" strokeType="INSIDE" width="41.0" />
+      <SVGPath fx:id="StatusValveBigNE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="212.0" layoutY="116.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <SVGPath fx:id="StatusValveCryoNE" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="211.0" layoutY="76.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </SVGPath>
+      <Label fx:id="NE" alignment="CENTER" contentDisplay="CENTER" layoutX="229.0" layoutY="61.0" prefHeight="33.0" prefWidth="33.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="NE">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="CryoNE" alignment="CENTER" contentDisplay="CENTER" layoutX="239.0" layoutY="121.0" prefHeight="20.0" prefWidth="15.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: #00bfff;" textFill="#0d70d6">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group layoutX="-20.0" layoutY="-17.0">
+         <children>
+            <SVGPath fx:id="StatusValveLN2NE1" content="m17,26v18l36-18v18z" fill="#ff9933" layoutX="4.0" layoutY="-2.0" scaleX="0.5">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Group layoutX="-20.0" layoutY="5.0">
+         <children>
+            <SVGPath fx:id="StatusValveLN2NE2" content="m17,26v18l36-18v18z" fill="#33ff57" layoutX="4.0" layoutY="-2.0" scaleX="0.5">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valve Open">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valve Close">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yag On">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yag Off">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green On">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green Off">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="TUBEN" alignment="CENTER" contentDisplay="CENTER" layoutX="207.0" layoutY="209.0" onMouseClicked="#TUBEN_Clicked" onMousePressed="#TUBEN_Pressed" onMouseReleased="#TUBEN_Released" prefHeight="21.0" prefWidth="80.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="NORTH">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F0+F7 CurrentOn">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F0+F7 Current Off">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Circle fill="#ff1f1f" layoutX="18.0" layoutY="63.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fill="#4e514e" layoutX="18.0" layoutY="84.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fill="#21ff27" layoutX="18.0" layoutY="108.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fill="#4e514e" layoutX="18.0" layoutY="129.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="12.0" layoutY="197.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4e514e" height="12.0" layoutX="12.0" layoutY="218.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
+      <Circle fx:id="NEYag" fill="#ff1f1f" layoutX="230.0" layoutY="61.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Rectangle fx:id="NELocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="256.0" layoutY="88.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
+      <Circle fx:id="TUBENYag" fill="#ff1f1f" layoutX="239.0" layoutY="168.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="NEGreen" fill="#21ff27" layoutX="229.0" layoutY="94.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="TUBENGreen" fill="#21ff27" layoutX="255.0" layoutY="168.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Label fx:id="NEMini" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="17.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; ">
+         <font>
+            <Font name="System" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Circle fx:id="NESourceGreen" fill="#21ff27" layoutX="306.0" layoutY="80.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <SVGPath content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#21ff27" layoutX="-44.0" layoutY="92.0" scaleX="0.11" scaleY="0.11" />
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Open">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <SVGPath content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#4e514e" layoutX="-44.0" layoutY="116.0" scaleX="0.11" scaleY="0.11" stroke="#21ff27" />
+      <Text fill="#d1d1e0" layoutX="53.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Close">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <SVGPath fx:id="NEGreenShutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#21ff27" layoutX="260.0" layoutY="19.0" scaleX="0.11" scaleY="0.11" />
+      <Circle fx:id="NEMiniGreen" fill="#21ff27" layoutX="239.0" layoutY="41.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Text fill="#d1d1e0" layoutX="283.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source Green">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Circle fx:id="NEMiniYag" fill="#ff1f1f" layoutX="239.0" layoutY="25.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

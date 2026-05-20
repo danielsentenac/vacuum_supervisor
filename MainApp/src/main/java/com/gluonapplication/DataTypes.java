@@ -101,7 +101,16 @@ public interface DataTypes {
    /**/  LABEL_OKWORKING_STATUS_STRING,
    /**/  LABEL_OKWORKING_STATUS_COLOR,
    /**/  LABEL_OKLOW_STATUS_STRING,
-   /**/  LABEL_OKLOW_STATUS_COLOR
+   /**/  LABEL_OKLOW_STATUS_COLOR,
+   /**/  RECTANGLE_LOCALCTRL_STATUS_COLOR,
+   /**/  CIRCLE_YAG_STATUS_COLOR,
+   /**/  CIRCLE_CO2_STATUS_COLOR,
+   /**/  CIRCLE_GREEN_STATUS_COLOR,
+   /**/  SHUTTER_GREEN_STATUS_COLOR,
+   /**/  SHUTTER_CO2_STATUS_COLOR,
+   /**/  CIRCLE_SOURCE_YAG_STATUS_COLOR,
+   /**/  CIRCLE_SOURCE_GREEN_STATUS_COLOR,
+   /**/  CIRCLE_SOURCE_CO2_STATUS_COLOR
    }
 
    String LABEL_STRING_STYLE = "-fx-border-color: #cfcfcf; -fx-font-size: 11; -fx-border-width: 1; -fx-font-weight: regular; -fx-border-radius: 5; -fx-text-fill: ";
@@ -1186,9 +1195,42 @@ public interface DataTypes {
       put("...", "...");
    }};
    //
+   // LASER STATUS (Yag / CO2 / Green / LocalCtrl )
+   //
+   Hashtable<String, Color> LASER_STATUS_COLOR = new Hashtable<String, Color>(){{
+      put("0", Color.rgb(78, 81, 78));      // off / safe (dark grey, matches legend)
+      put("1", Color.rgb(255, 31, 31));     // on / hazard (red)
+      put("255", Color.rgb(0, 0, 0));       // no data (black, distinct from off)
+      put("---", Color.rgb(0, 0, 0));
+      put("...", Color.rgb(0, 0, 0));
+   }};
+   
+   //
+   // GREEN STATUS
+   //
+   Hashtable<String, Color> GREEN_STATUS_COLOR = new Hashtable<String, Color>(){{
+      put("0", Color.rgb(78, 81, 78));    // off / safe (dark grey, matches legend)
+      put("1", Color.rgb(33,255,39));     // on / hazard (green)
+      put("255", Color.rgb(0, 0, 0));     // no data (black, distinct from off)
+      put("---", Color.rgb(0, 0, 0));
+      put("...", Color.rgb(0, 0, 0));
+   }};
+   
+   //
+   // CO2 STATUS
+   //
+   Hashtable<String, Color> CO2_STATUS_COLOR = new Hashtable<String, Color>(){{
+      put("0", Color.rgb(78, 81, 78));    // off / safe (dark grey, matches legend)
+      put("1", Color.rgb(239,255,33));    // on / hazard (yellow)
+      put("255", Color.rgb(0, 0, 0));     // no data (black, distinct from off)
+      put("---", Color.rgb(0, 0, 0));
+      put("...", Color.rgb(0, 0, 0));
+   }};
+   
+   //
    // GENERAL PUMP
    //
-   Hashtable<String, Color> PUMP_STATUS_COLOR = new Hashtable<String, Color>(){{ 
+   Hashtable<String, Color> PUMP_STATUS_COLOR = new Hashtable<String, Color>(){{
       put("0", Color.rgb(255, 153, 51));
       put("1", Color.rgb(51, 255, 87));
       put("2",Color.rgb(124, 124, 124));

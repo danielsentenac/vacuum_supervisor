@@ -102,6 +102,9 @@ public class Main extends MobileApplication {
     public ViewData minitowersqzdet1 = null;
     public ViewData minitowersqzdet2 = null;
     public ViewData tiltmeter = null;
+    public ViewData safetyFlagsCB = null;
+    public ViewData safetyFlagsNE = null;
+    public ViewData safetyFlagsWE = null;
 
     // Notification service
     NotificationService notificationTurboBox = new NotificationService("TurboBox Alert");

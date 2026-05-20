@@ -89,3 +89,9 @@ tasks.register('debug') {
     description = 'Alias to run the app on desktop'
     dependsOn 'run'
 }
+
+run {
+    if (project.hasProperty('backend')) {
+        systemProperty 'vacuum.supervisor.backend.host', project.property('backend')
+    }
+}
