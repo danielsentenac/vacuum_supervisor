@@ -10,16 +10,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="552.0" prefWidth="511.0" style="-fx-background-color: #333333;" stylesheets="@../../../../../../Downloads/vacuum_global/MainApp/src/main/resources/GLOBAL.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSafetyGlobal">
+<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="552.0" prefWidth="683.0" style="-fx-background-color: #333333;" stylesheets="@../../../../../../Downloads/vacuum_global/MainApp/src/main/resources/GLOBAL.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerSafetyGlobal">
    <children>
-      <Text fill="#d1d1e0" layoutX="120.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source CO2 WI" wrappingWidth="95.9220085144043">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="515.0" layoutY="292.0" stroke="#ff1f1f" strokeType="INSIDE" width="41.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="560.0" layoutY="292.0" stroke="#21ff27" strokeType="INSIDE" width="41.0" />
+      <Text fill="#d1d1e0" layoutX="171.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source CO2 WI" wrappingWidth="40.5">
          <font>
-            <Font size="12.0" />
+            <Font size="10.0" />
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="209.0" layoutY="285.0" stroke="#efff21" strokeType="INSIDE" width="41.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="370.0" layoutY="507.0" stroke="#ff1f1f" strokeType="INSIDE" width="41.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="220.0" layoutY="235.0" stroke="#efff21" strokeType="INSIDE" width="41.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="223.0" layoutY="249.0" stroke="#efff21" strokeType="INSIDE" width="41.0" />
       <Label fx:id="TUBEMC" alignment="CENTER" contentDisplay="CENTER" layoutX="178.0" layoutY="514.0" onMouseClicked="#TUBEMC_Clicked" onMousePressed="#TUBEMC_Pressed" onMouseReleased="#TUBEMC_Released" prefHeight="17.0" prefWidth="60.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;">
          <font>
             <Font name="System" size="12.0" />
@@ -44,7 +46,7 @@
             <InnerShadow />
          </effect>
       </Label>
-      <Label fx:id="Sqz" alignment="CENTER" contentDisplay="CENTER" layoutX="439.0" layoutY="158.0" onMouseClicked="#Sqz_Clicked" onMousePressed="#Sqz_Pressed" onMouseReleased="#Sqz_Released" prefHeight="17.0" prefWidth="60.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="SQZ">
+      <Label fx:id="Sqz" alignment="CENTER" contentDisplay="CENTER" layoutX="441.0" layoutY="137.0" onMouseClicked="#Sqz_Clicked" onMousePressed="#Sqz_Pressed" onMouseReleased="#Sqz_Released" prefHeight="20.0" prefWidth="60.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="SQZ">
          <font>
             <Font name="System" size="12.0" />
          </font>
@@ -52,45 +54,45 @@
             <InnerShadow />
          </effect>
       </Label>
-      <SVGPath fx:id="StatusValveSqz300N" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="434.0" layoutY="77.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
+      <SVGPath fx:id="StatusValveSqz300N" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="436.0" layoutY="59.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
          <effect>
             <InnerShadow />
          </effect>
       </SVGPath>
-      <SVGPath fx:id="StatusValveSqz0N" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="434.0" layoutY="185.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
+      <SVGPath fx:id="StatusValveSqz0N" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="436.0" layoutY="166.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
          <effect>
             <InnerShadow />
          </effect>
       </SVGPath>
-      <Label fx:id="Sqz0N" alignment="CENTER" contentDisplay="CENTER" layoutX="462.0" layoutY="231.0" prefHeight="16.0" prefWidth="13.5" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;">
+      <Label fx:id="Sqz0N" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="461.0" layoutY="213.0" prefHeight="18.0" prefWidth="21.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="FCIN">
          <font>
-            <Font name="System" size="12.0" />
+            <Font size="5.0" />
          </font>
          <effect>
             <InnerShadow />
          </effect>
       </Label>
-      <SVGPath fx:id="StatusValveSqzDet2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="434.0" layoutY="224.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
+      <SVGPath fx:id="StatusValveSqzDet2" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="436.0" layoutY="209.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
          <effect>
             <InnerShadow />
          </effect>
       </SVGPath>
-      <Label fx:id="SqzDet2" alignment="CENTER" contentDisplay="CENTER" layoutX="463.0" layoutY="268.0" prefHeight="17.0" prefWidth="12.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;">
+      <Label fx:id="SqzDet2" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="461.0" layoutY="256.0" prefHeight="18.0" prefWidth="21.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="SQB2">
          <font>
-            <Font name="System" size="12.0" />
+            <Font size="5.0" />
          </font>
          <effect>
             <InnerShadow />
          </effect>
       </Label>
-      <SVGPath fx:id="StatusValveSqzDet1" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="434.0" layoutY="259.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
+      <SVGPath fx:id="StatusValveSqzDet1" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="436.0" layoutY="252.0" rotate="90.0" scaleX="0.5" scaleY="1.5">
          <effect>
             <InnerShadow />
          </effect>
       </SVGPath>
-      <Label fx:id="Sqz300N" alignment="CENTER" contentDisplay="CENTER" layoutX="462.0" layoutY="86.0" prefHeight="17.0" prefWidth="14.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;">
+      <Label fx:id="Sqz300N" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="461.0" layoutY="63.0" prefHeight="18.0" prefWidth="20.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="FCEND">
          <font>
-            <Font name="System" size="12.0" />
+            <Font size="5.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -249,9 +251,9 @@
             <InnerShadow />
          </effect>
       </SVGPath>
-      <Label fx:id="SqzDet1" alignment="CENTER" contentDisplay="CENTER" layoutX="463.0" layoutY="304.0" prefHeight="17.0" prefWidth="13.0" rotate="90.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;">
+      <Label fx:id="SqzDet1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="461.0" layoutY="300.0" prefHeight="18.0" prefWidth="21.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: e1e4db;" text="SQB1">
          <font>
-            <Font name="System" size="12.0" />
+            <Font size="5.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -268,7 +270,7 @@
       </Group>
       <Group layoutX="-17.0" layoutY="3.0">
          <children>
-            <SVGPath fx:id="StatusValveLN2NE2" content="m17,26v18l36-18v18z" fill="#33ff57" layoutX="4.0" layoutY="-2.0" scaleX="0.5">
+            <SVGPath fx:id="StatusValveLN2NE2" content="m17,26v18l36-18v18z" fill="#33ff57" layoutX="4.0" layoutY="-7.0" scaleX="0.5">
                <effect>
                   <InnerShadow />
                </effect>
@@ -280,37 +282,37 @@
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valve Close">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valve Close">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yag On">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yag On">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yag Off">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yag Off">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green On">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green On">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green Off">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green Off">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 On">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 On">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Off">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Off">
          <font>
             <Font size="12.0" />
          </font>
@@ -323,32 +325,32 @@
             <InnerShadow />
          </effect>
       </Label>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F0+F7 Current On">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F0+F7 Current On">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F0+F7 Current Off">
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F0+F7 Current Off">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Circle fill="#ff1f1f" layoutX="21.0" layoutY="61.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fill="#4e514e" layoutX="21.0" layoutY="82.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fill="#21ff27" layoutX="21.0" layoutY="106.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
-      <Circle fill="#4e514e" layoutX="21.0" layoutY="127.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
-      <Circle fill="#efff21" layoutX="21.0" layoutY="150.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
-      <Circle fill="#4e514e" layoutX="21.0" layoutY="172.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="15.0" layoutY="235.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4e514e" height="12.0" layoutX="15.0" layoutY="256.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
-      <SVGPath content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#efff21" layoutX="-41.0" layoutY="134.0" scaleX="0.11" scaleY="0.11" />
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Open">
+      <Circle fill="#ff1f1f" layoutX="21.0" layoutY="48.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fill="#4e514e" layoutX="21.0" layoutY="67.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fill="#21ff27" layoutX="21.0" layoutY="126.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fill="#4e514e" layoutX="21.0" layoutY="145.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fill="#efff21" layoutX="21.0" layoutY="164.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
+      <Circle fill="#4e514e" layoutX="21.0" layoutY="183.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="15.0" layoutY="238.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4e514e" height="12.0" layoutX="15.0" layoutY="257.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
+      <SVGPath content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#efff21" layoutX="-41.0" layoutY="142.0" scaleX="0.11" scaleY="0.11" strokeWidth="2.0" />
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Open">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <SVGPath content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#4e514e" layoutX="-41.0" layoutY="158.0" scaleX="0.11" scaleY="0.11" stroke="#efff21" />
-      <Text fill="#d1d1e0" layoutX="56.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Close">
+      <SVGPath content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#4e514e" layoutX="-41.0" layoutY="163.0" scaleX="0.11" scaleY="0.11" stroke="#efff21" strokeWidth="2.0" />
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Close">
          <font>
             <Font size="12.0" />
          </font>
@@ -362,7 +364,7 @@
       <Circle fx:id="DETYag" fill="#ff1f1f" layoutX="455.0" layoutY="331.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Circle fx:id="MCYag" fill="#ff1f1f" layoutX="123.0" layoutY="507.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Circle fx:id="WISourceCO2" fill="#efff21" layoutX="221.0" layoutY="298.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
-      <Circle fx:id="NISourceCO2" fill="#efff21" layoutX="232.0" layoutY="248.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
+      <Circle fx:id="NISourceCO2" fill="#efff21" layoutX="235.0" layoutY="262.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
       <Rectangle fx:id="NILocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="306.0" layoutY="292.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
       <Rectangle fx:id="WILocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="240.0" layoutY="355.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
       <Rectangle fx:id="BSLocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="306.0" layoutY="355.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
@@ -371,12 +373,12 @@
       <Rectangle fx:id="MCLocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="149.0" layoutY="531.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
       <Rectangle fx:id="SRLocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="373.0" layoutY="355.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
       <Rectangle fx:id="DETLocalCtrl" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="12.0" layoutX="481.0" layoutY="355.0" scaleX="0.5" scaleY="0.5" stroke="#ff1f1f" strokeType="INSIDE" width="12.0" />
-      <SVGPath fx:id="NICO2Shutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#efff21" layoutX="186.0" layoutY="187.0" scaleX="0.11" scaleY="0.11" />
-      <SVGPath fx:id="WICO2Shutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#efff21" layoutX="175.0" layoutY="237.0" scaleX="0.11" scaleY="0.11" />
-      <Circle fx:id="SQZDET1Yag" fill="#ff1f1f" layoutX="466.0" layoutY="312.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fx:id="SQZDET2Yag" fill="#ff1f1f" layoutX="466.0" layoutY="276.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fx:id="SQZ0NYag" fill="#ff1f1f" layoutX="466.0" layoutY="239.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fx:id="SQZ300NYag" fill="#ff1f1f" layoutX="466.0" layoutY="93.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <SVGPath fx:id="NICO2Shutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#efff21" layoutX="189.0" layoutY="201.0" scaleX="0.11" scaleY="0.11" stroke="#2fff21" strokeWidth="2.0" />
+      <SVGPath fx:id="WICO2Shutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#efff21" layoutX="175.0" layoutY="237.0" scaleX="0.11" scaleY="0.11" stroke="#efff21" strokeWidth="2.0" />
+      <Circle fx:id="SQZDET1Yag" fill="#ff1f1f" layoutX="464.0" layoutY="313.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="SQZDET2Yag" fill="#ff1f1f" layoutX="464.0" layoutY="270.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="SQZ0NYag" fill="#ff1f1f" layoutX="464.0" layoutY="227.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="SQZ300NYag" fill="#ff1f1f" layoutX="464.0" layoutY="78.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Circle fx:id="TUBENYag" fill="#ff1f1f" layoutX="288.0" layoutY="190.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Circle fx:id="TUBEWYag" fill="#ff1f1f" layoutX="133.0" layoutY="337.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Circle fx:id="IBGreen" fill="#21ff27" layoutX="280.0" layoutY="536.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
@@ -388,7 +390,7 @@
       <Circle fx:id="TUBENGreen" fill="#21ff27" layoutX="304.0" layoutY="190.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
       <Circle fx:id="SRGreen" fill="#21ff27" layoutX="348.0" layoutY="364.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
       <Circle fx:id="DETGreen" fill="#21ff27" layoutX="455.0" layoutY="363.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
-      <Label fx:id="DetMini" alignment="CENTER" contentDisplay="CENTER" layoutX="498.0" layoutY="330.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; ">
+      <Label fx:id="DetMini" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="495.0" layoutY="330.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="SDT2">
          <font>
             <Font name="System" size="12.0" />
          </font>
@@ -396,7 +398,7 @@
             <InnerShadow />
          </effect>
       </Label>
-      <Label fx:id="PRMini" alignment="CENTER" contentDisplay="CENTER" layoutX="236.0" layoutY="376.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; ">
+      <Label fx:id="PRMini" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="376.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="SPRB">
          <font>
             <Font name="System" size="12.0" />
          </font>
@@ -404,9 +406,9 @@
             <InnerShadow />
          </effect>
       </Label>
-      <Circle fx:id="DETMiniGreen" fill="#21ff27" layoutX="508.0" layoutY="354.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
-      <Circle fx:id="PRMiniGreen" fill="#21ff27" layoutX="245.0" layoutY="400.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
-      <Label fx:id="IBMini" alignment="CENTER" contentDisplay="CENTER" layoutX="322.0" layoutY="504.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; ">
+      <Circle fx:id="DETMiniGreen" fill="#21ff27" layoutX="520.0" layoutY="354.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="PRMiniGreen" fill="#21ff27" layoutX="262.0" layoutY="400.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Label fx:id="IBMini" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="322.0" layoutY="504.0" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: e1e4db; -fx-background-radius: 5; -fx-border-radius: 5; " text="SIB2">
          <font>
             <Font name="System" size="12.0" />
          </font>
@@ -414,22 +416,87 @@
             <InnerShadow />
          </effect>
       </Label>
-      <Circle fx:id="IBMiniGreen" fill="#21ff27" layoutX="332.0" layoutY="528.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="IBMiniGreen" fill="#21ff27" layoutX="346.0" layoutY="528.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
       <Circle fx:id="NICO2" fill="#efff21" layoutX="310.0" layoutY="265.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
-      <Text fill="#d1d1e0" layoutX="218.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source CO2 NI" wrappingWidth="47.25">
+      <Text fill="#d1d1e0" layoutX="187.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source CO2 NI" wrappingWidth="33.75">
          <font>
-            <Font size="12.0" />
+            <Font size="10.0" />
          </font>
       </Text>
       <Circle fx:id="WICO2" fill="#efff21" layoutX="244.0" layoutY="330.0" radius="6.0" stroke="#efff21" strokeType="INSIDE" />
-      <Circle fx:id="SourceYag" fill="#ff1f1f" layoutX="391.0" layoutY="520.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="SourceYag" fill="#ff1f1f" layoutX="390.0" layoutY="520.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Text fill="#d1d1e0" layoutX="419.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source Yag" wrappingWidth="70.875">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Circle fx:id="IBMiniYag" fill="#ff1f1f" layoutX="331.0" layoutY="512.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fx:id="DETMiniYag" fill="#ff1f1f" layoutX="507.0" layoutY="338.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
-      <Circle fx:id="PRMiniYag" fill="#ff1f1f" layoutX="245.0" layoutY="384.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="IBMiniYag" fill="#ff1f1f" layoutX="331.0" layoutY="528.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="DETMiniYag" fill="#ff1f1f" layoutX="504.0" layoutY="354.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="PRMiniYag" fill="#ff1f1f" layoutX="246.0" layoutY="399.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Circle fx:id="SQZDET1Green" fill="#21ff27" layoutX="479.0" layoutY="313.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="SQZDET2Green" fill="#21ff27" layoutX="479.0" layoutY="270.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="SQZ0NGreen" fill="#21ff27" layoutX="479.0" layoutY="227.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="SQZTUBEGreen" fill="#21ff27" layoutX="479.0" layoutY="183.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="SQZ300NGreen" fill="#21ff27" layoutX="479.0" layoutY="78.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <Circle fx:id="SQZTUBEYag" fill="#ff1f1f" layoutX="464.0" layoutY="183.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
+      <Text fill="#d1d1e0" layoutX="160.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" ZONE A (EXT. TANK)" wrappingWidth="126.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="154.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONE B" wrappingWidth="49.5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="153.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONE C" wrappingWidth="49.5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="323.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONE D" wrappingWidth="49.5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="228.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONE E" wrappingWidth="49.5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="399.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONE F" wrappingWidth="49.5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="229.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONE G" wrappingWidth="49.5">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Circle fx:id="SQZSourceGreen" fill="#21ff27" layoutX="580.0" layoutY="306.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
+      <SVGPath fx:id="SQZGreenShutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#ff1f1f" layoutX="473.0" layoutY="244.0" scaleX="0.11" scaleY="0.11" stroke="#ff1f1f" strokeWidth="2.0" />
+      <Text fill="#d1d1e0" layoutX="562.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source SQZGreen" wrappingWidth="49.499999999999886">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="518.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source SQZYag" wrappingWidth="40.5">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <SVGPath fx:id="SQZGreenShutter1" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#4e514e" layoutX="-41.0" layoutY="45.0" scaleX="0.11" scaleY="0.11" stroke="#ff1f1f" strokeWidth="2.0" />
+      <SVGPath fx:id="SQZGreenShutter11" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#ff1f1f" layoutX="-41.0" layoutY="26.0" scaleX="0.11" scaleY="0.11" stroke="#ff1f1f" strokeWidth="2.0" />
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Open">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#d1d1e0" layoutX="56.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutter Close">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
