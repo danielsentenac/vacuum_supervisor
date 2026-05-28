@@ -118,9 +118,9 @@ public class DataSetCBSafety extends DataSet {
 
       // SQZ source indicators (single-channel thresholds, not part of LaserTopology propagation):
       //  - SHG Lock: value < 5 => ON (green), otherwise OFF (grey).
-      //  - Fast shutter: value > 1 => CLOSED (grey), otherwise OPEN (green).
+      //  - Fast shutter: value > 1 => CLOSED (grey), otherwise OPEN (red, YAG hazard).
       list.addElement(new DataElement("SQZSourceGreen",  Type.CIRCLE_SQZ_LOCK_STATUS_COLOR,  "SQZ_SHG_Lock_Status_MAX"));
-      list.addElement(new DataElement("SQZGreenShutter", Type.SHUTTER_SQZ_FAST_STATUS_COLOR, "EQB1_FAST_SHUTTER_MONI_MAX"));
+      list.addElement(new DataElement("SQZYagShutter", Type.SHUTTER_SQZ_FAST_STATUS_COLOR, "EQB1_FAST_SHUTTER_MONI_MAX"));
 
       // ---- Propagation-only channels (no FXML element renders these) ----
       // Cross-panel channels needed by LaserTopology.applyPropagation to compute

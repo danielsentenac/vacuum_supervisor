@@ -139,7 +139,7 @@
       <Circle fx:id="WEMiniYag" fill="#ff1f1f" layoutX="167.0" layoutY="118.0" radius="6.0" stroke="#ff1f1f" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="27.0" layoutX="196.0" layoutY="50.0" stroke="#21ff27" strokeType="INSIDE" width="41.0" />
       <Circle fx:id="WESourceGreen" fill="#21ff27" layoutX="209.0" layoutY="63.0" radius="6.0" stroke="#21ff27" strokeType="INSIDE" />
-      <SVGPath fx:id="WEGreenShutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#21ff27" layoutX="163.0" layoutY="1.0" scaleX="0.11" scaleY="0.11" />
+      <SVGPath fx:id="WEGreenShutter" content="M61.72.28a61.18,61.18,0,0,1,38.93,13.91L46.86,45.24V2.1A61.21,61.21,0,0,1,61.72.28ZM106,19.12a61.25,61.25,0,0,1,17.17,42.6,62,62,0,0,1-.64,8.89L69.66,40.09l36.33-21Zm15.06,58.64a61.59,61.59,0,0,1-34.91,40.36V57.6l34.91,20.16ZM79.21,120.64A61.6,61.6,0,0,1,25.05,111L79.21,79.75v40.89Zm-59.8-14.37A61.28,61.28,0,0,1,.28,61.72a62.4,62.4,0,0,1,.65-8.91L55.44,85.46l-36,20.81Zm-17-60.65A61.6,61.6,0,0,1,39.91,4.27l-.44,63.54-37-22.19Z" fill="#21ff27" layoutX="163.0" layoutY="1.0" scaleX="0.11" scaleY="0.11" stroke="#21ff27" strokeWidth="2.0" />
       <Text fill="#d1d1e0" layoutX="186.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source Green">
          <font>
             <Font size="12.0" />

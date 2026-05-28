@@ -60,7 +60,7 @@ public class ViewData extends View implements Runnable, DataTypes {
         name = _name;
         try {
            mainLoader = new FXMLLoader(getClass().getResource("/" + fxml + ".fxml"));
-           mainLoader.setClassLoader(cachingClassLoader); 
+           mainLoader.setClassLoader(cachingClassLoader);
            mainPane =  mainLoader.load();
            backgroundPane = new Pane();
            backgroundPane.getChildren().addAll(mainPane);
@@ -484,10 +484,11 @@ public class ViewData extends View implements Runnable, DataTypes {
                         }
                      break;
                 case SHUTTER_SQZ_FAST_STATUS_COLOR:
-                        SVGPath sqzFastShutter = (SVGPath) lookup("#" + data.list.elementAt(i).name);
-                        if (sqzFastShutter != null) {
+                        SVGPath sqzYagShutter = (SVGPath) lookup("#" + data.list.elementAt(i).name);
+                        if (sqzYagShutter != null) {
                            // Fast shutter CLOSED iff value > 1; otherwise OPEN.
-                           // OPEN => green (light passes), CLOSED => dark grey.
+                           // The fast shutter gates the YAG beam, so follow YAG colour
+                           // convention: OPEN => red (hazard), CLOSED => dark grey.
                            String raw = data.svrValueList.elementAt(i).replace(" ", "").replace(",", ".");
                            String state;
                            if (raw.contains("NOTEXIST") || raw.contains("TIMOUT")) {
@@ -497,7 +498,7 @@ public class ViewData extends View implements Runnable, DataTypes {
                               catch (NumberFormatException ex) { state = "---"; }
                            }
                            final String sqzFastState = state;
-                           Platform.runLater(() -> {sqzFastShutter.setFill(GREEN_STATUS_COLOR.get(sqzFastState));});
+                           Platform.runLater(() -> {sqzYagShutter.setFill(LASER_STATUS_COLOR.get(sqzFastState));});
                         }
                      break;
                 case CIRCLE_RGA_2_STATUS_COLOR:
