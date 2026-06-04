@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 
 final class ServerEndpoints {
 
-    private static final String DEFAULT_HOST = "online-data-provider.example";
+    private static final String DEFAULT_HOST = "olserver135.virgo.infn.it";
     private static final String BACKEND_HOST_PROPERTY = "vacuum.supervisor.backend.host";
     private static final String BACKEND_HOST_ENV = "VACUUM_SUPERVISOR_BACKEND_HOST";
 
