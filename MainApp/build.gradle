@@ -95,3 +95,28 @@ run {
         systemProperty 'vacuum.supervisor.backend.host', project.property('backend')
     }
 }
+
+// Writes the desktop runtime classpath (application jar + resolved runtime
+// dependencies) to build/desktop-launch/classpath.txt. The native desktop
+// launcher installed by scripts/install_desktop_launcher.sh reads this file to
+// build the -cp argument for java. JavaFX itself is provided by the JavaFX-enabled
+// JDK 8 the launcher runs with, so it is not listed here.
+tasks.register('writeDesktopLaunchClasspath') {
+    group = 'application'
+    description = 'Writes the desktop runtime classpath to build/desktop-launch/classpath.txt for the native launcher.'
+    dependsOn 'jar'
+
+    def outputFile = file("$buildDir/desktop-launch/classpath.txt")
+    outputs.file outputFile
+
+    doLast {
+        def entries = []
+        entries << jar.archiveFile.get().asFile
+        configurations.runtimeClasspath.each { entries << it }
+
+        def classpath = entries.collect { it.absolutePath }.join(File.pathSeparator)
+        outputFile.parentFile.mkdirs()
+        outputFile.text = classpath
+        logger.lifecycle("Wrote desktop launch classpath (${entries.size()} entries) to ${outputFile}")
+    }
+}
