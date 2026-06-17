@@ -22,6 +22,10 @@ jobs:
     name: Android APK
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    # Non-blocking: the Android APK is distributed via the olserver135 webapp.
+    # This job only produces a GitHub artifact when signing secrets are configured;
+    # its failure must not fail the release or block publishing.
+    continue-on-error: true
 
     steps:
       - name: Checkout
@@ -316,7 +320,6 @@ jobs:
     name: Publish GitHub Release
     runs-on: ubuntu-latest
     needs:
-      - android-apk
       - windows-installer
       - linux-tarball
     timeout-minutes: 15
