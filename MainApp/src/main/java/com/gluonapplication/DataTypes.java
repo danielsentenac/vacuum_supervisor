@@ -102,6 +102,10 @@ public interface DataTypes {
    /**/  LABEL_OKWORKING_STATUS_COLOR,
    /**/  LABEL_OKLOW_STATUS_STRING,
    /**/  LABEL_OKLOW_STATUS_COLOR,
+   /**/  LABEL_ACNOISE_STATUS_STRING,
+   /**/  LABEL_PCOUNTER_STATUS_COLOR,
+   /**/  LABEL_PCOUNTER_COUNT_STATUS_STRING,
+   /**/  LABEL_PCOUNTERMOB_COUNT_STATUS_STRING,
    /**/  RECTANGLE_LOCALCTRL_STATUS_COLOR,
    /**/  CIRCLE_YAG_STATUS_COLOR,
    /**/  CIRCLE_CO2_STATUS_COLOR,
@@ -1969,9 +1973,94 @@ public interface DataTypes {
       put("...", "...");
    }};
 
-   Hashtable<String, String> OKWORKING_STATUS_COLOR = new Hashtable<String, String>(){{ 
+   Hashtable<String, String> OKWORKING_STATUS_COLOR = new Hashtable<String, String>(){{
       put("0", "lime");
       put("1", "orange");
+      put("255", "lightgrey");
+      put("---", "lightgrey");
+      put("...", "lightgrey");
+   }};
+
+   // Central Building clean-room air-conditioning noise mode
+   // (VAC_PCOUNTERCB_M3_ACST: 0 OFF, 1 LOW NOISE, 2 HIGH NOISE, 3 ERROR)
+   Hashtable<String, String> ACNOISE_STATUS_STRING = new Hashtable<String, String>(){{
+      put("0", "OFF");
+      put("1", "LOW NOISE");
+      put("2", "HIGH NOISE");
+      put("3", "ERROR");
+      put("255", "?");
+      put("---", "---");
+      put("...", "...");
+   }};
+
+   Hashtable<String, String> ACNOISE_STATUS_COLOR = new Hashtable<String, String>(){{
+      put("0", "lime");
+      put("1", "orange");
+      put("2", "orangered");
+      put("3", "red");
+      put("255", "lightgrey");
+      put("---", "lightgrey");
+      put("...", "lightgrey");
+   }};
+
+   // Particle-counter per-bin threshold flag colour (UMxxFLG, computed on the
+   // counter Pi: value >= threshold -> 2 red, value >= 0.9*threshold -> 1 orange,
+   // else 0 green). Drives the text colour of each count field.
+   Hashtable<String, String> PCOUNTER_FLAG_COLOR = new Hashtable<String, String>(){{
+      put("0", "lime");
+      put("1", "orange");
+      put("2", "red");
+      put("255", "#d1d1e0");
+      put("---", "#d1d1e0");
+      put("...", "#d1d1e0");
+   }};
+
+   // Particle-counter counting status, collapsed to Stopped / Sampling / Hold.
+   // Fixed counters (_ST, PCounterSTATUS): 0 Init next, 1 Stopping, 2 Stopped,
+   // 3 Delay before, 4 Holding, 5 Sleeping, 6 Sampling. "Hold" = running but not
+   // actively sampling (Holding/Sleeping/Delay/Init); "Stopped" = Stopped/Stopping.
+   Hashtable<String, String> PCOUNTER_COUNT_STATUS_STRING = new Hashtable<String, String>(){{
+      put("0", "Hold");
+      put("1", "Stopped");
+      put("2", "Stopped");
+      put("3", "Hold");
+      put("4", "Hold");
+      put("5", "Hold");
+      put("6", "Sampling");
+      put("255", "-");
+      put("---", "-");
+      put("...", "...");
+   }};
+
+   Hashtable<String, String> PCOUNTER_COUNT_STATUS_COLOR = new Hashtable<String, String>(){{
+      put("0", "orange");
+      put("1", "red");
+      put("2", "red");
+      put("3", "orange");
+      put("4", "orange");
+      put("5", "orange");
+      put("6", "lime");
+      put("255", "lightgrey");
+      put("---", "lightgrey");
+      put("...", "lightgrey");
+   }};
+
+   // Mobile counters (_ST, PCounterMOBSTATUS): 0 Stopped, 1 Delay, 2 Counting, 3 Hold.
+   Hashtable<String, String> PCOUNTERMOB_COUNT_STATUS_STRING = new Hashtable<String, String>(){{
+      put("0", "Stopped");
+      put("1", "Hold");
+      put("2", "Sampling");
+      put("3", "Hold");
+      put("255", "-");
+      put("---", "-");
+      put("...", "...");
+   }};
+
+   Hashtable<String, String> PCOUNTERMOB_COUNT_STATUS_COLOR = new Hashtable<String, String>(){{
+      put("0", "red");
+      put("1", "orange");
+      put("2", "lime");
+      put("3", "orange");
       put("255", "lightgrey");
       put("---", "lightgrey");
       put("...", "lightgrey");

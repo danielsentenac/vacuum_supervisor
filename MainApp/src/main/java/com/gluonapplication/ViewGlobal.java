@@ -31,6 +31,10 @@ public class ViewGlobal extends ViewData {
            CreateAndShowSensorO2SidePopupView("SENSORO2", "SENSOR O2");
            setMouseTransparent(false);
         }));
+        appBar.getActionItems().addAll(MaterialDesignIcon.GRAIN.button(e -> {
+           CreateAndShowParticleCounterSidePopupView("PCOUNTER", "Particle Counters");
+           setMouseTransparent(false);
+        }));
         appBar.getActionItems().addAll(MaterialDesignIcon.FLAG.button(e -> {
            CreateAndShowGlobalSidePopupView("GLOBALFLAGS", "Global Flags");
            setMouseTransparent(false);
@@ -48,6 +52,25 @@ public class ViewGlobal extends ViewData {
           viewName.setText(name + " Flags");
           try { 
              new Thread(content).start(); 
+          }
+          catch (Exception e) {
+             e.printStackTrace();
+          }
+          ScrollPane scrollpane = createSidePopupScrollPane(content.pane);
+          SidePopupView sidePopupView = new SidePopupView(scrollpane);
+          bindSidePopupLifecycle(sidePopupView, content);
+          MobileApplication.getInstance().addLayerFactory(name, () -> { return sidePopupView;});
+       }
+       MobileApplication.getInstance().showLayer(name);
+   }
+
+    void CreateAndShowParticleCounterSidePopupView(String fxml, String name) {
+       if ( !MobileApplication.getInstance().isLayerPresent(name) ) {
+          SidePopupViewData content = new SidePopupViewParticleCounter(fxml, name);
+          Label viewName = (Label) content.pane.lookup("#ViewName");
+          viewName.setText(name);
+          try {
+             new Thread(content).start();
           }
           catch (Exception e) {
              e.printStackTrace();

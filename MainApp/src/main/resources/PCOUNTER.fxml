@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerParticleCounter" prefWidth="344.0" style="-fx-background-color: #333333;">
+   <children>
+      <VBox spacing="12.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <padding><Insets top="16.0" right="10.0" bottom="16.0" left="10.0"/></padding>
+         <children>
+            <Label fx:id="ViewName" alignment="CENTER" maxWidth="Infinity" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Particle Counters"/>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="Counts per bin size (um)"><font><Font size="11.0"/></font></Text>
+            <VBox spacing="2.0">
+               <children>
+                  <Label alignment="CENTER_LEFT" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="CB"/>
+                  <Line endX="324.0" startX="0.0" stroke="#901313" strokeWidth="3.0"/>
+               </children>
+            </VBox>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Injection L."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_1_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_1_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_1_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_1_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_1_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_1_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_1_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Baseroom C."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_2_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_2_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_2_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_2_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_2_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_2_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_2_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Detect. Sas"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_3_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_3_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_3_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_3_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_3_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_3_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_3_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Main Hall"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_4_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_4_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_4_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_4_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_4_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_4_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_4_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Detection L."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_5_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_5_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_5_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_5_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_5_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_5_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_5_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Sas Clean R."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_6_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_6_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_6_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_6_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_6_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_6_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_6_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Payload C."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_7_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_7_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_7_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_7_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_7_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_7_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_7_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Mirror C."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="CB_8_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="CB_8_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_8_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_8_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_8_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_8_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="CB_8_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffcc66;" text="Clean Room AC Noise">
+               <font><Font name="System Bold" size="12.0"/></font>
+            </Text>
+            <GridPane hgap="8.0" vgap="6.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" prefWidth="150.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="150.0"/>
+               </columnConstraints>
+               <children>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="0" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="Current status">
+                     <font><Font size="11.0"/></font></Text>
+                  <Label fx:id="CBACStatus" GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER" maxWidth="Infinity" text="---" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;">
+                     <font><Font size="11.0"/></font></Label>
+                  <Label fx:id="ACLowNoise" GridPane.columnIndex="0" GridPane.rowIndex="1" alignment="CENTER" maxWidth="Infinity" text="LOW NOISE" onMouseClicked="#ACLow_Clicked" onMousePressed="#ACLow_Pressed" onMouseReleased="#ACLow_Released" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #444a55; -fx-text-fill: #d1d1e0;">
+                     <padding><Insets top="5.0" bottom="5.0"/></padding>
+                     <font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="ACHighNoise" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER" maxWidth="Infinity" text="HIGH NOISE" onMouseClicked="#ACHigh_Clicked" onMousePressed="#ACHigh_Pressed" onMouseReleased="#ACHigh_Released" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #444a55; -fx-text-fill: #d1d1e0;">
+                     <padding><Insets top="5.0" bottom="5.0"/></padding>
+                     <font><Font name="System Bold" size="11.0"/></font></Label>
+               </children>
+            </GridPane>
+            <VBox spacing="2.0">
+               <children>
+                  <Label alignment="CENTER_LEFT" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="NE"/>
+                  <Line endX="324.0" startX="0.0" stroke="#901313" strokeWidth="3.0"/>
+               </children>
+            </VBox>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Tower Clean R."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="NE_3_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="NE_3_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_3_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_3_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_3_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_3_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_3_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Main Hall"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="NE_4_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="NE_4_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_4_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_4_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_4_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_4_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="NE_4_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <VBox spacing="2.0">
+               <children>
+                  <Label alignment="CENTER_LEFT" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="WE"/>
+                  <Line endX="324.0" startX="0.0" stroke="#901313" strokeWidth="3.0"/>
+               </children>
+            </VBox>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Tower Clean R."><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="WE_3_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="WE_3_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_3_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_3_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_3_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_3_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_3_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Main Hall"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="WE_4_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="WE_4_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_4_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_4_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_4_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_4_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="WE_4_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <VBox spacing="2.0">
+               <children>
+                  <Label alignment="CENTER_LEFT" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="1500W"/>
+                  <Line endX="324.0" startX="0.0" stroke="#901313" strokeWidth="3.0"/>
+               </children>
+            </VBox>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Payload Lab"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="W15_1_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="W15_1_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_1_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_1_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_1_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_1_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_1_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Fiber Lab"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="W15_2_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="W15_2_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_2_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_2_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_2_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_2_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_2_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Clean R. Sas"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="W15_3_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="W15_3_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_3_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_3_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_3_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_3_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_3_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="SQZ Lab"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="W15_4_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="W15_4_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_4_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_4_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_4_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_4_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="W15_4_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <VBox spacing="2.0">
+               <children>
+                  <Label alignment="CENTER_LEFT" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="MOBILE"/>
+                  <Line endX="324.0" startX="0.0" stroke="#901313" strokeWidth="3.0"/>
+               </children>
+            </VBox>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Mobile 1"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="MOB_1_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="MOB_1_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_1_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_1_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_1_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_1_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_1_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Mobile 2"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="MOB_2_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="MOB_2_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_2_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_2_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_2_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_2_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_2_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+            <GridPane hgap="2.0" vgap="3.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+                  <ColumnConstraints halignment="CENTER" prefWidth="50.0"/>
+               </columnConstraints>
+               <children>
+                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" GridPane.halignment="LEFT" style="-fx-text-fill: #d1d1e0;" text="Mobile 3"><font><Font name="System Bold" size="11.0"/></font></Label>
+                  <Label fx:id="MOB_3_ST" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Text GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.3"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="0.5"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="1.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="2.05"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="5.0"><font><Font size="9.0"/></font></Text>
+                  <Text GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #d1d1e0;" text="10"><font><Font size="9.0"/></font></Text>
+                  <Label fx:id="MOB_3_03" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_3_05" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_3_1" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_3_205" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_3_5" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+                  <Label fx:id="MOB_3_10" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" maxWidth="Infinity" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---"><font><Font size="10.0"/></font></Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

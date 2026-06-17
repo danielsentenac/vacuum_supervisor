@@ -551,7 +551,61 @@ public class SidePopupViewData implements Runnable, DataTypes {
                         if (oklowtxt != null) {
                            Platform.runLater(() -> {
                               oklowtxt.setText(OKLOW_STATUS_STRING.get(value));
-                              oklowtxt.setStyle(LABEL_STRING_STYLE + OKLOW_STATUS_COLOR.get(value));  
+                              oklowtxt.setStyle(LABEL_STRING_STYLE + OKLOW_STATUS_COLOR.get(value));
+                           });
+                        }
+                     break;
+                case LABEL_ACNOISE_STATUS_STRING:
+                        Label acnoisetxt = (Label) pane.lookup("#" + data.list.elementAt(i).name);
+                        if (acnoisetxt != null) {
+                           Platform.runLater(() -> {
+                              acnoisetxt.setText(ACNOISE_STATUS_STRING.get(value));
+                              acnoisetxt.setStyle(LABEL_STRING_STYLE + ACNOISE_STATUS_COLOR.get(value));
+                           });
+                        }
+                     break;
+                case LABEL_PCOUNTER_STATUS_COLOR:
+                        Label pcountercol = (Label) pane.lookup("#" + data.list.elementAt(i).name);
+                        if (pcountercol != null) {
+                           String tmpFlagColor;
+                           try {
+                              tmpFlagColor = PCOUNTER_FLAG_COLOR.get(String.valueOf((int) Double.parseDouble(value)));
+                           }
+                           catch (NumberFormatException e) {
+                              tmpFlagColor = PCOUNTER_FLAG_COLOR.get(value);
+                           }
+                           if (tmpFlagColor == null) tmpFlagColor = "#d1d1e0";
+                           final String flagColor = tmpFlagColor;
+                           Platform.runLater(() -> {
+                              pcountercol.setStyle(LABEL_STRING_STYLE + flagColor);
+                           });
+                        }
+                     break;
+                case LABEL_PCOUNTER_COUNT_STATUS_STRING:
+                        Label pcCountSt = (Label) pane.lookup("#" + data.list.elementAt(i).name);
+                        if (pcCountSt != null) {
+                           String key;
+                           try { key = String.valueOf((int) Double.parseDouble(value)); }
+                           catch (NumberFormatException e) { key = value; }
+                           final String txt = PCOUNTER_COUNT_STATUS_STRING.get(key);
+                           final String col = PCOUNTER_COUNT_STATUS_COLOR.get(key);
+                           if (txt != null) Platform.runLater(() -> {
+                              pcCountSt.setText(txt);
+                              pcCountSt.setStyle(LABEL_STRING_STYLE + (col == null ? "lightgrey" : col));
+                           });
+                        }
+                     break;
+                case LABEL_PCOUNTERMOB_COUNT_STATUS_STRING:
+                        Label pcMobCountSt = (Label) pane.lookup("#" + data.list.elementAt(i).name);
+                        if (pcMobCountSt != null) {
+                           String mkey;
+                           try { mkey = String.valueOf((int) Double.parseDouble(value)); }
+                           catch (NumberFormatException e) { mkey = value; }
+                           final String mtxt = PCOUNTERMOB_COUNT_STATUS_STRING.get(mkey);
+                           final String mcol = PCOUNTERMOB_COUNT_STATUS_COLOR.get(mkey);
+                           if (mtxt != null) Platform.runLater(() -> {
+                              pcMobCountSt.setText(mtxt);
+                              pcMobCountSt.setStyle(LABEL_STRING_STYLE + (mcol == null ? "lightgrey" : mcol));
                            });
                         }
                      break;
