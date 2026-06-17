@@ -52,6 +52,15 @@ jobs:
         run: |
           set -euo pipefail
           : "${ANDROID_HOME:?ANDROID_HOME is not set on this runner}"
+          # The build runs on JDK 8 (jfxmobile/JavaFX), but the Android cmdline-tools
+          # sdkmanager requires JDK 11+. Run sdkmanager with a newer JDK preinstalled
+          # on the runner; this override is scoped to this step only.
+          sdk_java_home="${JAVA_HOME_17_X64:-${JAVA_HOME_11_X64:-${JAVA_HOME_21_X64:-}}}"
+          if [[ -z "${sdk_java_home}" || ! -x "${sdk_java_home}/bin/java" ]]; then
+            echo "No JDK 11/17/21 found on runner for sdkmanager" >&2
+            exit 1
+          fi
+          export JAVA_HOME="${sdk_java_home}"
           sdkmanager="${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager"
           if [[ ! -x "${sdkmanager}" ]]; then
             sdkmanager="${ANDROID_HOME}/tools/bin/sdkmanager"
