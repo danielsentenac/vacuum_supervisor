@@ -1,9 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+STEP_NUM=0
+step() {
+  STEP_NUM=$((STEP_NUM + 1))
+  echo ""
+  echo "============================================================"
+  echo "==> Step ${STEP_NUM}: $1"
+  echo "============================================================"
+}
+
 if [[ $# -lt 1 || $# -gt 3 ]]; then
   echo "Usage: $0 <version_name|vX.Y.Z> [tag] [commit_message]"
   echo "Example: $0 0.1.48 v0.1.48 \"Release v0.1.48\""
+  echo ""
+  echo "Builds the signed APK and the Windows installer, commits, pushes, tags,"
+  echo "uploads both artifacts to the Tomcat webapps dir on olserver135, and"
+  echo "updates the local desktop launcher."
+  echo "Env toggles: SKIP_WINDOWS=1, SKIP_UPLOAD=1, SKIP_LAUNCHER=1,"
+  echo "             UPLOAD_HOST, UPLOAD_DIR,"
+  echo "             MAKENSIS_PATH + NSISDIR_PATH (override NSIS toolchain)."
   exit 1
 fi
 
@@ -20,6 +36,9 @@ LOCAL_SIGNING_ENV="${SIGNING_ENV_FILE:-${LOCAL_SIGNING_ENV_DEFAULT}}"
 GRADLE_USER_PROPS="${HOME}/.gradle/gradle.properties"
 PROJECT_LOCAL_PROPS="$(pwd)/local.properties"
 DEFAULT_ANDROID_SDK="$(pwd)/.android-sdk"
+
+step "Preflight: version and git tag checks"
+echo "Requested version: ${VERSION_NAME} (tag ${TAG})"
 
 if [[ ! -f "${MANIFEST}" ]]; then
   echo "Error: ${MANIFEST} not found."
@@ -68,6 +87,8 @@ update_doxy_project_number() {
     printf '\nPROJECT_NUMBER         = "%s"\n' "${version_tag}" >> "${doxyfile}"
   fi
 }
+
+step "Preflight: Android SDK and signing configuration"
 
 if [[ -f "${LOCAL_SIGNING_ENV}" ]]; then
   # shellcheck disable=SC1090
@@ -177,6 +198,63 @@ export RELEASE_STORE_PASSWORD="${SIGNING_STORE_PASSWORD}"
 export RELEASE_KEY_ALIAS="${SIGNING_KEY_ALIAS}"
 export RELEASE_KEY_PASSWORD="${SIGNING_KEY_PASSWORD}"
 
+step "Preflight: Windows NSIS toolchain and upload server"
+# Skippable with SKIP_WINDOWS=1 / SKIP_UPLOAD=1 / SKIP_LAUNCHER=1.
+SKIP_WINDOWS="${SKIP_WINDOWS:-0}"
+SKIP_UPLOAD="${SKIP_UPLOAD:-0}"
+SKIP_LAUNCHER="${SKIP_LAUNCHER:-0}"
+UPLOAD_HOST="${UPLOAD_HOST:-sentenac@olserver135.virgo.infn.it}"
+UPLOAD_DIR="${UPLOAD_DIR:-/virgoDev/TomcatApp/v0r1p3/1/webapps/Vacuum}"
+NSIS_BUNDLED_BIN="$(pwd)/Windows_Install/nsis-tool/usr/bin/makensis"
+NSIS_BUNDLED_DIR="$(pwd)/Windows_Install/nsis-tool/usr/share/nsis"
+NSIS_LOCAL_BIN="${HOME}/.local/share/nsis-3.08-fc36/usr/bin/makensis"
+NSIS_LOCAL_DIR="${HOME}/.local/share/nsis-3.08-fc36/usr/share/nsis"
+
+makensis_works() {
+  local bin="$1" share="$2"
+  [[ -x "${bin}" ]] || return 1
+  NSISDIR="${share}" "${bin}" -VERSION >/dev/null 2>&1
+}
+
+WINDOWS_MAKENSIS="${MAKENSIS_PATH:-}"
+WINDOWS_NSISDIR="${NSISDIR_PATH:-}"
+if [[ "${SKIP_WINDOWS}" != "1" ]]; then
+  if [[ -n "${WINDOWS_MAKENSIS}" ]]; then
+    if ! makensis_works "${WINDOWS_MAKENSIS}" "${WINDOWS_NSISDIR}"; then
+      echo "Error: MAKENSIS_PATH/NSISDIR_PATH set but makensis does not run."
+      exit 1
+    fi
+  elif makensis_works "${NSIS_BUNDLED_BIN}" "${NSIS_BUNDLED_DIR}"; then
+    WINDOWS_MAKENSIS="${NSIS_BUNDLED_BIN}"
+    WINDOWS_NSISDIR="${NSIS_BUNDLED_DIR}"
+  elif makensis_works "${NSIS_LOCAL_BIN}" "${NSIS_LOCAL_DIR}"; then
+    WINDOWS_MAKENSIS="${NSIS_LOCAL_BIN}"
+    WINDOWS_NSISDIR="${NSIS_LOCAL_DIR}"
+  else
+    echo "Error: no working makensis found (bundled needs newer glibc?)."
+    echo "Install one (e.g. extract mingw32-nsis fc36 rpm to ~/.local/share/nsis-3.08-fc36),"
+    echo "set MAKENSIS_PATH/NSISDIR_PATH, or rerun with SKIP_WINDOWS=1."
+    exit 1
+  fi
+  echo "Using makensis: ${WINDOWS_MAKENSIS}"
+  echo "Using NSISDIR:  ${WINDOWS_NSISDIR}"
+else
+  echo "SKIP_WINDOWS=1: Windows installer build will be skipped."
+fi
+
+if [[ "${SKIP_UPLOAD}" != "1" ]]; then
+  if ! ssh -o BatchMode=yes -o ConnectTimeout=10 "${UPLOAD_HOST}" true; then
+    echo "Error: cannot reach ${UPLOAD_HOST} with key auth."
+    echo "Fix SSH access or rerun with SKIP_UPLOAD=1."
+    exit 1
+  fi
+  echo "Upload server reachable: ${UPLOAD_HOST}"
+else
+  echo "SKIP_UPLOAD=1: artifact upload will be skipped."
+fi
+
+step "Bump version (AndroidManifest + Doxyfile)"
+
 sed -i -E "s/(android:versionName=\")[^\"]+(\")/\1${VERSION_NAME}\2/" "${MANIFEST}"
 
 if [[ -f "${DOXYFILE_PATH}" ]]; then
@@ -195,7 +273,7 @@ echo "AndroidManifest versionName: ${CURRENT_VERSION} -> ${VERSION_NAME}"
 echo "Using signing keystore: ${RELEASE_STORE_FILE}"
 echo "Using signing alias: ${RELEASE_KEY_ALIAS}"
 
-echo "Building signed APK (androidRelease)..."
+step "Build signed Android APK (androidRelease)"
 APK_UNALIGNED="MainApp/build/javafxports/android/MainApp-unaligned.apk"
 APK_ALIGNED="MainApp/build/javafxports/android/MainApp-aligned.apk"
 GRADLE_LOG="$(mktemp)"
@@ -255,6 +333,30 @@ else
   echo "Signed APK created at: ${APK_PATH}"
 fi
 
+# Later Gradle runs (Windows installer / launcher build) can delete the
+# javafxports APK; keep a safe copy for the upload step.
+APK_UPLOAD_COPY=""
+if [[ -n "${APK_PATH}" ]]; then
+  RELEASE_TMP_DIR="$(mktemp -d)"
+  APK_UPLOAD_COPY="${RELEASE_TMP_DIR}/vacuum_supervisor.apk"
+  cp "${APK_PATH}" "${APK_UPLOAD_COPY}"
+  echo "APK safe copy for upload: ${APK_UPLOAD_COPY}"
+fi
+
+step "Build Windows installer"
+SETUP_EXE="build/windows-installer/output/VacuumSupervisorSetup-${VERSION_NAME}.exe"
+if [[ "${SKIP_WINDOWS}" != "1" ]]; then
+  ./scripts/build_windows_setup.sh --makensis "${WINDOWS_MAKENSIS}" --nsisdir "${WINDOWS_NSISDIR}"
+  if [[ ! -f "${SETUP_EXE}" ]]; then
+    echo "Error: Windows installer not found at ${SETUP_EXE}."
+    exit 1
+  fi
+  echo "Windows installer created at: ${SETUP_EXE}"
+else
+  echo "Skipped (SKIP_WINDOWS=1)."
+fi
+
+step "Commit, push and tag"
 git add -A
 
 if git diff --cached --quiet; then
@@ -263,12 +365,61 @@ else
   git commit -m "${COMMIT_MESSAGE}"
 fi
 
+echo "Pushing branch..."
 git push
+echo "Tagging ${TAG} and pushing tag..."
 git tag "${TAG}"
 git push origin "${TAG}"
 
-if [[ -n "${APK_PATH}" ]]; then
-  echo "Release completed: version=${VERSION_NAME}, tag=${TAG}, apk=${APK_PATH}"
+step "Upload artifacts (APK + Windows installer)"
+if [[ "${SKIP_UPLOAD}" != "1" ]]; then
+  if [[ -n "${APK_UPLOAD_COPY}" && -f "${APK_UPLOAD_COPY}" ]]; then
+    echo "Uploading APK to ${UPLOAD_HOST}:${UPLOAD_DIR}/vacuum_supervisor.apk"
+    scp -o BatchMode=yes "${APK_UPLOAD_COPY}" "${UPLOAD_HOST}:${UPLOAD_DIR}/vacuum_supervisor.apk"
+  else
+    echo "Warning: no APK available to upload."
+  fi
+  if [[ "${SKIP_WINDOWS}" != "1" && -f "${SETUP_EXE}" ]]; then
+    echo "Uploading Windows installer to ${UPLOAD_HOST}:${UPLOAD_DIR}/"
+    scp -o BatchMode=yes "${SETUP_EXE}" "${UPLOAD_HOST}:${UPLOAD_DIR}/"
+  fi
+  echo "Uploads done."
 else
-  echo "Release completed: version=${VERSION_NAME}, tag=${TAG}"
+  echo "Skipped (SKIP_UPLOAD=1)."
 fi
+
+step "Update local desktop launcher"
+if [[ "${SKIP_LAUNCHER}" != "1" ]]; then
+  ./scripts/install_desktop_launcher.sh
+else
+  echo "Skipped (SKIP_LAUNCHER=1)."
+fi
+
+if [[ -n "${RELEASE_TMP_DIR:-}" ]]; then
+  rm -rf "${RELEASE_TMP_DIR}"
+fi
+
+step "Release summary"
+echo "Version:           ${VERSION_NAME} (tag ${TAG})"
+echo "Commit:            $(git rev-parse --short HEAD)"
+if [[ -n "${APK_PATH}" ]]; then
+  echo "Android APK:       ${APK_PATH}"
+else
+  echo "Android APK:       NOT FOUND (build issue?)"
+fi
+if [[ "${SKIP_WINDOWS}" != "1" ]]; then
+  echo "Windows installer: ${SETUP_EXE}"
+else
+  echo "Windows installer: skipped"
+fi
+if [[ "${SKIP_UPLOAD}" != "1" ]]; then
+  echo "Uploaded to:       ${UPLOAD_HOST}:${UPLOAD_DIR}"
+else
+  echo "Upload:            skipped"
+fi
+if [[ "${SKIP_LAUNCHER}" != "1" ]]; then
+  echo "Desktop launcher:  updated (${HOME}/.local/bin/vacuum-supervisor)"
+else
+  echo "Desktop launcher:  skipped"
+fi
+echo "Release completed."
