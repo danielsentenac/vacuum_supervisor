@@ -476,6 +476,11 @@ public interface ControlTypes {
       put("OpExecute", "_OP_EXECUTE_CMD");
       put("OpStop", "_OP_STOP_CMD");
    }};
+
+   Hashtable<String,String> BEAMSHUTTERACTIONS_COMMAND_CHANNELS = new Hashtable<String, String>(){{
+      // Full channel: VAC_SHUTTERBEAM<n>_CMD (NI = 1, WI = 2); value 1 = OPEN, 2 = CLOSE
+      put("ShutterCmd", "_CMD");
+   }};
    
    
 }

@@ -595,6 +595,20 @@ public class SidePopupViewData implements Runnable, DataTypes {
                            });
                         }
                      break;
+                case LABEL_SHUTTERBEAM_STATUS_STRING:
+                        Label beamshutter = (Label) pane.lookup("#" + data.list.elementAt(i).name);
+                        if (beamshutter != null) {
+                           String bskey;
+                           try { bskey = String.valueOf((int) Double.parseDouble(value)); }
+                           catch (NumberFormatException e) { bskey = value; }
+                           final String bstxt = SHUTTERBEAM_STATUS_STRING.get(bskey);
+                           final String bscol = SHUTTERBEAM_STATUS_COLOR.get(bskey);
+                           Platform.runLater(() -> {
+                              beamshutter.setText(bstxt == null ? "---" : bstxt);
+                              beamshutter.setStyle(LABEL_STRING_STYLE + (bscol == null ? "lightgrey" : bscol));
+                           });
+                        }
+                     break;
                 case LABEL_PCOUNTERMOB_COUNT_STATUS_STRING:
                         Label pcMobCountSt = (Label) pane.lookup("#" + data.list.elementAt(i).name);
                         if (pcMobCountSt != null) {

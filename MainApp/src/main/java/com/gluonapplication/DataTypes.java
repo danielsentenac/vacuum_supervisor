@@ -117,7 +117,8 @@ public interface DataTypes {
    /**/  CIRCLE_SOURCE_CO2_STATUS_COLOR,
    /**/  CIRCLE_PCAL_STATUS_COLOR,
    /**/  CIRCLE_SQZ_LOCK_STATUS_COLOR,
-   /**/  SHUTTER_SQZ_FAST_STATUS_COLOR
+   /**/  SHUTTER_SQZ_FAST_STATUS_COLOR,
+   /**/  LABEL_SHUTTERBEAM_STATUS_STRING
    }
 
    String LABEL_STRING_STYLE = "-fx-border-color: #cfcfcf; -fx-font-size: 11; -fx-border-width: 1; -fx-font-weight: normal; -fx-border-radius: 5; -fx-text-fill: ";
@@ -1126,6 +1127,24 @@ public interface DataTypes {
       put("255", Color.rgb(124, 124, 124));
       put("---", Color.rgb(124, 124, 124));
       put("...", Color.rgb(124, 124, 124));
+   }};
+   //
+   // CO2 BEAM SHUTTER (WI/NI tower viewports): 1 = OPEN, 2 = CLOSED
+   //
+   Hashtable<String, String> SHUTTERBEAM_STATUS_STRING = new Hashtable<String, String>(){{
+      put("1", "OPEN");
+      put("2", "CLOSED");
+      put("255", "---");
+      put("---", "---");
+      put("...", "...");
+   }};
+
+   Hashtable<String, String> SHUTTERBEAM_STATUS_COLOR = new Hashtable<String, String>(){{
+      put("1", "#ff9933");     // open: viewport not masked
+      put("2", "#33ff57");     // closed: CO2 beam masked
+      put("255", "lightgrey");
+      put("---", "lightgrey");
+      put("...", "lightgrey");
    }};
    //
    // VENTING STATUS

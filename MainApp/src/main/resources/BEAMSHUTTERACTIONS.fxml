@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerBeamShutterActions" prefHeight="320.0" prefWidth="280.0" style="-fx-background-color: #333333;">
+   <children>
+      <Label fx:id="ViewName" alignment="CENTER" layoutX="20.0" layoutY="36.0" prefHeight="25.0" prefWidth="240.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 20;" text="Viewport Beam Shutters">
+         <font>
+            <Font name="System" size="20.0"/>
+         </font>
+      </Label>
+      <Label alignment="CENTER_LEFT" layoutX="20.0" layoutY="78.0" prefHeight="25.0" prefWidth="160.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 16;" text="NI Tower">
+         <font>
+            <Font name="System" size="16.0"/>
+         </font>
+      </Label>
+      <Line endX="260.0" layoutY="106.0" startX="20.0" stroke="#901313" strokeWidth="3.0"/>
+      <Label alignment="CENTER_LEFT" layoutX="20.0" layoutY="116.0" prefHeight="25.0" prefWidth="110.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 12;" text="Shutter Status">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="NIShutterStatus" alignment="CENTER" layoutX="150.0" layoutY="116.0" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="NIShutterOpen" alignment="CENTER" layoutX="20.0" layoutY="150.0" onMouseClicked="#NIShutterOpen_Clicked" onMousePressed="#NIShutterOpen_Pressed" onMouseReleased="#NIShutterOpen_Released" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="OPEN">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="NIShutterClose" alignment="CENTER" layoutX="150.0" layoutY="150.0" onMouseClicked="#NIShutterClose_Clicked" onMousePressed="#NIShutterClose_Pressed" onMouseReleased="#NIShutterClose_Released" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="CLOSE">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label alignment="CENTER_LEFT" layoutX="20.0" layoutY="192.0" prefHeight="25.0" prefWidth="160.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 16;" text="WI Tower">
+         <font>
+            <Font name="System" size="16.0"/>
+         </font>
+      </Label>
+      <Line endX="260.0" layoutY="220.0" startX="20.0" stroke="#901313" strokeWidth="3.0"/>
+      <Label alignment="CENTER_LEFT" layoutX="20.0" layoutY="230.0" prefHeight="25.0" prefWidth="110.0" style="-fx-text-fill: #d1d1e0; -fx-font-size: 12;" text="Shutter Status">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="WIShutterStatus" alignment="CENTER" layoutX="150.0" layoutY="230.0" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="---">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="WIShutterOpen" alignment="CENTER" layoutX="20.0" layoutY="264.0" onMouseClicked="#WIShutterOpen_Clicked" onMousePressed="#WIShutterOpen_Pressed" onMouseReleased="#WIShutterOpen_Released" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="OPEN">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <Label fx:id="WIShutterClose" alignment="CENTER" layoutX="150.0" layoutY="264.0" onMouseClicked="#WIShutterClose_Clicked" onMousePressed="#WIShutterClose_Pressed" onMouseReleased="#WIShutterClose_Released" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1; -fx-border-radius: 5; -fx-text-fill: #d1d1e0;" text="CLOSE">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
