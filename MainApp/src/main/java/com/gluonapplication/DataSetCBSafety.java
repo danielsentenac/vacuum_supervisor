@@ -59,14 +59,20 @@ public class DataSetCBSafety extends DataSet {
       list.addElement(new DataElement("WISourceCO2",       Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_WI_CO2_PWRLAS_MEAN"));
       list.addElement(new DataElement("NISourceCO2",       Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_NI_CO2_CH_PWRLAS_MEAN"));
       list.addElement(new DataElement("NISourceCO2",       Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_NI_CO2_PWRLAS_MEAN"));
-      // WICO2 / NICO2 tower indicators reflect the same physics as the source-CO2
-      // circles (CO2 lasers are installed at the WI/NI towers themselves, no
-      // propagation through the ITF). Two channels per fx:id, same logic as
-      // CIRCLE_SOURCE_CO2_STATUS_COLOR.
-      list.addElement(new DataElement("WICO2",             Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_WI_CO2_CH_PWRLAS_MEAN"));
-      list.addElement(new DataElement("WICO2",             Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_WI_CO2_PWRLAS_MEAN"));
-      list.addElement(new DataElement("NICO2",             Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_NI_CO2_CH_PWRLAS_MEAN"));
-      list.addElement(new DataElement("NICO2",             Type.CIRCLE_SOURCE_CO2_STATUS_COLOR, "TCS_NI_CO2_PWRLAS_MEAN"));
+      // WICO2 / NICO2 tower beam indicators: ON iff the CO2 source is ON (any
+      // PWRLAS channel above threshold) AND the viewport shutter is open (any
+      // TCS_CO2_REL channel == 1; 1 = open, 0 = closed). Source circle and
+      // shutter icon stay independent; the beam needs both.
+      list.addElement(new DataElement("WICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_WI_CO2_CH_PWRLAS_MEAN"));
+      list.addElement(new DataElement("WICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_WI_CO2_PWRLAS_MEAN"));
+      list.addElement(new DataElement("WICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_CO2_REL1"));
+      list.addElement(new DataElement("WICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_CO2_REL2"));
+      list.addElement(new DataElement("WICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_CO2_REL3"));
+      list.addElement(new DataElement("NICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_NI_CO2_CH_PWRLAS_MEAN"));
+      list.addElement(new DataElement("NICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_NI_CO2_PWRLAS_MEAN"));
+      list.addElement(new DataElement("NICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_CO2_REL5"));
+      list.addElement(new DataElement("NICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_CO2_REL6"));
+      list.addElement(new DataElement("NICO2",             Type.CIRCLE_CO2_BEAM_STATUS_COLOR, "TCS_CO2_REL7"));
       
       // Green laser status (circles)
       list.addElement(new DataElement("IBGreen",      Type.CIRCLE_GREEN_STATUS_COLOR, ""));
