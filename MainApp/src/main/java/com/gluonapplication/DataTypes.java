@@ -119,7 +119,13 @@ public interface DataTypes {
    /**/  CIRCLE_PCAL_STATUS_COLOR,
    /**/  CIRCLE_SQZ_LOCK_STATUS_COLOR,
    /**/  SHUTTER_SQZ_FAST_STATUS_COLOR,
-   /**/  LABEL_SHUTTERBEAM_STATUS_STRING
+   /**/  LABEL_SHUTTERBEAM_STATUS_STRING,
+   /**/  RECTANGLE_IPC_PUMP_STATUS_COLOR,
+   /**/  LABEL_IPC_STATUS_STRING,
+   /**/  LABEL_IPC_ERROR_STRING,
+   /**/  LABEL_IPC_REMOTE_MODE_STRING,
+   /**/  LABEL_IPC_PROTECT_MODE_STRING,
+   /**/  LABEL_IPC_PUMPTYPE_STRING
    }
 
    String LABEL_STRING_STYLE = "-fx-border-color: #cfcfcf; -fx-font-size: 11; -fx-border-width: 1; -fx-font-weight: normal; -fx-border-radius: 5; -fx-text-fill: ";
@@ -424,6 +430,7 @@ public interface DataTypes {
       put("TOWERMC2", "INF_MC_UPS2_COM_ST");
       put("TUBE300N", "---");
       put("TUBELAL600N", "INF_N600_UPS_COM_ST");
+      put("TUBE900N", "INF_N900_UPS_COM_ST");
       put("TUBELAL1200N", "INF_N1200_UPS_COM_ST");
       put("TUBELAL1800N", "INF_N1800_UPS_COM_ST");
       put("TUBELAL2400N", "INF_N2400_UPS_COM_ST");
@@ -450,6 +457,7 @@ public interface DataTypes {
       put("TOWERMC2_BATTERY_WORK", "INF_MC_UPS2_BATTERY_WORK_ST");
       put("TUBE300N_BATTERY_WORK", "---");
       put("TUBELAL600N_BATTERY_WORK", "INF_N600_UPS_BATTERY_WORK_ST");
+      put("TUBE900N_BATTERY_WORK", "INF_N900_UPS_BATTERY_WORK_ST");
       put("TUBELAL1200N_BATTERY_WORK", "INF_N1200_UPS_BATTERY_WORK_ST");
       put("TUBELAL1800N_BATTERY_WORK", "INF_N1800_UPS_BATTERY_WORK_ST");
       put("TUBELAL2400N_BATTERY_WORK", "INF_N2400_UPS_BATTERY_WORK_ST");
@@ -476,6 +484,7 @@ public interface DataTypes {
       put("TOWERMC2_BATTERY_LOW", "INF_MC_UPS2_BATTERY_LOW_ST");
       put("TUBE300N_BATTERY_LOW", "---");
       put("TUBELAL600N_BATTERY_LOW", "INF_N600_UPS_BATTERY_LOW_ST");
+      put("TUBE900N_BATTERY_LOW", "INF_N900_UPS_BATTERY_LOW_ST");
       put("TUBELAL1200N_BATTERY_LOW", "INF_N1200_UPS_BATTERY_LOW_ST");
       put("TUBELAL1800N_BATTERY_LOW", "INF_N1800_UPS_BATTERY_LOW_ST");
       put("TUBELAL2400N_BATTERY_LOW", "INF_N2400_UPS_BATTERY_LOW_ST");
@@ -1850,6 +1859,125 @@ public interface DataTypes {
       put("---", "---");
       put("...", "...");
    }};
+   //
+   // SCADARPI (Raspberry Pi) tube station racks: channels VAC_<rack>_MG_*, _IPC_*, _I2C_*
+   //
+   String[] RPI_TUBE_STATIONS = { "TUBE900N" };
+
+   static boolean isRpiTubeStation(String rack) {
+      for (String s : RPI_TUBE_STATIONS)
+         if (s.equals(rack)) return true;
+      return false;
+   }
+
+   //
+   // IONIC AGILENT IPCMINI (SCADARPI racks, e.g. TUBE900N)
+   //
+   Hashtable<String,String> IPC_STATUS_STRING = new Hashtable<String, String>(){{ 
+      put("0","Pump Off");
+      put("1","On Step/Start");
+      put("2","On Fixed/Start");
+      put("3","On Protect/Step");
+      put("4","On Protect/Fixed");
+      put("-3","Off:Interlock panel");
+      put("-4","Off:Remote I/O intlk");
+      put("-5","Off:Cable interlock");
+      put("-7","Off:Remote I/O fault");
+      put("-8","Off:HV temp. excess");
+      put("255","---");
+      put("---", "---");
+      put("...", "...");
+   }};
+   Hashtable<String, String> IPC_REMOTE_MODE_STRING = new Hashtable<String, String>(){{ 
+      put("0","Local");
+      put("1","Remote I/O");
+      put("2","Serial");
+      put("3","LAN");
+      put("255","---");
+      put("---", "---");
+      put("...", "...");
+   }};
+   Hashtable<String, String> IPC_PROTECT_MODE_STRING = new Hashtable<String, String>(){{ 
+      put("0","Disabled");
+      put("1","Enabled");
+      put("255","---");
+      put("---", "---");
+      put("...", "...");
+   }};
+   // IPCMini window 610 device number -> pump type (manual 87-900-153-01)
+   Hashtable<String, String> IPC_PUMPTYPE_STRING = new Hashtable<String, String>(){{ 
+      put("0","Spare");
+      put("1","500 StarCell");
+      put("2","300 StarCell");
+      put("3","150 StarCell");
+      put("4","75-55-40 StarCell");
+      put("5","20 StarCell");
+      put("6","500 Diode");
+      put("7","300 Diode");
+      put("8","150 Diode");
+      put("9","75-55-40 Diode");
+      put("10","20 Diode");
+      put("11","10 Diode");
+      put("12","75 Sem");
+      put("13","25 Sem");
+      put("14","10 Sem");
+      put("15","200 Diode");
+      put("16","200 StarCell");
+      put("17","2 Diode");
+      put("18","0.2 Diode 1250 G");
+      put("19","0.2 Diode 800 G");
+      put("20","20 NEXTorr-SC");
+      put("---", "---");
+      put("...", "...");
+   }};
+
+   // Server value ("2", "2.0", "65531", "---", ...) -> integer key string; INT16 registers may come unsigned
+   static String ipcKey(String value) {
+      try {
+         int v = (int) Double.parseDouble(value);
+         if (v > 32767 && v <= 65535) v -= 65536;
+         return String.valueOf(v);
+      }
+      catch (NumberFormatException e) {
+         return value;
+      }
+   }
+
+   static String ipcLookup(Hashtable<String, String> table, String value) {
+      String s = table.get(ipcKey(value));
+      return (s != null) ? s : "Unknown (" + value + ")";
+   }
+
+   // IPCMini window 206 error bit field (manual Tab. 8)
+   static String ipcErrorString(String value) {
+      String key = ipcKey(value);
+      int code;
+      try { code = Integer.parseInt(key); }
+      catch (NumberFormatException e) { return value; }
+      if (code == 0) return "No Error";
+      if (code == 255) return "---"; // SCADARPI com error value
+      StringBuilder s = new StringBuilder();
+      int[] bits = { 4, 32, 64, 128 };
+      String[] names = { "Over Temp.", "Cable Intlk", "Short Circ.", "Protect" };
+      int known = 0;
+      for (int i = 0; i < bits.length; i++)
+         if ((code & bits[i]) != 0) { s.append(s.length() > 0 ? "+" : "").append(names[i]); known |= bits[i]; }
+      if ((code & ~known) != 0) s.append(s.length() > 0 ? "+" : "").append("Unknown");
+      return s.toString();
+   }
+
+   // P33ST: 0 Off (orange), 1..4 On (green), negative = interlock/fault (red), else grey
+   static Color ipcPumpStatusColor(String value) {
+      try {
+         int v = Integer.parseInt(ipcKey(value));
+         if (v == 0) return Color.rgb(255, 153, 51);
+         if (v >= 1 && v <= 4) return Color.rgb(51, 255, 87);
+         if (v < 0) return Color.rgb(255, 51, 57);
+      }
+      catch (NumberFormatException e) {}
+      return Color.rgb(124, 124, 124);
+   }
+
    //
    // TITANE
    //

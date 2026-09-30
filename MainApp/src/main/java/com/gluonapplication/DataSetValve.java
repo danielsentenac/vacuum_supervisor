@@ -11,8 +11,13 @@ public class DataSetValve extends DataSet {
       String channelPrefix = "VAC_" + attributes[0];
       System.out.println("Creating DataSetValve : " + channelPrefix + ":" +  attributes[1]);
       // Status Valves
+      // TUBE (SCADARPI) STATION: I2C valves, from station view (TUBE900N:V31) or tube view (TUBEN:TUBE900N_V31)
+      if (DataTypes.isRpiTubeStation(attributes[0]))
+         list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + "_I2C_" + attributes[1] + "ST"));
+      else if (DataTypes.isRpiTubeStation(attributes[1].split("_")[0]))
+         list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, "VAC_" + attributes[1].replace("_", "_I2C_") + "ST"));
       // TUBEN and TUBEW cases
-      if (attributes[1].equals("-") && channelPrefix.contains("V21")) 
+      else if (attributes[1].equals("-") && channelPrefix.contains("V21")) 
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + "ST"));
       else if (attributes[1].equals("-") && channelPrefix.contains("V31"))
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + "ST"));

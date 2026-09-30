@@ -32,6 +32,12 @@ public class ControllerValve implements ControlTypes {
        ViewData presentView = (ViewData) MobileApplication.getInstance().getView();
        name = presentView.name;
        data = presentView.data;
+       // SCADARPI tube station racks (TUBE900N): V31/V32 are manual valves, no command channels: status only
+       ValveName.textProperty().addListener((obs, oldText, newText) -> {
+          boolean readOnly = DataTypes.isRpiTubeStation(name) || DataTypes.isRpiTubeStation(newText.split("_")[0]);
+          OPEN.setVisible(!readOnly);
+          CLOSE.setVisible(!readOnly);
+       });
     }
 
     @FXML

@@ -481,6 +481,22 @@ public interface ControlTypes {
       // Full channel: VAC_SHUTTERBEAM<n>_CMD (NI = 1, WI = 2); value 1 = OPEN, 2 = CLOSE
       put("ShutterCmd", "_CMD");
    }};
+
+   // SCADARPI tube station racks (TUBE900N): Modbus master server holding the rack DEVICE
+   String RPITUBE_COMMAND_SERVER = "ModbusVac";
+
+   // SCADARPI tube station racks: G31 is Maxigauge channel 6 (triggers: 1 = ON, 2 = OFF, self reset by the rack)
+   Hashtable<String,String> GAUGE_RPITUBE_COMMAND_CHANNELS = new Hashtable<String, String>(){{
+      put("G31", "_MG_PR6ONOFF");
+   }};
+
+   // SCADARPI tube station racks: Agilent IPCMini ("_IPC_" prefix)
+   Hashtable<String,String> IONIC_IPC_COMMAND_CHANNELS = new Hashtable<String, String>(){{
+      put("P33", "_IPC_P33ONOFF");                // trigger: 1 = ON, 2 = OFF, self reset by the rack
+      put("P33ProtectCurrent", "_IPC_P33PRTCUR");  // uA [1,10000]
+      put("P33TargetVoltage", "_IPC_P33MAXVOLT");  // V [3000,7000]
+      put("P33MaxPower", "_IPC_P33MAXW");          // W [10,40]
+   }};
    
    
 }

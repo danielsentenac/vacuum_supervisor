@@ -62,8 +62,10 @@ public class DataSetTube extends DataSet {
          list.addElement(new DataElement("StatusSensor1200N",Type.CIRCLE_XGSGAUGE_STATUS_COLOR,"VAC_TUBELAL1200N_Ga4ST"));
          list.addElement(new DataElement("Pressure600N",Type.LABEL_VALUE_STRING,"VAC_TUBELAL600N_Ga4","mbar"));
          list.addElement(new DataElement("StatusSensor600N",Type.CIRCLE_XGSGAUGE_STATUS_COLOR,"VAC_TUBELAL600N_Ga4ST"));
+         list.addElement(new DataElement("Pressure900N",Type.LABEL_VALUE_STRING,"VAC_TUBE900N_MG_PR6","mbar"));
+         list.addElement(new DataElement("StatusSensor900N",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_TUBE900N_MG_PR6SST"));
          list.addElement(new DataElement("Pressure300N",Type.LABEL_VALUE_STRING,"VAC_TUBE300N_PR7","mbar"));
-         list.addElement(new DataElement("StatusSensor300N",Type.CIRCLE_XGSGAUGE_STATUS_COLOR,"VAC_TUBE300W_PR7SST"));
+         list.addElement(new DataElement("StatusSensor300N",Type.CIRCLE_XGSGAUGE_STATUS_COLOR,"VAC_TUBE300N_PR7SST"));
 
          // Valves Status
          list.addElement(new DataElement("StatusV3000N",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_TUBELAL3000N_V21ST"));
@@ -71,6 +73,7 @@ public class DataSetTube extends DataSet {
          list.addElement(new DataElement("StatusV1800N",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_TUBELAL1800N_V21ST"));
          list.addElement(new DataElement("StatusV1200N",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_TUBELAL1200N_V21ST"));
          list.addElement(new DataElement("StatusV600N",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_TUBELAL600N_V21ST"));
+         list.addElement(new DataElement("StatusV900N",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_TUBE900N_I2C_V31ST"));
          list.addElement(new DataElement("StatusV300N",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_TUBE300N_V21ST"));
          list.addElement(new DataElement("StatusVNI",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_VALVEBIGNI_ST"));
          list.addElement(new DataElement("StatusVNE",Type.SVGPATH_VALVE_STATUS_COLOR,"VAC_VALVEBIGNE_ST"));
@@ -91,6 +94,7 @@ public class DataSetTube extends DataSet {
          list.addElement(new DataElement("Station1800N",Type.LABEL_RACK_STATUS_COLOR,"VAC_TUBELAL1800N_RackStatus"));
          list.addElement(new DataElement("Station1200N",Type.LABEL_RACK_STATUS_COLOR,"VAC_TUBELAL1200N_RackStatus"));
          list.addElement(new DataElement("Station600N",Type.LABEL_RACK_STATUS_COLOR,"VAC_TUBELAL600N_RackStatus"));
+         list.addElement(new DataElement("Station900N",Type.LABEL_RACK_STATUS_COLOR,"VAC_TUBE900N_RackStatus"));
          list.addElement(new DataElement("Station300N",Type.LABEL_RACK_STATUS_COLOR,"VAC_TUBE300N_RackStatus"));
       }
    

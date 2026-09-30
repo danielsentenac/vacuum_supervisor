@@ -112,6 +112,15 @@ public class ControllerTubeN extends ControlLayer implements ControlTypes {
     private Label Station600N;
 
     @FXML
+    private Label Station900N;
+
+    @FXML
+    private Group V900N;
+
+    @FXML
+    private SVGPath StatusV900N;
+
+    @FXML
     private Label Station1200N;
 
     @FXML
@@ -352,6 +361,45 @@ public class ControllerTubeN extends ControlLayer implements ControlTypes {
     @FXML
     void Station600N_Released(MouseEvent event) {
        Station600N.setStyle(style);
+    }
+
+    @FXML
+    void Station900N_Clicked(MouseEvent event) {
+       System.out.println("Switch to Station900N View");
+       Main main = (Main) MobileApplication.getInstance();
+       if (main.tube900N == null) {
+          main.tube900N = new ViewTube900NStation("TUBE900NSTATION", "TUBE900N");
+          main.addViewFactory("TUBE900N", () -> { return main.tube900N;});
+          new Thread(main.tube900N).start(); 
+       }
+       main.switchView("TUBE900N");
+    }
+
+    @FXML
+    void Station900N_Pressed(MouseEvent event) {
+        style = Station900N.getStyle();
+        Station900N.setStyle(DECORATION_STYLE_PUSHED);
+    }
+
+    @FXML
+    void Station900N_Released(MouseEvent event) {
+       Station900N.setStyle(style);
+    }
+
+    @FXML
+    void V900N_Clicked(MouseEvent event) {
+      CreateAndShowValveLayer("TUBE900N_V31");
+    }
+
+    @FXML
+    void V900N_Pressed(MouseEvent event) {
+        style = StatusV900N.getStyle();
+        StatusV900N.setStyle(DECORATION_STYLE_PUSHED);
+    }
+
+    @FXML
+    void V900N_Released(MouseEvent event) {
+       StatusV900N.setStyle(style);
     }
 
     @FXML

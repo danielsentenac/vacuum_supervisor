@@ -10,7 +10,18 @@ public class DataSetGauge extends DataSet implements DataTypes {
       String[] attributes = name.split(":"); // Expect 2 attributes
       String channelPrefix = "VAC_" + attributes[0];
 
-      if ( channelPrefix.contains("TUBE") && !channelPrefix.contains("LAL")) { // TUBE (EGO) STATION
+      if ( DataTypes.isRpiTubeStation(attributes[0])) { // TUBE (SCADARPI) STATION: G31 = Maxigauge channel 6
+         // Pressure
+         list.addElement(new DataElement("Pressure",Type.LABEL_VALUE_STRING, 
+                                         channelPrefix + "_MG_PR6", "mbar"));
+         // Status Pressure
+         list.addElement(new DataElement("StatusPressure",Type.LABEL_MAXIGAUGE_PRESSURE_STATUS_STRING, 
+                                         channelPrefix + "_MG_PR6ST"));
+         // Status Sensor
+         list.addElement(new DataElement("StatusSensor",Type.LABEL_MAXIGAUGE_SENSOR_STATUS_STRING, 
+                                         channelPrefix + "_MG_PR6SST"));
+      }
+      else if ( channelPrefix.contains("TUBE") && !channelPrefix.contains("LAL")) { // TUBE (EGO) STATION
          // Pressure
          list.addElement(new DataElement("Pressure",Type.LABEL_VALUE_STRING, 
                                          channelPrefix + TUBESTATION_PRESSURE_EGO_CHANNELS.get("Pressure"+attributes[1]), "mbar"));

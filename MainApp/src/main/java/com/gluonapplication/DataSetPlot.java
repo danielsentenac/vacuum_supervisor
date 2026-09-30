@@ -10,7 +10,9 @@ public class DataSetPlot extends DataSet {
       String[] attributes = name.split(":"); // Expect 2 attributes
       System.out.println("Creating DataSetPlot : " + name);
       // Plot Data
-      if ( attributes[0].contains("LAL") && attributes[0].contains("TUBE"))
+      if ( DataTypes.isRpiTubeStation(attributes[0])) // TUBE (SCADARPI) STATION: G31 = Maxigauge channel 6
+         list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + "_MG_PR6"));
+      else if ( attributes[0].contains("LAL") && attributes[0].contains("TUBE"))
          list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + PLOT_TUBE_LAL_CHANNELS.get(attributes[1])));
       else if ( attributes[0].contains("TUBE"))
          list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + PLOT_TUBE_EGO_CHANNELS.get(attributes[1])));

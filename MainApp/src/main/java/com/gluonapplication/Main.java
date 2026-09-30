@@ -68,6 +68,7 @@ public class Main extends MobileApplication {
     public ViewData we = null;
     public ViewData tube300N = null; 
     public ViewData tube600N = null;
+    public ViewData tube900N = null;
     public ViewData tube1200N = null;
     public ViewData tube1800N = null;
     public ViewData tube2400N = null; 
@@ -628,6 +629,12 @@ public class Main extends MobileApplication {
              if (tube600N == null) {
                 tube600N = new ViewTubeLalStation("TUBELALSTATION", "TUBELAL600N");
                 registerViewFactoryAndStartThread("TUBELAL600N", tube600N);
+             }
+             return true;
+          case "TUBE900N":
+             if (tube900N == null) {
+                tube900N = new ViewTube900NStation("TUBE900NSTATION", "TUBE900N");
+                registerViewFactoryAndStartThread("TUBE900N", tube900N);
              }
              return true;
           case "TUBELAL1200N":

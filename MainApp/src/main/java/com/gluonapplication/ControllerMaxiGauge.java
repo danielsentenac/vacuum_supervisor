@@ -40,7 +40,11 @@ public class ControllerMaxiGauge implements ControlTypes {
 
     @FXML
     void OFF_Clicked(MouseEvent event) {
-       if (name.contains("LAL")) {
+       if (DataTypes.isRpiTubeStation(name)) { // SCADARPI rack: trigger self reset by the rack, no RESET
+          master.setCommand(RPITUBE_COMMAND_SERVER, "SETREGISTER", "VAC_" + name, 
+                            GAUGE_RPITUBE_COMMAND_CHANNELS.get(GaugeName.getText()), "2", 5000, true, "Authorize", true); // OFF
+       }
+       else if (name.contains("LAL")) {
           master.setCommand("ModbusVac", "SETREGISTER", "VAC_" + name, 
                             GAUGE_LAL_COMMAND_CHANNELS.get(GaugeName.getText()), "2", 5000, true, "Authorize", true); // ON
           master.setCommand("ModbusVac", "SETREGISTER", "VAC_" + name, 
@@ -119,7 +123,11 @@ public class ControllerMaxiGauge implements ControlTypes {
 
     @FXML
     void ON_Clicked(MouseEvent event) {
-       if (name.contains("LAL")) {
+       if (DataTypes.isRpiTubeStation(name)) { // SCADARPI rack: trigger self reset by the rack, no RESET
+          master.setCommand(RPITUBE_COMMAND_SERVER, "SETREGISTER", "VAC_" + name, 
+                            GAUGE_RPITUBE_COMMAND_CHANNELS.get(GaugeName.getText()), "1", 5000, true, "Authorize", true); // ON
+       }
+       else if (name.contains("LAL")) {
           master.setCommand("ModbusVac", "SETREGISTER", "VAC_" + name, 
                             GAUGE_LAL_COMMAND_CHANNELS.get(GaugeName.getText()), "1", 5000, true, "Authorize", true); // ON
           master.setCommand("ModbusVac", "SETREGISTER", "VAC_" + name, 

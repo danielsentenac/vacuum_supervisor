@@ -298,6 +298,11 @@ public class ViewData extends View implements Runnable, DataTypes {
                         if (pump != null)
                            Platform.runLater(() -> {pump.setFill(PUMP_STATUS_COLOR.get(value));});
                      break;
+                case RECTANGLE_IPC_PUMP_STATUS_COLOR: 
+                        Rectangle ipcpump = (Rectangle) lookup("#" + data.list.elementAt(i).name);
+                        if (ipcpump != null)
+                           Platform.runLater(() -> {ipcpump.setFill(DataTypes.ipcPumpStatusColor(value));});
+                     break;
                 case RECTANGLE_VENTING_STATUS_COLOR: 
                         Rectangle venting = (Rectangle) lookup("#" + data.list.elementAt(i).name);
                         if (venting != null) {

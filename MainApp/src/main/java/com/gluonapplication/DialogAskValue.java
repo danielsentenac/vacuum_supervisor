@@ -9,8 +9,15 @@ public class DialogAskValue extends Dialog {
     private ControlCommand master = ControlCommand.getInstance();
 
     public DialogAskValue(String msgChannel) {
+       // IONIC IPCMINI COMMANDS (SCADARPI racks)
+       if (msgChannel.endsWith("_IPC_P33PRTCUR"))
+          setTitleText("Protect Current [1,10000] uA:");
+       else if (msgChannel.endsWith("_IPC_P33MAXVOLT"))
+          setTitleText("Target Voltage [3000,7000] V:");
+       else if (msgChannel.endsWith("_IPC_P33MAXW"))
+          setTitleText("Max Power [10,40] W:");
        // IONIC COMMANDS
-       if (msgChannel.contains("P33OP") ||
+       else if (msgChannel.contains("P33OP") ||
            msgChannel.contains("P81OP") ||
            msgChannel.contains("P33EOP") ||
            msgChannel.contains("P33IOP") )

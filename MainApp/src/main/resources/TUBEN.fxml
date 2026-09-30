@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTubeN" maxHeight="1.7976931348623157E308" prefHeight="731.0" prefWidth="322.0" style="-fx-background-color: #333333;">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTubeN" maxHeight="1.7976931348623157E308" prefHeight="801.0" prefWidth="322.0" style="-fx-background-color: #333333;">
    <children>
       <Label fx:id="Station3000N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="67.0" onMouseClicked="#Station3000N_Clicked" onMousePressed="#Station3000N_Pressed" onMouseReleased="#Station3000N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="3000N" translateY="-10.0">
          <font>
@@ -57,7 +57,7 @@
             </SVGPath>
          </children>
       </Group>
-      <Group fx:id="V600N" layoutX="65.0" layoutY="343.0" onMouseClicked="#V600N_Clicked" onMousePressed="#V600N_Pressed" onMouseReleased="#V600N_Released">
+      <Group fx:id="V600N" layoutX="65.0" layoutY="413.0" onMouseClicked="#V600N_Clicked" onMousePressed="#V600N_Pressed" onMouseReleased="#V600N_Released">
          <children>
             <SVGPath fx:id="StatusV600N" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleY="2.0" translateY="-10.0">
                <effect>
@@ -66,7 +66,7 @@
             </SVGPath>
          </children>
       </Group>
-      <Group fx:id="V300N" layoutX="65.0" layoutY="411.0" onMouseClicked="#V300N_Clicked" onMousePressed="#V300N_Pressed" onMouseReleased="#V300N_Released">
+      <Group fx:id="V300N" layoutX="65.0" layoutY="481.0" onMouseClicked="#V300N_Clicked" onMousePressed="#V300N_Pressed" onMouseReleased="#V300N_Released">
          <children>
             <SVGPath fx:id="StatusV300N" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleY="2.0" translateY="-10.0">
                <effect>
@@ -80,12 +80,12 @@
             <Font size="12.0"/>
          </font>
       </Label>
-      <Label fx:id="Pressure300N" alignment="CENTER" layoutX="185.0" layoutY="437.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
+      <Label fx:id="Pressure300N" alignment="CENTER" layoutX="185.0" layoutY="507.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
             <Font size="12.0"/>
          </font>
       </Label>
-      <Label fx:id="Pressure600N" alignment="CENTER" layoutX="185.0" layoutY="367.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
+      <Label fx:id="Pressure600N" alignment="CENTER" layoutX="185.0" layoutY="437.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
          <font>
             <Font size="12.0"/>
          </font>
@@ -105,7 +105,7 @@
             <Font size="12.0"/>
          </font>
       </Label>
-      <Label fx:id="Station300N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="417.0" onMouseClicked="#Station300N_Clicked" onMousePressed="#Station300N_Pressed" onMouseReleased="#Station300N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="300N" translateY="-10.0">
+      <Label fx:id="Station300N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="487.0" onMouseClicked="#Station300N_Clicked" onMousePressed="#Station300N_Pressed" onMouseReleased="#Station300N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-border-radius: 5;  -fx-background-color: e1e4db; " text="300N" translateY="-10.0">
          <font>
             <Font name="System" size="12.0"/>
          </font>
@@ -113,7 +113,7 @@
             <InnerShadow />
          </effect>
       </Label>
-      <Label fx:id="Station600N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="347.0" onMouseClicked="#Station600N_Clicked" onMousePressed="#Station600N_Pressed" onMouseReleased="#Station600N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="600N" translateY="-10.0">
+      <Label fx:id="Station600N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="417.0" onMouseClicked="#Station600N_Clicked" onMousePressed="#Station600N_Pressed" onMouseReleased="#Station600N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="600N" translateY="-10.0">
          <font>
             <Font name="System" size="12.0"/>
          </font>
@@ -154,7 +154,7 @@
             </SVGPath>
          </children>
       </Group>
-      <Group fx:id="VNI" layoutX="-29.0" layoutY="453.0" onMouseClicked="#VNI_Clicked" onMousePressed="#VNI_Pressed" onMouseReleased="#VNI_Released">
+      <Group fx:id="VNI" layoutX="-29.0" layoutY="523.0" onMouseClicked="#VNI_Clicked" onMousePressed="#VNI_Pressed" onMouseReleased="#VNI_Released">
          <children>
             <SVGPath fx:id="StatusVNI" content="m17,26v18l36-18v18z" fill="#e1e4db" layoutX="50.39999771118164" rotate="90.0" scaleX="0.8" scaleY="2.8" translateY="-6.7">
                <effect>
@@ -163,16 +163,16 @@
             </SVGPath>
          </children>
       </Group>
-      <Group layoutX="57.0" layoutY="508.0"/>
+      <Group layoutX="57.0" layoutY="578.0"/>
       <Group layoutX="57.0" layoutY="16.0"/>
       <Text fill="#d1d1e0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NE" wrappingWidth="23.499992460012436"/>
-      <Text fill="#d1d1e0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NI" wrappingWidth="23.499992460012436"/>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="410.0" layoutX="32.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
+      <Text fill="#d1d1e0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="NI" wrappingWidth="23.499992460012436"/>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="480.0" layoutX="32.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
       <effect>
             <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
       </Rectangle>
-      <Rectangle fx:id="CB" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="235.0" layoutX="31.0" layoutY="496.0" onMouseClicked="#CB_Clicked" onMousePressed="#CB_Pressed" onMouseReleased="#CB_Released" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateY="-0.5" width="50.0">
+      <Rectangle fx:id="CB" arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="235.0" layoutX="31.0" layoutY="566.0" onMouseClicked="#CB_Clicked" onMousePressed="#CB_Pressed" onMouseReleased="#CB_Released" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" translateY="-0.5" width="50.0">
       <effect>
             <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
 	 </effect>
@@ -202,12 +202,12 @@
             <InnerShadow />
          </effect>
       </Circle>
-      <Circle fx:id="StatusSensor600N" fill="#d1d1e0" layoutX="304.0" layoutY="367.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE">
+      <Circle fx:id="StatusSensor600N" fill="#d1d1e0" layoutX="304.0" layoutY="437.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE">
          <effect>
             <InnerShadow />
          </effect>
       </Circle>
-      <Circle fx:id="StatusSensor300N" fill="#d1d1e0" layoutX="304.0" layoutY="437.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE">
+      <Circle fx:id="StatusSensor300N" fill="#d1d1e0" layoutX="304.0" layoutY="507.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE">
          <effect>
             <InnerShadow />
          </effect>
@@ -248,7 +248,7 @@
             </SVGPath>
          </children>
       </Group>
-      <Group fx:id="V600N1" layoutX="65.0" layoutY="369.0" onMouseClicked="#V600N1_Clicked" onMousePressed="#V600N1_Pressed" onMouseReleased="#V600N1_Released" scaleX="0.5" scaleY="0.5">
+      <Group fx:id="V600N1" layoutX="65.0" layoutY="439.0" onMouseClicked="#V600N1_Clicked" onMousePressed="#V600N1_Pressed" onMouseReleased="#V600N1_Released" scaleX="0.5" scaleY="0.5">
          <children>
             <SVGPath fx:id="StatusV600N1" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleY="2.0" translateY="-10.0">
                <effect>
@@ -257,7 +257,7 @@
             </SVGPath>
          </children>
       </Group>
-      <Group fx:id="V300N1" layoutX="65.0" layoutY="439.0" onMouseClicked="#V300N1_Clicked" onMousePressed="#V300N1_Pressed" onMouseReleased="#V300N1_Released" scaleX="0.5" scaleY="0.5">
+      <Group fx:id="V300N1" layoutX="65.0" layoutY="509.0" onMouseClicked="#V300N1_Clicked" onMousePressed="#V300N1_Pressed" onMouseReleased="#V300N1_Released" scaleX="0.5" scaleY="0.5">
          <children>
             <SVGPath fx:id="StatusV300N1" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleY="2.0" translateY="-10.0">
                <effect>
@@ -293,5 +293,32 @@
             <Line endX="76.0" endY="12.0" layoutX="-81.0" layoutY="-6.0" startX="76.0" startY="1.0"/>
          </children>
       </Group>
+      <Label fx:id="Station900N" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="347.0" onMouseClicked="#Station900N_Clicked" onMousePressed="#Station900N_Pressed" onMouseReleased="#Station900N_Released" prefHeight="57.0" prefWidth="50.0" style="-fx-background-radius: 5; -fx-background-color: e1e4db; " text="900N" translateY="-10.0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Group fx:id="V900N" layoutX="65.0" layoutY="343.0" onMouseClicked="#V900N_Clicked" onMousePressed="#V900N_Pressed" onMouseReleased="#V900N_Released">
+         <children>
+            <SVGPath fx:id="StatusV900N" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleY="2.0" translateY="-10.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Label fx:id="Pressure900N" alignment="CENTER" layoutX="185.0" layoutY="367.0" prefHeight="21.0" prefWidth="105.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5; -fx-border-radius: 5; " text="Pressure" textFill="#d1d1e0" translateY="-10.0">
+         <font>
+            <Font size="12.0"/>
+         </font>
+      </Label>
+      <Circle fx:id="StatusSensor900N" fill="#d1d1e0" layoutX="304.0" layoutY="367.0" radius="7.0" stroke="#d1d1de00" strokeType="INSIDE">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Circle>
    </children>
 </AnchorPane>

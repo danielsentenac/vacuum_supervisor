@@ -476,6 +476,31 @@ public class LayerData extends Layer implements Runnable, DataTypes {
                         if (ionic_voltage_mode != null)
                            Platform.runLater(() -> {ionic_voltage_mode.setText(IONIC_VOLTAGE_MODE_STRING.get(value));});
                      break;
+                case LABEL_IPC_STATUS_STRING: 
+                        Label ipc_status = (Label) lookup("#" + data.list.elementAt(i).name);
+                        if (ipc_status != null)
+                           Platform.runLater(() -> {ipc_status.setText(DataTypes.ipcLookup(IPC_STATUS_STRING, value));});
+                     break;
+                case LABEL_IPC_ERROR_STRING: 
+                        Label ipc_error = (Label) lookup("#" + data.list.elementAt(i).name);
+                        if (ipc_error != null)
+                           Platform.runLater(() -> {ipc_error.setText(DataTypes.ipcErrorString(value));});
+                     break;
+                case LABEL_IPC_REMOTE_MODE_STRING: 
+                        Label ipc_remote_mode = (Label) lookup("#" + data.list.elementAt(i).name);
+                        if (ipc_remote_mode != null)
+                           Platform.runLater(() -> {ipc_remote_mode.setText(DataTypes.ipcLookup(IPC_REMOTE_MODE_STRING, value));});
+                     break;
+                case LABEL_IPC_PROTECT_MODE_STRING: 
+                        Label ipc_protect_mode = (Label) lookup("#" + data.list.elementAt(i).name);
+                        if (ipc_protect_mode != null)
+                           Platform.runLater(() -> {ipc_protect_mode.setText(DataTypes.ipcLookup(IPC_PROTECT_MODE_STRING, value));});
+                     break;
+                case LABEL_IPC_PUMPTYPE_STRING: 
+                        Label ipc_pumptype = (Label) lookup("#" + data.list.elementAt(i).name);
+                        if (ipc_pumptype != null)
+                           Platform.runLater(() -> {ipc_pumptype.setText(DataTypes.ipcLookup(IPC_PUMPTYPE_STRING, value));});
+                     break;
                 case LABEL_TITANE_STATUS_STRING: 
                         Label titane_status = (Label) lookup("#" + data.list.elementAt(i).name);
                         if (titane_status != null)

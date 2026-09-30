@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.ControllerTube900NStation" prefHeight="594.0" prefWidth="365.0" style="-fx-background-color: #333333;">
+   <children>
+      <!-- Pipes -->
+      <Line endX="87.0" endY="240.0" startX="39.0" startY="240.0" stroke="#d1d1e0" strokeWidth="3.0"/>
+      <Line endX="230.0" endY="240.0" startX="123.0" startY="240.0" stroke="#d1d1e0" strokeWidth="3.0"/>
+      <Line endX="180.0" endY="272.0" startX="180.0" startY="202.0" stroke="#d1d1e0" strokeWidth="3.0"/>
+      <!-- Tube North (vertical, as in the other station views), drawn after the pipes so it is in front -->
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b7c4c6" height="410.0" layoutX="14.0" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 0;" width="50.0">
+         <effect>
+            <InnerShadow choke="0.2" color="#000000cd" height="0.0" radius="20.75" width="85.0"/>
+         </effect>
+      </Rectangle>
+      <!-- V31 (horizontal flow) -->
+      <Group fx:id="V31" layoutX="70.0" layoutY="205.0" onMouseClicked="#V31_Clicked" onMousePressed="#V31_Pressed" onMouseReleased="#V31_Released">
+         <children>
+            <SVGPath fx:id="StatusV31" content="m17,26v18l36-18v18z" fill="#e1e4db" scaleY="1.4">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#d1d1e0" layoutX="94.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="V31">
+         <font>
+            <Font size="12.0"/>
+         </font>
+      </Text>
+      <!-- V32 (vertical flow) -->
+      <Group fx:id="V32" layoutX="145.0" layoutY="255.0" onMouseClicked="#V32_Clicked" onMousePressed="#V32_Pressed" onMouseReleased="#V32_Released">
+         <children>
+            <SVGPath fx:id="StatusV32" content="m17,26v18l36-18v18z" fill="#e1e4db" rotate="90.0" scaleY="1.4">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#d1d1e0" layoutX="198.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="V32">
+         <font>
+            <Font size="12.0"/>
+         </font>
+      </Text>
+      <!-- G31 (Maxigauge channel 6) -->
+      <Group fx:id="G31" layoutX="180.0" layoutY="190.0" onMouseClicked="#G31_Clicked" onMousePressed="#G31_Pressed" onMouseReleased="#G31_Released">
+         <children>
+            <Circle fx:id="StatusG31" fill="#e1e4db" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <effect>
+                  <InnerShadow />
+               </effect></Circle>
+            <Circle fill="#e1e3dc00" layoutY="-5.0" radius="2.0" stroke="BLACK" strokeType="INSIDE"/>
+            <SVGPath content="M0 110 l0 -110 170 0 170 0 0 110 c0 103 -1 110 -20 110 -19 0 -20 -7 -20 -90 l0 -90 -130 0 -130 0 0 90 c0 83 -1 90 -20 90 -19 0 -20 -7 -20 -110z" opacity="1" rotate="180.0" scaleX="0.04" scaleY="0.03" translateX="-170.0" translateY="-108.0">
+               <fill>
+                  <Color blue="0.0" green="0.0" red="0.0"/>
+               </fill>
+            </SVGPath>
+         </children>
+      </Group>
+      <Text fill="#d1d1e0" layoutX="198.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" style="" text="G31">
+         <font>
+            <Font size="12.0"/>
+         </font>
+      </Text>
+      <Label fx:id="PressureG31" alignment="CENTER" layoutX="124.0" layoutY="150.0" onMouseClicked="#PressureG31_Clicked" onMousePressed="#PressureG31_Pressed" onMouseReleased="#PressureG31_Released" prefHeight="21.0" prefWidth="112.0" style="-fx-border-color: #cfcfcf; -fx-border-width: 1;  -fx-border-radius: 5;" text="Pressure" textFill="#d1d1e0">
+         <font>
+            <Font name="System" size="12.0"/>
+         </font>
+      </Label>
+      <!-- P33 (Agilent IPCMini) -->
+      <Group fx:id="P33" layoutX="230.0" layoutY="209.0" onMouseClicked="#P33_Clicked" onMousePressed="#P33_Pressed" onMouseReleased="#P33_Released">
+         <children>
+            <Rectangle fx:id="StatusP33" arcHeight="2.3636022" arcWidth="2.3636022" fill="#e1e4db" height="62.0" opacity="1" stroke="TRANSPARENT" strokeLineJoin="ROUND" strokeWidth="0.61400002" width="50.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Rectangle>
+            <Label layoutX="14.0" layoutY="2.0" style="" text="P33">
+               <font>
+                  <Font size="12.0"/>
+               </font>
+            </Label>
+            <Line endX="40.0" layoutY="26.0" startX="10.0"/>
+            <Line endX="40.0" layoutY="37.0" startX="10.0"/>
+            <Line endX="40.0" layoutY="48.0" startX="10.0"/>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

@@ -94,6 +94,23 @@ void CreateAndShowGaugeLayer(String fxml, String name) {
        MobileApplication.getInstance().showLayer(presentView.name + ":" + name);
    }
 
+   void CreateAndShowIonicIPCLayer(String fxml, String name) {
+       ViewData presentView = (ViewData) MobileApplication.getInstance().getView();
+       if ( !MobileApplication.getInstance().isLayerPresent(presentView.name + ":" + name) ) {
+          LayerData ionic = new LayerIonicIPC(fxml, presentView.name+ ":" + name);
+          Label ionicName = (Label) ionic.lookup("#IonicName");
+          ionicName.setText(name);
+          try { 
+             new Thread(ionic).start(); 
+          }
+          catch (Exception e) {
+             e.printStackTrace();
+          }
+          MobileApplication.getInstance().addLayerFactory(presentView.name+ ":" + name, () -> { return  ionic;});
+       }
+       MobileApplication.getInstance().showLayer(presentView.name + ":" + name);
+   }
+
    void CreateAndShowTitaneLayer(String fxml, String name) {
        ViewData presentView = (ViewData) MobileApplication.getInstance().getView();
        if ( !MobileApplication.getInstance().isLayerPresent(presentView.name + ":" + name) ) {
