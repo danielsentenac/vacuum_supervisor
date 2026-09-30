@@ -14,11 +14,11 @@ public class DataSetCryoLinkStation extends DataSet {
       list.addElement(new DataElement("PressureGs5",Type.LABEL_VALUE_STRING,"VAC_" + name + "_Gs5","mbar"));
       if (name.equals("CRYOLINKDET")) {
          list.addElement(new DataElement("PressureG21",Type.LABEL_VALUE_STRING,"VAC_" + name.replace("DET","_DET") + "_?","mbar"));
-         list.addElement(new DataElement("PressureG22",Type.LABEL_VALUE_STRING,"VAC_" + name.replace("DET","_DET") + "_PR1","mbar"));
+         list.addElement(new DataElement("PressureG22",Type.LABEL_VALUE_STRING,"VAC_" + name.replace("DET","") + "_PR1","mbar"));
       }
       else if (name.equals("CRYOLINKIB")) {
          list.addElement(new DataElement("PressureG21",Type.LABEL_VALUE_STRING,"VAC_" + name.replace("IB","_IB") + "_?","mbar"));
-         list.addElement(new DataElement("PressureG22",Type.LABEL_VALUE_STRING,"VAC_" + name.replace("IB","_IB") + "_PR2","mbar"));
+         list.addElement(new DataElement("PressureG22",Type.LABEL_VALUE_STRING,"VAC_" + name.replace("IB","") + "_PR2","mbar"));
       }
       // Status Gauges
       list.addElement(new DataElement("StatusGs1",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name + ""));
@@ -28,11 +28,11 @@ public class DataSetCryoLinkStation extends DataSet {
       list.addElement(new DataElement("StatusGs5",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name + ""));
       if (name.equals("CRYOLINKDET")) {
          list.addElement(new DataElement("StatusG21",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name.replace("DET","_DET") + "_?"));
-         list.addElement(new DataElement("StatusG22",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name.replace("DET","_DET") + "_PR1ST"));
+         list.addElement(new DataElement("StatusG22",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name.replace("DET","") + "_PR1ST"));
       }
       else if (name.equals("CRYOLINKIB")) {
          list.addElement(new DataElement("StatusG21",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name.replace("IB","_IB") + "_?"));
-         list.addElement(new DataElement("StatusG22",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name.replace("IB","_IB") + "_PR2ST"));
+         list.addElement(new DataElement("StatusG22",Type.CIRCLE_GAUGE_STATUS_COLOR,"VAC_" + name.replace("IB","") + "_PR2ST"));
       }
      
       // Status RGA

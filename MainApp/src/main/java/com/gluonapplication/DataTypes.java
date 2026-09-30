@@ -1948,7 +1948,7 @@ public interface DataTypes {
       return (s != null) ? s : "Unknown (" + value + ")";
    }
 
-   // IPCMini window 206 error bit field (manual Tab. 8)
+   // Agilent ionic error bit field: IPCMini window 206 (manual Tab. 8), same bits on the Dual (_P33ERRORST, ...)
    static String ipcErrorString(String value) {
       String key = ipcKey(value);
       int code;

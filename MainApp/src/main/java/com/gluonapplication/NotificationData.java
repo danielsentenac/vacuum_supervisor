@@ -472,7 +472,7 @@ public class NotificationData implements Runnable, DataTypes {
                         catch (Exception e){}
                      }
                      break;
-                 case LABEL_IPC_ERROR_STRING: // IPCMini error bit field (0 = no error)
+                 case LABEL_IPC_ERROR_STRING: // Agilent ionic (Dual / IPCMini) error bit field (0 = no error)
                      if (!"0".equals(DataTypes.ipcKey(value)) && !isInvalidValue(value)) {
                         try {
                            String notificationId = "IONIC ERROR:" + data.list.elementAt(i).name;

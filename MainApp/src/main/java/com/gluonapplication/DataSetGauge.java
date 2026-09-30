@@ -86,24 +86,24 @@ public class DataSetGauge extends DataSet implements DataTypes {
       else if (attributes[0].equals("CRYOLINKDET")) {
          // Pressure
          list.addElement(new DataElement("Pressure",Type.LABEL_VALUE_STRING, 
-                                         channelPrefix.replace("DET","_DET") + CRYOLINKDET_PRESSURE_CHANNELS.get("Pressure"+attributes[1]), "mbar"));
+                                         channelPrefix.replace("DET","") + CRYOLINKDET_PRESSURE_CHANNELS.get("Pressure"+attributes[1]), "mbar"));
          // Status Pressure
          list.addElement(new DataElement("StatusPressure",Type.LABEL_MAXIGAUGE_PRESSURE_STATUS_STRING, 
-                                         channelPrefix.replace("DET","_DET") + CRYOLINKDET_PRESSURE_CHANNELS.get("StatusPressure"+attributes[1])));
+                                         channelPrefix.replace("DET","") + CRYOLINKDET_PRESSURE_CHANNELS.get("StatusPressure"+attributes[1])));
          // Status Sensor
          list.addElement(new DataElement("StatusSensor",Type.LABEL_MAXIGAUGE_SENSOR_STATUS_STRING, 
-                                         channelPrefix.replace("DET","_DET") + CRYOLINKDET_PRESSURE_CHANNELS.get("StatusSensor"+attributes[1])));
+                                         channelPrefix.replace("DET","") + CRYOLINKDET_PRESSURE_CHANNELS.get("StatusSensor"+attributes[1])));
       }
       else if (attributes[0].equals("CRYOLINKIB")) {
          // Pressure
          list.addElement(new DataElement("Pressure",Type.LABEL_VALUE_STRING, 
-                                         channelPrefix.replace("IB","_IB") + CRYOLINKIB_PRESSURE_CHANNELS.get("Pressure"+attributes[1]), "mbar"));
+                                         channelPrefix.replace("IB","") + CRYOLINKIB_PRESSURE_CHANNELS.get("Pressure"+attributes[1]), "mbar"));
          // Status Pressure
          list.addElement(new DataElement("StatusPressure",Type.LABEL_MAXIGAUGE_PRESSURE_STATUS_STRING, 
-                                         channelPrefix.replace("IB","_IB") + CRYOLINKIB_PRESSURE_CHANNELS.get("StatusPressure"+attributes[1])));
+                                         channelPrefix.replace("IB","") + CRYOLINKIB_PRESSURE_CHANNELS.get("StatusPressure"+attributes[1])));
          // Status Sensor
          list.addElement(new DataElement("StatusSensor",Type.LABEL_MAXIGAUGE_SENSOR_STATUS_STRING, 
-                                         channelPrefix.replace("IB","_IB") + CRYOLINKIB_PRESSURE_CHANNELS.get("StatusSensor"+attributes[1])));
+                                         channelPrefix.replace("IB","") + CRYOLINKIB_PRESSURE_CHANNELS.get("StatusSensor"+attributes[1])));
       }
       else if (attributes[0].contains("VENTING")) {
          String prSuffix = attributes[1].equals("G2") ? "_MG_PR2" : "_MG_PR1";

@@ -63,7 +63,7 @@ public class DataSetPlot extends DataSet {
       else if ( attributes[0].contains("CRYO") ) {
          if (attributes[1].contains("LN2"))
             list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0].replace("CRYO","LN2") + PLOT_CRYO_CHANNELS.get(attributes[1])));
-         if (attributes[1].contains("VALVEBIG"))
+         else if (attributes[1].contains("VALVEBIG"))
             list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0].replace("CRYO","VALVEBIG") + PLOT_CRYO_CHANNELS.get(attributes[1])));
          else
             list.addElement(new DataElement("Data",Type.PLOT_DATA,"VAC_" + attributes[0] + PLOT_CRYO_CHANNELS.get(attributes[1])));

@@ -351,25 +351,25 @@ public interface ControlTypes {
 
    Hashtable<String,String> TITANE_COMMAND_CHANNELS = new Hashtable<String, String>(){{
       // CRYO
-      put("P31e", "_P31EONOFF");
+      put("P31e", "_P31ESUBLONOFF");
       put("P31eFilamentUsed", "_P31ESELFILVAL");
       put("P31eSublimationCurrent", "_P31ESUBLCURVAL");
       put("P31eSublimationTime", "_P31ESUBLTIMEVAL");
       put("P31eSublimationPeriod", "_P31ESUBLPERVAL");
       put("P31eParam", "_P31EPARAM");
-      put("P32e", "_P32EONOFF");
+      put("P32e", "_P32ESUBLONOFF");
       put("P32eFilamentUsed", "_P32ESELFILVAL");
       put("P32eSublimationCurrent", "_P32ESUBLCURVAL");
       put("P32eSublimationTime", "_P32ESUBLTIMEVAL");
       put("P32eSublimationPeriod", "_P32ESUBLPERVAL");
       put("P32eParam", "_P32EPARAM");
-      put("P31i", "_P31IONOFF");
+      put("P31i", "_P31ISUBLONOFF");
       put("P31iFilamentUsed", "_P31ISELFILVAL");
       put("P31iSublimationCurrent", "_P31ISUBLCURVAL");
       put("P31iSublimationTime", "_P31ISUBLTIMEVAL");
       put("P31iSublimationPeriod", "_P31ISUBLPERVAL");
       put("P31iParam", "_P31IPARAM");
-      put("P32i", "_P32IONOFF");
+      put("P32i", "_P32ISUBLONOFF");
       put("P32iFilamentUsed", "_P32ISELFILVAL");
       put("P32iSublimationCurrent", "_P32ISUBLCURVAL");
       put("P32iSublimationTime", "_P32ISUBLTIMEVAL");
@@ -377,17 +377,17 @@ public interface ControlTypes {
       put("P32iParam", "_P32IPARAM");
       // TOWER
       // TUBE STATIONS
-      put("P31", "_P31ONOFF");
+      put("P31", "_P31SUBLONOFF");
       put("P31FilamentUsed", "_P31SELFILVAL");
       put("P31SublimationCurrent", "_P31SUBLCURVAL");
       put("P31SublimationTime", "_P31SUBLTIMEVAL");
       put("P31SublimationPeriod", "_P31SUBLPERVAL");
       put("P31Param", "_P31PARAM");
-      put("P32", "_P32ONOFF");
+      put("P32", "_P32SUBLONOFF");
       put("P32FilamentUsed", "_P32SELFILVAL");
       put("P32SublimationCurrent", "_P32SUBLCURVAL");
       put("P32SublimationTime", "_P32SUBLTIMEVAL");
-      put("P32SublimationPeriod", "_P32SUBLPERVAL");
+      put("P32SublimationPeriod", "_P32SUBLPERIODVAL"); // tube stations cfg name (P31 is _P31SUBLPERVAL)
       put("P32Param", "_P32PARAM");
    }};
 

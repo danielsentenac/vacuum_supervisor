@@ -35,10 +35,14 @@ public class DataSetNotification extends DataSet {
          // SQZ
          list.addElement(new DataElement("COMPRESSAIR:SQZ100N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ100N_COMPRESSAIRST"));
          list.addElement(new DataElement("COMPRESSAIR:SQZ200N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ200N_COMPRESSAIRST"));
-         list.addElement(new DataElement("COMPRESSAIR:SQZ0N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ0N_COMPRESSAIRST"));
-         list.addElement(new DataElement("COMPRESSAIR:SQZ300N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ300N_COMPRESSAIRST"));
-         list.addElement(new DataElement("COMPRESSAIR:SQZDET1",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZDET1_COMPRESSAIRST"));
-         list.addElement(new DataElement("COMPRESSAIR:SQZDET2",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZDET2_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZ0N M1",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ0N_M1_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZ0N M2",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ0N_M2_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZ300N M1",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ300N_M1_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZ300N M2",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZ300N_M2_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZDET1 M1",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZDET1_M1_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZDET1 M2",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZDET1_M2_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZDET2 M1",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZDET2_M1_COMPRESSAIRST"));
+         list.addElement(new DataElement("COMPRESSAIR:SQZDET2 M2",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_SQZDET2_M2_COMPRESSAIRST"));
          // LINK
          list.addElement(new DataElement("COMPRESSAIR:LINKPR",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_LINK_PR_COMPRESSAIRST"));
          list.addElement(new DataElement("COMPRESSAIR:LINKSR",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_LINK_SR_COMPRESSAIRST"));
@@ -85,7 +89,7 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("SQZ100N P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_SQZ100N_P21BERR"));
          list.addElement(new DataElement("SQZ200N P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_SQZ200N_P21BERR"));
          list.addElement(new DataElement("SQZ300N P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_SQZ300N_P21BERR"));
-         list.addElement(new DataElement("SQZDET1 P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_SQZ1DET1_P21BERR"));
+         list.addElement(new DataElement("SQZDET1 P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_SQZDET1_P21BERR"));
          list.addElement(new DataElement("SQZDET2 P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_SQZDET2_P21BERR"));
          // LINK Turbo Pumps Notification Channels
          list.addElement(new DataElement("LINKPR P21",Type.LABEL_TURBO_BOX_STATUS_STRING,"VAC_LINK_PR_P21BERR"));
@@ -134,7 +138,7 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("SQZ100N P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_SQZ100N_P21TPST"));
          list.addElement(new DataElement("SQZ200N P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_SQZ200N_P21TPST"));
          list.addElement(new DataElement("SQZ300N P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_SQZ300N_P21TPST"));
-         list.addElement(new DataElement("SQZDET1 P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_SQZ1DET1_P21TPST"));
+         list.addElement(new DataElement("SQZDET1 P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_SQZDET1_P21TPST"));
          list.addElement(new DataElement("SQZDET2 P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_SQZDET2_P21TPST"));
          // LINK Turbo Pumps Notification Channels
          list.addElement(new DataElement("LINKPR P21",Type.LABEL_TURBO_TEMP_STATUS_STRING,"VAC_LINK_PR_P21TPST"));
@@ -184,7 +188,7 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("SQZ100N P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_SQZ100N_P21BTPST"));
          list.addElement(new DataElement("SQZ200N P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_SQZ200N_P21BTPST"));
          list.addElement(new DataElement("SQZ300N P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_SQZ300N_P21BTPST"));
-         list.addElement(new DataElement("SQZDET1 P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_SQZ1DET1_P21BTPST"));
+         list.addElement(new DataElement("SQZDET1 P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_SQZDET1_P21BTPST"));
          list.addElement(new DataElement("SQZDET2 P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_SQZDET2_P21BTPST")); 
          // LINK Turbo Pumps Notification Channels
          list.addElement(new DataElement("LINKPR P21",Type.LABEL_TURBO_TEMP_BOX_STATUS_STRING,"VAC_LINK_PR_P21BTPST"));
@@ -221,11 +225,11 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("TUBE1200N P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL1200N_P21W",0,80));
          list.addElement(new DataElement("TUBE2400N P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL2400N_P21W",0,80));
          // TUBE MC Turbo Pumps Notification Channels
-         list.addElement(new DataElement("TUBEMC P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBEMC_P21W",0,80));
-         // TUBE EGO Turbo Pumps Notification Channels
-         list.addElement(new DataElement("TUBE3000W P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL3000W_P21PW",0,80));
-         list.addElement(new DataElement("TUBE600N P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL600N_P21PW",0,80));
-         list.addElement(new DataElement("TUBE3000N P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL3000N_P21PW",0,80));
+         list.addElement(new DataElement("TUBEMC P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBEMC_P21PWR",0,80));
+         list.addElement(new DataElement("TUBE1800W P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL1800W_P21W",0,80));
+         list.addElement(new DataElement("TUBE3000W P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL3000W_P21W",0,80));
+         list.addElement(new DataElement("TUBE1800N P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL1800N_P21W",0,80));
+         list.addElement(new DataElement("TUBE3000N P21",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_TUBELAL3000N_P21W",0,80));
          // CRYO Turbo Pumps Notification Channels
          list.addElement(new DataElement("CRYONI P2",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_CRYONI_P2W",0,80));
          list.addElement(new DataElement("CRYOWI P2",Type.LABEL_TURBO_POWER_STATUS_STRING,"VAC_CRYOWI_P2W",0,80));
@@ -497,10 +501,10 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("Vs2 CRYOLINKIB",Type.LABEL_VALVE_STATUS_STRING,"VAC_CRYOLINKIB_Vs2"));
          list.addElement(new DataElement("Vs2 CRYOLINKDET",Type.LABEL_VALVE_STATUS_STRING,"VAC_CRYOLINKDET_Vs2"));
          // LINKS
-         list.addElement(new DataElement("V21 LINKPR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINKPR_V21ST"));
-         list.addElement(new DataElement("V21 LINKSR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINKSR_V21ST"));
-         list.addElement(new DataElement("V22 LINKPR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINKPR_V22ST"));
-         list.addElement(new DataElement("V22 LINKSR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINKSR_V22ST"));
+         list.addElement(new DataElement("V21 LINKPR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINK_PR_V21ST"));
+         list.addElement(new DataElement("V21 LINKSR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINK_SR_V21ST"));
+         list.addElement(new DataElement("V22 LINKPR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINK_PR_V22ST"));
+         list.addElement(new DataElement("V22 LINKSR",Type.LABEL_VALVE_STATUS_STRING,"VAC_LINK_SR_V22ST"));
          // BIG VALVES
          list.addElement(new DataElement("VALVEBIGWI",Type.LABEL_VALVE_STATUS_STRING,"VAC_VALVEBIGWI_ST"));
          list.addElement(new DataElement("VALVEBIGNI",Type.LABEL_VALVE_STATUS_STRING,"VAC_VALVEBIGNI_ST"));
@@ -554,9 +558,45 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("UPS:TB",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_TB_UPS3_NORMAL_FUNC_ST"));
       }
       if (name.equals("Ionic Alert")) {
-         // Agilent IPCMini (SCADARPI racks): interlock/fault status (negative P33ST) and error bits
-         list.addElement(new DataElement("P33 900N",Type.LABEL_IPC_STATUS_STRING,"VAC_TUBE900N_IPC_P33ST"));
-         list.addElement(new DataElement("P33 900N",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBE900N_IPC_P33ERR"));
+         // Agilent ionic pumps error bit field (0 = no error): TUBE LAL STATIONS (Dual)
+         list.addElement(new DataElement("600N P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL600N_P23ERRORST"));
+         list.addElement(new DataElement("600N P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL600N_P33ERRORST"));
+         list.addElement(new DataElement("1200N P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1200N_P23ERRORST"));
+         list.addElement(new DataElement("1200N P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1200N_P33ERRORST"));
+         list.addElement(new DataElement("1800N P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1800N_P23ERRORST"));
+         list.addElement(new DataElement("1800N P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1800N_P33ERRORST"));
+         list.addElement(new DataElement("2400N P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL2400N_P23ERRORST"));
+         list.addElement(new DataElement("2400N P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL2400N_P33ERRORST"));
+         list.addElement(new DataElement("3000N P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL3000N_P23ERRORST"));
+         list.addElement(new DataElement("3000N P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL3000N_P33ERRORST"));
+         list.addElement(new DataElement("600W P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL600W_P23ERRORST"));
+         list.addElement(new DataElement("600W P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL600W_P33ERRORST"));
+         list.addElement(new DataElement("1200W P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1200W_P23ERRORST"));
+         list.addElement(new DataElement("1200W P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1200W_P33ERRORST"));
+         list.addElement(new DataElement("1800W P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1800W_P23ERRORST"));
+         list.addElement(new DataElement("1800W P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL1800W_P33ERRORST"));
+         list.addElement(new DataElement("2400W P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL2400W_P23ERRORST"));
+         list.addElement(new DataElement("2400W P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL2400W_P33ERRORST"));
+         list.addElement(new DataElement("3000W P23",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL3000W_P23ERRORST"));
+         list.addElement(new DataElement("3000W P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBELAL3000W_P33ERRORST"));
+         // TOWERS (Dual)
+         list.addElement(new DataElement("TOWERBS P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERBS_P33ERRORST"));
+         list.addElement(new DataElement("TOWERBS P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERBS_P81ERRORST"));
+         list.addElement(new DataElement("TOWERPR P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERPR_P33ERRORST"));
+         list.addElement(new DataElement("TOWERPR P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERPR_P81ERRORST"));
+         list.addElement(new DataElement("TOWERNI P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERNI_P33ERRORST"));
+         list.addElement(new DataElement("TOWERNI P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERNI_P81ERRORST"));
+         list.addElement(new DataElement("TOWERWI P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERWI_P33ERRORST"));
+         list.addElement(new DataElement("TOWERWI P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERWI_P81ERRORST"));
+         list.addElement(new DataElement("TOWERSR P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERSR_P33ERRORST"));
+         list.addElement(new DataElement("TOWERSR P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERSR_P81ERRORST"));
+         list.addElement(new DataElement("TOWERNE P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERNE_P33ERRORST"));
+         list.addElement(new DataElement("TOWERNE P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERNE_P81ERRORST"));
+         list.addElement(new DataElement("TOWERWE P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERWE_P33ERRORST"));
+         list.addElement(new DataElement("TOWERWE P81",Type.LABEL_IPC_ERROR_STRING,"VAC_TOWERWE_P81ERRORST"));
+         // TUBE900N (IPCMini, SCADARPI rack): error bits and interlock/fault status (negative P33ST)
+         list.addElement(new DataElement("900N P33",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBE900N_IPC_P33ERR"));
+         list.addElement(new DataElement("900N P33",Type.LABEL_IPC_STATUS_STRING,"VAC_TUBE900N_IPC_P33ST"));
       }
       if (name.equals("O2 Sensor Alert")) {
          // O2 Sensor ALARMS

@@ -16,6 +16,11 @@ public class DataSetValve extends DataSet {
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + "_I2C_" + attributes[1] + "ST"));
       else if (DataTypes.isRpiTubeStation(attributes[1].split("_")[0]))
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, "VAC_" + attributes[1].replace("_", "_I2C_") + "ST"));
+      // Overview views (TUBEN, TUBEW, SQZ): big valves (VALVEBIGNE, ...) and valves given as <RACK>_<VALVE>
+      else if ((attributes[0].equals("TUBEN") || attributes[0].equals("TUBEW")) && attributes[1].startsWith("VALVEBIG"))
+         list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, "VAC_" + attributes[1] + "_ST"));
+      else if ((attributes[0].equals("TUBEN") || attributes[0].equals("TUBEW") || attributes[0].equals("SQZ")) && attributes[1].contains("_"))
+         list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, "VAC_" + attributes[1] + "ST"));
       // TUBEN and TUBEW cases
       else if (attributes[1].equals("-") && channelPrefix.contains("V21")) 
          list.addElement(new DataElement("Status",Type.LABEL_VALVE_STATUS_STRING, channelPrefix + "ST"));
