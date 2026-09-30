@@ -281,6 +281,11 @@ public class DataSetNotification extends DataSet {
       if (name.equals("Rack Alert")) {
          //list.addElement(new DataElement(" TUBE300N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBE300N_RackStatus"));
          list.addElement(new DataElement("600N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL600N_RackStatus"));
+         list.addElement(new DataElement("900N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBE900N_RackStatus"));
+         // 900N (SCADARPI) instruments communication: 0 = OK, 1 = FAILURE
+         list.addElement(new DataElement("COM MAXIGAUGE:900N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TUBE900N_MG_COMST"));
+         list.addElement(new DataElement("COM IONIC P33:900N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TUBE900N_IPC_P33COMST"));
+         list.addElement(new DataElement("COM VALVES I2C:900N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TUBE900N_I2C_COMST"));
          list.addElement(new DataElement("1200N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL1200N_RackStatus"));
          list.addElement(new DataElement("1800N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL1800N_RackStatus"));
          list.addElement(new DataElement("2400N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL2400N_RackStatus"));
@@ -341,6 +346,7 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("1800W UPS",Type.LABEL_RACK_STATUS_STRING,"INF_W1800_UPS_COM_ST"));
          list.addElement(new DataElement("2400W UPS",Type.LABEL_RACK_STATUS_STRING,"INF_W2400_UPS_COM_ST"));
          list.addElement(new DataElement("600N UPS",Type.LABEL_RACK_STATUS_STRING,"INF_N600_UPS_COM_ST"));
+         list.addElement(new DataElement("900N UPS",Type.LABEL_RACK_STATUS_STRING,"INF_N900_UPS_COM_ST"));
          list.addElement(new DataElement("1200N UPS",Type.LABEL_RACK_STATUS_STRING,"INF_N1200_UPS_COM_ST"));
          list.addElement(new DataElement("1800N UPS",Type.LABEL_RACK_STATUS_STRING,"INF_N1800_UPS_COM_ST"));
          list.addElement(new DataElement("2400N UPS",Type.LABEL_RACK_STATUS_STRING,"INF_N2400_UPS_COM_ST"));
@@ -382,6 +388,8 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("V22 2400N",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBELAL2400N_V22ST"));
          list.addElement(new DataElement("V22 3000N",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBELAL3000N_V22ST"));
          list.addElement(new DataElement("V22 300W",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBE300W_V22ST"));
+         list.addElement(new DataElement("V31 900N",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBE900N_I2C_V31ST"));
+         list.addElement(new DataElement("V32 900N",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBE900N_I2C_V32ST"));
          list.addElement(new DataElement("V22 600W",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBELAL600W_V22ST"));
          list.addElement(new DataElement("V22 1200W",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBELAL1200W_V22ST"));
          list.addElement(new DataElement("V22 1800W",Type.LABEL_VALVE_STATUS_STRING,"VAC_TUBELAL1800W_V22ST"));
@@ -536,6 +544,7 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("UPS:1800W",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_W1800_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:2400W",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_W2400_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:600N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N600_UPS_NORMAL_FUNC_ST"));
+         list.addElement(new DataElement("UPS:900N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N900_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:1200N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N1200_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:1800N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N1800_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:2400N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N2400_UPS_NORMAL_FUNC_ST"));
@@ -545,6 +554,11 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("UPS:SQZ200N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N230_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:SQZ300N",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_N330_UPS_NORMAL_FUNC_ST"));
          list.addElement(new DataElement("UPS:TB",Type.LABEL_FAILUREOK_STATUS_STRING,"INF_TB_UPS3_NORMAL_FUNC_ST"));
+      }
+      if (name.equals("Ionic Alert")) {
+         // Agilent IPCMini (SCADARPI racks): interlock/fault status (negative P33ST) and error bits
+         list.addElement(new DataElement("P33 900N",Type.LABEL_IPC_STATUS_STRING,"VAC_TUBE900N_IPC_P33ST"));
+         list.addElement(new DataElement("P33 900N",Type.LABEL_IPC_ERROR_STRING,"VAC_TUBE900N_IPC_P33ERR"));
       }
       if (name.equals("O2 Sensor Alert")) {
          // O2 Sensor ALARMS

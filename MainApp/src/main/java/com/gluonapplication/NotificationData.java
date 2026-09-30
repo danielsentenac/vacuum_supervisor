@@ -214,6 +214,9 @@ public class NotificationData implements Runnable, DataTypes {
             return "TUBE300W";
         }
 
+        if (key.contains("900N")) {
+            return "TUBE900N";
+        }
         if (key.contains("3000N")) {
             return "TUBELAL3000N";
         }
@@ -445,6 +448,38 @@ public class NotificationData implements Runnable, DataTypes {
                            });
                         } 
                          catch (Exception e){}
+                     }
+                     break;
+                 case LABEL_IPC_STATUS_STRING: // IPCMini interlock / fault (negative status codes)
+                     if (!isInvalidValue(value) && DataTypes.ipcKey(value).startsWith("-")) {
+                        try {
+                           String notificationId = "IONIC:" + data.list.elementAt(i).name;
+                           Services.get(LocalNotificationsService.class).ifPresent(service -> {
+                              if (!hasNotification(service, notificationId)) {
+                                 sleepQuietly(5000);
+                                 System.out.println("CREATING NOTIFICATION IONIC ALERT:" + notificationId);
+                                 String message = notificationId + "(" + DataTypes.ipcLookup(IPC_STATUS_STRING, value) + ")";
+                                 addNotification(service, notificationId, message);
+                              }
+                           });
+                        }
+                        catch (Exception e){}
+                     }
+                     break;
+                 case LABEL_IPC_ERROR_STRING: // IPCMini error bit field (0 = no error)
+                     if (!"0".equals(DataTypes.ipcKey(value)) && !isInvalidValue(value)) {
+                        try {
+                           String notificationId = "IONIC ERROR:" + data.list.elementAt(i).name;
+                           Services.get(LocalNotificationsService.class).ifPresent(service -> {
+                              if (!hasNotification(service, notificationId)) {
+                                 sleepQuietly(5000);
+                                 System.out.println("CREATING NOTIFICATION IONIC ERROR ALERT:" + notificationId);
+                                 String message = notificationId + "(" + DataTypes.ipcErrorString(value) + ")";
+                                 addNotification(service, notificationId, message);
+                              }
+                           });
+                        }
+                        catch (Exception e){}
                      }
                      break;
                  case LABEL_OKFAILURE_STATUS_STRING:

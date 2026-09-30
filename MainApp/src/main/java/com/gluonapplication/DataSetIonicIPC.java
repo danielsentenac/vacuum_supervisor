@@ -15,7 +15,7 @@ public class DataSetIonicIPC extends DataSet {
       // Status IONIC
       list.addElement(new DataElement("Status",Type.LABEL_IPC_STATUS_STRING, channelPrefix + "ST"));
       // Status Comm
-      list.addElement(new DataElement("StatusComm",Type.LABEL_RACK_STATUS_STRING, channelPrefix + "COMST"));
+      list.addElement(new DataElement("StatusComm",Type.LABEL_OKFAILURE_STATUS_STRING, channelPrefix + "COMST"));
       // Status Error
       list.addElement(new DataElement("StatusError",Type.LABEL_IPC_ERROR_STRING, channelPrefix + "ERR"));
       // Control (Remote) Mode

@@ -117,6 +117,7 @@ public class Main extends MobileApplication {
     NotificationService notificationValve = new NotificationService("Valve Alert");
     NotificationService notificationUps = new NotificationService("UPS Alert");
     NotificationService notificationO2Sensor = new NotificationService("O2 Sensor Alert");
+    NotificationService notificationIonic = new NotificationService("Ionic Alert");
     NotificationService notificationCompressAir = new NotificationService("Compress Air Alert");
 
     @Override
@@ -402,6 +403,7 @@ public class Main extends MobileApplication {
                 new Thread(notificationValve).start();
                 new Thread(notificationUps).start();
                 new Thread(notificationO2Sensor).start();
+                new Thread(notificationIonic).start();
                 new Thread(notificationCompressAir).start();
                 registerNotificationLaunchHandler();
                 clearPendingNotifications();
