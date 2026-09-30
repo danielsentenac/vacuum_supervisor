@@ -282,10 +282,6 @@ public class DataSetNotification extends DataSet {
          //list.addElement(new DataElement(" TUBE300N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBE300N_RackStatus"));
          list.addElement(new DataElement("600N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL600N_RackStatus"));
          list.addElement(new DataElement("900N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBE900N_RackStatus"));
-         // 900N (SCADARPI) instruments communication: 0 = OK, 1 = FAILURE
-         list.addElement(new DataElement("COM MAXIGAUGE:900N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TUBE900N_MG_COMST"));
-         list.addElement(new DataElement("COM IONIC P33:900N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TUBE900N_IPC_P33COMST"));
-         list.addElement(new DataElement("COM VALVES I2C:900N",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TUBE900N_I2C_COMST"));
          list.addElement(new DataElement("1200N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL1200N_RackStatus"));
          list.addElement(new DataElement("1800N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL1800N_RackStatus"));
          list.addElement(new DataElement("2400N",Type.LABEL_RACK_STATUS_STRING,"VAC_TUBELAL2400N_RackStatus"));
@@ -329,6 +325,8 @@ public class DataSetNotification extends DataSet {
          list.addElement(new DataElement("VALVECENTRAL",Type.LABEL_RACK_STATUS_STRING,"VAC_VALVECENTRAL_RackStatus"));
          list.addElement(new DataElement("VENTINGVALVENI",Type.LABEL_RACK_STATUS_STRING,"VAC_VENTINGVALVENI_RackStatus"));
          list.addElement(new DataElement("VENTINGVALVEWI",Type.LABEL_RACK_STATUS_STRING,"VAC_VENTINGVALVEWI_RackStatus"));
+         list.addElement(new DataElement("VENTING1",Type.LABEL_RACK_STATUS_STRING,"VAC_VENTING1_RackStatus"));
+         list.addElement(new DataElement("TILTMETER",Type.LABEL_RACK_STATUS_STRING,"VAC_TILTMETER_RackStatus"));
          list.addElement(new DataElement("REMOTESCROLL",Type.LABEL_RACK_STATUS_STRING,"VAC_REMOTESCROLL_RackStatus"));
          list.addElement(new DataElement("VALVEBIGNE",Type.LABEL_RACK_STATUS_STRING,"VAC_VALVEBIGNE_RackStatus"));
          list.addElement(new DataElement("VALVEBIGNI",Type.LABEL_RACK_STATUS_STRING,"VAC_VALVEBIGNI_RackStatus"));

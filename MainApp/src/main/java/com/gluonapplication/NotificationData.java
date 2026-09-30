@@ -98,6 +98,12 @@ public class NotificationData implements Runnable, DataTypes {
         }
         String key = notificationId.toUpperCase();
 
+        if (key.contains("VENTING1")) {
+            return "VENTING1";
+        }
+        if (key.contains("TILTMETER")) {
+            return "TILTMETER";
+        }
         if (key.contains("REMOTESCROLL")) {
             return "REMOTEPUMPS";
         }

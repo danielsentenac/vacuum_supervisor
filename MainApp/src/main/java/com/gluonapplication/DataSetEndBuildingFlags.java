@@ -8,19 +8,19 @@ public class DataSetEndBuildingFlags extends DataSet {
 
       if ( name.equals("WE")) {
          // Rack Status
-         list.addElement(new DataElement("StatusRackTower",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TOWERWE_RackStatus"));
-         list.addElement(new DataElement("StatusRackCryoPump",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_CRYOWE_RackStatus"));
-         list.addElement(new DataElement("StatusRackCryo",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_LN2WE_RackStatus"));
+         list.addElement(new DataElement("StatusRackTower",Type.LABEL_RACK_STATUS_STRING,"VAC_TOWERWE_RackStatus"));
+         list.addElement(new DataElement("StatusRackCryoPump",Type.LABEL_RACK_STATUS_STRING,"VAC_CRYOWE_RackStatus"));
+         list.addElement(new DataElement("StatusRackCryo",Type.LABEL_RACK_STATUS_STRING,"VAC_LN2WE_RackStatus"));
 
          // CompressAir
-         list.addElement(new DataElement("CompressAirTower",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TOWERNE_AIRP"));
-         list.addElement(new DataElement("CompressAirCryo",Type.LABEL_FAILUREOK_STATUS_STRING,"VAC_CRYONE_COMPRESSAIRST"));
+         list.addElement(new DataElement("CompressAirTower",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TOWERWE_AIRP"));
+         list.addElement(new DataElement("CompressAirCryo",Type.LABEL_FAILUREOK_STATUS_STRING,"VAC_CRYOWE_COMPRESSAIRST"));
       }
       else if ( name.equals("NE")) {
          // Rack Status
-         list.addElement(new DataElement("StatusRackTower",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TOWERNE_RackStatus"));
-         list.addElement(new DataElement("StatusRackCryoPump",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_CRYONE_RackStatus"));
-         list.addElement(new DataElement("StatusRackCryo",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_LN2NE_RackStatus"));
+         list.addElement(new DataElement("StatusRackTower",Type.LABEL_RACK_STATUS_STRING,"VAC_TOWERNE_RackStatus"));
+         list.addElement(new DataElement("StatusRackCryoPump",Type.LABEL_RACK_STATUS_STRING,"VAC_CRYONE_RackStatus"));
+         list.addElement(new DataElement("StatusRackCryo",Type.LABEL_RACK_STATUS_STRING,"VAC_LN2NE_RackStatus"));
 
          // CompressAir
          list.addElement(new DataElement("CompressAirTower",Type.LABEL_OKFAILURE_STATUS_STRING,"VAC_TOWERNE_AIRP"));

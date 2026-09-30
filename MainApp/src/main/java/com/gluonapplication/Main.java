@@ -633,6 +633,18 @@ public class Main extends MobileApplication {
                 registerViewFactoryAndStartThread("TUBELAL600N", tube600N);
              }
              return true;
+          case "VENTING1":
+             if (venting == null) {
+                venting = new ViewVenting1("VENTING1", "VENTING1");
+                registerViewFactoryAndStartThread("VENTING1", venting);
+             }
+             return true;
+          case "TILTMETER":
+             if (tiltmeter == null) {
+                tiltmeter = new ViewMiniTowerSqzStation("MINITOWERSQZ", "TILTMETER");
+                registerViewFactoryAndStartThread("TILTMETER", tiltmeter);
+             }
+             return true;
           case "TUBE900N":
              if (tube900N == null) {
                 tube900N = new ViewTube900NStation("TUBE900NSTATION", "TUBE900N");
