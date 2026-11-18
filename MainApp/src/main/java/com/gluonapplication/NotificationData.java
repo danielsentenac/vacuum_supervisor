@@ -27,6 +27,7 @@ public class NotificationData implements Runnable, DataTypes {
     public DataSet data;
     public String name = "";
     public boolean connectionError = false;
+    private long lastTraceTime = 0;
 
     public NotificationData(String name) {
         this.name = name;
@@ -525,7 +526,14 @@ public class NotificationData implements Runnable, DataTypes {
       }
       catch (IOException e) {
       }
-      catch (Exception e) {e.printStackTrace();}
+      catch (Exception e) {
+         // Full trace at most once a minute so a recurring error cannot fill the disk
+         long now = System.currentTimeMillis();
+         if (now - lastTraceTime > 60000) {
+            lastTraceTime = now;
+            e.printStackTrace();
+         }
+      }
     }
 
     public void run() {
