@@ -23,6 +23,9 @@ public class ViewGlobal extends ViewData {
     protected void updateAppBar(AppBar appBar) {
         appBar.setStyle("-fx-font-size: 13");
         appBar.setTitleText("Global View");
+        appBar.getActionItems().addAll(MaterialDesignIcon.VPN_KEY.button(e -> {
+           DialogPortalLogin.open(); // firewall portal login, to reach the server from outside Virgo
+        }));
         appBar.getActionItems().addAll(MaterialDesignIcon.CONTROL_POINT.button(e -> {
            CreateAndShowSupervisorActionsSidePopupView("SUPERVISORACTIONS", "SUPERVISOR ACTIONS");
            setMouseTransparent(false);

@@ -4,6 +4,9 @@ import com.gluonhq.charm.glisten.application.MobileApplication;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import com.gluonhq.charm.glisten.layout.Layer;
@@ -16,6 +19,10 @@ public class LayerMessage extends Layer {
 
     private BorderPane backgroundPane;
     private Label label;
+    private boolean hasAction = false;
+
+    /** Set while the firewall login dialog is open: the outage messages would cover it. */
+    static volatile boolean suppressed = false;
 
     public LayerMessage(String fxml, String message, boolean isAutoHide) {   
         try {     
@@ -43,6 +50,22 @@ public class LayerMessage extends Layer {
            });
         }
         System.out.println("Created layer message " + fxml);
+    }
+
+    /** Adds a button under the message (the firewall login, on the outage messages). */
+    public void addAction(String text, Runnable action) {
+        Button button = new Button(text);
+        button.setOnAction(e -> action.run());
+        BorderPane.setAlignment(button, Pos.CENTER);
+        BorderPane.setMargin(button, new Insets(0, 0, 8, 0));
+        backgroundPane.setBottom(button);
+        hasAction = true;
+    }
+
+    @Override
+    public void show() {
+        if (suppressed && hasAction) return;
+        super.show();
     }
 
     @Override

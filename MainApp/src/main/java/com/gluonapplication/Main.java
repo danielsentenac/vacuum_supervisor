@@ -134,6 +134,9 @@ public class Main extends MobileApplication {
          t.printStackTrace();
          throw t;
       }
+      // Outside Virgo the server is behind the firewall portal: the outage messages offer its login
+      network_error_layer.addAction("FIREWALL LOGIN", DialogPortalLogin::open);
+      server_ko_layer.addAction("FIREWALL LOGIN", DialogPortalLogin::open);
       // Add Layers
        addLayerFactory("NETWORK_ERROR", () -> { return network_error_layer;});
        addLayerFactory("SERVER_KO", () -> { return server_ko_layer;});
@@ -390,6 +393,7 @@ public class Main extends MobileApplication {
             setTitle("Vacuum Supervisor");
             updateStartupProgress(0.55, "Preparing views");
             try {
+                PortalAccess.loginAtStartup(); // outside Virgo: open the firewall portal session before the first requests
                 System.out.println("STARTING THREADS");
                 new Thread(global).start();
                 new Thread(venting).start();

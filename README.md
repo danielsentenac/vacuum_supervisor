@@ -78,6 +78,35 @@ To verify that no internal hostnames were accidentally committed:
 ./scripts/check_no_internal_hosts.sh
 ```
 
+## Access From Outside Virgo (Firewall Login)
+
+The backend is inside the Virgo network. From outside, the firewall portal (a Check Point captive portal) must be
+passed first; the client does it itself, with the login and password entered in the application.
+
+- The **key** icon of the Global view, or the **FIREWALL LOGIN** button under the "Network is unreachable" /
+  "No response from server" messages, opens the login dialog: login, password and "Log in automatically". Each user enters
+  their own login; it is saved locally with the client.
+- **LOG IN** saves the settings and logs in at once; **SAVE** only saves them.
+- With "Log in automatically" and a saved login, the client logs in by itself at startup, and again each time the
+  backend is not reached (when the portal session expires), then the views get their data again at their next cycle.
+- If the portal refuses the login, no further automatic attempt is made until the login is saved again, so that a
+  wrong password cannot lock the account.
+
+`PortalLogin.java` follows the portal page's own sequence (session, public key and one-time token, encrypted
+password, final state), the same as in the raven-kn logbook client; a firewall update may change it, and the client
+then says so instead of guessing.
+
+- The portal address and the name on its certificate are built in (`PortalAccess.java`); "Show the portal address"
+  in the dialog allows another one.
+- The password is sent only to the portal address, over HTTPS with the certificate verified. The firewall node
+  presents a certificate issued for another name than its address; "name on the portal certificate" makes the check
+  use that name. Verification is never switched off.
+- The certificate authority of the portal (HARICA 2021 roots, public) is missing from the Java 8 and older Android
+  lists; it is added from `MainApp/src/main/resources/portal-roots.pem` to the platform's own list, for the portal
+  connection only.
+- The login and its password are stored in the application's private storage, not encrypted
+  (`vacuum_supervisor_portal.properties`, owner-only file).
+
 ## Client Illustrations
 
 ### CB

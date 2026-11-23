@@ -630,6 +630,7 @@ public class LayerData extends Layer implements Runnable, DataTypes {
          isStarted = false;
       }
       catch (ConnectException e) {
+         PortalAccess.backendUnreachable(); // outside Virgo: log in to the firewall portal if a login is stored
          // Log once per outage: this runs every second while the server is down
          if (!serverError) System.err.println(fxml + " " + name + ": server KO: " + e);
          Platform.runLater(() -> {
@@ -640,6 +641,7 @@ public class LayerData extends Layer implements Runnable, DataTypes {
          serverError = true;
       }
       catch (IOException e) {
+         PortalAccess.backendUnreachable(); // outside Virgo: log in to the firewall portal if a login is stored
          // Log once per outage: this runs every second while the network is down
          if (!connectionError) System.err.println(fxml + " " + name + ": network error: " + e);
          Platform.runLater(() -> {

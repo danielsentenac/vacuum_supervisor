@@ -525,6 +525,7 @@ public class NotificationData implements Runnable, DataTypes {
          }
       }
       catch (IOException e) {
+         PortalAccess.backendUnreachable(); // outside Virgo: log in to the firewall portal if a login is stored
       }
       catch (Exception e) {
          // Full trace at most once a minute so a recurring error cannot fill the disk
