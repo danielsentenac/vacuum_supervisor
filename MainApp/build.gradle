@@ -84,6 +84,19 @@ jfxmobile {
     }
 }
 
+// The app version lives only in AndroidManifest.xml (android:versionName, bumped
+// by release_app). Expose it to the running app, on every platform, as the
+// version.properties resource read by AppVersion.
+def appVersionMatcher = (file('src/android/AndroidManifest.xml').getText('UTF-8') =~ /android:versionName="([^"]*)"/)
+def appVersionName = appVersionMatcher.find() ? appVersionMatcher.group(1) : ''
+
+processResources {
+    inputs.property 'appVersionName', appVersionName
+    doLast {
+        new File(destinationDir, 'version.properties').setText("version=${appVersionName}\n", 'UTF-8')
+    }
+}
+
 tasks.register('debug') {
     group = 'application'
     description = 'Alias to run the app on desktop'

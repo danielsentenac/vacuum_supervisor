@@ -22,7 +22,8 @@ public class ViewGlobal extends ViewData {
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setStyle("-fx-font-size: 13");
-        appBar.setTitleText("Global View");
+        String version = AppVersion.get();
+        appBar.setTitleText(version.isEmpty() ? "Global View" : "Global View - v" + version);
         appBar.getActionItems().addAll(MaterialDesignIcon.VPN_KEY.button(e -> {
            DialogPortalLogin.open(); // firewall portal login, to reach the server from outside Virgo
         }));
